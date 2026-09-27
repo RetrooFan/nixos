@@ -1,11 +1,11 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    pkgs.unstable.git
-    pkgs.unstable.htop
-    pkgs.unstable.lazygit
-    pkgs.unstable.nmap
-    pkgs.unstable.tcpdump
-    pkgs.unstable.tmux
+    latest.git
+    latest.htop
+    latest.lazygit
+    latest.nmap
+    latest.tcpdump
+    latest.tmux
     k3s
   ];
 }

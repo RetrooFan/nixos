@@ -20,17 +20,17 @@
     useDHCP = lib.mkDefault true; # Kluczowe dla chmury: upewnia się, że DHCP zadziała niezależnie od NM
   };
 
-  # Mapowanie inputów z Flake do systemowego rejestru
-  nix.registry.unstable.flake = inputs.nixpkgs-unstable;
+  # Żeby w terminalu było dostępne 'nix search latest <paczka>'
+  nix.registry.latest.flake = inputs.nixpkgs-unstable;
 
   # Włączenie obsługi Flakes również w nowym systemie
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Żeby w 'apps.nix' można było używać 'pkgs.unstable'
+  # Żeby w 'apps.nix' można było używać 'latest.<paczka>'
   nixpkgs.overlays = [
     (final: prev: {
-      unstable = import inputs.nixpkgs-unstable {
-        system = pkgs.system;
+      latest = import inputs.nixpkgs-unstable.outPath {
+        system = final.stdenv.hostPlatform.system;
       };
     })
   ];
