@@ -18,11 +18,13 @@ set-option -g status-right '#{?#{==:#{window-size},manual},#{?pane_in_mode,#[bg=
 bind-key    -T root         C-PPage                previous-window
 bind-key    -T root         C-NPage                next-window
 bind-key    -T root         C-t                    new-window -c "#{pane_current_path}"
+bind-key    -T root         C-[DC4]                new-window
 bind-key    -T root         C-\\                   split-window -h -c "#{pane_current_path}"
 bind-key    -T root         M-C-\\                 split-window -c "#{pane_current_path}"
 bind-key    -T root         C-S-PPage              swap-window -t -1\; select-window -t -1
 bind-key    -T root         C-S-NPage              swap-window -t +1\; select-window -t +1
 bind-key    -T root         IC                     copy-mode
+bind-key    -T prefix       C-b                    send-keys C-b
 bind-key    -T prefix       C-t                    send-keys C-t
 bind-key    -T prefix       C-\\                   send-keys C-\\
 bind-key    -T prefix       BSpace                 command-prompt -k -p "Wcisnij:" "display-message 'Klawisz: %1'"
@@ -34,6 +36,7 @@ bind-key    -T prefix       C-NPage                switch-client -n
 bind-key    -T copy-mode-vi IC                     send-keys -X cancel
 bind-key    -T copy-mode-vi C-Left                 send-keys -X previous-word
 bind-key    -T copy-mode-vi C-Right                send-keys -X next-word
+#bind-key    -T root         C-t                    run-shell "echo 'Działa!'"
 # ------------------------------------------------
   '';
 }
