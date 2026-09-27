@@ -67,7 +67,7 @@
     };
   };
 
-  system.stateVersion = "26.05"; # Startowa wersja systemu, nie wolno usuwać
+  system.stateVersion = "26.05"; # Startowa wersja systemu, nie wolno usuwać!
 
   systemd.services.k3s = {
     preStart = ''
