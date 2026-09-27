@@ -2,8 +2,8 @@
   description = "Konfiguracja NixOS dla Oracle Cloud Ampere A1";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05"; # najnowsze stabilne wydanie
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Wydanie unstable
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs: {
@@ -14,14 +14,14 @@
       specialArgs = { inherit inputs; };
 
       modules = [
-        ./hardware-configuration.nix # Import automatycznie wykrytego sprzętu
+        ./hardware-configuration.nix
         ./tmux.nix
         ./htop.nix
         ./nano.nix
         ./bash.nix
         ./apps.nix
         ./traefik.nix
-        ./configuration.nix # Import głównej konfiguracji systemu
+        ./configuration.nix
       ];
     };
   };

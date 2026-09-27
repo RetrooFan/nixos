@@ -1,6 +1,4 @@
-# Główna konfiguracja systemu
 { config, lib, pkgs, inputs, ... }: {
-  # Włączenie bootloadera systemd-boot (wspiera UEFI w OCI)
   boot.loader = {
     efi.canTouchEfiVariables = true;
     systemd-boot.enable = true;
@@ -9,10 +7,8 @@
   # Zabezpieczenie partycji /boot
   fileSystems."/boot".options = [ "fmask=0007" "dmask=0007" ];
 
-  # Język
   i18n.defaultLocale = "pl_PL.UTF-8";
 
-  # Sieć
   networking = {
     firewall.enable = false;
     hostName = "Oracle-VPS";
@@ -40,10 +36,8 @@
     })
   ];
 
-  # Uruchamiaj ssh-agent
   programs.ssh.startAgent = true;
 
-  # Sudo
   security.sudo = {
     extraRules = [{
       users = [ "nixos" ];
@@ -56,7 +50,6 @@
     }];
   };
 
-  # Uslugi
   services = {
     openssh = {
       enable = true;
@@ -79,7 +72,6 @@
   # Wersja systemu, z której startujesz
   system.stateVersion = "26.05";
 
-  # SystemD
   systemd.services.k3s = {
     preStart = ''
       mkdir -p /var/lib/rancher/k3s/server/manifests
@@ -88,10 +80,8 @@
     wantedBy = lib.mkForce [];
   };
 
-  # Strefa czasowa
   time.timeZone = "Europe/Warsaw";
 
-  # Uzytkownicy
   users = {
     groups.k3s = {};
 
