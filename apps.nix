@@ -4,6 +4,7 @@
 
     latest.git
     latest.htop
+    latest.k9s
     latest.lazygit
     latest.nmap
     latest.tcpdump
