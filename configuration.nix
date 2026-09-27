@@ -20,6 +20,9 @@
     useDHCP = lib.mkDefault true; # Kluczowe dla chmury: upewnia się, że DHCP zadziała niezależnie od NM
   };
 
+  # Mapowanie inputów z Flake do systemowego rejestru
+  nix.registry.unstable.flake = inputs.nixpkgs-unstable;
+
   # Włączenie obsługi Flakes również w nowym systemie
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
