@@ -32,6 +32,7 @@
       latest = import inputs.nixpkgs-unstable.outPath {
         system = final.stdenv.hostPlatform.system;
       };
+
       stable = import inputs.nixpkgs.outPath {
         system = final.stdenv.hostPlatform.system;
       };
