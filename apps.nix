@@ -6,6 +6,6 @@
     latest.nmap
     latest.tcpdump
     latest.tmux
-    k3s
+    stable.k3s
   ];
 }
