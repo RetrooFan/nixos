@@ -13,13 +13,13 @@
 
       modules = [
         ./hardware-configuration.nix
-        ./tmux.nix
+        ./configuration.nix
+        ./apps.nix
+        ./bash.nix
         ./htop.nix
         ./nano.nix
-        ./bash.nix
-        ./apps.nix
+        ./tmux.nix
         ./traefik.nix
-        ./configuration.nix
       ];
     };
   };
