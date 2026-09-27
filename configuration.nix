@@ -23,6 +23,9 @@
   # Włączenie obsługi Flakes również w nowym systemie
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Uruchamiaj ssh-agent
+  programs.ssh.startAgent = true;
+
   # Sudo
   security.sudo = {
     extraRules = [{
