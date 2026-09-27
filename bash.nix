@@ -8,6 +8,7 @@ HISTFILESIZE=20000
 HISTCONTROL=ignoreboth
 
 stty -ixon
+export LG_CONFIG_FILE="/etc/lazygit.conf.yml,$HOME/.config/lazygit/config.yml"
 
 # ------------------------------------------------
 
