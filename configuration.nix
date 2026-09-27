@@ -22,6 +22,7 @@
 
   nix = {
     registry.latest.flake = inputs.nixpkgs-unstable; # Żeby w terminalu było dostępne 'nix search latest <paczka>'
+    registry.stable.flake = inputs.nixpkgs; # Żeby w terminalu było dostępne 'nix search stable <paczka>'
     settings.experimental-features = [ "nix-command" "flakes" ]; # Włączenie obsługi Flakes również w nowym systemie
   };
 
@@ -29,6 +30,9 @@
   nixpkgs.overlays = [
     (final: prev: {
       latest = import inputs.nixpkgs-unstable.outPath {
+        system = final.stdenv.hostPlatform.system;
+      };
+      stable = import inputs.nixpkgs.outPath {
         system = final.stdenv.hostPlatform.system;
       };
     })
