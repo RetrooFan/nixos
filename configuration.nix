@@ -26,13 +26,14 @@
     settings.experimental-features = [ "nix-command" "flakes" ]; # Włączenie obsługi Flakes również w nowym systemie
   };
 
-  # Żeby w 'apps.nix' można było używać 'latest.<paczka>'
   nixpkgs.overlays = [
     (final: prev: {
+      # Żeby w 'apps.nix' można było używać 'latest.<paczka>'
       latest = import inputs.nixpkgs-unstable.outPath {
         system = final.stdenv.hostPlatform.system;
       };
 
+      # Żeby w 'apps.nix' można było używać 'stable.<paczka>'
       stable = import inputs.nixpkgs.outPath {
         system = final.stdenv.hostPlatform.system;
       };
