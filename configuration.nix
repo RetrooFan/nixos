@@ -4,9 +4,7 @@
     systemd-boot.enable = true;
   };
 
-  # Zabezpieczenie partycji /boot
-  fileSystems."/boot".options = [ "fmask=0007" "dmask=0007" ];
-
+  fileSystems."/boot".options = [ "fmask=0007" "dmask=0007" ]; # Zabezpieczenie partycji /boot
   i18n.defaultLocale = "pl_PL.UTF-8";
 
   networking = {
@@ -69,8 +67,7 @@
     };
   };
 
-  # Wersja systemu, z której startujesz
-  system.stateVersion = "26.05";
+  system.stateVersion = "26.05"; # Startowa wersja systemu, nie wolno usuwać
 
   systemd.services.k3s = {
     preStart = ''

@@ -9,9 +9,7 @@
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs: {
     nixosConfigurations.Oracle-VPS = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux"; # Dla maszyn Ampere A1 (ARM) musi być aarch64-linux
-
-      # Aby udostępnić 'inputs' w configuration.nix
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs; }; # Aby udostępnić 'inputs' w configuration.nix
 
       modules = [
         ./hardware-configuration.nix
