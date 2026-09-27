@@ -2,16 +2,13 @@
   description = "Konfiguracja NixOS dla Oracle Cloud Ampere A1";
 
   inputs = {
-    # Korzystamy z najnowszego stabilnego wydania NixOS
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
-    # Wydanie unstable
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05"; # najnowsze stabilne wydanie
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Wydanie unstable
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs: {
     nixosConfigurations.Oracle-VPS = nixpkgs.lib.nixosSystem {
-      # Dla maszyn Ampere A1 (ARM) musi być aarch64-linux
-      system = "aarch64-linux";
+      system = "aarch64-linux"; # Dla maszyn Ampere A1 (ARM) musi być aarch64-linux
 
       # Aby udostępnić 'inputs' w configuration.nix
       specialArgs = { inherit inputs; };
