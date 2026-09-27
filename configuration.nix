@@ -44,6 +44,8 @@
         { command = "/run/current-system/sw/bin/systemctl start k3s.service"; options = [ "NOPASSWD" ]; }
         { command = "/run/current-system/sw/bin/systemctl stop k3s.service"; options = [ "NOPASSWD" ]; }
         { command = "/run/current-system/sw/bin/systemctl status k3s.service"; options = [ "NOPASSWD" ]; }
+        { command = "/run/current-system/sw/bin/reboot"; options = [ "NOPASSWD" ]; }
+        { command = "/run/current-system/sw/bin/poweroff"; options = [ "NOPASSWD" ]; }
       ];
     }];
   };
