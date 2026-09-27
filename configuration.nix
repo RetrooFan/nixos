@@ -1,5 +1,5 @@
 # Główna konfiguracja systemu
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, inputs, ... }: {
   # Włączenie bootloadera systemd-boot (wspiera UEFI w OCI)
   boot.loader = {
     efi.canTouchEfiVariables = true;
@@ -22,6 +22,15 @@
 
   # Włączenie obsługi Flakes również w nowym systemie
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Żeby w 'apps.nix' można było używać 'pkgs.unstable'
+  nixpkgs.overlays = [
+    (final: prev: {
+      unstable = import inputs.nixpkgs-unstable {
+        system = pkgs.system;
+      };
+    })
+  ];
 
   # Uruchamiaj ssh-agent
   programs.ssh.startAgent = true;

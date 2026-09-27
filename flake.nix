@@ -13,6 +13,9 @@
       # Dla maszyn Ampere A1 (ARM) musi być aarch64-linux
       system = "aarch64-linux";
 
+      # Aby udostępnić 'inputs' w configuration.nix
+      specialArgs = { inherit inputs; };
+
       modules = [
         ./hardware-configuration.nix # Import automatycznie wykrytego sprzętu
         ./tmux.nix
@@ -22,15 +25,6 @@
         ./apps.nix
         ./traefik.nix
         ./configuration.nix # Import głównej konfiguracji systemu
-        ({ config, pkgs, ... }: {
-          nixpkgs.overlays = [
-            (final: prev: {
-              unstable = import nixpkgs-unstable {
-                system = pkgs.system;
-              };
-            })
-          ];
-        })
       ];
     };
   };
