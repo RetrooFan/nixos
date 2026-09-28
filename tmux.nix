@@ -24,6 +24,9 @@ bind-key    -T root         C-\\                   split-window -h -c "#{pane_cu
 bind-key    -T root         M-C-\\                 split-window -c "#{pane_current_path}"
 bind-key    -T root         C-S-PPage              swap-window -t -1\; select-window -t -1
 bind-key    -T root         C-S-NPage              swap-window -t +1\; select-window -t +1
+bind-key    -T root         M-t                    new-session
+bind-key    -T root         M-PPage                switch-client -p
+bind-key    -T root         M-NPage                switch-client -n
 bind-key    -T root         IC                     copy-mode
 bind-key    -T prefix       C-b                    send-keys C-b
 bind-key    -T prefix       C-t                    send-keys C-t
