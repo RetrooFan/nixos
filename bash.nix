@@ -10,6 +10,12 @@ HISTCONTROL=ignoreboth
 stty -ixon
 export LG_CONFIG_FILE="/etc/lazygit.conf.yml,$HOME/.config/lazygit/config.yml"
 
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias l='ls -l'
+alias ll='ls -lA'
+
 # ------------------------------------------------
 
 SESSION_ID=`hexdump -vn4 -e'4/1 "%02x"' /dev/urandom`
