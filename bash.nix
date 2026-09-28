@@ -18,9 +18,6 @@ alias -- ll='ls -lA'
 
 # ------------------------------------------------
 
-SESSION_ID=`hexdump -vn4 -e'4/1 "%02x"' /dev/urandom`
-echo "# ----- | `date` | START | $SESSION_ID" >> $HISTFILE
-
 PS1_USER=`whoami`
 case "$PS1_USER" in
   "root")
@@ -52,6 +49,11 @@ prompt() {
   PS1="| `date` | $PS1_0$PS1_1$PS1_SPACES | $PS1_2 | $PS1_3 | $PS1_4 | $PS1_5 |\n$PS1_6$PS1_7$PS1_PROMPT"
 }
 PROMPT_COMMAND=prompt
+
+# ------------------------------------------------
+
+SESSION_ID=`hexdump -vn4 -e'4/1 "%02x"' /dev/urandom`
+echo "# ----- | `date` | START | $SESSION_ID" >> $HISTFILE
 
 after_exit() {
   sleep 0.1 && echo "# ----- | `date` | END   | $SESSION_ID" >> "$HISTFILE" &
