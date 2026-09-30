@@ -6,7 +6,7 @@
 
   environment.etc."htoprc".text = builtins.readFile ./htoprc;
   environment.etc."k3s-manifests/traefik-dashboard-config.yaml".text = builtins.readFile ./traefik-dashboard-config.yaml;
-  environment.etc."lazygit.conf.yml".text = builtins.readFile ./lazygit.yml;
+  environment.etc."lazygit.yml".text = builtins.readFile ./lazygit.yml;
   environment.etc."tmux.conf".text = builtins.readFile ./tmux.conf;
   environment.etc."micro.bindings.json".text = builtins.readFile ./micro.bindings.json;
   environment.etc."micro.settings.json".text = builtins.readFile ./micro.settings.json;
