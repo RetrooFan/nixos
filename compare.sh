@@ -5,7 +5,11 @@ HASH2=$(sha256sum $2 | awk '{print $1}')
 
 if [ "$HASH1" != "$HASH2" ]; then
   echo "----------------------------------------"
+  echo "|                                      |"
   echo "|             Pliki rozne!             |"
+  echo "|                                      |"
+  echo "|     Uruchom polecenie copyfiles!     |"
+  echo "|                                      |"
   echo "----------------------------------------"
 
   echo $1
