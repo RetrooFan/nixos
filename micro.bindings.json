@@ -1,0 +1,28 @@
+{
+    "Alt-/": "",
+    "Ctrl-Underscore": "lua:comment.comment",
+
+    "Alt-Left": "PreviousTab|LastTab",
+    "Alt-Right": "NextTab|FirstTab",
+    "Alt-q": "PreviousTab|LastTab",
+    "Alt-w": "NextTab|FirstTab",
+
+    "\u001b[1;6H": "SelectToStart",
+    "\u001b[1;6F": "SelectToEnd",
+    "Ctrl-Up": "ScrollUp",
+    "Ctrl-Down": "ScrollDown",
+    "Alt-Up": "ParagraphPrevious",
+    "Alt-Down": "ParagraphNext",
+    "Shift-Ctrl-Up": "MoveLinesUp",
+    "Shift-Ctrl-Down": "MoveLinesDown",
+
+    "CtrlH": "DeleteWordLeft",
+    "Ctrl-Delete": "DeleteWordRight",
+    "Alt-Backspace": "",
+
+    "Ctrl-k": "",
+    "Ctrl-q": "",
+    "Ctrl-o": "command-edit:tab ",
+    "Alt-Z": "Suspend",
+    "Ctrl-w": "Quit",
+}
