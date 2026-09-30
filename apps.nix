@@ -11,7 +11,7 @@
     latest.tmux
     latest.micro
 
-    (pkgs.writeShellScriptBin "compare" (builtins.readFile ./compare.sh))
-    (pkgs.writeShellScriptBin "copyfiles" (builtins.readFile ./copyfiles.sh))
+    (pkgs.writeShellScriptBin "compare" (builtins.readFile ./compare))
+    (pkgs.writeShellScriptBin "copyfiles" (builtins.readFile ./copyfiles))
   ];
 }
