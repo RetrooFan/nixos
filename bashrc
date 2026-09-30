@@ -15,6 +15,7 @@ alias -- fgrep='fgrep --color=auto'
 alias -- egrep='egrep --color=auto'
 alias -- l='ls -l'
 alias -- ll='ls -lA'
+alias -- mi='micro'
 
 # ------------------------------------------------
 
