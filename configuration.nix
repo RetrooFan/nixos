@@ -44,7 +44,11 @@
   ];
 
   programs = {
-    nano.nanorc = builtins.readFile ./nanorc;
+    nano = {
+      enable = false;
+      nanorc = builtins.readFile ./nanorc;
+    };
+
     ssh.startAgent = true;
   };
 
