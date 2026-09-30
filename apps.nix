@@ -9,5 +9,6 @@
     latest.nmap
     latest.tcpdump
     latest.tmux
+    latest.micro
   ];
 }
