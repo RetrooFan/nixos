@@ -6,7 +6,7 @@ HISTFILESIZE=20000
 HISTCONTROL=ignoreboth
 
 stty -ixon
-export LG_CONFIG_FILE="/etc/lazygit.conf.yml,$HOME/.config/lazygit/config.yml"
+export LG_CONFIG_FILE="/etc/lazygit.yml,$HOME/.config/lazygit/config.yml"
 
 alias -- grep='grep --color=auto'
 alias -- fgrep='fgrep --color=auto'
