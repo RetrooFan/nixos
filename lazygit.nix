@@ -1,8 +1,3 @@
 { pkgs, ... }: {
-  environment.etc."lazygit.conf.yml".text = ''
-# ------------------------------------------------
-gui:
-  scrollHeight: 10
-# ------------------------------------------------
-  '';
+  environment.etc."lazygit.conf.yml".text = builtins.readFile ./lazygit.conf.yml;
 }
