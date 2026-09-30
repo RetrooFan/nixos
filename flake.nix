@@ -15,12 +15,6 @@
         ./hardware-configuration.nix
         ./configuration.nix
         ./apps.nix
-        ./bash.nix
-        ./htop.nix
-        ./lazygit.nix
-        ./nano.nix
-        ./tmux.nix
-        ./traefik.nix
       ];
     };
   };
