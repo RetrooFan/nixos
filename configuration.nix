@@ -43,8 +43,10 @@
     })
   ];
 
-  programs.nano.nanorc = builtins.readFile ./nanorc;
-  programs.ssh.startAgent = true;
+  programs = {
+    nano.nanorc = builtins.readFile ./nanorc;
+    ssh.startAgent = true;
+  };
 
   security.sudo = {
     extraRules = [{
