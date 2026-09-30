@@ -4,13 +4,14 @@
     systemd-boot.enable = true;
   };
 
-  environment.interactiveShellInit = builtins.readFile ./bashrc;
   environment.etc."htoprc".text = builtins.readFile ./htoprc;
   environment.etc."k3s-manifests/traefik-dashboard-config.yaml".text = builtins.readFile ./traefik-dashboard-config.yaml;
   environment.etc."lazygit.conf.yml".text = builtins.readFile ./lazygit.yml;
   environment.etc."tmux.conf".text = builtins.readFile ./tmux.conf;
   environment.etc."micro.bindings.json".text = builtins.readFile ./micro.bindings.json;
   environment.etc."micro.settings.json".text = builtins.readFile ./micro.settings.json;
+
+  environment.interactiveShellInit = builtins.readFile ./bashrc;
 
   fileSystems."/boot".options = [ "fmask=0007" "dmask=0007" ]; # Zabezpieczenie partycji /boot
   i18n.defaultLocale = "pl_PL.UTF-8";
