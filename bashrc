@@ -18,6 +18,11 @@ alias -- ll='ls -lA'
 
 # ------------------------------------------------
 
+compare /etc/micro.bindings.json ~/.config/micro/bindings.json.bckp
+compare /etc/micro.settings.json ~/.config/micro/settings.json.bckp
+
+# ------------------------------------------------
+
 PS1_USER=`whoami`
 case "$PS1_USER" in
   "root")
