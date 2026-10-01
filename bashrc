@@ -29,6 +29,7 @@ alias -- mi='micro'
 compare /etc/micro.bindings.json ~/.config/micro/bindings.json.bckp
 compare /etc/micro.settings.json ~/.config/micro/settings.json.bckp
 compare /etc/inputrc.local ~/.inputrc.bckp
+compare /etc/gitconfig ~/.gitconfig.bckp
 
 # ------------------------------------------------
 

@@ -1,0 +1,9 @@
+#[user]
+#	email = nazwa@gmail.com
+#	name = Imie Nazwisko
+[push]
+	autoSetupRemote = true
+[core]
+	whitespace = cr-at-eol
+[safe]
+	directory = /etc/nixos

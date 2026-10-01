@@ -6,6 +6,7 @@
 
   environment.etc."htoprc".text = builtins.readFile ./htoprc;
   environment.etc."k3s-manifests/traefik-dashboard-config.yaml".text = builtins.readFile ./traefik-dashboard-config.yaml;
+  environment.etc."gitconfig".text = builtins.readFile ./gitconfig;
   environment.etc."inputrc.local".text = builtins.readFile ./inputrc.local;
   environment.etc."lazygit.yml".text = builtins.readFile ./lazygit.yml;
   environment.etc."tmux.conf".text = builtins.readFile ./tmux.conf;
