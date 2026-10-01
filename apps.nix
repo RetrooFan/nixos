@@ -13,6 +13,6 @@
     latest.micro
 
     (pkgs.writeShellScriptBin "compare-nixos-files" (builtins.readFile ./compare-nixos-files))
-    (pkgs.writeShellScriptBin "copyfiles" (builtins.readFile ./copyfiles))
+    (pkgs.writeShellScriptBin "copy-nixos-files" (builtins.readFile ./copy-nixos-files))
   ];
 }
