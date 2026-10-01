@@ -53,18 +53,6 @@
     ssh.startAgent = true;
   };
 
-  security.sudo = {
-    extraRules = [{
-      users = [ "nixos" ];
-      commands = [
-        { command = "/run/wrappers/bin/su"; options = [ "NOPASSWD" ]; }
-        { command = "/run/current-system/sw/bin/systemctl start k3s.service"; options = [ "NOPASSWD" ]; }
-        { command = "/run/current-system/sw/bin/systemctl stop k3s.service"; options = [ "NOPASSWD" ]; }
-        { command = "/run/current-system/sw/bin/systemctl status k3s.service"; options = [ "NOPASSWD" ]; }
-      ];
-    }];
-  };
-
   services = {
     openssh = {
       enable = true;
