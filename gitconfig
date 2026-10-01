@@ -5,5 +5,5 @@
 	autoSetupRemote = true
 [core]
 	whitespace = cr-at-eol
-[safe]
-	directory = /etc/nixos
+#[safe]
+#	directory = /etc/nixos
