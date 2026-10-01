@@ -15,8 +15,6 @@
   environment.etc."micro.settings.json".text = builtins.readFile ./micro.settings.json;
   environment.etc."tmux.conf".text = builtins.readFile ./tmux.conf;
 
-  environment.interactiveShellInit = builtins.readFile ./bashrc;
-
   fileSystems."/boot".options = [ "fmask=0007" "dmask=0007" ]; # Zabezpieczenie partycji /boot
   i18n.defaultLocale = "pl_PL.UTF-8";
 
