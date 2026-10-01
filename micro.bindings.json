@@ -4,8 +4,12 @@
 
     "Alt-Left": "PreviousTab|LastTab",
     "Alt-Right": "NextTab|FirstTab",
+    "Shift-Alt-Left": "command:tabmove -1",
+    "Shift-Alt-Right": "command:tabmove +1",
     "Alt-q": "PreviousTab|LastTab",
     "Alt-w": "NextTab|FirstTab",
+    "Alt-Q": "command:tabmove -1",
+    "Alt-W": "command:tabmove +1",
 
     "\u001b[1;6H": "SelectToStart",
     "\u001b[1;6F": "SelectToEnd",
