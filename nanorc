@@ -693,8 +693,8 @@ color brightred "self"
 #color cyan "([\"']).*?[^\]\1"
 # this is kludge to avoid the line for the example C syntax marked "this is wasteful"
 # strings
-color cyan "\"\"" "'''"
-color cyan start="''''" end="''''"
+color cyan "\"\"" "''"
+color cyan start="'''" end="'''"
 color cyan start="\"\"\"" end="\"\"\""
 color cyan ""(\\.|[^\"])*"" "'(\\.|[^'])*'"
 
