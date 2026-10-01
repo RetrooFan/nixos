@@ -1,0 +1,31 @@
+#!/bin/bash
+
+porownaj() {
+  echo
+
+  docelowy_plik=$(ls $2 --color=always);
+
+  printf "Nastepny plik: | %-40s -> %-40s\n" "$1" "$docelowy_plik"
+
+  compare-nixos-files $1 $2 1 && printf "Pliki identyczne (sha256sum) !\n" && return;
+
+  read -p "Naciśnij [ENTER], aby kontynuować ...";
+
+  micro $1 $2;
+}
+
+porownaj /home/kristof/7nixos/compare-nixos-files /usr/local/bin/compare-nixos-files
+porownaj /home/kristof/7nixos/copy-nixos-files    /usr/local/bin/copy-nixos-files
+porownaj /home/kristof/7nixos/setup-nixos-files   /usr/local/bin/setup-nixos-files
+
+porownaj /home/kristof/7nixos/bashrc.local        /etc/bashrc.local
+porownaj /home/kristof/7nixos/gitconfig           /etc/gitconfig
+porownaj /home/kristof/7nixos/htoprc              /etc/htoprc
+porownaj /home/kristof/7nixos/inputrc.local       /etc/inputrc.local
+porownaj /home/kristof/7nixos/lazygit.yml         /etc/lazygit.yml
+porownaj /home/kristof/7nixos/micro.bindings.json /etc/micro.bindings.json
+porownaj /home/kristof/7nixos/micro.settings.json /etc/micro.settings.json
+# porownaj /home/kristof/7nixos/nanorc             /etc/nanorc
+porownaj /home/kristof/7nixos/tmux.conf           /etc/tmux.conf
+
+echo
