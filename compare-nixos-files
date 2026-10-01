@@ -8,7 +8,6 @@ if [ "$HASH1" != "$HASH2" ]; then
     echo "----------------------------------------"
     echo "|                                      |"
     echo "|     Pliki sa rozne lub ich brak!     |"
-    echo "|                                      |"
     echo "|    Uruchom polecenie 'copyfiles'!    |"
     echo "|                                      |"
     echo "----------------------------------------"
