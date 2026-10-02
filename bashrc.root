@@ -19,8 +19,8 @@ compare-nixos-files $NIXOS_REPO/micro.settings.json /etc/micro.settings.json
 compare-nixos-files $NIXOS_REPO/inputrc.local       /etc/inputrc.local
 compare-nixos-files $NIXOS_REPO/gitconfig           /etc/gitconfig
 
+compare-nixos-files $NIXOS_REPO/bashrc.root         /root/.bashrc.root
 compare-nixos-files $NIXOS_REPO/bashrc.local        /etc/bashrc.local
-compare-nixos-files $NIXOS_REPO/bashrc.root         /etc/bashrc.root
 compare-nixos-files $NIXOS_REPO/htoprc              /etc/htoprc
 compare-nixos-files $NIXOS_REPO/lazygit.yml         /etc/lazygit.yml
 compare-nixos-files $NIXOS_REPO/nanorc              /etc/nanorc
