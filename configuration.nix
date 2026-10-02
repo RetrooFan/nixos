@@ -4,22 +4,26 @@
     systemd-boot.enable = true;
   };
 
-  environment.etc."k3s-manifests/traefik-dashboard-config.yaml".text = builtins.readFile ./traefik-dashboard-config.yaml;
+  environment = {
+    etc = {
+      "k3s-manifests/traefik-dashboard-config.yaml".text = builtins.readFile ./traefik-dashboard-config.yaml;
 
-  environment.etc."bashrc.local".text = builtins.readFile ./bashrc.local;
-  environment.etc."gitconfig".text = builtins.readFile ./gitconfig;
-  environment.etc."htoprc".text = builtins.readFile ./htoprc;
-  environment.etc."inputrc.local".text = builtins.readFile ./inputrc.local;
-  environment.etc."lazygit.yml".text = builtins.readFile ./lazygit.yml;
-  environment.etc."micro.bindings.json".text = builtins.readFile ./micro.bindings.json;
-  environment.etc."micro.settings.json".text = builtins.readFile ./micro.settings.json;
-  environment.etc."tmux.conf".text = builtins.readFile ./tmux.conf;
-  environment.etc."tmux.conf.local".text = builtins.readFile ./tmux.conf.local;
+      "bashrc.local".text = builtins.readFile ./bashrc.local;
+      "gitconfig".text = builtins.readFile ./gitconfig;
+      "htoprc".text = builtins.readFile ./htoprc;
+      "inputrc.local".text = builtins.readFile ./inputrc.local;
+      "lazygit.yml".text = builtins.readFile ./lazygit.yml;
+      "micro.bindings.json".text = builtins.readFile ./micro.bindings.json;
+      "micro.settings.json".text = builtins.readFile ./micro.settings.json;
+      "tmux.conf".text = builtins.readFile ./tmux.conf;
+      "tmux.conf.local".text = builtins.readFile ./tmux.conf.local;
+    };
 
-  environment.interactiveShellInit = ''
-    REPO_USER="nixos"
-    REPO_DIR="/etc/nixos"
-  '';
+    interactiveShellInit = ''
+      REPO_USER="nixos"
+      REPO_DIR="/etc/nixos"
+    '';
+  };
 
   fileSystems."/boot".options = [ "fmask=0007" "dmask=0007" ]; # Zabezpieczenie partycji /boot
   i18n.defaultLocale = "pl_PL.UTF-8";
