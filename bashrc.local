@@ -88,11 +88,12 @@ trap after_exit EXIT
 # ------------------------------------------------
 
 git_pull() {
+  [ "$(whoami)" != "$REPO_USER" ] && return
+
   data_z_pliku=$(cat .last_update)
   data_aktualna=$(date +%F)
 
   [ "$data_z_pliku" == "$data_aktualna" ] && return
-  [ "$(whoami)" != "$REPO_USER" ] && return
 
   INIT_DIR="$(pwd)"
 
