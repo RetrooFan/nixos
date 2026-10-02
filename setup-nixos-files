@@ -28,7 +28,7 @@ porownaj /home/nixos-repo/inputrc.local       /etc/inputrc.local
 porownaj /home/nixos-repo/lazygit.yml         /etc/lazygit.yml
 porownaj /home/nixos-repo/micro.bindings.json /etc/micro.bindings.json
 porownaj /home/nixos-repo/micro.settings.json /etc/micro.settings.json
-# porownaj /home/kristof/nixos-repo/nanorc             /etc/nanorc
-porownaj /home/kristof/nixos-repo/tmux.conf           /etc/tmux.conf
+# porownaj /home/nixos-repo/nanorc             /etc/nanorc
+porownaj /home/nixos-repo/tmux.conf           /etc/tmux.conf
 
 echo
