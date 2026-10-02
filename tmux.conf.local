@@ -1,0 +1,2 @@
+set-option -g @empty_space ' '
+set-option -g @status_bg '#[bg=green]'

@@ -44,5 +44,6 @@ porownaj htoprc              /etc/htoprc
 porownaj lazygit.yml         /etc/lazygit.yml
 porownaj nanorc              /etc/nanorc
 porownaj tmux.conf           /etc/tmux.conf
+porownaj tmux.conf.local     /etc/tmux.conf.local
 
 echo

@@ -25,3 +25,4 @@ compare-nixos-files -c setup-nixos-files $NIXOS_REPO/htoprc              /etc/ht
 compare-nixos-files -c setup-nixos-files $NIXOS_REPO/lazygit.yml         /etc/lazygit.yml
 compare-nixos-files -c setup-nixos-files $NIXOS_REPO/nanorc              /etc/nanorc
 compare-nixos-files -c setup-nixos-files $NIXOS_REPO/tmux.conf           /etc/tmux.conf
+compare-nixos-files -c setup-nixos-files $NIXOS_REPO/tmux.conf.local     /etc/tmux.conf.local

@@ -6,13 +6,16 @@ cp /etc/gitconfig ~/.gitconfig.bckp
 cp /etc/inputrc.local ~/.inputrc.bckp
 cp /etc/micro.bindings.json ~/.config/micro/bindings.json.bckp
 cp /etc/micro.settings.json ~/.config/micro/settings.json.bckp
+cp /etc/tmux.conf.local ~/.tmux.conf.bckp
 
 chmod 644 ~/.gitconfig.bckp
 chmod 644 ~/.inputrc.bckp
 chmod 644 ~/.config/micro/bindings.json.bckp
 chmod 644 ~/.config/micro/settings.json.bckp
+chmod 644 ~/.tmux.conf.bckp
 
 ln -s ~/.gitconfig.bckp ~/.gitconfig
 ln -s ~/.inputrc.bckp ~/.inputrc
 ln -s ~/.config/micro/bindings.json.bckp ~/.config/micro/bindings.json
 ln -s ~/.config/micro/settings.json.bckp ~/.config/micro/settings.json
+ln -s ~/.tmux.conf.bckp ~/.tmux.conf

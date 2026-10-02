@@ -30,6 +30,7 @@ compare-nixos-files -c copy-nixos-files /etc/micro.bindings.json ~/.config/micro
 compare-nixos-files -c copy-nixos-files /etc/micro.settings.json ~/.config/micro/settings.json.bckp
 compare-nixos-files -c copy-nixos-files /etc/inputrc.local ~/.inputrc.bckp
 compare-nixos-files -c copy-nixos-files /etc/gitconfig ~/.gitconfig.bckp
+compare-nixos-files -c copy-nixos-files /etc/tmux.conf.local ~/.tmux.conf.bckp
 
 # ------------------------------------------------
 
