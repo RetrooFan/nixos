@@ -15,4 +15,4 @@ chmod 644 ~/.config/micro/settings.json.bckp
 ln -s ~/.gitconfig.bckp ~/.gitconfig
 ln -s ~/.inputrc.bckp ~/.inputrc
 ln -s ~/.config/micro/bindings.json.bckp ~/.config/micro/bindings.json
-ln -s ~/.config/micro/settings.json.bckp~/.config/micro/settings.json
+ln -s ~/.config/micro/settings.json.bckp ~/.config/micro/settings.json
