@@ -1,9 +1,7 @@
 #!/bin/bash
 
 porownaj() {
-  echo
-
-  printf "Nastepny plik: | %-40s -> %-40s" "$1" "$2"
+  printf "\nNastepny plik: | %-40s -> %-40s" "$1" "$2"
 
   compare-nixos-files $1 $2 1 && printf "Pliki identyczne (sha256sum) !\n" && ls -l $2 --color=always && return;
 
