@@ -14,19 +14,19 @@ porownaj() {
   micro $1 $2;
 }
 
-porownaj /home/nixos-repo/copy-nixos-files    /usr/local/bin/copy-nixos-files
-chmod a+x /usr/local/bin/copy-nixos-files
-porownaj /home/nixos-repo/setup-nixos-files   /usr/local/bin/setup-nixos-files
-chmod a+x /usr/local/bin/setup-nixos-files
+porownaj copy-nixos-files    /usr/local/bin/copy-nixos-files
+chmod a+x                    /usr/local/bin/copy-nixos-files
+porownaj setup-nixos-files   /usr/local/bin/setup-nixos-files
+chmod a+x                    /usr/local/bin/setup-nixos-files
 
-porownaj /home/nixos-repo/bashrc.local        /etc/bashrc.local
-porownaj /home/nixos-repo/gitconfig           /etc/gitconfig
-porownaj /home/nixos-repo/htoprc              /etc/htoprc
-porownaj /home/nixos-repo/inputrc.local       /etc/inputrc.local
-porownaj /home/nixos-repo/lazygit.yml         /etc/lazygit.yml
-porownaj /home/nixos-repo/micro.bindings.json /etc/micro.bindings.json
-porownaj /home/nixos-repo/micro.settings.json /etc/micro.settings.json
-# porownaj /home/nixos-repo/nanorc             /etc/nanorc
-porownaj /home/nixos-repo/tmux.conf           /etc/tmux.conf
+porownaj bashrc.local        /etc/bashrc.local
+porownaj gitconfig           /etc/gitconfig
+porownaj htoprc              /etc/htoprc
+porownaj inputrc.local       /etc/inputrc.local
+porownaj lazygit.yml         /etc/lazygit.yml
+porownaj micro.bindings.json /etc/micro.bindings.json
+porownaj micro.settings.json /etc/micro.settings.json
+# porownaj nanorc              /etc/nanorc
+porownaj tmux.conf           /etc/tmux.conf
 
 echo
