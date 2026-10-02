@@ -1,15 +1,15 @@
 #!/bin/bash
 
 porownaj() {
-  printf "\nNastepny plik: | %-40s -> %-40s" "$1" "$2"
+  printf "\n%-40s -> %-40s" "$1" "$2"
 
   compare-nixos-files $1 $2 1 && printf "Pliki identyczne (sha256sum) !\n" && ls -l $2 --color=always && return;
-
-  ls $2 --color=always
 
   read -p "Naciśnij [ENTER], aby kontynuować ...";
 
   micro $1 $2;
+
+  ls $2 --color=always
 }
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
