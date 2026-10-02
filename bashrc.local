@@ -2,6 +2,8 @@
 # ------------------------------------------------
 # ------------------------------------------------
 
+# REPO_USER="user"
+
 # if [ -f /etc/bashrc.local ]; then
 #   source /etc/bashrc.local
 # fi
@@ -82,3 +84,27 @@ after_exit() {
   sleep 0.1 && echo "# ----- | `date` | END   | $SESSION_ID" >> "$HISTFILE" &
 }
 trap after_exit EXIT
+
+# ------------------------------------------------
+
+git_pull() {
+  data_z_pliku=$(cat .last_update)
+  data_aktualna=$(date +%F)
+
+  [ "$data_z_pliku" == "$data_aktualna" ] && return
+  [ "$(whoami)" != "$REPO_USER" ] && return
+
+  INIT_DIR="$(pwd)"
+
+  echo "cd ~/7nixos"
+  cd ~/7nixos || return
+
+  echo "git pull ..."
+  git pull && echo $data_aktualna > .last_update
+
+  cd $INIT_DIR
+}
+
+git_pull
+
+# ------------------------------------------------
