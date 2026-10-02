@@ -6,16 +6,16 @@ porownaj() {
   printf "%-25s -> %-40s" "$1" "$2"
 
   compare-nixos-files $1 $2 1 &&
-  printf "%-5s %s\n" "1==2" "$uprawnienia_docelowego" &&
+  printf "%-21s%-6s\n" "$uprawnienia_docelowego" "1==2" &&
   return
 
+  printf "%-21s" "$uprawnienia_docelowego"
+
   [ -f "$2" ] &&
-  printf "%-5s " "1!=2" ||
-  printf "%-5s " "2 ∈ Ø"
+  printf "%-6s" "1!=2" ||
+  printf "%-10s" "2 ∈ Ø"
 
-  printf "%-20s" "$uprawnienia_docelowego"
-
-  read -p " [ENTER]"
+  read -p "[ENTER]"
 
   micro $1 $2;
 }
