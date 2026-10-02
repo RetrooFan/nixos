@@ -13,16 +13,16 @@ porownaj() {
   printf "%-5s " "1!=2" ||
   printf "%-5s " "2 ∈ Ø"
 
-  printf "%-21s" "$plik_docelowy"
+  printf "%s" "$plik_docelowy"
 
-  read -p "[ENTER]"
+  read -p " [ENTER]"
 
   micro $1 $2;
 }
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
-echo
-echo "$(pwd):"
+
+printf "\n%s:\n" "$(pwd)"
 
 porownaj compare-nixos-files /usr/local/bin/compare-nixos-files
 chmod a+x                    /usr/local/bin/compare-nixos-files
