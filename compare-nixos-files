@@ -5,12 +5,13 @@ HASH2=$(sha256sum $2 2>/dev/null | awk '{print $1}') &&
 
 if [ "$HASH1" != "$HASH2" ]; then
   if [ "$3" != "1" ]; then
-    echo "----------------------------------------"
-    echo "|                                      |"
-    echo "|     Pliki sa rozne lub ich brak!     |"
-    echo "|    Uruchom polecenie 'copyfiles'!    |"
-    echo "|                                      |"
-    echo "----------------------------------------"
+    echo "--------------------------------------------------"
+    echo "|                                                |"
+    echo "|          Pliki sa rozne lub ich brak!          |"
+    echo "|      Uruchom polecenie 'copy-nixos-files'!     |"
+    echo "|     Uruchom polecenie 'setup-nixos-files'!     |"
+    echo "|                                                |"
+    echo "--------------------------------------------------"
 
     echo $1
     echo $2
