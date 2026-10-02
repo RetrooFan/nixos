@@ -1,19 +1,19 @@
 #!/bin/bash
 
 porownaj() {
-  plik_docelowy="$(ls -l $2 --color=auto 2>/dev/null | awk '{print $1, $3, $4}')"
+  uprawnienia_docelowego="$(ls -l $2 --color=auto 2>/dev/null | awk '{print $1, $3, $4}')"
 
   printf "%-25s -> %-40s" "$1" "$2"
 
   compare-nixos-files $1 $2 1 &&
-  printf "%-5s %s\n" "1==2" "$plik_docelowy" &&
+  printf "%-5s %s\n" "1==2" "$uprawnienia_docelowego" &&
   return
 
   [ -f "$2" ] &&
   printf "%-5s " "1!=2" ||
   printf "%-5s " "2 ∈ Ø"
 
-  printf "%s" "$plik_docelowy"
+  printf "%-20s" "$uprawnienia_docelowego"
 
   read -p " [ENTER]"
 
