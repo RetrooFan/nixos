@@ -8,8 +8,6 @@ porownaj() {
   read -p "Naciśnij [ENTER], aby kontynuować ...";
 
   micro $1 $2;
-
-  ls $2 --color=always
 }
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
