@@ -3,7 +3,10 @@
 porownaj() {
   printf "\n%-40s -> %-40s" "$1" "$2"
 
-  compare-nixos-files $1 $2 1 && printf "Pliki identyczne (sha256sum) !\n" && ls -l $2 --color=always && return;
+  compare-nixos-files $1 $2 1 &&
+  printf "%-35s" "Pliki identyczne (sha256sum)" &&
+  ls -l $2 --color=auto | awk '{print $1, $3, $4}' &&
+  return;
 
   read -p "Naciśnij [ENTER], aby kontynuować ...";
 
