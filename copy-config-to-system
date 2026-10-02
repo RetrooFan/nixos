@@ -17,7 +17,7 @@ porownaj() {
 
   read -p "[ENTER]"
 
-  micro $1 $2;
+  micro $1 $2
 }
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
