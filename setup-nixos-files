@@ -5,7 +5,7 @@ porownaj() {
 
   printf "%-25s -> %-40s" "$1" "$2"
 
-  compare-nixos-files $1 $2 1 &&
+  compare-nixos-files $1 $2 &&
   printf "%-21s%-6s\n" "$uprawnienia_pliku_docelowego" "1==2" &&
   return
 

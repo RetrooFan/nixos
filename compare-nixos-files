@@ -1,14 +1,28 @@
 #!/usr/bin/env bash
 
+COMMAND=""
+
+while getopts "c:" flaga; do
+  case "${flaga}" in
+    c)
+      COMMAND="${OPTARG}"
+      ;;
+  esac
+done
+
+shift $((OPTIND - 1))
+
 HASH1=$(sha256sum $1 2>/dev/null | awk '{print $1}') &&
 HASH2=$(sha256sum $2 2>/dev/null | awk '{print $1}') &&
 
 if [ "$HASH1" != "$HASH2" ]; then
-  if [ "$3" != "1" ]; then
+  if [ "$COMMAND" != "" ]; then
     echo "--------------------------------------------------"
     echo "|                                                |"
     echo "|          Pliki sa rozne lub ich brak!          |"
-    echo "|      Uruchom polecenie 'copy-nixos-files'!     |"
+    [ "$COMMAND" == "copy-nixos-files" ] &&
+    echo "|     Uruchom polecenie 'copy-nixos-files'!      |"
+    [ "$COMMAND" == "setup-nixos-files" ] &&
     echo "|     Uruchom polecenie 'setup-nixos-files'!     |"
     echo "|                                                |"
     echo "--------------------------------------------------"

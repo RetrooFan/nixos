@@ -26,10 +26,10 @@ alias -- mi='micro'
 
 # ------------------------------------------------
 
-compare-nixos-files /etc/micro.bindings.json ~/.config/micro/bindings.json.bckp
-compare-nixos-files /etc/micro.settings.json ~/.config/micro/settings.json.bckp
-compare-nixos-files /etc/inputrc.local ~/.inputrc.bckp
-compare-nixos-files /etc/gitconfig ~/.gitconfig.bckp
+compare-nixos-files -c copy-nixos-files /etc/micro.bindings.json ~/.config/micro/bindings.json.bckp
+compare-nixos-files -c copy-nixos-files /etc/micro.settings.json ~/.config/micro/settings.json.bckp
+compare-nixos-files -c copy-nixos-files /etc/inputrc.local ~/.inputrc.bckp
+compare-nixos-files -c copy-nixos-files /etc/gitconfig ~/.gitconfig.bckp
 
 # ------------------------------------------------
 
