@@ -3,7 +3,7 @@
 porownaj() {
   plik_docelowy="$(ls -l $2 --color=auto 2>/dev/null | awk '{print $1, $3, $4}')"
 
-  printf "%-45s -> %-40s" "$1" "$2"
+  printf "%-25s -> %-40s" "$1" "$2"
 
   compare-nixos-files $1 $2 1 &&
   printf "%-5s %s\n" "1==2" "$plik_docelowy" &&
@@ -20,21 +20,23 @@ porownaj() {
   micro $1 $2;
 }
 
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$(dirname "${BASH_SOURCE[0]}")"
+echo
+echo "$(pwd):"
 
-porownaj $DIR/compare-nixos-files /usr/local/bin/compare-nixos-files
-chmod a+x                         /usr/local/bin/compare-nixos-files
-porownaj $DIR/copy-nixos-files    /usr/local/bin/copy-nixos-files
-chmod a+x                         /usr/local/bin/copy-nixos-files
+porownaj compare-nixos-files /usr/local/bin/compare-nixos-files
+chmod a+x                    /usr/local/bin/compare-nixos-files
+porownaj copy-nixos-files    /usr/local/bin/copy-nixos-files
+chmod a+x                    /usr/local/bin/copy-nixos-files
 
-porownaj $DIR/bashrc.local        /etc/bashrc.local
-porownaj $DIR/gitconfig           /etc/gitconfig
-porownaj $DIR/htoprc              /etc/htoprc
-porownaj $DIR/inputrc.local       /etc/inputrc.local
-porownaj $DIR/lazygit.yml         /etc/lazygit.yml
-porownaj $DIR/micro.bindings.json /etc/micro.bindings.json
-porownaj $DIR/micro.settings.json /etc/micro.settings.json
-porownaj $DIR/nanorc              /etc/nanorc
-porownaj $DIR/tmux.conf           /etc/tmux.conf
+porownaj bashrc.local        /etc/bashrc.local
+porownaj gitconfig           /etc/gitconfig
+porownaj htoprc              /etc/htoprc
+porownaj inputrc.local       /etc/inputrc.local
+porownaj lazygit.yml         /etc/lazygit.yml
+porownaj micro.bindings.json /etc/micro.bindings.json
+porownaj micro.settings.json /etc/micro.settings.json
+porownaj nanorc              /etc/nanorc
+porownaj tmux.conf           /etc/tmux.conf
 
 echo
