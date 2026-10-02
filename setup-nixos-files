@@ -14,8 +14,6 @@ porownaj() {
   micro $1 $2;
 }
 
-porownaj /home/nixos-repo/compare-nixos-files /usr/local/bin/compare-nixos-files
-chmod a+x /usr/local/bin/compare-nixos-files
 porownaj /home/nixos-repo/copy-nixos-files    /usr/local/bin/copy-nixos-files
 chmod a+x /usr/local/bin/copy-nixos-files
 porownaj /home/nixos-repo/setup-nixos-files   /usr/local/bin/setup-nixos-files
