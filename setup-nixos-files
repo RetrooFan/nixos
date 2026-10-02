@@ -7,7 +7,8 @@ porownaj() {
 
   compare-nixos-files $1 $2 1 &&
   printf "%-20s %s\n" "Pliki identyczne" "$plik_docelowy" &&
-  return ||
+  return
+
   printf "%-20s %-25s" "Pliki rozne" "$plik_docelowy"
 
   read -p "[ENTER]"
