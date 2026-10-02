@@ -16,6 +16,11 @@
   environment.etc."tmux.conf".text = builtins.readFile ./tmux.conf;
   environment.etc."tmux.conf.local".text = builtins.readFile ./tmux.conf.local;
 
+  environment.interactiveShellInit = ''
+    REPO_USER="nixos"
+    REPO_DIR="/etc/nixos"
+  '';
+
   fileSystems."/boot".options = [ "fmask=0007" "dmask=0007" ]; # Zabezpieczenie partycji /boot
   i18n.defaultLocale = "pl_PL.UTF-8";
 
