@@ -14,19 +14,21 @@ porownaj() {
   micro $1 $2;
 }
 
-porownaj compare-nixos-files /usr/local/bin/compare-nixos-files
-chmod a+x                    /usr/local/bin/compare-nixos-files
-porownaj copy-nixos-files    /usr/local/bin/copy-nixos-files
-chmod a+x                    /usr/local/bin/copy-nixos-files
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-porownaj bashrc.local        /etc/bashrc.local
-porownaj gitconfig           /etc/gitconfig
-porownaj htoprc              /etc/htoprc
-porownaj inputrc.local       /etc/inputrc.local
-porownaj lazygit.yml         /etc/lazygit.yml
-porownaj micro.bindings.json /etc/micro.bindings.json
-porownaj micro.settings.json /etc/micro.settings.json
-# porownaj nanorc              /etc/nanorc
-porownaj tmux.conf           /etc/tmux.conf
+porownaj $DIR/compare-nixos-files /usr/local/bin/compare-nixos-files
+chmod a+x                         /usr/local/bin/compare-nixos-files
+porownaj $DIR/copy-nixos-files    /usr/local/bin/copy-nixos-files
+chmod a+x                         /usr/local/bin/copy-nixos-files
+
+porownaj $DIR/bashrc.local        /etc/bashrc.local
+porownaj $DIR/gitconfig           /etc/gitconfig
+porownaj $DIR/htoprc              /etc/htoprc
+porownaj $DIR/inputrc.local       /etc/inputrc.local
+porownaj $DIR/lazygit.yml         /etc/lazygit.yml
+porownaj $DIR/micro.bindings.json /etc/micro.bindings.json
+porownaj $DIR/micro.settings.json /etc/micro.settings.json
+# porownaj $DIR/nanorc              /etc/nanorc
+porownaj $DIR/tmux.conf           /etc/tmux.conf
 
 echo
