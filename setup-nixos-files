@@ -39,6 +39,7 @@ porownaj gitconfig           /etc/gitconfig
 echo
 
 porownaj bashrc.local        /etc/bashrc.local
+porownaj bashrc.root         /etc/bashrc.root
 porownaj htoprc              /etc/htoprc
 porownaj lazygit.yml         /etc/lazygit.yml
 porownaj nanorc              /etc/nanorc
