@@ -3,6 +3,7 @@
 # ------------------------------------------------
 
 # REPO_USER="user"
+# REPO_DIR="directory"
 
 # if [ -f /etc/bashrc.local ]; then
 #   source /etc/bashrc.local
@@ -97,8 +98,8 @@ git_pull() {
 
   INIT_DIR="$(pwd)"
 
-  echo "cd ~/7nixos"
-  cd ~/7nixos || return
+  echo "cd $REPO_DIR"
+  cd $REPO_DIR || return
 
   echo "git pull ..."
   git pull && echo $data_aktualna > .last_update
