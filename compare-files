@@ -20,10 +20,10 @@ if [ "$HASH1" != "$HASH2" ]; then
     echo "--------------------------------------------------"
     echo "|                                                |"
     echo "|          Pliki sa rozne lub ich brak!          |"
-    [ "$COMMAND" == "copy-nixos-files" ] &&
-    echo "|     Uruchom polecenie 'copy-nixos-files'!      |"
-    [ "$COMMAND" == "setup-nixos-files" ] &&
-    echo "|     Uruchom polecenie 'setup-nixos-files'!     |"
+    [ "$COMMAND" == "copy-config-to-home" ] &&
+    echo "|    Uruchom polecenie 'copy-config-to-home'!    |"
+    [ "$COMMAND" == "copy-config-to-system" ] &&
+    echo "|   Uruchom polecenie 'copy-config-to-system'!   |"
     echo "|                                                |"
     echo "--------------------------------------------------"
 

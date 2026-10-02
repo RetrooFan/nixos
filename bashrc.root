@@ -11,18 +11,18 @@
 # ------------------------------------------------
 # ------------------------------------------------
 
-compare-nixos-files -c setup-nixos-files $NIXOS_REPO/compare-nixos-files /usr/local/bin/compare-nixos-files
-compare-nixos-files -c setup-nixos-files $NIXOS_REPO/copy-nixos-files    /usr/local/bin/copy-nixos-files
+compare-files -c copy-config-to-system $NIXOS_REPO/compare-files       /usr/local/bin/compare-files
+compare-files -c copy-config-to-system $NIXOS_REPO/copy-config-to-home /usr/local/bin/copy-config-to-home
 
-compare-nixos-files -c setup-nixos-files $NIXOS_REPO/micro.bindings.json /etc/micro.bindings.json
-compare-nixos-files -c setup-nixos-files $NIXOS_REPO/micro.settings.json /etc/micro.settings.json
-compare-nixos-files -c setup-nixos-files $NIXOS_REPO/inputrc.local       /etc/inputrc.local
-compare-nixos-files -c setup-nixos-files $NIXOS_REPO/gitconfig           /etc/gitconfig
+compare-files -c copy-config-to-system $NIXOS_REPO/micro.bindings.json /etc/micro.bindings.json
+compare-files -c copy-config-to-system $NIXOS_REPO/micro.settings.json /etc/micro.settings.json
+compare-files -c copy-config-to-system $NIXOS_REPO/inputrc.local       /etc/inputrc.local
+compare-files -c copy-config-to-system $NIXOS_REPO/gitconfig           /etc/gitconfig
 
-compare-nixos-files -c setup-nixos-files $NIXOS_REPO/bashrc.root         /root/.bashrc.root
-compare-nixos-files -c setup-nixos-files $NIXOS_REPO/bashrc.local        /etc/bashrc.local
-compare-nixos-files -c setup-nixos-files $NIXOS_REPO/htoprc              /etc/htoprc
-compare-nixos-files -c setup-nixos-files $NIXOS_REPO/lazygit.yml         /etc/lazygit.yml
-compare-nixos-files -c setup-nixos-files $NIXOS_REPO/nanorc              /etc/nanorc
-compare-nixos-files -c setup-nixos-files $NIXOS_REPO/tmux.conf           /etc/tmux.conf
-compare-nixos-files -c setup-nixos-files $NIXOS_REPO/tmux.conf.local     /etc/tmux.conf.local
+compare-files -c copy-config-to-system $NIXOS_REPO/bashrc.root         /root/.bashrc.root
+compare-files -c copy-config-to-system $NIXOS_REPO/bashrc.local        /etc/bashrc.local
+compare-files -c copy-config-to-system $NIXOS_REPO/htoprc              /etc/htoprc
+compare-files -c copy-config-to-system $NIXOS_REPO/lazygit.yml         /etc/lazygit.yml
+compare-files -c copy-config-to-system $NIXOS_REPO/nanorc              /etc/nanorc
+compare-files -c copy-config-to-system $NIXOS_REPO/tmux.conf           /etc/tmux.conf
+compare-files -c copy-config-to-system $NIXOS_REPO/tmux.conf.local     /etc/tmux.conf.local

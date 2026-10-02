@@ -26,11 +26,11 @@ alias -- mi='micro'
 
 # ------------------------------------------------
 
-compare-nixos-files -c copy-nixos-files /etc/micro.bindings.json ~/.config/micro/bindings.json.bckp
-compare-nixos-files -c copy-nixos-files /etc/micro.settings.json ~/.config/micro/settings.json.bckp
-compare-nixos-files -c copy-nixos-files /etc/inputrc.local ~/.inputrc.bckp
-compare-nixos-files -c copy-nixos-files /etc/gitconfig ~/.gitconfig.bckp
-compare-nixos-files -c copy-nixos-files /etc/tmux.conf.local ~/.tmux.conf.bckp
+compare-files -c copy-config-to-home /etc/micro.bindings.json ~/.config/micro/bindings.json.bckp
+compare-files -c copy-config-to-home /etc/micro.settings.json ~/.config/micro/settings.json.bckp
+compare-files -c copy-config-to-home /etc/inputrc.local ~/.inputrc.bckp
+compare-files -c copy-config-to-home /etc/gitconfig ~/.gitconfig.bckp
+compare-files -c copy-config-to-home /etc/tmux.conf.local ~/.tmux.conf.bckp
 
 # ------------------------------------------------
 

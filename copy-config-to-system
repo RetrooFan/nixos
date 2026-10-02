@@ -5,7 +5,7 @@ porownaj() {
 
   printf "%-25s -> %-40s" "$1" "$2"
 
-  compare-nixos-files $1 $2 &&
+  compare-files $1 $2 &&
   printf "%-21s%-6s\n" "$uprawnienia_pliku_docelowego" "1==2" &&
   return
 
@@ -24,10 +24,10 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 
 printf "\n%s:\n\n" "$(pwd)"
 
-porownaj compare-nixos-files /usr/local/bin/compare-nixos-files
-chmod a+x                    /usr/local/bin/compare-nixos-files
-porownaj copy-nixos-files    /usr/local/bin/copy-nixos-files
-chmod a+x                    /usr/local/bin/copy-nixos-files
+porownaj compare-files       /usr/local/bin/compare-files
+chmod a+x                    /usr/local/bin/compare-files
+porownaj copy-config-to-home /usr/local/bin/copy-config-to-home
+chmod a+x                    /usr/local/bin/copy-config-to-home
 
 echo
 
