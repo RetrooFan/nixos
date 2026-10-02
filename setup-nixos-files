@@ -3,11 +3,11 @@
 porownaj() {
   echo
 
-  docelowy_plik=$(ls $2 --color=always);
+  printf "Nastepny plik: | %-40s -> %-40s" "$1" "$2"
 
-  printf "Nastepny plik: | %-40s -> %-40s\n" "$1" "$docelowy_plik"
+  compare-nixos-files $1 $2 1 && printf "Pliki identyczne (sha256sum) !\n" && ls -l $2 --color=always && return;
 
-  compare-nixos-files $1 $2 1 && printf "Pliki identyczne (sha256sum) !\n" && return;
+  ls $2 --color=always
 
   read -p "Naciśnij [ENTER], aby kontynuować ...";
 
