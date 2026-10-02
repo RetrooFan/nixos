@@ -26,7 +26,7 @@ porownaj $DIR/inputrc.local       /etc/inputrc.local
 porownaj $DIR/lazygit.yml         /etc/lazygit.yml
 porownaj $DIR/micro.bindings.json /etc/micro.bindings.json
 porownaj $DIR/micro.settings.json /etc/micro.settings.json
-# porownaj $DIR/nanorc              /etc/nanorc
+porownaj $DIR/nanorc              /etc/nanorc
 porownaj $DIR/tmux.conf           /etc/tmux.conf
 
 echo
