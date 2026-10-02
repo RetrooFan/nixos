@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-HASH1=$(sha256sum $1 | awk '{print $1}')
-HASH2=$(sha256sum $2 | awk '{print $1}')
+HASH1=$(sha256sum $1 2>/dev/null | awk '{print $1}') &&
+HASH2=$(sha256sum $2 2>/dev/null | awk '{print $1}') &&
 
 if [ "$HASH1" != "$HASH2" ]; then
   if [ "$3" != "1" ]; then
