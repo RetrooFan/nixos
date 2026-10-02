@@ -22,20 +22,25 @@ porownaj() {
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
-printf "\n%s:\n" "$(pwd)"
+printf "\n%s:\n\n" "$(pwd)"
 
 porownaj compare-nixos-files /usr/local/bin/compare-nixos-files
 chmod a+x                    /usr/local/bin/compare-nixos-files
 porownaj copy-nixos-files    /usr/local/bin/copy-nixos-files
 chmod a+x                    /usr/local/bin/copy-nixos-files
 
-porownaj bashrc.local        /etc/bashrc.local
-porownaj gitconfig           /etc/gitconfig
-porownaj htoprc              /etc/htoprc
-porownaj inputrc.local       /etc/inputrc.local
-porownaj lazygit.yml         /etc/lazygit.yml
+echo
+
 porownaj micro.bindings.json /etc/micro.bindings.json
 porownaj micro.settings.json /etc/micro.settings.json
+porownaj inputrc.local       /etc/inputrc.local
+porownaj gitconfig           /etc/gitconfig
+
+echo
+
+porownaj bashrc.local        /etc/bashrc.local
+porownaj htoprc              /etc/htoprc
+porownaj lazygit.yml         /etc/lazygit.yml
 porownaj nanorc              /etc/nanorc
 porownaj tmux.conf           /etc/tmux.conf
 
