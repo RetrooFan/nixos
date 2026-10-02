@@ -2,14 +2,14 @@
 # ------------------------------------------------
 # ------------------------------------------------
 
-# if [ -f /etc/bashrc.root ]; then
-#   source /etc/bashrc.root
+# if [ -f /root/bashrc.root ]; then
+#   source /root/bashrc.root
 # fi
 
 # ------------------------------------------------
 # ------------------------------------------------
 
-NIXOS_REPO="/home/kristof/7nixos"
+NIXOS_REPO="/home/user/repo"
 
 compare-nixos-files $NIXOS_REPO/compare-nixos-files /usr/local/bin/compare-nixos-files
 compare-nixos-files $NIXOS_REPO/copy-nixos-files    /usr/local/bin/copy-nixos-files
