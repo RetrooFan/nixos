@@ -9,7 +9,11 @@ porownaj() {
   printf "%-20s %s\n" "Pliki identyczne" "$plik_docelowy" &&
   return
 
-  printf "%-20s %-25s" "Pliki rozne" "$plik_docelowy"
+  [ -f "$2" ] &&
+  printf "%-20s " "Pliki rozne" ||
+  printf "%-20s " "Brak docelowego"
+
+  printf "%-25s" "$plik_docelowy"
 
   read -p "[ENTER]"
 
