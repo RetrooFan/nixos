@@ -14,10 +14,10 @@ porownaj() {
   micro $1 $2;
 }
 
+porownaj compare-nixos-files /usr/local/bin/compare-nixos-files
+chmod a+x                    /usr/local/bin/compare-nixos-files
 porownaj copy-nixos-files    /usr/local/bin/copy-nixos-files
 chmod a+x                    /usr/local/bin/copy-nixos-files
-porownaj setup-nixos-files   /usr/local/bin/setup-nixos-files
-chmod a+x                    /usr/local/bin/setup-nixos-files
 
 porownaj bashrc.local        /etc/bashrc.local
 porownaj gitconfig           /etc/gitconfig
