@@ -35,6 +35,7 @@ porownaj micro.bindings.json /etc/micro.bindings.json
 porownaj micro.settings.json /etc/micro.settings.json
 porownaj inputrc.local       /etc/inputrc.local
 porownaj gitconfig           /etc/gitconfig
+porownaj tmux.conf.local     /etc/tmux.conf.local
 
 echo
 
@@ -44,6 +45,5 @@ porownaj htoprc              /etc/htoprc
 porownaj lazygit.yml         /etc/lazygit.yml
 porownaj nanorc              /etc/nanorc
 porownaj tmux.conf           /etc/tmux.conf
-porownaj tmux.conf.local     /etc/tmux.conf.local
 
 echo
