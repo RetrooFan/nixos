@@ -12,7 +12,7 @@
     latest.tmux
     latest.micro
 
-    (pkgs.writeShellScriptBin "compare-nixos-files" (builtins.readFile ./compare-nixos-files))
-    (pkgs.writeShellScriptBin "copy-nixos-files" (builtins.readFile ./copy-nixos-files))
+    (pkgs.writeShellScriptBin "compare-files" (builtins.readFile ./compare-files))
+    (pkgs.writeShellScriptBin "copy-config-to-home" (builtins.readFile ./copy-config-to-home))
   ];
 }
