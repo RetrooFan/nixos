@@ -19,10 +19,8 @@ if [ "$HASH1" != "$HASH2" ]; then
   if [ "$COMMAND" != "" ]; then
     echo "--------------------------------------------------"
     echo "|                                                |"
-    echo "|          Pliki sa rozne lub ich brak!          |"
-    [ "$COMMAND" == "copy-config-to-home" ] &&
-    echo "|    Uruchom polecenie 'copy-config-to-home'!    |"
-    [ "$COMMAND" == "copy-config-to-system" ] &&
+    echo "|          Pliki sa rozne lub ich brak!          |"; [ "$COMMAND" == "copy-config-to-home" ] &&
+    echo "|    Uruchom polecenie 'copy-config-to-home'!    |"; [ "$COMMAND" == "copy-config-to-system" ] &&
     echo "|   Uruchom polecenie 'copy-config-to-system'!   |"
     echo "|                                                |"
     echo "--------------------------------------------------"
