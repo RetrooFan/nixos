@@ -9,13 +9,14 @@
       "k3s-manifests/traefik-dashboard-config.yaml".text = builtins.readFile ./traefik-dashboard-config.yaml;
 
       "bashrc.local".text = builtins.readFile ./bashrc.local;
-      "gitconfig".text = builtins.readFile ./gitconfig;
       "htoprc".text = builtins.readFile ./htoprc;
-      "inputrc.local".text = builtins.readFile ./inputrc.local;
       "lazygit.yml".text = builtins.readFile ./lazygit.yml;
+      "tmux.conf".text = builtins.readFile ./tmux.conf;
+
+      "gitconfig".text = builtins.readFile ./gitconfig;
+      "inputrc.local".text = builtins.readFile ./inputrc.local;
       "micro.bindings.json".text = builtins.readFile ./micro.bindings.json;
       "micro.settings.json".text = builtins.readFile ./micro.settings.json;
-      "tmux.conf".text = builtins.readFile ./tmux.conf;
       "tmux.conf.local".text = builtins.readFile ./tmux.conf.local;
     };
 
