@@ -20,12 +20,14 @@ chmod 644 $FILE3
 chmod 644 $FILE4
 chmod 644 $FILE5
 
+echo
 echo "Nadpisano nastepujace pliki:"
 echo $FILE1
 echo $FILE2
 echo $FILE3
 echo $FILE4
 echo $FILE5
+echo
 
 ln -s $FILE1 ~/.gitconfig
 ln -s $FILE2 ~/.inputrc
