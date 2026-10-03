@@ -41,9 +41,9 @@ chmod 444 $FILE6.etc
 # [ ! -f $FILE5 ] && cp $FILE5.etc $FILE5
 # [ ! -f $FILE6 ] && cp $FILE6.etc $FILE6
 
-rm -f $FILE1
-rm -f $FILE2
-rm -f $FILE3
-rm -f $FILE4
-rm -f $FILE5
-rm -f $FILE6
+rm -f $FILE1 $FILE1.bckp
+rm -f $FILE2 $FILE2.bckp
+rm -f $FILE3 $FILE3.bckp
+rm -f $FILE4 $FILE4.bckp
+rm -f $FILE5 $FILE5.bckp
+rm -f $FILE6 $FILE6.bckp
