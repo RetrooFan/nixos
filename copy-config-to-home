@@ -34,9 +34,16 @@ chmod 444 $FILE4.etc
 chmod 444 $FILE5.etc
 chmod 444 $FILE6.etc
 
-[ ! -f $FILE1 ] && cp $FILE1.etc $FILE1
-[ ! -f $FILE2 ] && cp $FILE2.etc $FILE2
-[ ! -f $FILE3 ] && cp $FILE3.etc $FILE3
-[ ! -f $FILE4 ] && cp $FILE4.etc $FILE4
-[ ! -f $FILE5 ] && cp $FILE5.etc $FILE5
-[ ! -f $FILE6 ] && cp $FILE6.etc $FILE6
+# [ ! -f $FILE1 ] && cp $FILE1.etc $FILE1
+# [ ! -f $FILE2 ] && cp $FILE2.etc $FILE2
+# [ ! -f $FILE3 ] && cp $FILE3.etc $FILE3
+# [ ! -f $FILE4 ] && cp $FILE4.etc $FILE4
+# [ ! -f $FILE5 ] && cp $FILE5.etc $FILE5
+# [ ! -f $FILE6 ] && cp $FILE6.etc $FILE6
+
+rm -f $FILE1
+rm -f $FILE2
+rm -f $FILE3
+rm -f $FILE4
+rm -f $FILE5
+rm -f $FILE6
