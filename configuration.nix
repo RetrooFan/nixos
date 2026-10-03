@@ -14,10 +14,10 @@
       "tmux.conf".text =    builtins.readFile ./tmux.conf;
 
       "homefiles/gitconfig".text =           builtins.readFile ./homefiles/gitconfig;
-      "homefiles/inputrc.local".text =       builtins.readFile ./homefiles/inputrc.local;
+      "homefiles/inputrc".text =             builtins.readFile ./homefiles/inputrc;
       "homefiles/micro.bindings.json".text = builtins.readFile ./homefiles/micro.bindings.json;
       "homefiles/micro.settings.json".text = builtins.readFile ./homefiles/micro.settings.json;
-      "homefiles/tmux.conf.local".text =     builtins.readFile ./homefiles/tmux.conf.local;
+      "homefiles/tmux.conf".text =           builtins.readFile ./homefiles/tmux.conf;
     };
 
     interactiveShellInit = ''
