@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-mkdir -p ~/.config/micro/
-
 FILE1=~/.gitconfig
 FILE2=~/.inputrc
 FILE3=~/.config/micro/bindings.json
 FILE4=~/.config/micro/settings.json
 FILE5=~/.tmux.conf
+
+mkdir -p ~/.config/micro/
 
 cp /etc/homefiles/gitconfig           $FILE1.bckp
 cp /etc/homefiles/inputrc.local       $FILE2.bckp
