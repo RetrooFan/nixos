@@ -14,11 +14,11 @@ cp /etc/micro.bindings.json $FILE3.bckp
 cp /etc/micro.settings.json $FILE4.bckp
 cp /etc/tmux.conf.local     $FILE5.bckp
 
-chmod 644 $FILE1.bckp
-chmod 644 $FILE2.bckp
-chmod 644 $FILE3.bckp
-chmod 644 $FILE4.bckp
-chmod 644 $FILE5.bckp
+chmod 444 $FILE1.bckp
+chmod 444 $FILE2.bckp
+chmod 444 $FILE3.bckp
+chmod 444 $FILE4.bckp
+chmod 444 $FILE5.bckp
 
 echo
 echo "Nadpisano nastepujace pliki:"
