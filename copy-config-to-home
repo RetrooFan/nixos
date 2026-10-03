@@ -2,35 +2,35 @@
 
 mkdir -p ~/.config/micro/
 
-FILE1=~/.gitconfig.bckp
-FILE2=~/.inputrc.bckp
-FILE3=~/.config/micro/bindings.json.bckp
-FILE4=~/.config/micro/settings.json.bckp
-FILE5=~/.tmux.conf.bckp
+FILE1=~/.gitconfig
+FILE2=~/.inputrc
+FILE3=~/.config/micro/bindings.json
+FILE4=~/.config/micro/settings.json
+FILE5=~/.tmux.conf
 
-cp /etc/gitconfig           $FILE1
-cp /etc/inputrc.local       $FILE2
-cp /etc/micro.bindings.json $FILE3
-cp /etc/micro.settings.json $FILE4
-cp /etc/tmux.conf.local     $FILE5
+cp /etc/gitconfig           $FILE1.bckp
+cp /etc/inputrc.local       $FILE2.bckp
+cp /etc/micro.bindings.json $FILE3.bckp
+cp /etc/micro.settings.json $FILE4.bckp
+cp /etc/tmux.conf.local     $FILE5.bckp
 
-chmod 644 $FILE1
-chmod 644 $FILE2
-chmod 644 $FILE3
-chmod 644 $FILE4
-chmod 644 $FILE5
+chmod 644 $FILE1.bckp
+chmod 644 $FILE2.bckp
+chmod 644 $FILE3.bckp
+chmod 644 $FILE4.bckp
+chmod 644 $FILE5.bckp
 
 echo
 echo "Nadpisano nastepujace pliki:"
-echo $FILE1
-echo $FILE2
-echo $FILE3
-echo $FILE4
-echo $FILE5
+echo $FILE1.bckp
+echo $FILE2.bckp
+echo $FILE3.bckp
+echo $FILE4.bckp
+echo $FILE5.bckp
 echo
 
-ln -s $FILE1 ~/.gitconfig
-ln -s $FILE2 ~/.inputrc
-ln -s $FILE3 ~/.config/micro/bindings.json
-ln -s $FILE4 ~/.config/micro/settings.json
-ln -s $FILE5 ~/.tmux.conf
+[ ! -f $FILE1 ] && cp $FILE1.bckp $FILE1
+[ ! -f $FILE2 ] && cp $FILE2.bckp $FILE2
+[ ! -f $FILE3 ] && cp $FILE3.bckp $FILE3
+[ ! -f $FILE4 ] && cp $FILE4.bckp $FILE4
+[ ! -f $FILE5 ] && cp $FILE5.bckp $FILE5
