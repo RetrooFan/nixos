@@ -3,7 +3,7 @@
 porownaj() {
   uprawnienia_pliku_docelowego="$(ls -l $2 --color=auto 2>/dev/null | awk '{print $1, $3, $4}')"
 
-  printf "%-25s -> %-40s" "$1" "$2"
+  printf "%-30s -> %-40s" "$1" "$2"
 
   compare-files $1 $2 &&
   printf "%-21s%-6s\n" "$uprawnienia_pliku_docelowego" "1==2" &&
