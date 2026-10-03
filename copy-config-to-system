@@ -31,7 +31,6 @@ chmod a+x                    /usr/local/bin/copy-config-to-home
 
 echo
 
-porownaj bashrc.root         /root/.bashrc.root
 porownaj bashrc.local        /etc/bashrc.local
 porownaj htoprc              /etc/htoprc
 porownaj lazygit.yml         /etc/lazygit.yml
@@ -42,6 +41,7 @@ echo
 
 mkdir -p /etc/homefiles/
 
+porownaj homefiles/bashrc.root         /root/.bashrc.root
 porownaj homefiles/gitconfig           /etc/homefiles/gitconfig
 porownaj homefiles/inputrc             /etc/homefiles/inputrc
 porownaj homefiles/micro.bindings.json /etc/homefiles/micro.bindings.json
