@@ -18,6 +18,7 @@
       "homefiles/micro.bindings.json".text = builtins.readFile ./homefiles/micro.bindings.json;
       "homefiles/micro.settings.json".text = builtins.readFile ./homefiles/micro.settings.json;
       "homefiles/tmux.conf".text =           builtins.readFile ./homefiles/tmux.conf;
+      "homefiles/vscode.settings.json".text = builtins.readFile ./homefiles/vscode.settings.json;
     };
 
     interactiveShellInit = ''

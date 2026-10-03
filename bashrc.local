@@ -85,6 +85,7 @@ compare-files -c copy-config-to-home /etc/homefiles/inputrc             ~/.input
 compare-files -c copy-config-to-home /etc/homefiles/micro.bindings.json ~/.config/micro/bindings.json.bckp
 compare-files -c copy-config-to-home /etc/homefiles/micro.settings.json ~/.config/micro/settings.json.bckp
 compare-files -c copy-config-to-home /etc/homefiles/tmux.conf           ~/.tmux.conf.bckp
+compare-files -c copy-config-to-home /etc/homefiles/vscode.settings.json ~/.config/Code/User/settings.json.bckp
 
 # ------------------------------------------------
 

@@ -5,14 +5,17 @@ FILE2=~/.inputrc
 FILE3=~/.config/micro/bindings.json
 FILE4=~/.config/micro/settings.json
 FILE5=~/.tmux.conf
+FILE6=~/.config/Code/User/settings.json
 
 mkdir -p ~/.config/micro/
+mkdir -p ~/.config/Code/User/
 
 rm -f $FILE1.bckp
 rm -f $FILE2.bckp
 rm -f $FILE3.bckp
 rm -f $FILE4.bckp
 rm -f $FILE5.bckp
+rm -f $FILE6.bckp
 
 echo
 echo "Nadpisano nastepujace pliki:"
@@ -21,6 +24,7 @@ cp /etc/homefiles/inputrc             $FILE2.bckp && printf "%-35s -> %-40s\n" "
 cp /etc/homefiles/micro.bindings.json $FILE3.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/micro.bindings.json" "$FILE3.bckp"
 cp /etc/homefiles/micro.settings.json $FILE4.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/micro.settings.json" "$FILE4.bckp"
 cp /etc/homefiles/tmux.conf           $FILE5.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/tmux.conf"           "$FILE5.bckp"
+cp /etc/homefiles/vscode.settings.json $FILE5.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/vscode.settings.json" "$FILE6.bckp"
 echo
 
 chmod 444 $FILE1.bckp
@@ -28,9 +32,11 @@ chmod 444 $FILE2.bckp
 chmod 444 $FILE3.bckp
 chmod 444 $FILE4.bckp
 chmod 444 $FILE5.bckp
+chmod 444 $FILE6.bckp
 
 [ ! -f $FILE1 ] && cp $FILE1.bckp $FILE1
 [ ! -f $FILE2 ] && cp $FILE2.bckp $FILE2
 [ ! -f $FILE3 ] && cp $FILE3.bckp $FILE3
 [ ! -f $FILE4 ] && cp $FILE4.bckp $FILE4
 [ ! -f $FILE5 ] && cp $FILE5.bckp $FILE5
+[ ! -f $FILE6 ] && cp $FILE6.bckp $FILE6
