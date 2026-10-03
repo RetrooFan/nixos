@@ -8,6 +8,12 @@ FILE5=~/.tmux.conf
 
 mkdir -p ~/.config/micro/
 
+rm -f $FILE1.bckp
+rm -f $FILE2.bckp
+rm -f $FILE3.bckp
+rm -f $FILE4.bckp
+rm -f $FILE5.bckp
+
 echo
 echo "Nadpisano nastepujace pliki:"
 cp /etc/homefiles/gitconfig           $FILE1.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/gitconfig"           "$FILE1.bckp"
