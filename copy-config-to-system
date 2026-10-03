@@ -31,22 +31,22 @@ chmod a+x                    /usr/local/bin/copy-config-to-home
 
 echo
 
-porownaj bashrc.local        /etc/bashrc.local
-porownaj htoprc              /etc/htoprc
-porownaj lazygit.yml         /etc/lazygit.yml
-porownaj nanorc              /etc/nanorc
-porownaj tmux.conf           /etc/tmux.conf
+porownaj bashrc.local /etc/bashrc.local
+porownaj htoprc       /etc/htoprc
+porownaj lazygit.yml  /etc/lazygit.yml
+porownaj nanorc       /etc/nanorc
+porownaj tmux.conf    /etc/tmux.conf
 
 echo
 
 mkdir -p /etc/homefiles/
 
-porownaj homefiles/bashrc.root         /root/.bashrc.root
-porownaj homefiles/gitconfig           /etc/homefiles/gitconfig
-porownaj homefiles/inputrc             /etc/homefiles/inputrc
-porownaj homefiles/micro.bindings.json /etc/homefiles/micro.bindings.json
-porownaj homefiles/micro.settings.json /etc/homefiles/micro.settings.json
-porownaj homefiles/tmux.conf           /etc/homefiles/tmux.conf
+porownaj homefiles/bashrc.root          /root/.bashrc.root
+porownaj homefiles/gitconfig            /etc/homefiles/gitconfig
+porownaj homefiles/inputrc              /etc/homefiles/inputrc
+porownaj homefiles/micro.bindings.json  /etc/homefiles/micro.bindings.json
+porownaj homefiles/micro.settings.json  /etc/homefiles/micro.settings.json
+porownaj homefiles/tmux.conf            /etc/homefiles/tmux.conf
 porownaj homefiles/vscode.settings.json /etc/homefiles/vscode.settings.json
 
 echo

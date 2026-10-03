@@ -19,11 +19,11 @@ rm -f $FILE6.bckp
 
 echo
 echo "Nadpisano nastepujace pliki:"
-cp /etc/homefiles/gitconfig           $FILE1.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/gitconfig"           "$FILE1.bckp"
-cp /etc/homefiles/inputrc             $FILE2.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/inputrc"             "$FILE2.bckp"
-cp /etc/homefiles/micro.bindings.json $FILE3.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/micro.bindings.json" "$FILE3.bckp"
-cp /etc/homefiles/micro.settings.json $FILE4.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/micro.settings.json" "$FILE4.bckp"
-cp /etc/homefiles/tmux.conf           $FILE5.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/tmux.conf"           "$FILE5.bckp"
+cp /etc/homefiles/gitconfig            $FILE1.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/gitconfig"            "$FILE1.bckp"
+cp /etc/homefiles/inputrc              $FILE2.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/inputrc"              "$FILE2.bckp"
+cp /etc/homefiles/micro.bindings.json  $FILE3.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/micro.bindings.json"  "$FILE3.bckp"
+cp /etc/homefiles/micro.settings.json  $FILE4.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/micro.settings.json"  "$FILE4.bckp"
+cp /etc/homefiles/tmux.conf            $FILE5.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/tmux.conf"            "$FILE5.bckp"
 cp /etc/homefiles/vscode.settings.json $FILE5.bckp && printf "%-35s -> %-40s\n" "/etc/homefiles/vscode.settings.json" "$FILE6.bckp"
 echo
 
