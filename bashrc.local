@@ -80,10 +80,10 @@ trap after_exit EXIT
 
 # ------------------------------------------------
 
+compare-files -c copy-config-to-home /etc/gitconfig           ~/.gitconfig.bckp
+compare-files -c copy-config-to-home /etc/inputrc.local       ~/.inputrc.bckp
 compare-files -c copy-config-to-home /etc/micro.bindings.json ~/.config/micro/bindings.json.bckp
 compare-files -c copy-config-to-home /etc/micro.settings.json ~/.config/micro/settings.json.bckp
-compare-files -c copy-config-to-home /etc/inputrc.local       ~/.inputrc.bckp
-compare-files -c copy-config-to-home /etc/gitconfig           ~/.gitconfig.bckp
 compare-files -c copy-config-to-home /etc/tmux.conf.local     ~/.tmux.conf.bckp
 
 # ------------------------------------------------
