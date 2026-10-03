@@ -27,12 +27,12 @@ cp /etc/homefiles/tmux.conf            $FILE5.etc && printf "%-35s -> %-40s\n" "
 cp /etc/homefiles/vscode.settings.json $FILE6.etc && printf "%-35s -> %-40s\n" "/etc/homefiles/vscode.settings.json" "$FILE6.etc"
 echo
 
-chmod 444 $FILE1.etc
-chmod 444 $FILE2.etc
-chmod 444 $FILE3.etc
-chmod 444 $FILE4.etc
-chmod 444 $FILE5.etc
-chmod 444 $FILE6.etc
+chmod 644 $FILE1.etc
+chmod 644 $FILE2.etc
+chmod 644 $FILE3.etc
+chmod 644 $FILE4.etc
+chmod 644 $FILE5.etc
+chmod 644 $FILE6.etc
 
 [ ! -f $FILE1 ] && cp $FILE1.etc $FILE1
 [ ! -f $FILE2 ] && cp $FILE2.etc $FILE2
