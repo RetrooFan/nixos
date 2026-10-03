@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# ------------------------------------------------
+# ------------------------------------------------
+
+# if [ -f /root/bashrc.root ]; then
+#   source /root/bashrc.root
+# fi
+
+# ------------------------------------------------
+# ------------------------------------------------
+
+compare-files -c copy-config-to-system $REPO_DIR/compare-files                 /usr/local/bin/compare-files
+compare-files -c copy-config-to-system $REPO_DIR/copy-config-to-home           /usr/local/bin/copy-config-to-home
+
+compare-files -c copy-config-to-system $REPO_DIR/bashrc.root                   /root/.bashrc.root
+compare-files -c copy-config-to-system $REPO_DIR/bashrc.local                  /etc/bashrc.local
+compare-files -c copy-config-to-system $REPO_DIR/htoprc                        /etc/htoprc
+compare-files -c copy-config-to-system $REPO_DIR/lazygit.yml                   /etc/lazygit.yml
+compare-files -c copy-config-to-system $REPO_DIR/nanorc                        /etc/nanorc
+compare-files -c copy-config-to-system $REPO_DIR/tmux.conf                     /etc/tmux.conf
+
+compare-files -c copy-config-to-system $REPO_DIR/homefiles/gitconfig           /etc/homefiles/gitconfig
+compare-files -c copy-config-to-system $REPO_DIR/homefiles/inputrc             /etc/homefiles/inputrc
+compare-files -c copy-config-to-system $REPO_DIR/homefiles/micro.bindings.json /etc/homefiles/micro.bindings.json
+compare-files -c copy-config-to-system $REPO_DIR/homefiles/micro.settings.json /etc/homefiles/micro.settings.json
+compare-files -c copy-config-to-system $REPO_DIR/homefiles/tmux.conf           /etc/homefiles/tmux.conf

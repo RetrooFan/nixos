@@ -13,11 +13,11 @@
       "lazygit.yml".text =  builtins.readFile ./lazygit.yml;
       "tmux.conf".text =    builtins.readFile ./tmux.conf;
 
-      "gitconfig".text =           builtins.readFile ./gitconfig;
-      "inputrc.local".text =       builtins.readFile ./inputrc.local;
-      "micro.bindings.json".text = builtins.readFile ./micro.bindings.json;
-      "micro.settings.json".text = builtins.readFile ./micro.settings.json;
-      "tmux.conf.local".text =     builtins.readFile ./tmux.conf.local;
+      "homefiles/gitconfig".text =           builtins.readFile ./homefiles/gitconfig;
+      "homefiles/inputrc.local".text =       builtins.readFile ./homefiles/inputrc.local;
+      "homefiles/micro.bindings.json".text = builtins.readFile ./homefiles/micro.bindings.json;
+      "homefiles/micro.settings.json".text = builtins.readFile ./homefiles/micro.settings.json;
+      "homefiles/tmux.conf.local".text =     builtins.readFile ./homefiles/tmux.conf.local;
     };
 
     interactiveShellInit = ''

@@ -8,11 +8,11 @@ FILE3=~/.config/micro/bindings.json
 FILE4=~/.config/micro/settings.json
 FILE5=~/.tmux.conf
 
-cp /etc/gitconfig           $FILE1.bckp
-cp /etc/inputrc.local       $FILE2.bckp
-cp /etc/micro.bindings.json $FILE3.bckp
-cp /etc/micro.settings.json $FILE4.bckp
-cp /etc/tmux.conf.local     $FILE5.bckp
+cp /etc/homefiles/gitconfig           $FILE1.bckp
+cp /etc/homefiles/inputrc.local       $FILE2.bckp
+cp /etc/homefiles/micro.bindings.json $FILE3.bckp
+cp /etc/homefiles/micro.settings.json $FILE4.bckp
+cp /etc/homefiles/tmux.conf.local     $FILE5.bckp
 
 chmod 444 $FILE1.bckp
 chmod 444 $FILE2.bckp

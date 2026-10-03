@@ -40,10 +40,10 @@ porownaj tmux.conf           /etc/tmux.conf
 
 echo
 
-porownaj gitconfig           /etc/gitconfig
-porownaj inputrc.local       /etc/inputrc.local
-porownaj micro.bindings.json /etc/micro.bindings.json
-porownaj micro.settings.json /etc/micro.settings.json
-porownaj tmux.conf.local     /etc/tmux.conf.local
+porownaj homefiles/gitconfig           /etc/homefiles/gitconfig
+porownaj homefiles/inputrc             /etc/homefiles/inputrc
+porownaj homefiles/micro.bindings.json /etc/homefiles/micro.bindings.json
+porownaj homefiles/micro.settings.json /etc/homefiles/micro.settings.json
+porownaj homefiles/tmux.conf           /etc/homefiles/tmux.conf
 
 echo
