@@ -40,6 +40,8 @@ porownaj tmux.conf           /etc/tmux.conf
 
 echo
 
+mkdir -p /etc/homefiles/
+
 porownaj homefiles/gitconfig           /etc/homefiles/gitconfig
 porownaj homefiles/inputrc             /etc/homefiles/inputrc
 porownaj homefiles/micro.bindings.json /etc/homefiles/micro.bindings.json
