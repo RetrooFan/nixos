@@ -12,15 +12,15 @@
 compare-files -c copy-config-to-system $REPO_DIR/compare-files       /usr/local/bin/compare-files
 compare-files -c copy-config-to-system $REPO_DIR/copy-config-to-home /usr/local/bin/copy-config-to-home
 
-compare-files -c copy-config-to-system $REPO_DIR/micro.bindings.json /etc/micro.bindings.json
-compare-files -c copy-config-to-system $REPO_DIR/micro.settings.json /etc/micro.settings.json
-compare-files -c copy-config-to-system $REPO_DIR/inputrc.local       /etc/inputrc.local
-compare-files -c copy-config-to-system $REPO_DIR/gitconfig           /etc/gitconfig
-
 compare-files -c copy-config-to-system $REPO_DIR/bashrc.root         /root/.bashrc.root
 compare-files -c copy-config-to-system $REPO_DIR/bashrc.local        /etc/bashrc.local
 compare-files -c copy-config-to-system $REPO_DIR/htoprc              /etc/htoprc
 compare-files -c copy-config-to-system $REPO_DIR/lazygit.yml         /etc/lazygit.yml
 compare-files -c copy-config-to-system $REPO_DIR/nanorc              /etc/nanorc
 compare-files -c copy-config-to-system $REPO_DIR/tmux.conf           /etc/tmux.conf
+
+compare-files -c copy-config-to-system $REPO_DIR/gitconfig           /etc/gitconfig
+compare-files -c copy-config-to-system $REPO_DIR/inputrc.local       /etc/inputrc.local
+compare-files -c copy-config-to-system $REPO_DIR/micro.bindings.json /etc/micro.bindings.json
+compare-files -c copy-config-to-system $REPO_DIR/micro.settings.json /etc/micro.settings.json
 compare-files -c copy-config-to-system $REPO_DIR/tmux.conf.local     /etc/tmux.conf.local
