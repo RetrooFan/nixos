@@ -58,20 +58,18 @@ if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
   for ((i = 2; i < ${#HOME_PATHS[@]}; i++)); do
     [ ! -f ${HOME_PATHS[$i]} ] && ln -s ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
   done
-
-  exit 0
-fi
-
-if $LINKS; then
-  cpOrLn() { ln -s "$1" "$2"; }
 else
-  cpOrLn() { cp "$1" "$2"; }
+  if $LINKS; then
+    cpOrLn() { ln -s "$1" "$2"; }
+  else
+    cpOrLn() { cp "$1" "$2"; }
+  fi
+
+  for ((i = 0; i < 2; i++)); do
+    [ ! -f ${HOME_PATHS[$i]} ] && cp     ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
+  done
+
+  for ((i = 2; i < ${#HOME_PATHS[@]}; i++)); do
+    [ ! -f ${HOME_PATHS[$i]} ] && cpOrLn ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
+  done
 fi
-
-for ((i = 0; i < 2; i++)); do
-  [ ! -f ${HOME_PATHS[$i]} ] && cp     ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
-done
-
-for ((i = 2; i < ${#HOME_PATHS[@]}; i++)); do
-  [ ! -f ${HOME_PATHS[$i]} ] && cpOrLn ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
-done
