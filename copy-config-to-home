@@ -37,7 +37,8 @@ echo
 echo "Nadpisano nastepujace pliki:"
 for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
   rm -f ${HOME_PATHS[$i]}.etc
-  cp ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc"
+  cp ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc &&
+  printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc"
   chmod 644 ${HOME_PATHS[$i]}.etc
 done
 echo
