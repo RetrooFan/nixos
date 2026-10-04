@@ -1,0 +1,16 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+	"font_face": "Fira Code",
+	/*"font_size": 20,*/
+	"font_size": 20,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"index_files": true,
+	"word_wrap": false,
+	"gtk_client_side_window_decorations": false,
+	"scroll_speed": 0.0,
+	"theme": "Default Dark.sublime-theme",
+}
