@@ -14,19 +14,10 @@ eval "$REPO_HOME_PATHS_E"
 eval "$SYSTEM_ROOT_PATHS_E"
 eval "$SYSTEM_HOME_PATHS_E"
 
-compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[0]} ${SYSTEM_ROOT_PATHS[0]}
-compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[1]} ${SYSTEM_ROOT_PATHS[1]}
+for ((i = 0; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
+  compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
+done
 
-compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[2]} ${SYSTEM_ROOT_PATHS[2]}
-compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[3]} ${SYSTEM_ROOT_PATHS[3]}
-compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[4]} ${SYSTEM_ROOT_PATHS[4]}
-compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[5]} ${SYSTEM_ROOT_PATHS[5]}
-compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[6]} ${SYSTEM_ROOT_PATHS[6]}
-
-compare-files -c copy-config-to-system ${REPO_HOME_PATHS[0]} ${SYSTEM_HOME_PATHS[0]}
-compare-files -c copy-config-to-system ${REPO_HOME_PATHS[1]} ${SYSTEM_HOME_PATHS[1]}
-compare-files -c copy-config-to-system ${REPO_HOME_PATHS[2]} ${SYSTEM_HOME_PATHS[2]}
-compare-files -c copy-config-to-system ${REPO_HOME_PATHS[3]} ${SYSTEM_HOME_PATHS[3]}
-compare-files -c copy-config-to-system ${REPO_HOME_PATHS[4]} ${SYSTEM_HOME_PATHS[4]}
-compare-files -c copy-config-to-system ${REPO_HOME_PATHS[5]} ${SYSTEM_HOME_PATHS[5]}
-compare-files -c copy-config-to-system ${REPO_HOME_PATHS[6]} ${SYSTEM_HOME_PATHS[6]}
+for ((i = 0; i < ${#REPO_HOME_PATHS[@]}; i++)); do
+  compare-files -c copy-config-to-system ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
+done
