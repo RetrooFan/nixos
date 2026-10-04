@@ -65,9 +65,9 @@ else
   cpOrLn() { cp "$1" "$2"; }
 fi
 
-[ ! -f $FILE1 ] && cpOrLn $FILE1.etc $FILE1
+[ ! -f $FILE1 ] && cp     $FILE1.etc $FILE1
 [ ! -f $FILE2 ] && cpOrLn $FILE2.etc $FILE2
 [ ! -f $FILE3 ] && cpOrLn $FILE3.etc $FILE3
 [ ! -f $FILE4 ] && cpOrLn $FILE4.etc $FILE4
-[ ! -f $FILE5 ] && cpOrLn $FILE5.etc $FILE5
+[ ! -f $FILE5 ] && cp     $FILE5.etc $FILE5
 [ ! -f $FILE6 ] && cpOrLn $FILE6.etc $FILE6
