@@ -22,9 +22,11 @@ FILE3=~/.config/micro/bindings.json
 FILE4=~/.config/micro/settings.json
 FILE5=~/.tmux.conf
 FILE6=~/.config/Code/User/settings.json
+FILE7=~/.config/lazygit/config.yml
 
 mkdir -p ~/.config/micro/
 mkdir -p ~/.config/Code/User/
+mkdir -p ~/.config/lazygit
 
 rm -f $FILE1.etc
 rm -f $FILE2.etc
@@ -32,6 +34,7 @@ rm -f $FILE3.etc
 rm -f $FILE4.etc
 rm -f $FILE5.etc
 rm -f $FILE6.etc
+rm -f $FILE7.etc
 
 echo
 echo "Nadpisano nastepujace pliki:"
@@ -41,6 +44,7 @@ cp /etc/homefiles/micro.bindings.json  $FILE3.etc && printf "%-35s -> %-40s\n" "
 cp /etc/homefiles/micro.settings.json  $FILE4.etc && printf "%-35s -> %-40s\n" "/etc/homefiles/micro.settings.json"  "$FILE4.etc"
 cp /etc/homefiles/tmux.conf            $FILE5.etc && printf "%-35s -> %-40s\n" "/etc/homefiles/tmux.conf"            "$FILE5.etc"
 cp /etc/homefiles/vscode.settings.json $FILE6.etc && printf "%-35s -> %-40s\n" "/etc/homefiles/vscode.settings.json" "$FILE6.etc"
+cp /etc/homefiles/lazygit.yml          $FILE7.etc && printf "%-35s -> %-40s\n" "/etc/homefiles/lazygit.yml"          "$FILE7.etc"
 echo
 
 chmod 644 $FILE1.etc
@@ -49,6 +53,7 @@ chmod 644 $FILE3.etc
 chmod 644 $FILE4.etc
 chmod 644 $FILE5.etc
 chmod 644 $FILE6.etc
+chmod 644 $FILE7.etc
 
 if $DELETE; then
   # rm -f $FILE1
@@ -57,6 +62,7 @@ if $DELETE; then
   rm -f $FILE4
   # rm -f $FILE5
   rm -f $FILE6
+  rm -f $FILE7
 fi
 
 if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
@@ -66,6 +72,7 @@ if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
   [ ! -f $FILE4 ] && ln -s $REPO_DIR/homefiles/micro.settings.json  $FILE4
   [ ! -f $FILE5 ] && cp    $REPO_DIR/homefiles/tmux.conf            $FILE5
   [ ! -f $FILE6 ] && ln -s $REPO_DIR/homefiles/vscode.settings.json $FILE6
+  [ ! -f $FILE7 ] && ln -s $REPO_DIR/homefiles/lazygit.yml          $FILE7
 
   exit 0
 fi
@@ -82,3 +89,4 @@ fi
 [ ! -f $FILE4 ] && cpOrLn $FILE4.etc $FILE4
 [ ! -f $FILE5 ] && cp     $FILE5.etc $FILE5
 [ ! -f $FILE6 ] && cpOrLn $FILE6.etc $FILE6
+[ ! -f $FILE7 ] && cpOrLn $FILE7.etc $FILE7

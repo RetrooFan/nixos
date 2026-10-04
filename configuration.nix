@@ -10,7 +10,6 @@
 
       "bashrc.local".text = builtins.readFile ./bashrc.local;
       "htoprc".text =       builtins.readFile ./htoprc;
-      "lazygit.yml".text =  builtins.readFile ./lazygit.yml;
       "tmux.conf".text =    builtins.readFile ./tmux.conf;
 
       "homefiles/gitconfig".text =            builtins.readFile ./homefiles/gitconfig;
@@ -19,6 +18,7 @@
       "homefiles/micro.settings.json".text =  builtins.readFile ./homefiles/micro.settings.json;
       "homefiles/tmux.conf".text =            builtins.readFile ./homefiles/tmux.conf;
       "homefiles/vscode.settings.json".text = builtins.readFile ./homefiles/vscode.settings.json;
+      "homefiles/lazygit.yml".text =          builtins.readFile ./homefiles/lazygit.yml;
     };
 
     interactiveShellInit = ''

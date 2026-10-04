@@ -17,7 +17,6 @@ HISTFILESIZE=20000
 HISTCONTROL=ignoreboth
 
 stty -ixon
-export LG_CONFIG_FILE="/etc/lazygit.yml,$HOME/.config/lazygit/config.yml"
 export EDITOR=micro
 export CURRENT_USER="$(whoami)"
 
@@ -86,6 +85,7 @@ compare-files -c copy-config-to-home /etc/homefiles/micro.bindings.json  ~/.conf
 compare-files -c copy-config-to-home /etc/homefiles/micro.settings.json  ~/.config/micro/settings.json.etc
 compare-files -c copy-config-to-home /etc/homefiles/tmux.conf            ~/.tmux.conf.etc
 compare-files -c copy-config-to-home /etc/homefiles/vscode.settings.json ~/.config/Code/User/settings.json.etc
+compare-files -c copy-config-to-home /etc/homefiles/lazygit.yml          ~/.config/lazygit/config.yml
 
 # ------------------------------------------------
 

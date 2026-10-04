@@ -33,7 +33,6 @@ echo
 
 porownaj bashrc.local /etc/bashrc.local
 porownaj htoprc       /etc/htoprc
-porownaj lazygit.yml  /etc/lazygit.yml
 porownaj nanorc       /etc/nanorc
 porownaj tmux.conf    /etc/tmux.conf
 
@@ -48,5 +47,6 @@ porownaj homefiles/micro.bindings.json  /etc/homefiles/micro.bindings.json
 porownaj homefiles/micro.settings.json  /etc/homefiles/micro.settings.json
 porownaj homefiles/tmux.conf            /etc/homefiles/tmux.conf
 porownaj homefiles/vscode.settings.json /etc/homefiles/vscode.settings.json
+porownaj homefiles/lazygit.yml          /etc/homefiles/lazygit.yml
 
 echo
