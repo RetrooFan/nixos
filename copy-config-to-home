@@ -20,6 +20,14 @@ eval "$REPO_HOME_PATHS_E"
 eval "$SYSTEM_HOME_PATHS_E"
 eval "$HOME_PATHS_E"
 
+if [ "${#HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" -o "${#HOME_PATHS[@]}" != "${#REPO_HOME_PATHS[@]}" ]; then
+  echo
+  echo "TABLICE MAJA ROZNE DLUGOSCI!"
+  echo
+
+  exit 0
+fi
+
 mkdir -p ~/.config/micro/
 mkdir -p ~/.config/Code/User/
 mkdir -p ~/.config/lazygit
