@@ -14,8 +14,8 @@
 
       "homefiles/gitconfig".text =            builtins.readFile ./homefiles/gitconfig;
       "homefiles/tmux.conf".text =            builtins.readFile ./homefiles/tmux.conf;
-      "homefiles/inputrc".text =              builtins.readFile ./homefiles/inputrc;
       "homefiles/alacritty.toml".text =       builtins.readFile ./homefiles/alacritty.toml;
+      "homefiles/inputrc".text =              builtins.readFile ./homefiles/inputrc;
       "homefiles/lazygit.yml".text =          builtins.readFile ./homefiles/lazygit.yml;
       "homefiles/micro.bindings.json".text =  builtins.readFile ./homefiles/micro.bindings.json;
       "homefiles/micro.settings.json".text =  builtins.readFile ./homefiles/micro.settings.json;
