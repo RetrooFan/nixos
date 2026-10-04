@@ -20,7 +20,7 @@
       "homefiles/lazygit.yml".text =         builtins.readFile ./homefiles/lazygit.yml;
       "homefiles/micro.bindings.json".text = builtins.readFile ./homefiles/micro.bindings.json;
       "homefiles/micro.settings.json".text = builtins.readFile ./homefiles/micro.settings.json;
-      "homefiles/sublime.json".text =        builtins.readFile ./homefiles/Preferences.sublime-settings;
+      "homefiles/sublime.json".text =        builtins.readFile ./homefiles/sublime.json;
       "homefiles/vscode.json".text =         builtins.readFile ./homefiles/vscode.json;
     };
 
