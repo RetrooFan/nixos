@@ -59,7 +59,9 @@ if $DELETE; then
   rm -f $FILE6
 fi
 
-if [ "$(whoami)" == "$REPO_USER" ]; then
+CURRENT_USER="$(whoami)"
+
+if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
   [ ! -f $FILE1 ] && cp    $REPO_DIR/homefiles/gitconfig            $FILE1
   [ ! -f $FILE2 ] && ln -s $REPO_DIR/homefiles/inputrc              $FILE2
   [ ! -f $FILE3 ] && ln -s $REPO_DIR/homefiles/micro.bindings.json  $FILE3
