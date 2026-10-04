@@ -21,6 +21,7 @@ compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[2]} ${SYSTEM_ROOT_PATHS
 compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[3]} ${SYSTEM_ROOT_PATHS[3]}
 compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[4]} ${SYSTEM_ROOT_PATHS[4]}
 compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[5]} ${SYSTEM_ROOT_PATHS[5]}
+compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[6]} ${SYSTEM_ROOT_PATHS[6]}
 
 compare-files -c copy-config-to-system ${REPO_HOME_PATHS[0]} ${SYSTEM_HOME_PATHS[0]}
 compare-files -c copy-config-to-system ${REPO_HOME_PATHS[1]} ${SYSTEM_HOME_PATHS[1]}
@@ -29,4 +30,3 @@ compare-files -c copy-config-to-system ${REPO_HOME_PATHS[3]} ${SYSTEM_HOME_PATHS
 compare-files -c copy-config-to-system ${REPO_HOME_PATHS[4]} ${SYSTEM_HOME_PATHS[4]}
 compare-files -c copy-config-to-system ${REPO_HOME_PATHS[5]} ${SYSTEM_HOME_PATHS[5]}
 compare-files -c copy-config-to-system ${REPO_HOME_PATHS[6]} ${SYSTEM_HOME_PATHS[6]}
-compare-files -c copy-config-to-system ${REPO_HOME_PATHS[7]} ${SYSTEM_HOME_PATHS[7]}

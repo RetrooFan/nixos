@@ -34,13 +34,13 @@ rm -f ${HOME_PATHS[6]}.etc
 
 echo
 echo "Nadpisano nastepujace pliki:"
-cp ${SYSTEM_HOME_PATHS[1]} ${HOME_PATHS[0]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[1]}" "${HOME_PATHS[0]}.etc"
-cp ${SYSTEM_HOME_PATHS[2]} ${HOME_PATHS[1]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[2]}" "${HOME_PATHS[1]}.etc"
-cp ${SYSTEM_HOME_PATHS[3]} ${HOME_PATHS[2]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[3]}" "${HOME_PATHS[2]}.etc"
-cp ${SYSTEM_HOME_PATHS[4]} ${HOME_PATHS[3]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[4]}" "${HOME_PATHS[3]}.etc"
-cp ${SYSTEM_HOME_PATHS[5]} ${HOME_PATHS[4]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[5]}" "${HOME_PATHS[4]}.etc"
-cp ${SYSTEM_HOME_PATHS[6]} ${HOME_PATHS[5]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[6]}" "${HOME_PATHS[5]}.etc"
-cp ${SYSTEM_HOME_PATHS[7]} ${HOME_PATHS[6]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[7]}" "${HOME_PATHS[6]}.etc"
+cp ${SYSTEM_HOME_PATHS[0]} ${HOME_PATHS[0]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[0]}" "${HOME_PATHS[0]}.etc"
+cp ${SYSTEM_HOME_PATHS[1]} ${HOME_PATHS[1]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[1]}" "${HOME_PATHS[1]}.etc"
+cp ${SYSTEM_HOME_PATHS[2]} ${HOME_PATHS[2]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[2]}" "${HOME_PATHS[2]}.etc"
+cp ${SYSTEM_HOME_PATHS[3]} ${HOME_PATHS[3]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[3]}" "${HOME_PATHS[3]}.etc"
+cp ${SYSTEM_HOME_PATHS[4]} ${HOME_PATHS[4]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[4]}" "${HOME_PATHS[4]}.etc"
+cp ${SYSTEM_HOME_PATHS[5]} ${HOME_PATHS[5]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[5]}" "${HOME_PATHS[5]}.etc"
+cp ${SYSTEM_HOME_PATHS[6]} ${HOME_PATHS[6]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[6]}" "${HOME_PATHS[6]}.etc"
 echo
 
 chmod 644 ${HOME_PATHS[0]}.etc
@@ -62,13 +62,13 @@ if $DELETE; then
 fi
 
 if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
-  [ ! -f ${HOME_PATHS[0]} ] && cp    ${REPO_HOME_PATHS[1]} ${HOME_PATHS[0]}
-  [ ! -f ${HOME_PATHS[1]} ] && ln -s ${REPO_HOME_PATHS[2]} ${HOME_PATHS[1]}
-  [ ! -f ${HOME_PATHS[2]} ] && ln -s ${REPO_HOME_PATHS[3]} ${HOME_PATHS[2]}
-  [ ! -f ${HOME_PATHS[3]} ] && ln -s ${REPO_HOME_PATHS[4]} ${HOME_PATHS[3]}
-  [ ! -f ${HOME_PATHS[4]} ] && cp    ${REPO_HOME_PATHS[5]} ${HOME_PATHS[4]}
-  [ ! -f ${HOME_PATHS[5]} ] && ln -s ${REPO_HOME_PATHS[6]} ${HOME_PATHS[5]}
-  [ ! -f ${HOME_PATHS[6]} ] && ln -s ${REPO_HOME_PATHS[7]} ${HOME_PATHS[6]}
+  [ ! -f ${HOME_PATHS[0]} ] && cp    ${REPO_HOME_PATHS[0]} ${HOME_PATHS[0]}
+  [ ! -f ${HOME_PATHS[1]} ] && ln -s ${REPO_HOME_PATHS[1]} ${HOME_PATHS[1]}
+  [ ! -f ${HOME_PATHS[2]} ] && ln -s ${REPO_HOME_PATHS[2]} ${HOME_PATHS[2]}
+  [ ! -f ${HOME_PATHS[3]} ] && ln -s ${REPO_HOME_PATHS[3]} ${HOME_PATHS[3]}
+  [ ! -f ${HOME_PATHS[4]} ] && cp    ${REPO_HOME_PATHS[4]} ${HOME_PATHS[4]}
+  [ ! -f ${HOME_PATHS[5]} ] && ln -s ${REPO_HOME_PATHS[5]} ${HOME_PATHS[5]}
+  [ ! -f ${HOME_PATHS[6]} ] && ln -s ${REPO_HOME_PATHS[6]} ${HOME_PATHS[6]}
 
   exit 0
 fi

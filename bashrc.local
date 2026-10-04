@@ -22,13 +22,13 @@ export CURRENT_USER="$(whoami)"
 REPO_ROOT_PATHS=(
   $REPO_DIR/compare-files
   $REPO_DIR/copy-config-to-home
+  $REPO_DIR/homefiles/bashrc.root
   $REPO_DIR/bashrc.local
   $REPO_DIR/htoprc
   $REPO_DIR/nanorc
   $REPO_DIR/tmux.conf
 )
 REPO_HOME_PATHS=(
-  $REPO_DIR/homefiles/bashrc.root
   $REPO_DIR/homefiles/gitconfig
   $REPO_DIR/homefiles/inputrc
   $REPO_DIR/homefiles/micro.bindings.json
@@ -40,13 +40,13 @@ REPO_HOME_PATHS=(
 SYSTEM_ROOT_PATHS=(
   /usr/local/bin/compare-files
   /usr/local/bin/copy-config-to-home
+  /root/.bashrc.root
   /etc/bashrc.local
   /etc/htoprc
   /etc/nanorc
   /etc/tmux.conf
 )
 SYSTEM_HOME_PATHS=(
-  /root/.bashrc.root
   /etc/homefiles/gitconfig
   /etc/homefiles/inputrc
   /etc/homefiles/micro.bindings.json
@@ -130,13 +130,13 @@ trap after_exit EXIT
 
 # ------------------------------------------------
 
-compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[1]} ${HOME_PATHS[0]}.etc
-compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[2]} ${HOME_PATHS[1]}.etc
-compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[3]} ${HOME_PATHS[2]}.etc
-compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[4]} ${HOME_PATHS[3]}.etc
-compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[5]} ${HOME_PATHS[4]}.etc
-compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[6]} ${HOME_PATHS[5]}.etc
-compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[7]} ${HOME_PATHS[6]}.etc
+compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[0]} ${HOME_PATHS[0]}.etc
+compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[1]} ${HOME_PATHS[1]}.etc
+compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[2]} ${HOME_PATHS[2]}.etc
+compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[3]} ${HOME_PATHS[3]}.etc
+compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[4]} ${HOME_PATHS[4]}.etc
+compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[5]} ${HOME_PATHS[5]}.etc
+compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[6]} ${HOME_PATHS[6]}.etc
 
 # ------------------------------------------------
 
