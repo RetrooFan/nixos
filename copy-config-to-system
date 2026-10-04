@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source $(dirname "${BASH_SOURCE[0]}")/file-arrays
+
 eval "$REPO_ROOT_PATHS_E"
 eval "$REPO_HOME_PATHS_E"
 eval "$SYSTEM_ROOT_PATHS_E"

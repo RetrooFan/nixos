@@ -12,6 +12,8 @@
 # ------------------------------------------------
 # ------------------------------------------------
 
+source /etc/file-arrays
+
 HISTSIZE=10000
 HISTFILESIZE=20000
 HISTCONTROL=ignoreboth
@@ -19,63 +21,6 @@ HISTCONTROL=ignoreboth
 stty -ixon
 export EDITOR=micro
 export CURRENT_USER="$(whoami)"
-REPO_ROOT_PATHS=(
-  $REPO_DIR/compare-files
-  $REPO_DIR/copy-config-to-home
-  $REPO_DIR/bashrc.root
-  $REPO_DIR/bashrc.local
-  $REPO_DIR/htoprc
-  $REPO_DIR/nanorc
-  $REPO_DIR/tmux.conf
-)
-SYSTEM_ROOT_PATHS=(
-  /usr/local/bin/compare-files
-  /usr/local/bin/copy-config-to-home
-  /root/.bashrc.root
-  /etc/bashrc.local
-  /etc/htoprc
-  /etc/nanorc
-  /etc/tmux.conf
-)
-REPO_HOME_PATHS=(
-  $REPO_DIR/homefiles/gitconfig
-  $REPO_DIR/homefiles/tmux.conf
-  $REPO_DIR/homefiles/alacritty.toml
-  $REPO_DIR/homefiles/inputrc
-  $REPO_DIR/homefiles/lazygit.yml
-  $REPO_DIR/homefiles/micro.bindings.json
-  $REPO_DIR/homefiles/micro.settings.json
-  $REPO_DIR/homefiles/sublime.json
-  $REPO_DIR/homefiles/vscode.json
-)
-SYSTEM_HOME_PATHS=(
-  /etc/homefiles/gitconfig
-  /etc/homefiles/tmux.conf
-  /etc/homefiles/alacritty.toml
-  /etc/homefiles/inputrc
-  /etc/homefiles/lazygit.yml
-  /etc/homefiles/micro.bindings.json
-  /etc/homefiles/micro.settings.json
-  /etc/homefiles/sublime.json
-  /etc/homefiles/vscode.json
-)
-HOME_PATHS=(
-  ~/.gitconfig
-  ~/.tmux.conf
-  ~/.config/alacritty/alacritty.toml
-  ~/.inputrc
-  ~/.config/lazygit/config.yml
-  ~/.config/micro/bindings.json
-  ~/.config/micro/settings.json
-  ~/.config/sublime-text/Packages/User/Preferences.sublime-settings
-  ~/.config/Code/User/settings.json
-)
-
-export REPO_ROOT_PATHS_E=$(declare -p REPO_ROOT_PATHS)
-export REPO_HOME_PATHS_E=$(declare -p REPO_HOME_PATHS)
-export SYSTEM_ROOT_PATHS_E=$(declare -p SYSTEM_ROOT_PATHS)
-export SYSTEM_HOME_PATHS_E=$(declare -p SYSTEM_HOME_PATHS)
-export HOME_PATHS_E=$(declare -p HOME_PATHS)
 
 alias -- grep='grep --color=auto'
 alias -- fgrep='fgrep --color=auto'
