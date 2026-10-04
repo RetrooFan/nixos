@@ -67,7 +67,7 @@ if [ "$(whoami)" == "$REPO_USER" ]; then
   [ ! -f $FILE5 ] && cp    $REPO_DIR/homefiles/tmux.conf            $FILE5
   [ ! -f $FILE6 ] && ln -s $REPO_DIR/homefiles/vscode.settings.json $FILE6
 
-  return
+  exit 0
 fi
 
 if $LINKS; then
