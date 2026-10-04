@@ -22,7 +22,7 @@ export CURRENT_USER="$(whoami)"
 REPO_ROOT_PATHS=(
   $REPO_DIR/compare-files
   $REPO_DIR/copy-config-to-home
-  $REPO_DIR/homefiles/bashrc.root
+  $REPO_DIR/bashrc.root
   $REPO_DIR/bashrc.local
   $REPO_DIR/htoprc
   $REPO_DIR/nanorc
