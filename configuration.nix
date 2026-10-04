@@ -8,9 +8,9 @@
     etc = {
       "k3s-manifests/traefik-dashboard-config.yaml".text = builtins.readFile ./traefik-dashboard-config.yaml;
 
-      "bashrc.local".text = builtins.readFile ./bashrc.local;
-      "htoprc".text =       builtins.readFile ./htoprc;
-      "tmux.conf".text =    builtins.readFile ./tmux.conf;
+      "bashrc.local".text =                   builtins.readFile ./bashrc.local;
+      "htoprc".text =                         builtins.readFile ./htoprc;
+      "tmux.conf".text =                      builtins.readFile ./tmux.conf;
 
       "homefiles/gitconfig".text =            builtins.readFile ./homefiles/gitconfig;
       "homefiles/tmux.conf".text =            builtins.readFile ./homefiles/tmux.conf;
@@ -19,6 +19,7 @@
       "homefiles/lazygit.yml".text =          builtins.readFile ./homefiles/lazygit.yml;
       "homefiles/micro.bindings.json".text =  builtins.readFile ./homefiles/micro.bindings.json;
       "homefiles/micro.settings.json".text =  builtins.readFile ./homefiles/micro.settings.json;
+      "homefiles/sublime.json".text =         builtins.readFile ./homefiles/Preferences.sublime-settings;
       "homefiles/vscode.settings.json".text = builtins.readFile ./homefiles/vscode.settings.json;
     };
 
