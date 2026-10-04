@@ -30,8 +30,8 @@ fi
 
 mkdir -p ~/.config/micro/
 mkdir -p ~/.config/Code/User/
-mkdir -p ~/.config/lazygit
-mkdir -p ~/.config/alacritty
+mkdir -p ~/.config/lazygit/
+mkdir -p ~/.config/alacritty/
 
 echo
 echo "Nadpisano nastepujace pliki:"
