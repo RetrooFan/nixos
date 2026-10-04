@@ -43,16 +43,13 @@ for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
 done
 echo
 
-for ((i = 2; i < ${#HOME_PATHS[@]}; i++)); do
-  rm -f ${HOME_PATHS[$i]}
-done
-
 if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
   for ((i = 0; i < 2; i++)); do
     [ ! -f ${HOME_PATHS[$i]} ] && cp    ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
   done
 
   for ((i = 2; i < ${#HOME_PATHS[@]}; i++)); do
+    rm -f ${HOME_PATHS[$i]}
     [ ! -f ${HOME_PATHS[$i]} ] && ln -s ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
   done
 
