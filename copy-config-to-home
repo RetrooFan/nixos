@@ -24,32 +24,14 @@ mkdir -p ~/.config/micro/
 mkdir -p ~/.config/Code/User/
 mkdir -p ~/.config/lazygit
 
-rm -f ${HOME_PATHS[0]}.etc
-rm -f ${HOME_PATHS[1]}.etc
-rm -f ${HOME_PATHS[2]}.etc
-rm -f ${HOME_PATHS[3]}.etc
-rm -f ${HOME_PATHS[4]}.etc
-rm -f ${HOME_PATHS[5]}.etc
-rm -f ${HOME_PATHS[6]}.etc
-
 echo
 echo "Nadpisano nastepujace pliki:"
-cp ${SYSTEM_HOME_PATHS[0]} ${HOME_PATHS[0]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[0]}" "${HOME_PATHS[0]}.etc"
-cp ${SYSTEM_HOME_PATHS[1]} ${HOME_PATHS[1]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[1]}" "${HOME_PATHS[1]}.etc"
-cp ${SYSTEM_HOME_PATHS[2]} ${HOME_PATHS[2]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[2]}" "${HOME_PATHS[2]}.etc"
-cp ${SYSTEM_HOME_PATHS[3]} ${HOME_PATHS[3]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[3]}" "${HOME_PATHS[3]}.etc"
-cp ${SYSTEM_HOME_PATHS[4]} ${HOME_PATHS[4]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[4]}" "${HOME_PATHS[4]}.etc"
-cp ${SYSTEM_HOME_PATHS[5]} ${HOME_PATHS[5]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[5]}" "${HOME_PATHS[5]}.etc"
-cp ${SYSTEM_HOME_PATHS[6]} ${HOME_PATHS[6]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[6]}" "${HOME_PATHS[6]}.etc"
+for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
+  rm -f ${HOME_PATHS[$i]}.etc
+  cp ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc"
+  chmod 644 ${HOME_PATHS[$i]}.etc
+done
 echo
-
-chmod 644 ${HOME_PATHS[0]}.etc
-chmod 644 ${HOME_PATHS[1]}.etc
-chmod 644 ${HOME_PATHS[2]}.etc
-chmod 644 ${HOME_PATHS[3]}.etc
-chmod 644 ${HOME_PATHS[4]}.etc
-chmod 644 ${HOME_PATHS[5]}.etc
-chmod 644 ${HOME_PATHS[6]}.etc
 
 if $DELETE; then
   # rm -f ${HOME_PATHS[0]}
