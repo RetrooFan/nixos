@@ -39,28 +39,28 @@ SYSTEM_ROOT_PATHS=(
 )
 REPO_HOME_PATHS=(
   $REPO_DIR/homefiles/gitconfig
+  $REPO_DIR/homefiles/tmux.conf
   $REPO_DIR/homefiles/inputrc
   $REPO_DIR/homefiles/micro.bindings.json
   $REPO_DIR/homefiles/micro.settings.json
-  $REPO_DIR/homefiles/tmux.conf
   $REPO_DIR/homefiles/vscode.settings.json
   $REPO_DIR/homefiles/lazygit.yml
 )
 SYSTEM_HOME_PATHS=(
   /etc/homefiles/gitconfig
+  /etc/homefiles/tmux.conf
   /etc/homefiles/inputrc
   /etc/homefiles/micro.bindings.json
   /etc/homefiles/micro.settings.json
-  /etc/homefiles/tmux.conf
   /etc/homefiles/vscode.settings.json
   /etc/homefiles/lazygit.yml
 )
 HOME_PATHS=(
   ~/.gitconfig
+  ~/.tmux.conf
   ~/.inputrc
   ~/.config/micro/bindings.json
   ~/.config/micro/settings.json
-  ~/.tmux.conf
   ~/.config/Code/User/settings.json
   ~/.config/lazygit/config.yml
 )
