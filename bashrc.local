@@ -2,8 +2,8 @@
 # ------------------------------------------------
 # ------------------------------------------------
 
-# REPO_USER="user"
-# REPO_DIR="directory"
+# export REPO_USER="user"
+# export REPO_DIR="directory"
 
 # if [ -f /etc/bashrc.local ]; then
 #   source /etc/bashrc.local
