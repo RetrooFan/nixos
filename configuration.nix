@@ -22,8 +22,8 @@
     };
 
     interactiveShellInit = ''
-      REPO_USER="nixos"
-      REPO_DIR="/etc/nixos"
+      export REPO_USER="nixos"
+      export REPO_DIR="/etc/nixos"
     '';
   };
 
