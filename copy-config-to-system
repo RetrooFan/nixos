@@ -26,24 +26,19 @@ porownaj() {
 }
 
 echo
-
 for ((i = 0; i < 2; i++)); do
   porownaj ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
   chmod a+x                       ${SYSTEM_ROOT_PATHS[$i]}
 done
-
 echo
 
 for ((i = 2; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
   porownaj ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
 done
-
 echo
 
 mkdir -p /etc/homefiles/
-
 for ((i = 0; i < ${#REPO_HOME_PATHS[@]}; i++)); do
   porownaj ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
 done
-
 echo
