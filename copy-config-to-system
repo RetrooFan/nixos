@@ -15,33 +15,23 @@ if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PAT
   exit 0
 fi
 
-porownaj() {
-  uprawnienia_pliku_docelowego="$(ls -l $2 --color=auto 2>/dev/null | awk '{print $1, $3, $4}')"
-
-  printf "%-55s -> %-40s" "$1" "$2"
-  compare-files $1 $2 && printf "%-21s%-6s\n" "$uprawnienia_pliku_docelowego" "1==2" && return
-  printf "%-21s" "$uprawnienia_pliku_docelowego"
-  [ -f "$2" ] && printf "%-6s" "1!=2" || printf "%-10s" "2 ∈ Ø"
-
-  read -p "[ENTER]"
-
-  micro $1 $2
-}
-
 echo
-for ((i = 0; i < 2; i++)); do
-  porownaj ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
-  chmod a+x                       ${SYSTEM_ROOT_PATHS[$i]}
+for ((i = 0; i < 3; i++)); do
+  compare-files-dialog ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} ||
+  micro                ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
+  chmod a+x                                   ${SYSTEM_ROOT_PATHS[$i]}
 done
 echo
 
-for ((i = 2; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
-  porownaj ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
+for ((i = 3; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
+  compare-files-dialog ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} ||
+  micro                ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
 done
 echo
 
 mkdir -p /etc/homefiles/
 for ((i = 0; i < ${#REPO_HOME_PATHS[@]}; i++)); do
-  porownaj ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
+  compare-files-dialog ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} ||
+  micro                ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
 done
 echo
