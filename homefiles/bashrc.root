@@ -9,19 +9,24 @@
 # ------------------------------------------------
 # ------------------------------------------------
 
-compare-files -c copy-config-to-system $REPO_DIR/compare-files       /usr/local/bin/compare-files
-compare-files -c copy-config-to-system $REPO_DIR/copy-config-to-home /usr/local/bin/copy-config-to-home
+eval "$REPO_ROOT_PATHS_E"
+eval "$REPO_HOME_PATHS_E"
+eval "$SYSTEM_ROOT_PATHS_E"
+eval "$SYSTEM_HOME_PATHS_E"
 
-compare-files -c copy-config-to-system $REPO_DIR/bashrc.local /etc/bashrc.local
-compare-files -c copy-config-to-system $REPO_DIR/htoprc       /etc/htoprc
-compare-files -c copy-config-to-system $REPO_DIR/nanorc       /etc/nanorc
-compare-files -c copy-config-to-system $REPO_DIR/tmux.conf    /etc/tmux.conf
+compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[0]} ${SYSTEM_ROOT_PATHS[0]}
+compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[1]} ${SYSTEM_ROOT_PATHS[1]}
 
-compare-files -c copy-config-to-system $REPO_DIR/homefiles/bashrc.root          /root/.bashrc.root
-compare-files -c copy-config-to-system $REPO_DIR/homefiles/gitconfig            /etc/homefiles/gitconfig
-compare-files -c copy-config-to-system $REPO_DIR/homefiles/inputrc              /etc/homefiles/inputrc
-compare-files -c copy-config-to-system $REPO_DIR/homefiles/micro.bindings.json  /etc/homefiles/micro.bindings.json
-compare-files -c copy-config-to-system $REPO_DIR/homefiles/micro.settings.json  /etc/homefiles/micro.settings.json
-compare-files -c copy-config-to-system $REPO_DIR/homefiles/tmux.conf            /etc/homefiles/tmux.conf
-compare-files -c copy-config-to-system $REPO_DIR/homefiles/vscode.settings.json /etc/homefiles/vscode.settings.json
-compare-files -c copy-config-to-system $REPO_DIR/homefiles/lazygit.yml          /etc/homefiles/lazygit.yml
+compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[2]} ${SYSTEM_ROOT_PATHS[2]}
+compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[3]} ${SYSTEM_ROOT_PATHS[3]}
+compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[4]} ${SYSTEM_ROOT_PATHS[4]}
+compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[5]} ${SYSTEM_ROOT_PATHS[5]}
+
+compare-files -c copy-config-to-system ${REPO_HOME_PATHS[0]} ${SYSTEM_HOME_PATHS[0]}
+compare-files -c copy-config-to-system ${REPO_HOME_PATHS[1]} ${SYSTEM_HOME_PATHS[1]}
+compare-files -c copy-config-to-system ${REPO_HOME_PATHS[2]} ${SYSTEM_HOME_PATHS[2]}
+compare-files -c copy-config-to-system ${REPO_HOME_PATHS[3]} ${SYSTEM_HOME_PATHS[3]}
+compare-files -c copy-config-to-system ${REPO_HOME_PATHS[4]} ${SYSTEM_HOME_PATHS[4]}
+compare-files -c copy-config-to-system ${REPO_HOME_PATHS[5]} ${SYSTEM_HOME_PATHS[5]}
+compare-files -c copy-config-to-system ${REPO_HOME_PATHS[6]} ${SYSTEM_HOME_PATHS[6]}
+compare-files -c copy-config-to-system ${REPO_HOME_PATHS[7]} ${SYSTEM_HOME_PATHS[7]}
