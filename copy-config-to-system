@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
+eval "$REPO_ROOT_PATHS_E"
+eval "$REPO_HOME_PATHS_E"
+eval "$SYSTEM_ROOT_PATHS_E"
+eval "$SYSTEM_HOME_PATHS_E"
+
 porownaj() {
   uprawnienia_pliku_docelowego="$(ls -l $2 --color=auto 2>/dev/null | awk '{print $1, $3, $4}')"
 
-  printf "%-30s -> %-40s" "$1" "$2"
+  printf "%-55s -> %-40s" "$1" "$2"
 
   compare-files $1 $2 &&
   printf "%-21s%-6s\n" "$uprawnienia_pliku_docelowego" "1==2" &&
@@ -20,33 +25,31 @@ porownaj() {
   micro $1 $2
 }
 
-cd "$(dirname "${BASH_SOURCE[0]}")"
+echo
 
-printf "\n%s:\n\n" "$(pwd)"
-
-porownaj compare-files       /usr/local/bin/compare-files
-chmod a+x                    /usr/local/bin/compare-files
-porownaj copy-config-to-home /usr/local/bin/copy-config-to-home
-chmod a+x                    /usr/local/bin/copy-config-to-home
+porownaj ${REPO_ROOT_PATHS[0]} ${SYSTEM_ROOT_PATHS[0]}
+chmod a+x                      ${SYSTEM_ROOT_PATHS[0]}
+porownaj ${REPO_ROOT_PATHS[1]} ${SYSTEM_ROOT_PATHS[1]}
+chmod a+x                      ${SYSTEM_ROOT_PATHS[1]}
 
 echo
 
-porownaj bashrc.local /etc/bashrc.local
-porownaj htoprc       /etc/htoprc
-porownaj nanorc       /etc/nanorc
-porownaj tmux.conf    /etc/tmux.conf
+porownaj ${REPO_ROOT_PATHS[2]} ${SYSTEM_ROOT_PATHS[2]}
+porownaj ${REPO_ROOT_PATHS[3]} ${SYSTEM_ROOT_PATHS[3]}
+porownaj ${REPO_ROOT_PATHS[4]} ${SYSTEM_ROOT_PATHS[4]}
+porownaj ${REPO_ROOT_PATHS[5]} ${SYSTEM_ROOT_PATHS[5]}
 
 echo
 
 mkdir -p /etc/homefiles/
 
-porownaj homefiles/bashrc.root          /root/.bashrc.root
-porownaj homefiles/gitconfig            /etc/homefiles/gitconfig
-porownaj homefiles/inputrc              /etc/homefiles/inputrc
-porownaj homefiles/micro.bindings.json  /etc/homefiles/micro.bindings.json
-porownaj homefiles/micro.settings.json  /etc/homefiles/micro.settings.json
-porownaj homefiles/tmux.conf            /etc/homefiles/tmux.conf
-porownaj homefiles/vscode.settings.json /etc/homefiles/vscode.settings.json
-porownaj homefiles/lazygit.yml          /etc/homefiles/lazygit.yml
+porownaj ${REPO_HOME_PATHS[0]} ${SYSTEM_HOME_PATHS[0]}
+porownaj ${REPO_HOME_PATHS[1]} ${SYSTEM_HOME_PATHS[1]}
+porownaj ${REPO_HOME_PATHS[2]} ${SYSTEM_HOME_PATHS[2]}
+porownaj ${REPO_HOME_PATHS[3]} ${SYSTEM_HOME_PATHS[3]}
+porownaj ${REPO_HOME_PATHS[4]} ${SYSTEM_HOME_PATHS[4]}
+porownaj ${REPO_HOME_PATHS[5]} ${SYSTEM_HOME_PATHS[5]}
+porownaj ${REPO_HOME_PATHS[6]} ${SYSTEM_HOME_PATHS[6]}
+porownaj ${REPO_HOME_PATHS[7]} ${SYSTEM_HOME_PATHS[7]}
 
 echo
