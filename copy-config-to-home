@@ -59,6 +59,17 @@ if $DELETE; then
   rm -f $FILE6
 fi
 
+if [ "$(whoami)" == "$REPO_USER" ]; then
+  [ ! -f $FILE1 ] && cp    $REPO_DIR/homefiles/gitconfig            $FILE1
+  [ ! -f $FILE2 ] && ln -s $REPO_DIR/homefiles/inputrc              $FILE2
+  [ ! -f $FILE3 ] && ln -s $REPO_DIR/homefiles/micro.bindings.json  $FILE3
+  [ ! -f $FILE4 ] && ln -s $REPO_DIR/homefiles/micro.settings.json  $FILE4
+  [ ! -f $FILE5 ] && cp    $REPO_DIR/homefiles/tmux.conf            $FILE5
+  [ ! -f $FILE6 ] && ln -s $REPO_DIR/homefiles/vscode.settings.json $FILE6
+
+  return
+fi
+
 if $LINKS; then
   cpOrLn() { ln -s "$1" "$2"; }
 else
