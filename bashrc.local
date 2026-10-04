@@ -30,8 +30,7 @@ alias -- mi='micro'
 
 # ------------------------------------------------
 
-PS1_USER=`whoami`
-case "$PS1_USER" in
+case "$CURRENT_USER" in
   "root")
     PS1_COLOR='\[\033[01;31m\]';;
   "kristof")
@@ -43,7 +42,7 @@ esac
 PS1_FORMAT_END='\[\033[00m\]'
 # PS1_PROMPT_TEXT='---->'
 PS1_PROMPT_TEXT='\$\$\$\$\$'
-PS1_SPACES=`printf "%*s" $(expr 10 - ${#PS1_USER})`
+PS1_SPACES=`printf "%*s" $(expr 10 - ${#CURRENT_USER})`
 # PS1_0='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}'
 PS1_1="$PS1_COLOR\u$PS1_FORMAT_END"
 PS1_2="\[\033[01;36m\]\h$PS1_FORMAT_END"
