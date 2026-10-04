@@ -16,63 +16,59 @@ done
 
 shift $((OPTIND - 1))
 
-FILE1=~/.gitconfig
-FILE2=~/.inputrc
-FILE3=~/.config/micro/bindings.json
-FILE4=~/.config/micro/settings.json
-FILE5=~/.tmux.conf
-FILE6=~/.config/Code/User/settings.json
-FILE7=~/.config/lazygit/config.yml
+eval "$REPO_HOME_PATHS_E"
+eval "$SYSTEM_HOME_PATHS_E"
+eval "$HOME_PATHS_E"
 
 mkdir -p ~/.config/micro/
 mkdir -p ~/.config/Code/User/
 mkdir -p ~/.config/lazygit
 
-rm -f $FILE1.etc
-rm -f $FILE2.etc
-rm -f $FILE3.etc
-rm -f $FILE4.etc
-rm -f $FILE5.etc
-rm -f $FILE6.etc
-rm -f $FILE7.etc
+rm -f ${HOME_PATHS[0]}.etc
+rm -f ${HOME_PATHS[1]}.etc
+rm -f ${HOME_PATHS[2]}.etc
+rm -f ${HOME_PATHS[3]}.etc
+rm -f ${HOME_PATHS[4]}.etc
+rm -f ${HOME_PATHS[5]}.etc
+rm -f ${HOME_PATHS[6]}.etc
 
 echo
 echo "Nadpisano nastepujace pliki:"
-cp /etc/homefiles/gitconfig            $FILE1.etc && printf "%-35s -> %-40s\n" "/etc/homefiles/gitconfig"            "$FILE1.etc"
-cp /etc/homefiles/inputrc              $FILE2.etc && printf "%-35s -> %-40s\n" "/etc/homefiles/inputrc"              "$FILE2.etc"
-cp /etc/homefiles/micro.bindings.json  $FILE3.etc && printf "%-35s -> %-40s\n" "/etc/homefiles/micro.bindings.json"  "$FILE3.etc"
-cp /etc/homefiles/micro.settings.json  $FILE4.etc && printf "%-35s -> %-40s\n" "/etc/homefiles/micro.settings.json"  "$FILE4.etc"
-cp /etc/homefiles/tmux.conf            $FILE5.etc && printf "%-35s -> %-40s\n" "/etc/homefiles/tmux.conf"            "$FILE5.etc"
-cp /etc/homefiles/vscode.settings.json $FILE6.etc && printf "%-35s -> %-40s\n" "/etc/homefiles/vscode.settings.json" "$FILE6.etc"
-cp /etc/homefiles/lazygit.yml          $FILE7.etc && printf "%-35s -> %-40s\n" "/etc/homefiles/lazygit.yml"          "$FILE7.etc"
+cp ${SYSTEM_HOME_PATHS[1]} ${HOME_PATHS[0]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[1]}" "${HOME_PATHS[0]}.etc"
+cp ${SYSTEM_HOME_PATHS[2]} ${HOME_PATHS[1]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[2]}" "${HOME_PATHS[1]}.etc"
+cp ${SYSTEM_HOME_PATHS[3]} ${HOME_PATHS[2]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[3]}" "${HOME_PATHS[2]}.etc"
+cp ${SYSTEM_HOME_PATHS[4]} ${HOME_PATHS[3]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[4]}" "${HOME_PATHS[3]}.etc"
+cp ${SYSTEM_HOME_PATHS[5]} ${HOME_PATHS[4]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[5]}" "${HOME_PATHS[4]}.etc"
+cp ${SYSTEM_HOME_PATHS[6]} ${HOME_PATHS[5]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[6]}" "${HOME_PATHS[5]}.etc"
+cp ${SYSTEM_HOME_PATHS[7]} ${HOME_PATHS[6]}.etc && printf "%-35s -> %-40s\n" "${SYSTEM_HOME_PATHS[7]}" "${HOME_PATHS[6]}.etc"
 echo
 
-chmod 644 $FILE1.etc
-chmod 644 $FILE2.etc
-chmod 644 $FILE3.etc
-chmod 644 $FILE4.etc
-chmod 644 $FILE5.etc
-chmod 644 $FILE6.etc
-chmod 644 $FILE7.etc
+chmod 644 ${HOME_PATHS[0]}.etc
+chmod 644 ${HOME_PATHS[1]}.etc
+chmod 644 ${HOME_PATHS[2]}.etc
+chmod 644 ${HOME_PATHS[3]}.etc
+chmod 644 ${HOME_PATHS[4]}.etc
+chmod 644 ${HOME_PATHS[5]}.etc
+chmod 644 ${HOME_PATHS[6]}.etc
 
 if $DELETE; then
-  # rm -f $FILE1
-  rm -f $FILE2
-  rm -f $FILE3
-  rm -f $FILE4
-  # rm -f $FILE5
-  rm -f $FILE6
-  rm -f $FILE7
+  # rm -f ${HOME_PATHS[0]}
+  rm -f ${HOME_PATHS[1]}
+  rm -f ${HOME_PATHS[2]}
+  rm -f ${HOME_PATHS[3]}
+  # rm -f ${HOME_PATHS[4]}
+  rm -f ${HOME_PATHS[5]}
+  rm -f ${HOME_PATHS[6]}
 fi
 
 if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
-  [ ! -f $FILE1 ] && cp    $REPO_DIR/homefiles/gitconfig            $FILE1
-  [ ! -f $FILE2 ] && ln -s $REPO_DIR/homefiles/inputrc              $FILE2
-  [ ! -f $FILE3 ] && ln -s $REPO_DIR/homefiles/micro.bindings.json  $FILE3
-  [ ! -f $FILE4 ] && ln -s $REPO_DIR/homefiles/micro.settings.json  $FILE4
-  [ ! -f $FILE5 ] && cp    $REPO_DIR/homefiles/tmux.conf            $FILE5
-  [ ! -f $FILE6 ] && ln -s $REPO_DIR/homefiles/vscode.settings.json $FILE6
-  [ ! -f $FILE7 ] && ln -s $REPO_DIR/homefiles/lazygit.yml          $FILE7
+  [ ! -f ${HOME_PATHS[0]} ] && cp    ${REPO_HOME_PATHS[1]} ${HOME_PATHS[0]}
+  [ ! -f ${HOME_PATHS[1]} ] && ln -s ${REPO_HOME_PATHS[2]} ${HOME_PATHS[1]}
+  [ ! -f ${HOME_PATHS[2]} ] && ln -s ${REPO_HOME_PATHS[3]} ${HOME_PATHS[2]}
+  [ ! -f ${HOME_PATHS[3]} ] && ln -s ${REPO_HOME_PATHS[4]} ${HOME_PATHS[3]}
+  [ ! -f ${HOME_PATHS[4]} ] && cp    ${REPO_HOME_PATHS[5]} ${HOME_PATHS[4]}
+  [ ! -f ${HOME_PATHS[5]} ] && ln -s ${REPO_HOME_PATHS[6]} ${HOME_PATHS[5]}
+  [ ! -f ${HOME_PATHS[6]} ] && ln -s ${REPO_HOME_PATHS[7]} ${HOME_PATHS[6]}
 
   exit 0
 fi
@@ -83,10 +79,10 @@ else
   cpOrLn() { cp "$1" "$2"; }
 fi
 
-[ ! -f $FILE1 ] && cp     $FILE1.etc $FILE1
-[ ! -f $FILE2 ] && cpOrLn $FILE2.etc $FILE2
-[ ! -f $FILE3 ] && cpOrLn $FILE3.etc $FILE3
-[ ! -f $FILE4 ] && cpOrLn $FILE4.etc $FILE4
-[ ! -f $FILE5 ] && cp     $FILE5.etc $FILE5
-[ ! -f $FILE6 ] && cpOrLn $FILE6.etc $FILE6
-[ ! -f $FILE7 ] && cpOrLn $FILE7.etc $FILE7
+[ ! -f ${HOME_PATHS[0]} ] && cp     ${HOME_PATHS[0]}.etc ${HOME_PATHS[0]}
+[ ! -f ${HOME_PATHS[1]} ] && cpOrLn ${HOME_PATHS[1]}.etc ${HOME_PATHS[1]}
+[ ! -f ${HOME_PATHS[2]} ] && cpOrLn ${HOME_PATHS[2]}.etc ${HOME_PATHS[2]}
+[ ! -f ${HOME_PATHS[3]} ] && cpOrLn ${HOME_PATHS[3]}.etc ${HOME_PATHS[3]}
+[ ! -f ${HOME_PATHS[4]} ] && cp     ${HOME_PATHS[4]}.etc ${HOME_PATHS[4]}
+[ ! -f ${HOME_PATHS[5]} ] && cpOrLn ${HOME_PATHS[5]}.etc ${HOME_PATHS[5]}
+[ ! -f ${HOME_PATHS[6]} ] && cpOrLn ${HOME_PATHS[6]}.etc ${HOME_PATHS[6]}
