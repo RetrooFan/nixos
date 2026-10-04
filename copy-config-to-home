@@ -41,24 +41,18 @@ for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
 done
 echo
 
-if $DELETE; then
-  # rm -f ${HOME_PATHS[0]}
-  # rm -f ${HOME_PATHS[1]}
-  rm -f ${HOME_PATHS[2]}
-  rm -f ${HOME_PATHS[3]}
-  rm -f ${HOME_PATHS[4]}
-  rm -f ${HOME_PATHS[5]}
-  rm -f ${HOME_PATHS[6]}
-fi
+for ((i = 2; i < ${#HOME_PATHS[@]}; i++)); do
+  rm -f ${HOME_PATHS[$i]}
+done
 
 if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
-  [ ! -f ${HOME_PATHS[0]} ] && cp    ${REPO_HOME_PATHS[0]} ${HOME_PATHS[0]}
-  [ ! -f ${HOME_PATHS[1]} ] && cp    ${REPO_HOME_PATHS[1]} ${HOME_PATHS[1]}
-  [ ! -f ${HOME_PATHS[2]} ] && ln -s ${REPO_HOME_PATHS[2]} ${HOME_PATHS[2]}
-  [ ! -f ${HOME_PATHS[3]} ] && ln -s ${REPO_HOME_PATHS[3]} ${HOME_PATHS[3]}
-  [ ! -f ${HOME_PATHS[4]} ] && ln -s ${REPO_HOME_PATHS[4]} ${HOME_PATHS[4]}
-  [ ! -f ${HOME_PATHS[5]} ] && ln -s ${REPO_HOME_PATHS[5]} ${HOME_PATHS[5]}
-  [ ! -f ${HOME_PATHS[6]} ] && ln -s ${REPO_HOME_PATHS[6]} ${HOME_PATHS[6]}
+  for ((i = 0; i < 2; i++)); do
+    [ ! -f ${HOME_PATHS[$i]} ] && cp    ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
+  done
+
+  for ((i = 2; i < ${#HOME_PATHS[@]}; i++)); do
+    [ ! -f ${HOME_PATHS[$i]} ] && ln -s ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
+  done
 
   exit 0
 fi
@@ -69,10 +63,10 @@ else
   cpOrLn() { cp "$1" "$2"; }
 fi
 
-[ ! -f ${HOME_PATHS[0]} ] && cp     ${HOME_PATHS[0]}.etc ${HOME_PATHS[0]}
-[ ! -f ${HOME_PATHS[1]} ] && cp     ${HOME_PATHS[1]}.etc ${HOME_PATHS[1]}
-[ ! -f ${HOME_PATHS[2]} ] && cpOrLn ${HOME_PATHS[2]}.etc ${HOME_PATHS[2]}
-[ ! -f ${HOME_PATHS[3]} ] && cpOrLn ${HOME_PATHS[3]}.etc ${HOME_PATHS[3]}
-[ ! -f ${HOME_PATHS[4]} ] && cpOrLn ${HOME_PATHS[4]}.etc ${HOME_PATHS[4]}
-[ ! -f ${HOME_PATHS[5]} ] && cpOrLn ${HOME_PATHS[5]}.etc ${HOME_PATHS[5]}
-[ ! -f ${HOME_PATHS[6]} ] && cpOrLn ${HOME_PATHS[6]}.etc ${HOME_PATHS[6]}
+for ((i = 0; i < 2; i++)); do
+  [ ! -f ${HOME_PATHS[$i]} ] && cp     ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
+done
+
+for ((i = 2; i < ${#HOME_PATHS[@]}; i++)); do
+  [ ! -f ${HOME_PATHS[$i]} ] && cpOrLn ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
+done
