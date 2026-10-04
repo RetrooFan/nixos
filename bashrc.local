@@ -19,6 +19,57 @@ HISTCONTROL=ignoreboth
 stty -ixon
 export EDITOR=micro
 export CURRENT_USER="$(whoami)"
+REPO_ROOT_PATHS=(
+  $REPO_DIR/compare-files
+  $REPO_DIR/copy-config-to-home
+  $REPO_DIR/bashrc.local
+  $REPO_DIR/htoprc
+  $REPO_DIR/nanorc
+  $REPO_DIR/tmux.conf
+)
+REPO_HOME_PATHS=(
+  $REPO_DIR/homefiles/bashrc.root
+  $REPO_DIR/homefiles/gitconfig
+  $REPO_DIR/homefiles/inputrc
+  $REPO_DIR/homefiles/micro.bindings.json
+  $REPO_DIR/homefiles/micro.settings.json
+  $REPO_DIR/homefiles/tmux.conf
+  $REPO_DIR/homefiles/vscode.settings.json
+  $REPO_DIR/homefiles/lazygit.yml
+)
+SYSTEM_ROOT_PATHS=(
+  /usr/local/bin/compare-files
+  /usr/local/bin/copy-config-to-home
+  /etc/bashrc.local
+  /etc/htoprc
+  /etc/nanorc
+  /etc/tmux.conf
+)
+SYSTEM_HOME_PATHS=(
+  /root/.bashrc.root
+  /etc/homefiles/gitconfig
+  /etc/homefiles/inputrc
+  /etc/homefiles/micro.bindings.json
+  /etc/homefiles/micro.settings.json
+  /etc/homefiles/tmux.conf
+  /etc/homefiles/vscode.settings.json
+  /etc/homefiles/lazygit.yml
+)
+HOME_PATHS=(
+  .gitconfig
+  .inputrc
+  .config/micro/bindings.json
+  .config/micro/settings.json
+  .tmux.conf
+  .config/Code/User/settings.json
+  .config/lazygit/config.yml
+)
+
+export REPO_ROOT_PATHS_E=$(declare -p REPO_ROOT_PATHS)
+export REPO_HOME_PATHS_E=$(declare -p REPO_HOME_PATHS)
+export SYSTEM_ROOT_PATHS_E=$(declare -p SYSTEM_ROOT_PATHS)
+export SYSTEM_HOME_PATHS_E=$(declare -p SYSTEM_HOME_PATHS)
+export HOME_PATHS_E=$(declare -p HOME_PATHS)
 
 alias -- grep='grep --color=auto'
 alias -- fgrep='fgrep --color=auto'
