@@ -40,8 +40,8 @@ SYSTEM_ROOT_PATHS=(
 REPO_HOME_PATHS=(
   $REPO_DIR/homefiles/gitconfig
   $REPO_DIR/homefiles/tmux.conf
-  $REPO_DIR/homefiles/inputrc
   $REPO_DIR/homefiles/alacritty.toml
+  $REPO_DIR/homefiles/inputrc
   $REPO_DIR/homefiles/lazygit.yml
   $REPO_DIR/homefiles/micro.bindings.json
   $REPO_DIR/homefiles/micro.settings.json
@@ -50,8 +50,8 @@ REPO_HOME_PATHS=(
 SYSTEM_HOME_PATHS=(
   /etc/homefiles/gitconfig
   /etc/homefiles/tmux.conf
-  /etc/homefiles/inputrc
   /etc/homefiles/alacritty.toml
+  /etc/homefiles/inputrc
   /etc/homefiles/lazygit.yml
   /etc/homefiles/micro.bindings.json
   /etc/homefiles/micro.settings.json
@@ -60,8 +60,8 @@ SYSTEM_HOME_PATHS=(
 HOME_PATHS=(
   ~/.gitconfig
   ~/.tmux.conf
-  ~/.inputrc
   ~/.config/alacritty/alacritty.toml
+  ~/.inputrc
   ~/.config/lazygit/config.yml
   ~/.config/micro/bindings.json
   ~/.config/micro/settings.json
