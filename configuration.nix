@@ -12,15 +12,15 @@
       "htoprc".text =                         builtins.readFile ./htoprc;
       "tmux.conf".text =                      builtins.readFile ./tmux.conf;
 
-      "homefiles/gitconfig".text =            builtins.readFile ./homefiles/gitconfig;
-      "homefiles/tmux.conf".text =            builtins.readFile ./homefiles/tmux.conf;
-      "homefiles/alacritty.toml".text =       builtins.readFile ./homefiles/alacritty.toml;
-      "homefiles/inputrc".text =              builtins.readFile ./homefiles/inputrc;
-      "homefiles/lazygit.yml".text =          builtins.readFile ./homefiles/lazygit.yml;
-      "homefiles/micro.bindings.json".text =  builtins.readFile ./homefiles/micro.bindings.json;
-      "homefiles/micro.settings.json".text =  builtins.readFile ./homefiles/micro.settings.json;
-      "homefiles/sublime.json".text =         builtins.readFile ./homefiles/Preferences.sublime-settings;
-      "homefiles/vscode.settings.json".text = builtins.readFile ./homefiles/vscode.settings.json;
+      "homefiles/gitconfig".text =           builtins.readFile ./homefiles/gitconfig;
+      "homefiles/tmux.conf".text =           builtins.readFile ./homefiles/tmux.conf;
+      "homefiles/alacritty.toml".text =      builtins.readFile ./homefiles/alacritty.toml;
+      "homefiles/inputrc".text =             builtins.readFile ./homefiles/inputrc;
+      "homefiles/lazygit.yml".text =         builtins.readFile ./homefiles/lazygit.yml;
+      "homefiles/micro.bindings.json".text = builtins.readFile ./homefiles/micro.bindings.json;
+      "homefiles/micro.settings.json".text = builtins.readFile ./homefiles/micro.settings.json;
+      "homefiles/sublime.json".text =        builtins.readFile ./homefiles/Preferences.sublime-settings;
+      "homefiles/vscode.json".text =         builtins.readFile ./homefiles/vscode.json;
     };
 
     interactiveShellInit = ''

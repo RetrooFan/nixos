@@ -46,7 +46,7 @@ REPO_HOME_PATHS=(
   $REPO_DIR/homefiles/micro.bindings.json
   $REPO_DIR/homefiles/micro.settings.json
   $REPO_DIR/homefiles/sublime.json
-  $REPO_DIR/homefiles/vscode.settings.json
+  $REPO_DIR/homefiles/vscode.json
 )
 SYSTEM_HOME_PATHS=(
   /etc/homefiles/gitconfig
@@ -57,7 +57,7 @@ SYSTEM_HOME_PATHS=(
   /etc/homefiles/micro.bindings.json
   /etc/homefiles/micro.settings.json
   /etc/homefiles/sublime.json
-  /etc/homefiles/vscode.settings.json
+  /etc/homefiles/vscode.json
 )
 HOME_PATHS=(
   ~/.gitconfig
