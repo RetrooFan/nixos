@@ -8,9 +8,9 @@
     etc = {
       "k3s-manifests/traefik-dashboard-config.yaml".text = builtins.readFile ./traefik-dashboard-config.yaml;
 
-      "bashrc.local".text =                   builtins.readFile ./bashrc.local;
-      "htoprc".text =                         builtins.readFile ./htoprc;
-      "tmux.conf".text =                      builtins.readFile ./tmux.conf;
+      "bashrc.local".text =                  builtins.readFile ./bashrc.local;
+      "htoprc".text =                        builtins.readFile ./htoprc;
+      "tmux.conf".text =                     builtins.readFile ./tmux.conf;
 
       "homefiles/gitconfig".text =           builtins.readFile ./homefiles/gitconfig;
       "homefiles/tmux.conf".text =           builtins.readFile ./homefiles/tmux.conf;
