@@ -14,10 +14,16 @@ eval "$REPO_HOME_PATHS_E"
 eval "$SYSTEM_ROOT_PATHS_E"
 eval "$SYSTEM_HOME_PATHS_E"
 
-for ((i = 0; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
-  compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
-done
+if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
+  echo
+  echo "TABLICE MAJA ROZNE DLUGOSCI!"
+  echo
+else
+  for ((i = 0; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
+    compare-files -c copy-config-to-system ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
+  done
 
-for ((i = 0; i < ${#REPO_HOME_PATHS[@]}; i++)); do
-  compare-files -c copy-config-to-system ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
-done
+  for ((i = 0; i < ${#REPO_HOME_PATHS[@]}; i++)); do
+    compare-files -c copy-config-to-system ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
+  done
+fi
