@@ -56,13 +56,13 @@ SYSTEM_HOME_PATHS=(
   /etc/homefiles/lazygit.yml
 )
 HOME_PATHS=(
-  .gitconfig
-  .inputrc
-  .config/micro/bindings.json
-  .config/micro/settings.json
-  .tmux.conf
-  .config/Code/User/settings.json
-  .config/lazygit/config.yml
+  ~/.gitconfig
+  ~/.inputrc
+  ~/.config/micro/bindings.json
+  ~/.config/micro/settings.json
+  ~/.tmux.conf
+  ~/.config/Code/User/settings.json
+  ~/.config/lazygit/config.yml
 )
 
 export REPO_ROOT_PATHS_E=$(declare -p REPO_ROOT_PATHS)
