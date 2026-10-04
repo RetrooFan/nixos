@@ -51,11 +51,11 @@ chmod 644 $FILE5.etc
 chmod 644 $FILE6.etc
 
 if $DELETE; then
-  rm -f $FILE1
+  # rm -f $FILE1
   rm -f $FILE2
   rm -f $FILE3
   rm -f $FILE4
-  rm -f $FILE5
+  # rm -f $FILE5
   rm -f $FILE6
 fi
 
