@@ -19,6 +19,7 @@ HISTCONTROL=ignoreboth
 stty -ixon
 export LG_CONFIG_FILE="/etc/lazygit.yml,$HOME/.config/lazygit/config.yml"
 export EDITOR=micro
+export CURRENT_USER="$(whoami)"
 
 alias -- grep='grep --color=auto'
 alias -- fgrep='fgrep --color=auto'
@@ -90,7 +91,7 @@ compare-files -c copy-config-to-home /etc/homefiles/vscode.settings.json ~/.conf
 # ------------------------------------------------
 
 git_pull() {
-  [ "$(whoami)" != "$REPO_USER" ] && return
+  [ "$CURRENT_USER" != "$REPO_USER" ] && return
 
   cd $REPO_DIR || return
 
