@@ -27,29 +27,23 @@ porownaj() {
 
 echo
 
-porownaj ${REPO_ROOT_PATHS[0]} ${SYSTEM_ROOT_PATHS[0]}
-chmod a+x                      ${SYSTEM_ROOT_PATHS[0]}
-porownaj ${REPO_ROOT_PATHS[1]} ${SYSTEM_ROOT_PATHS[1]}
-chmod a+x                      ${SYSTEM_ROOT_PATHS[1]}
+for ((i = 0; i < 2; i++)); do
+  porownaj ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
+  chmod a+x                       ${SYSTEM_ROOT_PATHS[$i]}
+done
 
 echo
 
-porownaj ${REPO_ROOT_PATHS[2]} ${SYSTEM_ROOT_PATHS[2]}
-porownaj ${REPO_ROOT_PATHS[3]} ${SYSTEM_ROOT_PATHS[3]}
-porownaj ${REPO_ROOT_PATHS[4]} ${SYSTEM_ROOT_PATHS[4]}
-porownaj ${REPO_ROOT_PATHS[5]} ${SYSTEM_ROOT_PATHS[5]}
-porownaj ${REPO_ROOT_PATHS[6]} ${SYSTEM_ROOT_PATHS[6]}
+for ((i = 2; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
+  porownaj ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
+done
 
 echo
 
 mkdir -p /etc/homefiles/
 
-porownaj ${REPO_HOME_PATHS[0]} ${SYSTEM_HOME_PATHS[0]}
-porownaj ${REPO_HOME_PATHS[1]} ${SYSTEM_HOME_PATHS[1]}
-porownaj ${REPO_HOME_PATHS[2]} ${SYSTEM_HOME_PATHS[2]}
-porownaj ${REPO_HOME_PATHS[3]} ${SYSTEM_HOME_PATHS[3]}
-porownaj ${REPO_HOME_PATHS[4]} ${SYSTEM_HOME_PATHS[4]}
-porownaj ${REPO_HOME_PATHS[5]} ${SYSTEM_HOME_PATHS[5]}
-porownaj ${REPO_HOME_PATHS[6]} ${SYSTEM_HOME_PATHS[6]}
+for ((i = 0; i < ${#REPO_HOME_PATHS[@]}; i++)); do
+  porownaj ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
+done
 
 echo
