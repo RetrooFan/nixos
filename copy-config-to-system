@@ -16,15 +16,13 @@ if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PAT
 fi
 
 echo
-for ((i = 0; i < 3; i++)); do
+for ((i = 0; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
   compare-files-dialog ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} ${i} ||
   $EDITOR              ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
-  chmod a+x                                   ${SYSTEM_ROOT_PATHS[$i]}
-done
 
-for ((i = 3; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
-  compare-files-dialog ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} ${i} ||
-  $EDITOR              ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
+  if ((i < 3)); then
+    chmod a+x                                 ${SYSTEM_ROOT_PATHS[$i]}
+  fi
 done
 echo
 
