@@ -12,8 +12,9 @@ compare-files $1 $2 && printf "%-20s %s\n" "$uprawnienia_pliku_docelowego" "1=2"
 printf "%-20s" "$uprawnienia_pliku_docelowego"
 [ -f "$2" ] && printf " %s" "1≠2" || printf " %s" "2∈Ø"
 
-read -p " [ENTER]"
+read -s -p " [ENTER/n]" odpowiedz
+echo
 
 printf "${RESET}"
 
-exit 1
+[ "$odpowiedz" == "n" ] && exit 0 || exit 1
