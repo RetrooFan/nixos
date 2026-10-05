@@ -5,8 +5,8 @@ uprawnienia_pliku_docelowego="$(ls -l $2 --color=auto 2>/dev/null | awk '{print 
 ile_kresek=$((110 - ${#2} - 2))
 printf "│%s" "$1"; printf "\n╰"; printf '%.0s─' $(seq 1 $ile_kresek); printf "►%s " "$2"
 
-compare-files $1 $2 && printf "%-21s%-6s\n" "$uprawnienia_pliku_docelowego" "1==2" && exit 0
-printf "%-21s" "$uprawnienia_pliku_docelowego"
-[ -f "$2" ] && printf "%-6s" "1!=2" || printf "%-10s" "2 ∈ Ø"
+compare-files $1 $2 && printf "%s %s\n" "$uprawnienia_pliku_docelowego" "1=2" && exit 0
+printf "%s" "$uprawnienia_pliku_docelowego"
+[ -f "$2" ] && printf " %s" "1≠2" || printf " %s" "2∈Ø"
 
-read -p "[ENTER]" && exit 1
+read -p " [ENTER]" && exit 1
