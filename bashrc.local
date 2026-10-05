@@ -43,7 +43,7 @@ esac
 PS1_FORMAT_END='\[\033[00m\]'
 # PS1_PROMPT_TEXT='---->'
 PS1_PROMPT_TEXT='\$\$\$\$\$'
-PS1_SPACES=`printf "%*s" $(expr 10 - ${#CURRENT_USER})`
+PS1_1_SPACES=`printf "%*s" $(expr 10 - ${#CURRENT_USER})`
 # PS1_0='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}'
 PS1_1="$PS1_COLOR\u$PS1_FORMAT_END"
 PS1_2="\[\033[01;36m\]\h$PS1_FORMAT_END"
@@ -63,7 +63,7 @@ prompt() {
   printf -v PS1_7 '%.0s\n' $(seq 0 "$empty_lines")
   empty_lines=0
 
-  PS1="│ `date` │ $PS1_0$PS1_1$PS1_SPACES │ $PS1_2 │ $PS1_3 │ $PS1_4 │ $PS1_5 │\n$PS1_6$PS1_7$PS1_PROMPT"
+  PS1="│ `date` │ $PS1_0$PS1_1$PS1_1_SPACES │ $PS1_2 │ $PS1_3 │ $PS1_4 │ $PS1_5 │\n$PS1_6$PS1_7$PS1_PROMPT"
 }
 PROMPT_COMMAND=prompt
 
