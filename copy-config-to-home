@@ -3,7 +3,6 @@
 LINKS=false
 DELETE=false
 RESET="\033[0m"
-
 while getopts "ld" flaga; do
   case "${flaga}" in
     l)
@@ -14,7 +13,6 @@ while getopts "ld" flaga; do
       ;;
   esac
 done
-
 shift $((OPTIND - 1))
 
 eval "$REPO_HOME_PATHS_E"
