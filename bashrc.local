@@ -43,14 +43,14 @@ esac
 PS1_FORMAT_END='\[\033[00m\]'
 # PS1_PROMPT_TEXT='---->'
 PS1_PROMPT_TEXT='\$\$\$\$\$'
-PS1_1_SPACES=`printf "%*s" $(expr 10 - ${#CURRENT_USER})`
+PS1_USER_SPACES=`printf "%*s" $(expr 10 - ${#CURRENT_USER})`
 # PS1_0='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}'
-PS1_1="$PS1_COLOR\u$PS1_FORMAT_END"
-PS1_2_SPACES=`printf "%*s" $(expr 15 - ${#HOSTNAME})`
-PS1_2="\[\033[01;36m\]\h$PS1_FORMAT_END"
-PS1_3="$PS1_COLOR$SHLVL$PS1_FORMAT_END"
-PS1_4="$$"
-PS1_5="\[\033[01;34m\]\w$PS1_FORMAT_END"
+PS1_USER="$PS1_COLOR\u$PS1_FORMAT_END"
+PS1_HOST_SPACES=`printf "%*s" $(expr 15 - ${#HOSTNAME})`
+PS1_HOST="\[\033[01;36m\]\h$PS1_FORMAT_END"
+PS1_SHLVL="$PS1_COLOR$SHLVL$PS1_FORMAT_END"
+PS1_PID="$$"
+PS1_PATH="\[\033[01;34m\]\w$PS1_FORMAT_END"
 PS1_PROMPT="$PS1_COLOR$PS1_PROMPT_TEXT$PS1_FORMAT_END -> "
 
 PS1_INIT=$PS1
@@ -63,20 +63,20 @@ prompt() {
   PS1_DATE=$(date)
   printf -v PS1_DATE_LINE '%.0s─' $(seq -1 ${#PS1_DATE})
 
-  printf -v CURRENT_PROCESS_LINE '%.0s─' $(seq -1 ${#PS1_4})
+  printf -v PS1_CURRENT_PROCESS_LINE '%.0s─' $(seq -1 ${#PS1_PID})
 
-  PWD_HOME="${PWD/#$HOME/\~}"
-  printf -v PWD_HOME_LINE '%.0s─' $(seq -1 ${#PWD_HOME})
+  PS1_PWD="${PWD/#$HOME/\~}"
+  printf -v PS1_PWD_LINE '%.0s─' $(seq -1 ${#PS1_PWD})
 
-  printf -v PS1_7 '%.0s\n' $(seq 0 "$empty_lines")
+  printf -v PS1_SPACING '%.0s\n' $(seq 0 "$empty_lines")
   empty_lines=0
 
-  PS1_6="╰$PS1_DATE_LINE┴────────────┴─────────────────┴───┴$CURRENT_PROCESS_LINE┴$PWD_HOME_LINE┴"
+  PS1_HORIZONTAL_LINE="╰$PS1_DATE_LINE┴────────────┴─────────────────┴───┴$PS1_CURRENT_PROCESS_LINE┴$PS1_PWD_LINE┴"
 
-  END_LINE_LENGTH=$((148 - ${#PS1_6}))
+  END_LINE_LENGTH=$((148 - ${#PS1_HORIZONTAL_LINE}))
   printf -v END_LINE '%.0s─' $(seq 1 $END_LINE_LENGTH)
 
-  PS1="│ $PS1_DATE │ $PS1_0$PS1_1$PS1_1_SPACES │ $PS1_2$PS1_2_SPACES │ $PS1_3 │ $PS1_4 │ $PS1_5 │\n$PS1_6$END_LINE$PS1_7$PS1_PROMPT"
+  PS1="│ $PS1_DATE │ $PS1_0$PS1_USER$PS1_USER_SPACES │ $PS1_HOST$PS1_HOST_SPACES │ $PS1_SHLVL │ $PS1_PID │ $PS1_PATH │\n$PS1_HORIZONTAL_LINE$END_LINE$PS1_SPACING$PS1_PROMPT"
 }
 PROMPT_COMMAND=prompt
 
