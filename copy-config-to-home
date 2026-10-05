@@ -74,7 +74,9 @@ else
 fi
 
 for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
+  ((i % 2 == 0)) && printf "\033[0m" || printf "\033[38;5;153m"
   compare-files-dialog ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} ||
   micro                ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
 done
+printf "${RESET}"
 echo
