@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-LINKS=false
 DELETE=false
-while getopts "ld" flaga; do
+LINKS=false
+while getopts "dl" flaga; do
   case "${flaga}" in
-    l)
-      LINKS=true
-      ;;
     d)
       DELETE=true
+      ;;
+    l)
+      LINKS=true
       ;;
   esac
 done
