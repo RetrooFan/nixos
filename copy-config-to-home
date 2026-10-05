@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 
-CLEAN=false
 DELETE=false
 LINKS=false
-while getopts "cdl" flaga; do
+while getopts "dl" flaga; do
   case "${flaga}" in
-    c)
-      CLEAN=true
-      ;;
     d)
       DELETE=true
       ;;
@@ -75,11 +71,7 @@ else
 fi
 
 for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
-  if $CLEAN; then
-    compare-files-dialog -s ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} ${i}
-  else
-    compare-files-dialog ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} ${i} ||
-    $EDITOR              ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
-  fi
+  compare-files-dialog ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} ${i} ||
+  $EDITOR              ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
 done
 echo
