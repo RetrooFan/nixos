@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+SILENT=false
+while getopts "s" flaga; do
+  case "${flaga}" in
+    s)
+      SILENT=true
+      ;;
+  esac
+done
+shift $((OPTIND - 1))
+
 uprawnienia_pliku_docelowego="$(ls -l $2 --color=auto 2>/dev/null | awk '{print $1, $3, $4}')"
 
 ((${3:0} % 2 == 0)) && printf "\033[38;5;153m" || printf "\033[0m"
@@ -11,4 +21,10 @@ compare-files $1 $2 && printf "%s %s\n" "$uprawnienia_pliku_docelowego" "1=2" &&
 printf "%s" "$uprawnienia_pliku_docelowego"
 [ -f "$2" ] && printf " %s" "1≠2" || printf " %s" "2∈Ø"
 
-read -p " [ENTER]" && exit 1
+if $SILENT; then
+  printf " %s %s\n" "──►" "1=2"
+else
+  read -p " [ENTER]"
+fi
+
+exit 1
