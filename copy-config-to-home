@@ -72,3 +72,9 @@ else
     [ ! -f ${HOME_PATHS[$i]} ] && cpOrLn ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
   done
 fi
+
+for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
+  compare-files-dialog ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} ||
+  micro                ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
+done
+echo
