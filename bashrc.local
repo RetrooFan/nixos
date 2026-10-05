@@ -41,10 +41,8 @@ case "$CURRENT_USER" in
 esac
 
 PS1_FORMAT_END='\[\033[00m\]'
-# PS1_PROMPT_TEXT='---->'
 PS1_PROMPT_TEXT='\$\$\$\$\$'
 PS1_USER_SPACES=`printf "%*s" $(expr 10 - ${#CURRENT_USER})`
-# PS1_0='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}'
 PS1_USER="$PS1_COLOR\u$PS1_FORMAT_END"
 PS1_HOST_SPACES=`printf "%*s" $(expr 15 - ${#HOSTNAME})`
 PS1_HOST="\[\033[01;36m\]\h$PS1_FORMAT_END"
@@ -57,9 +55,6 @@ PS1_INIT=$PS1
 empty_lines=0
 
 prompt() {
-  # PS1_OLD='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]'
-  # PS1=$(printf "\n%*s\r%s\n\$ " "$(tput cols)" "$(date)" "$PS1_OLD")
-
   PS1_DATE=$(date)
   printf -v PS1_DATE_LINE '%.0s─' $(seq -1 ${#PS1_DATE})
 
@@ -85,11 +80,9 @@ PROMPT_COMMAND=prompt
 
 # ------------------------------------------------
 
-# SESSION_ID=`openssl rand -hex 4`
 SESSION_ID=`hexdump -vn4 -e'4/1 "%02x"' /dev/urandom`
 echo "# ----- | `date` | START | $SESSION_ID" >> $HISTFILE
 
-# alias exit='nohup add-comment "$SESSION_ID" "$HISTFILE" >/dev/null 2>&1 & exit'
 after_exit() {
   sleep 0.1 && echo "# ----- | `date` | END   | $SESSION_ID" >> "$HISTFILE" &
 }
