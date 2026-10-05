@@ -21,7 +21,6 @@ for ((i = 0; i < 3; i++)); do
   micro                ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
   chmod a+x                                   ${SYSTEM_ROOT_PATHS[$i]}
 done
-echo
 
 for ((i = 3; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
   compare-files-dialog ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} ${i} ||
