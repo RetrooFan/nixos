@@ -34,8 +34,10 @@ mkdir -p ~/.config/sublime-text/Packages/User/
 
 echo
 for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
-  compare-files-dialog ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc ${i} ||
-  cp ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
+  compare-files-dialog        ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc ${i}
+  result=$?
+  [ $result == 1 ] && $EDITOR ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
+  [ $result == 2 ] && cp      ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
   chmod 644 ${HOME_PATHS[$i]}.etc
 done
 echo
@@ -71,7 +73,9 @@ else
 fi
 
 for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
-  compare-files-dialog ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} ${i} ||
-  $EDITOR              ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
+  compare-files-dialog        ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} ${i}
+  result=$?
+  [ $result == 1 ] && $EDITOR ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
+  [ $result == 2 ] && cp      ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
 done
 echo
