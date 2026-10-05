@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
 
 DELETE=false
-LINKS=false
-while getopts "dl" flaga; do
+while getopts "d" flaga; do
   case "${flaga}" in
     d)
       DELETE=true
-      ;;
-    l)
-      LINKS=true
       ;;
   esac
 done
@@ -57,18 +53,8 @@ if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
     [ ! -f ${HOME_PATHS[$i]} ] && ln -s  ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
   done
 else
-  if $LINKS; then
-    cpOrLn() { ln -s "$1" "$2"; }
-  else
-    cpOrLn() { cp    "$1" "$2"; }
-  fi
-
-  for ((i = 0; i < 2; i++)); do
-    [ ! -f ${HOME_PATHS[$i]} ] && cp     ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
-  done
-
-  for ((i = 2; i < ${#HOME_PATHS[@]}; i++)); do
-    [ ! -f ${HOME_PATHS[$i]} ] && cpOrLn ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
+  for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
+    [ ! -f ${HOME_PATHS[$i]} ] && cp ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
   done
 fi
 
