@@ -2,7 +2,6 @@
 
 LINKS=false
 DELETE=false
-RESET="\033[0m"
 while getopts "ld" flaga; do
   case "${flaga}" in
     l)
@@ -39,7 +38,6 @@ for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
   cp ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
   chmod 644 ${HOME_PATHS[$i]}.etc
 done
-printf "${RESET}"
 echo
 
 if $DELETE; then
@@ -76,5 +74,4 @@ for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
   compare-files-dialog ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} ${i} ||
   micro                ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
 done
-printf "${RESET}"
 echo
