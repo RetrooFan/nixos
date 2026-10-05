@@ -48,17 +48,17 @@ fi
 
 if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
   for ((i = 0; i < 2; i++)); do
-    [ ! -f ${HOME_PATHS[$i]} ] && cp    ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
+    [ ! -f ${HOME_PATHS[$i]} ] && cp     ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
   done
 
   for ((i = 2; i < ${#HOME_PATHS[@]}; i++)); do
-    [ ! -f ${HOME_PATHS[$i]} ] && ln -s ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
+    [ ! -f ${HOME_PATHS[$i]} ] && ln -s  ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
   done
 else
   if $LINKS; then
     cpOrLn() { ln -s "$1" "$2"; }
   else
-    cpOrLn() { cp "$1" "$2"; }
+    cpOrLn() { cp    "$1" "$2"; }
   fi
 
   for ((i = 0; i < 2; i++)); do
