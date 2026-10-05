@@ -17,21 +17,21 @@ fi
 
 echo
 for ((i = 0; i < 3; i++)); do
-  compare-files-dialog ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} ||
+  compare-files-dialog ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} ${i} ||
   micro                ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
   chmod a+x                                   ${SYSTEM_ROOT_PATHS[$i]}
 done
 echo
 
 for ((i = 3; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
-  compare-files-dialog ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} ||
+  compare-files-dialog ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} ${i} ||
   micro                ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
 done
 echo
 
 mkdir -p /etc/homefiles/
 for ((i = 0; i < ${#REPO_HOME_PATHS[@]}; i++)); do
-  compare-files-dialog ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} ||
+  compare-files-dialog ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} ${i} ||
   micro                ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
 done
 echo
