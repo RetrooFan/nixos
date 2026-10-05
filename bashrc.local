@@ -73,7 +73,10 @@ prompt() {
 
   PS1_6="╰$PS1_DATE_LINE┴────────────┴─────────────────┴───┴$CURRENT_PROCESS_LINE┴$PWD_HOME_LINE┴"
 
-  PS1="│ $PS1_DATE │ $PS1_0$PS1_1$PS1_1_SPACES │ $PS1_2$PS1_2_SPACES │ $PS1_3 │ $PS1_4 │ $PS1_5 │\n$PS1_6$PS1_7$PS1_PROMPT"
+  END_LINE_LENGTH=$((148 - ${#PS1_6}))
+  printf -v END_LINE '%.0s─' $(seq 1 $END_LINE_LENGTH)
+
+  PS1="│ $PS1_DATE │ $PS1_0$PS1_1$PS1_1_SPACES │ $PS1_2$PS1_2_SPACES │ $PS1_3 │ $PS1_4 │ $PS1_5 │\n$PS1_6$END_LINE$PS1_7$PS1_PROMPT"
 }
 PROMPT_COMMAND=prompt
 
