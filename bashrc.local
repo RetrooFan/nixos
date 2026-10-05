@@ -66,7 +66,7 @@ prompt() {
   PS1_PWD="${PWD/#$HOME/\~}"
   printf -v PS1_PWD_LINE '%.0s─' $(seq -1 ${#PS1_PWD})
 
-  printf -v PS1_SPACING '%.0s\n' $(seq 0 "$empty_lines")
+  printf -v PS1_VERTICAL_SPACING '%.0s\n' $(seq 0 "$empty_lines")
   empty_lines=0
 
   PS1_HORIZONTAL_LINE="╰$PS1_DATE_LINE┴────────────┴─────────────────┴───┴──────────┴$PS1_PWD_LINE┴"
@@ -76,7 +76,7 @@ prompt() {
 
   PS1_LINE1="│ $PS1_DATE_WITH_SPACES │ $PS1_0$PS1_USER$PS1_USER_SPACES │ $PS1_HOST$PS1_HOST_SPACES │ $PS1_SHLVL │ $PS1_PID$PS1_PID_SPACES │ $PS1_PATH │"
   PS1_LINE2="$PS1_HORIZONTAL_LINE$END_LINE"
-  PS1_LINE3="$PS1_SPACING$PS1_PROMPT"
+  PS1_LINE3="$PS1_VERTICAL_SPACING$PS1_PROMPT"
   PS1="$PS1_LINE1\n$PS1_LINE2$PS1_LINE3"
 }
 PROMPT_COMMAND=prompt
