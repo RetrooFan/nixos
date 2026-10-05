@@ -42,10 +42,10 @@ esac
 
 PS1_FORMAT_END='\[\033[00m\]'
 PS1_PROMPT_TEXT='\$\$\$\$\$'
-PS1_USER_SPACES=`printf "%*s" $(expr 10 - ${#CURRENT_USER})`
 PS1_USER="$PS1_COLOR\u$PS1_FORMAT_END"
-PS1_HOST_SPACES=`printf "%*s" $(expr 15 - ${#HOSTNAME})`
+PS1_USER_SPACES=`printf "%*s" $(expr 10 - ${#CURRENT_USER})`
 PS1_HOST="\[\033[01;36m\]\h$PS1_FORMAT_END"
+PS1_HOST_SPACES=`printf "%*s" $(expr 15 - ${#HOSTNAME})`
 PS1_SHLVL="$PS1_COLOR$SHLVL$PS1_FORMAT_END"
 PS1_PID="$$"
 PS1_PATH="\[\033[01;34m\]\w$PS1_FORMAT_END"
