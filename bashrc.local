@@ -51,7 +51,6 @@ PS1_2="\[\033[01;36m\]\h$PS1_FORMAT_END"
 PS1_3="$PS1_COLOR$SHLVL$PS1_FORMAT_END"
 PS1_4="$$"
 PS1_5="\[\033[01;34m\]\w$PS1_FORMAT_END"
-PS1_6="╰────────────────────────────────┴────────────┴─────────────────┴───┴───────────────────────────────────────────────────────────────────────────────"
 PS1_PROMPT="$PS1_COLOR$PS1_PROMPT_TEXT$PS1_FORMAT_END -> "
 
 PS1_INIT=$PS1
@@ -62,9 +61,17 @@ prompt() {
   # PS1=$(printf "\n%*s\r%s\n\$ " "$(tput cols)" "$(date)" "$PS1_OLD")
 
   PS1_DATE=$(date)
+  printf -v PS1_DATE_LINE '%.0s─' $(seq -1 ${#PS1_DATE})
+
+  printf -v CURRENT_PROCESS_LINE '%.0s─' $(seq -1 ${#PS1_4})
+
+  PWD_HOME="${PWD/#$HOME/\~}"
+  printf -v PWD_HOME_LINE '%.0s─' $(seq -1 ${#PWD_HOME})
 
   printf -v PS1_7 '%.0s\n' $(seq 0 "$empty_lines")
   empty_lines=0
+
+  PS1_6="╰$PS1_DATE_LINE┴────────────┴─────────────────┴───┴$CURRENT_PROCESS_LINE┴$PWD_HOME_LINE┴"
 
   PS1="│ $PS1_DATE │ $PS1_0$PS1_1$PS1_1_SPACES │ $PS1_2$PS1_2_SPACES │ $PS1_3 │ $PS1_4 │ $PS1_5 │\n$PS1_6$PS1_7$PS1_PROMPT"
 }
