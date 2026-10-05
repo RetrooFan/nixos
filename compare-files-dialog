@@ -11,8 +11,9 @@ done
 shift $((OPTIND - 1))
 
 uprawnienia_pliku_docelowego="$(ls -l $2 --color=auto 2>/dev/null | awk '{print $1, $3, $4}')"
+RESET="\033[0m"
 
-((${3:0} % 2 == 0)) && printf "\033[38;5;153m" || printf "\033[0m"
+((${3:0} % 2 == 0)) && printf "\033[38;5;153m" || printf "${RESET}"
 
 ile_kresek=$((110 - ${#2} - 3))
 printf "│%s" "$1"; printf "\n╰"; printf '%.0s─' $(seq 1 $ile_kresek); printf "► %s " "$2"
@@ -26,5 +27,7 @@ if $SILENT; then
 else
   read -p " [ENTER]"
 fi
+
+printf "${RESET}"
 
 exit 1
