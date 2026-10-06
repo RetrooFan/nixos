@@ -10,6 +10,13 @@ while getopts "i" flaga; do
 done
 shift $((OPTIND - 1))
 
+user_input() {
+  printf $1
+  printf "${RESET} ${KOLOR}"
+  read odpowiedz
+  odpowiedz="${odpowiedz,,}"
+}
+
 uprawnienia_pliku_docelowego="$(ls -l $2 --color=auto 2>/dev/null | awk '{print $1, $3, $4}')"
 ((${3:0} % 2)) && KOLOR="\033[0m" || KOLOR="\033[38;5;153m"
 RESET="\033[0m"
@@ -26,10 +33,7 @@ if compare-files $1 $2; then
 else
   [ -f "$2" ] && printf " %s" "1≠2" || printf " %s" "2∈Ø"
 
-  printf " [C/yes/n]" # 'C' stands for 'Compare'
-  printf "${RESET} ${KOLOR}"
-  read odpowiedz
-  odpowiedz="${odpowiedz,,}"
+  user_input " [C/yes/n]" # 'C' stands for 'Compare'
 
   printf "${RESET}"
 
