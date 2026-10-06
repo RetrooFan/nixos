@@ -28,16 +28,21 @@ printf "╰"; printf '%.0s─' $(seq 1 $ile_kresek); printf "► %s " "$2"
 printf "%-20s" "$uprawnienia_pliku_docelowego"
 
 if compare-files $1 $2; then
-  printf " %s\n" "1=2"
-  printf "${RESET}"
+  printf " %s" "1=2"
+  $INSPECT || printf "\n"
 else
   [ -f "$2" ] && printf " %s" "1≠2" || printf " %s" "2∈Ø"
 
   user_input " [C/yes/n]" # 'C' stands for 'Compare'
 fi
 
+if $INSPECT; then
+  user_input " [ENTER]"
+fi
+
 printf "${RESET}"
 
 [ "$odpowiedz" == "c" ] && exit 1
 [ "$odpowiedz" == "yes" ] && exit 2
+$INSPECT && exit 1
 exit 0
