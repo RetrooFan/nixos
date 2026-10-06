@@ -26,11 +26,12 @@ if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PAT
 fi
 
 echo
-for ((i = 0; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
+size=${#REPO_ROOT_PATHS[@]}
+for ((i = 0; i < $size; i++)); do
   if $INSPECT; then
-    compare-files-dialog -i   ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} ${i}
+    compare-files-dialog -i   ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} $i $size
   else
-    compare-files-dialog      ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} ${i}
+    compare-files-dialog      ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} $i $size
   fi
   result=$?
 
@@ -41,11 +42,12 @@ done
 echo
 
 mkdir -p /etc/homefiles/
-for ((i = 0; i < ${#REPO_HOME_PATHS[@]}; i++)); do
+size=${#REPO_HOME_PATHS[@]}
+for ((i = 0; i < $size; i++)); do
   if $INSPECT; then
-    compare-files-dialog -i   ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} ${i}
+    compare-files-dialog -i   ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} $i $size
   else
-    compare-files-dialog      ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} ${i}
+    compare-files-dialog      ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} $i $size
   fi
   result=$?
 
