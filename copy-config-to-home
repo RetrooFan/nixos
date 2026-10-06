@@ -44,7 +44,7 @@ for ((i = 0; i < $size; i++)); do
 
   [ $result == 1 ] && $EDITOR ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
   [ $result == 2 ] && cp      ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
-  chmod 644 ${HOME_PATHS[$i]}.etc
+  chmod u+r ${HOME_PATHS[$i]}.etc
 done
 echo
 
