@@ -17,7 +17,7 @@ user_input() {
   odpowiedz="${odpowiedz,,}"
 }
 
-uprawnienia_pliku_docelowego="$(ls -l $2 --color=auto 2>/dev/null | awk '{print $1, $3, $4}')"
+uprawnienia_pliku_docelowego="$(ls -l $2 2>/dev/null | awk '{print $1, $3, $4}')"
 ((${3:0} % 2)) && KOLOR="\033[0m" || KOLOR="\033[38;5;153m"
 RESET="\033[0m"
 
