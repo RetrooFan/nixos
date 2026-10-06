@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
 DELETE=false
-while getopts "d" flaga; do
+INSPECT=false
+while getopts "di" flaga; do
   case "${flaga}" in
     d)
       DELETE=true
+      ;;
+    i)
+      INSPECT=true
       ;;
   esac
 done
