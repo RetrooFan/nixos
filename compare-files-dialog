@@ -16,10 +16,11 @@ printf "%-20s" "$uprawnienia_pliku_docelowego"
 printf " [C/yes/n]" # 'C' stands for 'Compare'
 read -s odpowiedz
 echo
+odpowiedz="${odpowiedz,,}"
 
 printf "${RESET}"
 
-[ "$odpowiedz" == "n" ] && exit 0
-[ "$odpowiedz" == "y" ] && exit 2
+[ "$odpowiedz" == "c" ] && exit 1
+[ "$odpowiedz" == "yes" ] && exit 2
 
-exit 1
+exit 0
