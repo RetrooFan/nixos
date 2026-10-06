@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+INSPECT=false
+while getopts "i" flaga; do
+  case "${flaga}" in
+    i)
+      INSPECT=true
+      ;;
+  esac
+done
+shift $((OPTIND - 1))
+
 source $(dirname "${BASH_SOURCE[0]}")/file-arrays
 
 eval "$REPO_ROOT_PATHS_E"
