@@ -11,7 +11,7 @@ done
 shift $((OPTIND - 1))
 
 user_input() {
-  printf $1
+  printf "$1"
   printf "${RESET} ${KOLOR}"
   read odpowiedz
   odpowiedz="${odpowiedz,,}"
@@ -36,7 +36,7 @@ else
 fi
 
 if $INSPECT; then
-  user_input " [ENTER]"
+  user_input "   [ENTER]"
 fi
 
 printf "${RESET}"
