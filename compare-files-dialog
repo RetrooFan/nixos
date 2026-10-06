@@ -21,11 +21,11 @@ uprawnienia_pliku_docelowego="$(ls -l $2 --color=auto 2>/dev/null | awk '{print 
 ((${3:0} % 2)) && KOLOR="\033[0m" || KOLOR="\033[38;5;153m"
 RESET="\033[0m"
 
-ile_kresek=$((110 - ${#2} - 3))
+ile_kresek=$((100 - ${#2} - 3))
 printf "${KOLOR}"
 printf "│%s\n" "$1"
 printf "╰"; printf '%.0s─' $(seq 1 $ile_kresek); printf "► %s " "$2"
-printf "%-20s" "$uprawnienia_pliku_docelowego"
+printf "%-26s" "$uprawnienia_pliku_docelowego"
 
 if compare-files $1 $2; then
   printf " %s" "1=2"
