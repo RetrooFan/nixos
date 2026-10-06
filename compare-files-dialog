@@ -19,12 +19,12 @@ RESET="\033[0m"
 ile_kresek=$((110 - ${#2} - 3))
 printf "│%s\n" "$1"
 printf "╰"; printf '%.0s─' $(seq 1 $ile_kresek); printf "► %s " "$2"
+printf "%-20s" "$uprawnienia_pliku_docelowego"
 
 if compare-files $1 $2; then
-  printf "%-20s %s\n" "$uprawnienia_pliku_docelowego" "1=2"
+  printf " %s\n" "1=2"
   printf "${RESET}"
 else
-  printf "%-20s" "$uprawnienia_pliku_docelowego"
   [ -f "$2" ] && printf " %s" "1≠2" || printf " %s" "2∈Ø"
 
   printf " [C/yes/n]" # 'C' stands for 'Compare'
