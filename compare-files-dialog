@@ -11,7 +11,7 @@ done
 shift $((OPTIND - 1))
 
 user_input() {
-  printf " [C/yes/n]"
+  printf " [copy/y/N]"
   printf "${RESET} ${KOLOR}"
   read odpowiedz
   odpowiedz="${odpowiedz,,}"
@@ -38,6 +38,6 @@ fi
 
 printf "${RESET}"
 
-[ "$odpowiedz" == "c" ] && exit 1
-[ "$odpowiedz" == "yes" ] && exit 2
+[ "$odpowiedz" == "y" ] && exit 1
+[ "$odpowiedz" == "copy" ] && exit 2
 exit 0
