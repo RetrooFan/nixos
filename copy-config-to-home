@@ -33,11 +33,12 @@ mkdir -p ~/.config/alacritty/
 mkdir -p ~/.config/sublime-text/Packages/User/
 
 echo
-for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
+size=${#HOME_PATHS[@]}
+for ((i = 0; i < $size; i++)); do
   if $INSPECT; then
-    compare-files-dialog -i   ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc ${i}
+    compare-files-dialog -i   ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc $i $size
   else
-    compare-files-dialog      ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc ${i}
+    compare-files-dialog      ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc $i $size
   fi
   result=$?
 
@@ -65,11 +66,12 @@ else
   done
 fi
 
-for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
+size=${#HOME_PATHS[@]}
+for ((i = 0; i < $size; i++)); do
   if $INSPECT; then
-    compare-files-dialog -i   ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} ${i}
+    compare-files-dialog -i   ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} $i $size
   else
-    compare-files-dialog      ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} ${i}
+    compare-files-dialog      ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} $i $size
   fi
   result=$?
 
