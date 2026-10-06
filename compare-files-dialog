@@ -11,7 +11,7 @@ done
 shift $((OPTIND - 1))
 
 user_input() {
-  printf "$1"
+  printf " [C/yes/n]"
   printf "${RESET} ${KOLOR}"
   read odpowiedz
   odpowiedz="${odpowiedz,,}"
@@ -30,15 +30,14 @@ printf "%-20s" "$uprawnienia_pliku_docelowego"
 if compare-files $1 $2; then
   printf " %s" "1=2"
   $INSPECT || printf "\n"
-  $INSPECT && user_input "   [ENTER]"
+  $INSPECT && user_input
 else
   [ -f "$2" ] && printf " %s" "1≠2" || printf " %s" "2∈Ø"
-  user_input " [C/yes/n]" # 'C' stands for 'Compare'
+  user_input
 fi
 
 printf "${RESET}"
 
 [ "$odpowiedz" == "c" ] && exit 1
 [ "$odpowiedz" == "yes" ] && exit 2
-$INSPECT && exit 1
 exit 0
