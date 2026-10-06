@@ -19,10 +19,7 @@ echo
 for ((i = 0; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
   compare-files-dialog ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} ${i} ||
   $EDITOR              ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
-
-  if ((i < 3)); then
-    chmod a+x                                 ${SYSTEM_ROOT_PATHS[$i]}
-  fi
+  ((i < 3)) && chmod a+x                      ${SYSTEM_ROOT_PATHS[$i]}
 done
 echo
 
