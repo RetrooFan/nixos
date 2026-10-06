@@ -14,8 +14,8 @@ printf "%-20s" "$uprawnienia_pliku_docelowego"
 [ -f "$2" ] && printf " %s" "1≠2" || printf " %s" "2∈Ø"
 
 printf " [C/yes/n]" # 'C' stands for 'Compare'
-read -s odpowiedz
-echo
+printf "${RESET} ${KOLOR}"
+read odpowiedz
 odpowiedz="${odpowiedz,,}"
 
 printf "${RESET}"
