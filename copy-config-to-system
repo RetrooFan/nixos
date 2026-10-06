@@ -34,7 +34,8 @@ for ((i = 0; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
   fi
   result=$?
 
-  [ $result != 0 ] && $EDITOR ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
+  [ $result == 1 ] && $EDITOR ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
+  [ $result == 2 ] && cp      ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
   ((i < 3)) && chmod a+x                             ${SYSTEM_ROOT_PATHS[$i]}
 done
 echo
@@ -48,6 +49,7 @@ for ((i = 0; i < ${#REPO_HOME_PATHS[@]}; i++)); do
   fi
   result=$?
 
-  [ $result != 0 ] && $EDITOR ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
+  [ $result == 1 ] && $EDITOR ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
+  [ $result == 2 ] && cp      ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
 done
 echo
