@@ -17,7 +17,8 @@ RESET="\033[0m"
 ((${3:0} % 2 == 0)) && printf "${KOLOR}" || printf "${RESET}"
 
 ile_kresek=$((110 - ${#2} - 3))
-printf "│%s" "$1"; printf "\n╰"; printf '%.0s─' $(seq 1 $ile_kresek); printf "► %s " "$2"
+printf "│%s\n" "$1"
+printf "╰"; printf '%.0s─' $(seq 1 $ile_kresek); printf "► %s " "$2"
 
 if compare-files $1 $2; then
   printf "%-20s %s\n" "$uprawnienia_pliku_docelowego" "1=2"
