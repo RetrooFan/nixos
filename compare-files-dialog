@@ -10,6 +10,12 @@ while getopts "i" flaga; do
 done
 shift $((OPTIND - 1))
 
+header() {
+  printf "╭"; printf '%.0s─' $(seq 1 91); printf "┬"; printf '%.0s─' $(seq 1 25); printf "╮\n"
+  printf "│ %-68s ──► %16s │ %s\n" "Source file" "Destination file" "Dest. file properties   │"
+  printf "├"; printf '%.0s─' $(seq 1 91); printf "┼"; printf '%.0s─' $(seq 1 25); printf "┤\n"
+}
+
 user_input() {
   printf "${RESET} ${KOLOR}"
   read odpowiedz
@@ -32,6 +38,8 @@ line2_1=$(
   printf "► %s" "$plik_docelowy"
 )
 line2_2=$(echo $uprawnienia_pliku_docelowego | awk '{print $1}')
+
+[ $3 == 0 ] && header
 
 printf "${KOLOR}"
 if compare-files $1 $2; then
