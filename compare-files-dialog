@@ -12,7 +12,7 @@ shift $((OPTIND - 1))
 
 header() {
   printf "╭"; printf '%.0s─' $(seq 1 81); printf "┬"; printf '%.0s─' $(seq 1 25); printf "╮\n"
-  printf "│ %-58s ──► %16s │ %s\n" "Source file" "Destination file" "Dest. file properties   │"
+  printf "│ %-58s ──► %16s │ %s        %s\n" "Source file" "Destination file" "Dest. props" "Info │"
   printf "├"; printf '%.0s─' $(seq 1 81); printf "┼"; printf '%.0s─' $(seq 1 25); printf "┤\n"
 }
 
