@@ -36,15 +36,15 @@ echo
 size=${#HOME_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
   if $INSPECT; then
-    $compare_files_dialog -i  ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc $i $size
+    $compare_files_dialog -i            ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc $i $size
   else
-    $compare_files_dialog     ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc $i $size
+    $compare_files_dialog               ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc $i $size
   fi
   result=$?
 
-  [ $result == 1 ] && $EDITOR ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
-  [ $result == 2 ] && cp      ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
-  chmod a=r ${HOME_PATHS[$i]}.etc
+  [ $result == 1 ] && $EDITOR           ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
+  [ $result == 2 ] && cp                ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
+  chmod a=r                                                      ${HOME_PATHS[$i]}.etc
 done
 echo
 
@@ -57,25 +57,25 @@ fi
 if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
   for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
     ((i < 2)) &&
-    [ ! -f ${HOME_PATHS[$i]} ] && cp     ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]} ||
-    [ ! -f ${HOME_PATHS[$i]} ] && ln -s  ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
+    [ ! -f ${HOME_PATHS[$i]} ] && cp    ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]} ||
+    [ ! -f ${HOME_PATHS[$i]} ] && ln -s ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
   done
 else
   for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
-    [ ! -f ${HOME_PATHS[$i]} ] && cp ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
+    [ ! -f ${HOME_PATHS[$i]} ] && cp    ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
   done
 fi
 
 size=${#HOME_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
   if $INSPECT; then
-    $compare_files_dialog -i  ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} $i $size
+    $compare_files_dialog -i            ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} $i $size
   else
-    $compare_files_dialog     ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} $i $size
+    $compare_files_dialog               ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} $i $size
   fi
   result=$?
 
-  [ $result == 1 ] && $EDITOR ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
-  [ $result == 2 ] && cp      ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
+  [ $result == 1 ] && $EDITOR           ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
+  [ $result == 2 ] && cp                ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]}
 done
 echo
