@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source $REPO_DIR/file-arrays || exit 1
+
 INSPECT=false
 while getopts "i" flaga; do
   case "${flaga}" in
@@ -9,8 +11,6 @@ while getopts "i" flaga; do
   esac
 done
 shift $((OPTIND - 1))
-
-source $(dirname "${BASH_SOURCE[0]}")/file-arrays
 
 eval "$REPO_ROOT_PATHS_E"
 eval "$REPO_HOME_PATHS_E"
