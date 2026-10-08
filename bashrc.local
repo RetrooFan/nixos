@@ -95,7 +95,7 @@ if [ "${#HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
   echo
 else
   for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
-    compare-files -c copy-config-to-home ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
+    compare-files -c "copy-config-to-home" ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
   done
 fi
 
