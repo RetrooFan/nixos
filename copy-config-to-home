@@ -31,8 +31,6 @@ if [ "${#HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" -o "${#HOME_PATHS[@]}" !=
   echo "TABLICE MAJA ROZNE DLUGOSCI!"; echo; exit 0
 fi
 
-HOME_PATHS_etc=("${HOME_PATHS[@]/%/.etc}")
-
 mkdir -p ~/.config/micro/
 mkdir -p ~/.config/Code/User/
 mkdir -p ~/.config/lazygit/
@@ -41,8 +39,8 @@ mkdir -p ~/.config/sublime-text/Packages/User/
 
 size=${#SYSTEM_HOME_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
-  $compare_and_copy_files $compare_files_dialog $INSPECT ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS_etc[$i]} $i $size
-  [ -f ${HOME_PATHS_etc[$i]} ] && chmod a=r ${HOME_PATHS_etc[$i]}
+  $compare_and_copy_files $compare_files_dialog $INSPECT ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc $i $size
+  [ -f ${HOME_PATHS[$i]}.etc ] && chmod a=r ${HOME_PATHS[$i]}.etc
 done
 echo
 
@@ -64,8 +62,8 @@ else
   done
 fi
 
-size=${#HOME_PATHS_etc[@]}
+size=${#HOME_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
-  $compare_and_copy_files $compare_files_dialog $INSPECT ${HOME_PATHS_etc[$i]} ${HOME_PATHS[$i]} $i $size
+  $compare_and_copy_files $compare_files_dialog $INSPECT ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} $i $size
 done
 echo
