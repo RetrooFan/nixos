@@ -9,6 +9,7 @@
 # ------------------------------------------------
 # ------------------------------------------------
 
+source $REPO_DIR/file-arrays 2>/dev/null || source /etc/file-arrays || exit 1
 eval "$REPO_ROOT_PATHS_E"
 eval "$REPO_HOME_PATHS_E"
 eval "$SYSTEM_ROOT_PATHS_E"
