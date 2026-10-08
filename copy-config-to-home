@@ -16,7 +16,27 @@ while getopts "di" flaga; do
 done
 shift $((OPTIND - 1))
 
+compare_files() {
+  declare -n array0=$1
+  declare -n array1=$2
+  size=${#array0[@]}
+
+  for ((i = 0; i < $size; i++)); do
+    if $INSPECT; then
+      $compare_files_dialog -i    ${array0[$i]} ${array1[$i]} $i $size
+    else
+      $compare_files_dialog       ${array0[$i]} ${array1[$i]} $i $size
+    fi
+    result=$?
+
+    [ $result == 1 ] && $EDITOR   ${array0[$i]} ${array1[$i]}
+    [ $result == 2 ] && cp        ${array0[$i]} ${array1[$i]}
+    [ $3 ] && [ -f ${array1[$i]} ] && chmod a=r ${array1[$i]}
+  done
+}
+
 command -v "compare-files-dialog" &>/dev/null && compare_files_dialog="compare-files-dialog" || compare_files_dialog="$REPO_DIR/compare-files-dialog"
+HOME_PATHS_etc=("${HOME_PATHS[@]/%/.etc}")
 
 if [ "${#HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" -o "${#HOME_PATHS[@]}" != "${#REPO_HOME_PATHS[@]}" ]; then
   echo
@@ -33,19 +53,7 @@ mkdir -p ~/.config/alacritty/
 mkdir -p ~/.config/sublime-text/Packages/User/
 
 echo
-size=${#HOME_PATHS[@]}
-for ((i = 0; i < $size; i++)); do
-  if $INSPECT; then
-    $compare_files_dialog -i            ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc $i $size
-  else
-    $compare_files_dialog               ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc $i $size
-  fi
-  result=$?
-
-  [ $result == 1 ] && $EDITOR           ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
-  [ $result == 2 ] && cp                ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
-  [ -f ${HOME_PATHS[$i]}.etc ] && chmod a=r                      ${HOME_PATHS[$i]}.etc
-done
+compare_files SYSTEM_HOME_PATHS HOME_PATHS_etc true
 echo
 
 if $DELETE; then
@@ -66,16 +74,5 @@ else
   done
 fi
 
-size=${#HOME_PATHS[@]}
-for ((i = 0; i < $size; i++)); do
-  if $INSPECT; then
-    $compare_files_dialog -i            ${HOME_PATHS[$i]}.etc    ${HOME_PATHS[$i]} $i $size
-  else
-    $compare_files_dialog               ${HOME_PATHS[$i]}.etc    ${HOME_PATHS[$i]} $i $size
-  fi
-  result=$?
-
-  [ $result == 1 ] && $EDITOR           ${HOME_PATHS[$i]}.etc    ${HOME_PATHS[$i]}
-  [ $result == 2 ] && cp                ${HOME_PATHS[$i]}.etc    ${HOME_PATHS[$i]}
-done
+compare_files HOME_PATHS_etc HOME_PATHS
 echo
