@@ -12,6 +12,8 @@ while getopts "i" flaga; do
 done
 shift $((OPTIND - 1))
 
+command -v "compare-files-dialog" &>/dev/null && compare_files_dialog="compare-files-dialog" || compare_files_dialog="$REPO_DIR/compare-files-dialog"
+
 if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
   echo
   echo "TABLICE MAJA ROZNE DLUGOSCI!"
@@ -24,9 +26,9 @@ echo
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
   if $INSPECT; then
-    compare-files-dialog -i   ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} $i $size
+    $compare_files_dialog -i  ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} $i $size
   else
-    compare-files-dialog      ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} $i $size
+    $compare_files_dialog     ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} $i $size
   fi
   result=$?
 
@@ -40,9 +42,9 @@ mkdir -p /etc/homefiles/
 size=${#REPO_HOME_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
   if $INSPECT; then
-    compare-files-dialog -i   ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} $i $size
+    $compare_files_dialog -i  ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} $i $size
   else
-    compare-files-dialog      ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} $i $size
+    $compare_files_dialog     ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} $i $size
   fi
   result=$?
 
