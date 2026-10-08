@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-source $REPO_DIR/file-arrays ||
-  exit 1
+source $REPO_DIR/file-arrays || exit 1
 
 INSPECT=false
 while getopts "i" flaga; do
