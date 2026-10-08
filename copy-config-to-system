@@ -21,10 +21,17 @@ if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PAT
   echo "TABLICE MAJA ROZNE DLUGOSCI!"; echo; exit 0
 fi
 
+size=${#REPO_SCRIPTS_PATHS[@]}
+for ((i = 0; i < $size; i++)); do
+  $compare_and_copy_files $INSPECT ${REPO_SCRIPTS_PATHS[$i]} ${SYSTEM_SCRIPTS_PATHS[$i]} $i $size
+  [ -f ${SYSTEM_SCRIPTS_PATHS[$i]} ] && chmod a+x ${SYSTEM_SCRIPTS_PATHS[$i]}
+done
+echo
+
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
   $compare_and_copy_files $INSPECT ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} $i $size
-  [ -f ${SYSTEM_ROOT_PATHS[$i]} ] && ((i < 4)) && chmod a+x ${SYSTEM_ROOT_PATHS[$i]}
+  [ -f ${SYSTEM_ROOT_PATHS[$i]} ] && chmod a+x ${SYSTEM_ROOT_PATHS[$i]}
 done
 echo
 

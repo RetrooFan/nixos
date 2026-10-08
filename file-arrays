@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
 
-REPO_ROOT_PATHS=(
+REPO_SCRIPTS_PATHS=(
   $REPO_DIR/compare-and-copy-files
   $REPO_DIR/compare-files
   $REPO_DIR/compare-files-dialog
   $REPO_DIR/copy-config-to-home
+)
+SYSTEM_SCRIPTS_PATHS=(
+  /usr/local/bin/compare-and-copy-files
+  /usr/local/bin/compare-files
+  /usr/local/bin/compare-files-dialog
+  /usr/local/bin/copy-config-to-home
+)
+REPO_ROOT_PATHS=(
   $REPO_DIR/bashrc.root
   $REPO_DIR/bashrc.local
   $REPO_DIR/file-arrays
@@ -13,10 +21,6 @@ REPO_ROOT_PATHS=(
   $REPO_DIR/tmux.conf
 )
 SYSTEM_ROOT_PATHS=(
-  /usr/local/bin/compare-and-copy-files
-  /usr/local/bin/compare-files
-  /usr/local/bin/compare-files-dialog
-  /usr/local/bin/copy-config-to-home
   /root/.bashrc.root
   /etc/bashrc.local
   /etc/file-arrays
