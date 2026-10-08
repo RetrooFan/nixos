@@ -34,7 +34,7 @@ for ((i = 0; i < $size; i++)); do
 
   [ $result == 1 ] && $EDITOR ${REPO_ROOT_PATHS[$i]}        ${SYSTEM_ROOT_PATHS[$i]}
   [ $result == 2 ] && cp      ${REPO_ROOT_PATHS[$i]}        ${SYSTEM_ROOT_PATHS[$i]}
-  ((i < 3)) && chmod a+x                                    ${SYSTEM_ROOT_PATHS[$i]}
+  [ -f ${SYSTEM_ROOT_PATHS[$i]} ] && ((i < 3)) && chmod a+x ${SYSTEM_ROOT_PATHS[$i]}
 done
 echo
 
