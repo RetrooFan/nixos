@@ -31,7 +31,6 @@ echo
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
   $compare_and_copy_files $INSPECT ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} $i $size
-  [ -f ${SYSTEM_ROOT_PATHS[$i]} ] && chmod a+x ${SYSTEM_ROOT_PATHS[$i]}
 done
 echo
 
