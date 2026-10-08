@@ -24,7 +24,7 @@ fi
 size=${#REPO_SCRIPTS_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
   $compare_and_copy_files $INSPECT ${REPO_SCRIPTS_PATHS[$i]} ${SYSTEM_SCRIPTS_PATHS[$i]} $i $size
-  [ -f ${SYSTEM_SCRIPTS_PATHS[$i]} ] && chmod a+x ${SYSTEM_SCRIPTS_PATHS[$i]}
+  [ -f ${SYSTEM_SCRIPTS_PATHS[$i]} ] && chmod a+x            ${SYSTEM_SCRIPTS_PATHS[$i]}
 done
 echo
 
