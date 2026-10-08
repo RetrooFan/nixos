@@ -26,15 +26,15 @@ echo
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
   if $INSPECT; then
-    $compare_files_dialog -i  ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} $i $size
+    $compare_files_dialog -i  ${REPO_ROOT_PATHS[$i]}        ${SYSTEM_ROOT_PATHS[$i]} $i $size
   else
-    $compare_files_dialog     ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} $i $size
+    $compare_files_dialog     ${REPO_ROOT_PATHS[$i]}        ${SYSTEM_ROOT_PATHS[$i]} $i $size
   fi
   result=$?
 
-  [ $result == 1 ] && $EDITOR ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
-  [ $result == 2 ] && cp      ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
-  ((i < 3)) && chmod a+x                             ${SYSTEM_ROOT_PATHS[$i]}
+  [ $result == 1 ] && $EDITOR ${REPO_ROOT_PATHS[$i]}        ${SYSTEM_ROOT_PATHS[$i]}
+  [ $result == 2 ] && cp      ${REPO_ROOT_PATHS[$i]}        ${SYSTEM_ROOT_PATHS[$i]}
+  ((i < 3)) && chmod a+x                                    ${SYSTEM_ROOT_PATHS[$i]}
 done
 echo
 
@@ -42,13 +42,13 @@ mkdir -p /etc/homefiles/
 size=${#REPO_HOME_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
   if $INSPECT; then
-    $compare_files_dialog -i  ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} $i $size
+    $compare_files_dialog -i  ${REPO_HOME_PATHS[$i]}        ${SYSTEM_HOME_PATHS[$i]} $i $size
   else
-    $compare_files_dialog     ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} $i $size
+    $compare_files_dialog     ${REPO_HOME_PATHS[$i]}        ${SYSTEM_HOME_PATHS[$i]} $i $size
   fi
   result=$?
 
-  [ $result == 1 ] && $EDITOR ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
-  [ $result == 2 ] && cp      ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
+  [ $result == 1 ] && $EDITOR ${REPO_HOME_PATHS[$i]}        ${SYSTEM_HOME_PATHS[$i]}
+  [ $result == 2 ] && cp      ${REPO_HOME_PATHS[$i]}        ${SYSTEM_HOME_PATHS[$i]}
 done
 echo
