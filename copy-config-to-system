@@ -12,9 +12,9 @@ while getopts "i" flaga; do
 done
 shift $((OPTIND - 1))
 
-command -v "compare-files-dialog" &>/dev/null &&
-  compare_files_dialog="compare-files-dialog" ||
-  compare_files_dialog="$REPO_DIR/compare-files-dialog"
+command -v "compare-and-copy-files" &>/dev/null &&
+  compare_and_copy_files="compare-and-copy-files" ||
+  compare_and_copy_files="$REPO_DIR/compare-and-copy-files"
 
 echo
 if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
@@ -23,15 +23,7 @@ fi
 
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
-  if $INSPECT; then
-    $compare_files_dialog -i  ${REPO_ROOT_PATHS[$i]}        ${SYSTEM_ROOT_PATHS[$i]} $i $size
-  else
-    $compare_files_dialog     ${REPO_ROOT_PATHS[$i]}        ${SYSTEM_ROOT_PATHS[$i]} $i $size
-  fi
-  result=$?
-
-  [ $result == 1 ] && $EDITOR ${REPO_ROOT_PATHS[$i]}        ${SYSTEM_ROOT_PATHS[$i]}
-  [ $result == 2 ] && cp      ${REPO_ROOT_PATHS[$i]}        ${SYSTEM_ROOT_PATHS[$i]}
+  $compare_and_copy_files $INSPECT ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} $i $size
   [ -f ${SYSTEM_ROOT_PATHS[$i]} ] && ((i < 3)) && chmod a+x ${SYSTEM_ROOT_PATHS[$i]}
 done
 echo
@@ -39,14 +31,6 @@ echo
 mkdir -p /etc/homefiles/
 size=${#REPO_HOME_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
-  if $INSPECT; then
-    $compare_files_dialog -i  ${REPO_HOME_PATHS[$i]}        ${SYSTEM_HOME_PATHS[$i]} $i $size
-  else
-    $compare_files_dialog     ${REPO_HOME_PATHS[$i]}        ${SYSTEM_HOME_PATHS[$i]} $i $size
-  fi
-  result=$?
-
-  [ $result == 1 ] && $EDITOR ${REPO_HOME_PATHS[$i]}        ${SYSTEM_HOME_PATHS[$i]}
-  [ $result == 2 ] && cp      ${REPO_HOME_PATHS[$i]}        ${SYSTEM_HOME_PATHS[$i]}
+  $compare_and_copy_files $INSPECT ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} $i $size
 done
 echo
