@@ -10,6 +10,8 @@ while getopts "i" flaga; do
 done
 shift $((OPTIND - 1))
 
+command -v "compare-files" &>/dev/null && compare_files="compare-files" || compare_files="$REPO_DIR/compare-files"
+
 header() {
   printf "╭"; printf '%.0s─' $(seq 1 81); printf "┬"; printf '%.0s─' $(seq 1 25); printf "╮\n"
   printf "│ %-58s ──► %16s │ %s        %s\n" "Source file" "Destination file" "Dest. props" "Info │"
@@ -44,7 +46,7 @@ props3=$(echo $uprawnienia_pliku_docelowego | awk '{print $1}')
 printf "${KOLOR}"
 printf "%s │ %-19s " "$line1_column1" "$props1 $props2"
 line2=$(printf "%s │ %-13s" "$line2_column1" "$props3")
-if compare-files $1 $2; then
+if $compare_files $1 $2; then
   $INSPECT && read_hint="[copy/y/N]"
   printf "%s\n" "1=2 │"
   printf "$line2"
