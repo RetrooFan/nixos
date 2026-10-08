@@ -11,16 +11,20 @@
 
 source $REPO_DIR/file-arrays 2>/dev/null || source /etc/file-arrays || exit 1
 
+command -v "compare-files" &>/dev/null &&
+  compare_files="compare-files" ||
+  compare_files="$REPO_DIR/compare-files"
+
 if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
   echo
   echo "TABLICE MAJA ROZNE DLUGOSCI!"
   echo
 else
   for ((i = 0; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
-    compare-files -c "copy-config-to-system" ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
+    $compare_files -c "copy-config-to-system" ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
   done
 
   for ((i = 0; i < ${#REPO_HOME_PATHS[@]}; i++)); do
-    compare-files -c "copy-config-to-system" ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
+    $compare_files -c "copy-config-to-system" ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
   done
 fi
