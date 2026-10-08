@@ -16,10 +16,6 @@ while getopts "di" flaga; do
 done
 shift $((OPTIND - 1))
 
-eval "$REPO_HOME_PATHS_E"
-eval "$SYSTEM_HOME_PATHS_E"
-eval "$HOME_PATHS_E"
-
 if [ "${#HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" -o "${#HOME_PATHS[@]}" != "${#REPO_HOME_PATHS[@]}" ]; then
   echo
   echo "TABLICE MAJA ROZNE DLUGOSCI!"

@@ -55,9 +55,3 @@ HOME_PATHS=(
   ~/.config/sublime-text/Packages/User/Preferences.sublime-settings
   ~/.config/Code/User/settings.json
 )
-
-export REPO_ROOT_PATHS_E=$(declare -p REPO_ROOT_PATHS)
-export REPO_HOME_PATHS_E=$(declare -p REPO_HOME_PATHS)
-export SYSTEM_ROOT_PATHS_E=$(declare -p SYSTEM_ROOT_PATHS)
-export SYSTEM_HOME_PATHS_E=$(declare -p SYSTEM_HOME_PATHS)
-export HOME_PATHS_E=$(declare -p HOME_PATHS)
