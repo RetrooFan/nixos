@@ -65,12 +65,12 @@ fi
 if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
   for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
     ((i < 2)) &&
-    [ ! -f ${HOME_PATHS[$i]} ] && cp    ${REPO_HOME_PATHS[$i]}   ${HOME_PATHS[$i]} ||
-    [ ! -f ${HOME_PATHS[$i]} ] && ln -s ${REPO_HOME_PATHS[$i]}   ${HOME_PATHS[$i]}
+    [ ! -f ${HOME_PATHS[$i]} ] && cp    ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]} ||
+    [ ! -f ${HOME_PATHS[$i]} ] && ln -s ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
   done
 else
   for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
-    [ ! -f ${HOME_PATHS[$i]} ] && cp    ${HOME_PATHS[$i]}.etc    ${HOME_PATHS[$i]}
+    [ ! -f ${HOME_PATHS[$i]} ] && cp    ${HOME_PATHS[$i]}.etc  ${HOME_PATHS[$i]}
   done
 fi
 
