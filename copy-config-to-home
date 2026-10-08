@@ -54,7 +54,7 @@ if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
   done
 else
   for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
-    [ ! -f ${HOME_PATHS[$i]} ] && cp    ${HOME_PATHS[$i]}.etc  ${HOME_PATHS[$i]}
+    [ ! -f ${HOME_PATHS[$i]} ] && cp ${HOME_PATHS[$i]}.etc  ${HOME_PATHS[$i]}
   done
 fi
 
