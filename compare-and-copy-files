@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 
-if $2; then
-  $1 -i $3 $4 $5 $6
+command -v "compare-files-dialog" &>/dev/null &&
+  compare_files_dialog="compare-files-dialog" ||
+  compare_files_dialog="$REPO_DIR/compare-files-dialog"
+
+if $1; then
+  $compare_files_dialog -i $2 $3 $4 $5
 else
-  $1    $3 $4 $5 $6
+  $compare_files_dialog    $2 $3 $4 $5
 fi
 result=$?
 
-[ $result == 1 ] && $EDITOR $3 $4
-[ $result == 2 ] && cp      $3 $4
+[ $result == 1 ] && $EDITOR $2 $3
+[ $result == 2 ] && cp      $2 $3
