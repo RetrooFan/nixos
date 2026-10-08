@@ -14,15 +14,14 @@ shift $((OPTIND - 1))
 
 command -v "compare-files-dialog" &>/dev/null && compare_files_dialog="compare-files-dialog" || compare_files_dialog="$REPO_DIR/compare-files-dialog"
 
+echo
 if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
-  echo
   echo "TABLICE MAJA ROZNE DLUGOSCI!"
   echo
 
   exit 0
 fi
 
-echo
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
   if $INSPECT; then
