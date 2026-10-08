@@ -19,10 +19,7 @@ command -v "compare-files-dialog" &>/dev/null &&
 
 echo
 if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
-  echo "TABLICE MAJA ROZNE DLUGOSCI!"
-  echo
-
-  exit 0
+  echo "TABLICE MAJA ROZNE DLUGOSCI!"; echo; exit 0
 fi
 
 size=${#REPO_ROOT_PATHS[@]}
