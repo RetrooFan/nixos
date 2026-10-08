@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-source $REPO_DIR/file-arrays 2>/dev/null || source /etc/file-arrays || exit 1
+source $REPO_DIR/file-arrays 2>/dev/null ||
+  source /etc/file-arrays ||
+  exit 1
 
 DELETE=false
 INSPECT=false
@@ -16,7 +18,9 @@ while getopts "di" flaga; do
 done
 shift $((OPTIND - 1))
 
-command -v "compare-files-dialog" &>/dev/null && compare_files_dialog="compare-files-dialog" || compare_files_dialog="$REPO_DIR/compare-files-dialog"
+command -v "compare-files-dialog" &>/dev/null &&
+  compare_files_dialog="compare-files-dialog" ||
+  compare_files_dialog="$REPO_DIR/compare-files-dialog"
 
 compare_files() {
   declare -n array0=$1

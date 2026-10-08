@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-source $REPO_DIR/file-arrays || exit 1
+source $REPO_DIR/file-arrays ||
+  exit 1
 
 INSPECT=false
 while getopts "i" flaga; do
@@ -12,7 +13,9 @@ while getopts "i" flaga; do
 done
 shift $((OPTIND - 1))
 
-command -v "compare-files-dialog" &>/dev/null && compare_files_dialog="compare-files-dialog" || compare_files_dialog="$REPO_DIR/compare-files-dialog"
+command -v "compare-files-dialog" &>/dev/null &&
+  compare_files_dialog="compare-files-dialog" ||
+  compare_files_dialog="$REPO_DIR/compare-files-dialog"
 
 echo
 if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then

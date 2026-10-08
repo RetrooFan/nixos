@@ -10,7 +10,9 @@ while getopts "i" flaga; do
 done
 shift $((OPTIND - 1))
 
-command -v "compare-files" &>/dev/null && compare_files="compare-files" || compare_files="$REPO_DIR/compare-files"
+command -v "compare-files" &>/dev/null &&
+  compare_files="compare-files" ||
+  compare_files="$REPO_DIR/compare-files"
 
 header() {
   printf "╭"; printf '%.0s─' $(seq 1 81); printf "┬"; printf '%.0s─' $(seq 1 25); printf "╮\n"

@@ -12,7 +12,9 @@
 # ------------------------------------------------
 # ------------------------------------------------
 
-source $REPO_DIR/file-arrays 2>/dev/null || source /etc/file-arrays || exit 1
+source $REPO_DIR/file-arrays 2>/dev/null ||
+  source /etc/file-arrays ||
+  exit 1
 
 HISTSIZE=10000
 HISTFILESIZE=20000
