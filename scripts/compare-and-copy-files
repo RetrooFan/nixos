@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
-if $1; then
-  /etc/scripts/compare-files-dialog $2 $3 $4 $5 true
+if [ -f /etc/scripts/compare-files-dialog ]; then
+  if $1; then
+    /etc/scripts/compare-files-dialog $2 $3 $4 $5 true
+  else
+    /etc/scripts/compare-files-dialog $2 $3 $4 $5 false
+  fi
+
+  result=$?
 else
-  /etc/scripts/compare-files-dialog $2 $3 $4 $5 false
+  result=1
 fi
-result=$?
 
 [ $result == 1 ] && $EDITOR $2 $3
 [ $result == 2 ] && cp      $2 $3
