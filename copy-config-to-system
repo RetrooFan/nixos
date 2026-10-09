@@ -2,7 +2,8 @@
 
 # set -euo pipefail
 
-source $REPO_DIR/file-paths || exit 1
+[ ! -f /etc/file-paths ] && $EDITOR $REPO_DIR/file-paths /etc/file-paths
+source /etc/file-paths || exit 1
 
 INSPECT=false
 while getopts "i" flaga; do
