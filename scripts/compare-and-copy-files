@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-source $REPO_DIR/functions || exit 1
+source $REPO_DIR/file-paths || exit 1
 
 if $1; then
-  compare-files-dialog $2 $3 $4 $5 true
+  $compare_files_dialog $2 $3 $4 $5 true
 else
-  compare-files-dialog $2 $3 $4 $5 false
+  $compare_files_dialog $2 $3 $4 $5 false
 fi
 result=$?
 

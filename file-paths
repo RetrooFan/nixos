@@ -65,3 +65,7 @@ HOME_PATHS=(
 [ -f $REPO_DIR/scripts/compare-and-copy-files ] &&
   compare_and_copy_files="$REPO_DIR/scripts/compare-and-copy-files" ||
   compare_and_copy_files="/etc/scripts/compare-and-copy-files"
+
+[ -f $REPO_DIR/scripts/compare-files-dialog ] &&
+  compare_files_dialog="$REPO_DIR/scripts/compare-files-dialog" ||
+  compare_files_dialog="/etc/scripts/compare-files-dialog"
