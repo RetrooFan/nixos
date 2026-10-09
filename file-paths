@@ -26,6 +26,7 @@ REPO_ROOT_PATHS=(
   $REPO_DIR/htoprc
   $REPO_DIR/nanorc
   $REPO_DIR/tmux.conf
+  $REPO_DIR/scripts/set-exit-action
 )
 SYSTEM_ROOT_PATHS=(
   /root/.bashrc.root
@@ -34,6 +35,7 @@ SYSTEM_ROOT_PATHS=(
   /etc/htoprc
   /etc/nanorc
   /etc/tmux.conf
+  /etc/scripts/set-exit-action
 )
 
 REPO_HOME_PATHS=(

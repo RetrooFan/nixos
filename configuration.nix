@@ -13,6 +13,7 @@
       "scripts/compare-files".text =          builtins.readFile ./scripts/compare-files;
       "scripts/git-pull".text =               builtins.readFile ./scripts/git-pull;
       "scripts/check-for-home-files".text =   builtins.readFile ./scripts/check-for-home-files;
+      "scripts/set-exit-action".text =        builtins.readFile ./scripts/set-exit-action;
 
       "bashrc.local".text =                   builtins.readFile ./bashrc.local;
       "file-paths".text =                     builtins.readFile ./file-paths;

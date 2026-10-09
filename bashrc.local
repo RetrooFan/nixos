@@ -77,13 +77,7 @@ PROMPT_COMMAND=prompt
 
 # ------------------------------------------------
 
-SESSION_ID=`hexdump -vn4 -e'4/1 "%02x"' /dev/urandom`
-echo "# ----- | `date` | START | $SESSION_ID" >> $HISTFILE
-
-after_exit() {
-  sleep 0.1 && echo "# ----- | `date` | END   | $SESSION_ID" >> "$HISTFILE" &
-}
-trap after_exit EXIT
+[ -f /etc/scripts/set-exit-action ] && source /etc/scripts/set-exit-action
 
 # ------------------------------------------------
 
