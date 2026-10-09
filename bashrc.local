@@ -29,11 +29,11 @@ alias -- mi='micro'
 
 # ------------------------------------------------
 
-[ -f /etc/scripts/set-prompt ] && source /etc/scripts/set-prompt
+[ -f /etc/sources/set-prompt ] && source /etc/sources/set-prompt
 
 # ------------------------------------------------
 
-[ -f /etc/scripts/set-exit-action ] && source /etc/scripts/set-exit-action
+[ -f /etc/sources/set-exit-action ] && source /etc/sources/set-exit-action
 
 # ------------------------------------------------
 

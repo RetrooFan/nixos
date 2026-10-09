@@ -33,6 +33,7 @@ for ((i = 0; i < $size; i++)); do
 done
 echo
 
+mkdir -p /etc/sources/
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
   /etc/scripts/compare-and-copy-files $INSPECT ${REPO_ROOT_PATHS[$i]}    ${SYSTEM_ROOT_PATHS[$i]}    $i $size
