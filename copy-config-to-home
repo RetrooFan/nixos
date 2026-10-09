@@ -59,6 +59,6 @@ fi
 
 size=${#HOME_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
-  compare-and-copy-files $INSPECT         ${HOME_PATHS[$i]}.etc    ${HOME_PATHS[$i]} $i $size
+  compare-and-copy-files $INSPECT         ${HOME_PATHS[$i]}.etc    ${HOME_PATHS[$i]}     $i $size
 done
 echo

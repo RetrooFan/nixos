@@ -29,13 +29,13 @@ echo
 
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
-  compare-and-copy-files $INSPECT ${REPO_ROOT_PATHS[$i]}    ${SYSTEM_ROOT_PATHS[$i]} $i $size
+  compare-and-copy-files $INSPECT ${REPO_ROOT_PATHS[$i]}    ${SYSTEM_ROOT_PATHS[$i]}    $i $size
 done
 echo
 
 mkdir -p /etc/homefiles/
 size=${#REPO_HOME_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
-  compare-and-copy-files $INSPECT ${REPO_HOME_PATHS[$i]}    ${SYSTEM_HOME_PATHS[$i]} $i $size
+  compare-and-copy-files $INSPECT ${REPO_HOME_PATHS[$i]}    ${SYSTEM_HOME_PATHS[$i]}    $i $size
 done
 echo
