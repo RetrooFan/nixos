@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
 REPO_SCRIPTS_PATHS=(
-  $REPO_DIR/compare-and-copy-files
   $REPO_DIR/copy-config-to-home
 )
 SYSTEM_SCRIPTS_PATHS=(
-  /usr/local/bin/compare-and-copy-files
   /usr/local/bin/copy-config-to-home
 )
 REPO_ROOT_PATHS=(

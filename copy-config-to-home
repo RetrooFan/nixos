@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+source $REPO_DIR/functions   2>/dev/null || source /etc/functions   || exit 1
 source $REPO_DIR/file-arrays 2>/dev/null || source /etc/file-arrays || exit 1
 
 DELETE=false
@@ -16,10 +17,6 @@ while getopts "di" flaga; do
 done
 shift $((OPTIND - 1))
 
-command -v "compare-and-copy-files" &>/dev/null &&
-  compare_and_copy_files="compare-and-copy-files" ||
-  compare_and_copy_files="$REPO_DIR/compare-and-copy-files"
-
 echo
 if [ "${#HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" -o "${#HOME_PATHS[@]}" != "${#REPO_HOME_PATHS[@]}" ]; then
   echo "TABLICE MAJA ROZNE DLUGOSCI!"; echo; exit 0
@@ -33,7 +30,7 @@ mkdir -p ~/.config/sublime-text/Packages/User/
 
 size=${#SYSTEM_HOME_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
-  $compare_and_copy_files $INSPECT ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc $i $size
+  compare-and-copy-files $INSPECT ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc $i $size
   [ -f ${HOME_PATHS[$i]}.etc ] && chmod a=r ${HOME_PATHS[$i]}.etc
 done
 echo
@@ -60,6 +57,6 @@ fi
 
 size=${#HOME_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
-  $compare_and_copy_files $INSPECT ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} $i $size
+  compare-and-copy-files $INSPECT ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} $i $size
 done
 echo

@@ -84,3 +84,15 @@ compare-files-dialog() {
   [ "$odpowiedz" == "copy" ] && odpowiedz="" && return 2
   return 0
 }
+
+compare-and-copy-files() {
+  if $1; then
+    compare-files-dialog $2 $3 $4 $5 true
+  else
+    compare-files-dialog $2 $3 $4 $5 false
+  fi
+  result=$?
+
+  [ $result == 1 ] && $EDITOR $2 $3
+  [ $result == 2 ] && cp      $2 $3
+}
