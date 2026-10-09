@@ -9,8 +9,8 @@ SYSTEM_SCRIPTS_PATHS=(
 REPO_ROOT_PATHS=(
   $REPO_DIR/bashrc.root
   $REPO_DIR/bashrc.local
-  $REPO_DIR/functions
   $REPO_DIR/file-arrays
+  $REPO_DIR/functions
   $REPO_DIR/htoprc
   $REPO_DIR/nanorc
   $REPO_DIR/tmux.conf
@@ -18,8 +18,8 @@ REPO_ROOT_PATHS=(
 SYSTEM_ROOT_PATHS=(
   /root/.bashrc.root
   /etc/bashrc.local
-  /etc/functions
   /etc/file-arrays
+  /etc/functions
   /etc/htoprc
   /etc/nanorc
   /etc/tmux.conf
