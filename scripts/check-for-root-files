@@ -19,3 +19,5 @@ else
     /etc/scripts/compare-files ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} "copy-config-to-system"
   done
 fi
+
+exit 0
