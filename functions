@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+compare-files() {
+  HASH1=$(sha256sum $1 2>/dev/null | awk '{print $1}') &&
+  HASH2=$(sha256sum $2 2>/dev/null | awk '{print $1}') &&
+
+  if [ "$HASH1" != "$HASH2" ]; then
+    if [ "$3" != "" ]; then
+      echo "--------------------------------------------------"
+      echo "|                                                |"
+      echo "|          Pliki sa rozne lub ich brak!          |"; [ "$COMMAND" == "copy-config-to-home" ] &&
+      echo "|    Uruchom polecenie 'copy-config-to-home'!    |"; [ "$COMMAND" == "copy-config-to-system" ] &&
+      echo "|   Uruchom polecenie 'copy-config-to-system'!   |"
+      echo "|                                                |"
+      echo "--------------------------------------------------"
+
+      printf "%-47s -> %-45s\n\n" "$1" "$2"
+    fi
+
+    return 2
+  fi
+}
