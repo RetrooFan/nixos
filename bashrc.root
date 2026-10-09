@@ -10,7 +10,7 @@
 # ------------------------------------------------
 
 source $REPO_DIR/functions   2>/dev/null || source /etc/functions
-source $REPO_DIR/file-arrays 2>/dev/null || source /etc/file-arrays
+source $REPO_DIR/file-paths 2>/dev/null || source /etc/file-paths
 
 if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
   echo

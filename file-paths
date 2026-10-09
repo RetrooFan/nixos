@@ -12,7 +12,7 @@ SYSTEM_SCRIPTS_PATHS=(
 REPO_ROOT_PATHS=(
   $REPO_DIR/bashrc.root
   $REPO_DIR/bashrc.local
-  $REPO_DIR/file-arrays
+  $REPO_DIR/file-paths
   $REPO_DIR/functions
   $REPO_DIR/htoprc
   $REPO_DIR/nanorc
@@ -21,7 +21,7 @@ REPO_ROOT_PATHS=(
 SYSTEM_ROOT_PATHS=(
   /root/.bashrc.root
   /etc/bashrc.local
-  /etc/file-arrays
+  /etc/file-paths
   /etc/functions
   /etc/htoprc
   /etc/nanorc

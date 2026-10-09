@@ -3,7 +3,7 @@
 # set -euo pipefail
 
 source $REPO_DIR/functions   || exit 1
-source $REPO_DIR/file-arrays || exit 1
+source $REPO_DIR/file-paths || exit 1
 
 INSPECT=false
 while getopts "i" flaga; do

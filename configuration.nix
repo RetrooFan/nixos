@@ -9,7 +9,7 @@
       "k3s-manifests/traefik-dashboard-config.yaml".text = builtins.readFile ./traefik-dashboard-config.yaml;
 
       "bashrc.local".text =                  builtins.readFile ./bashrc.local;
-      "file-arrays".text =                   builtins.readFile ./file-arrays;
+      "file-paths".text =                    builtins.readFile ./file-paths;
       "functions".text =                     builtins.readFile ./functions;
       "htoprc".text =                        builtins.readFile ./htoprc;
       "tmux.conf".text =                     builtins.readFile ./tmux.conf;
