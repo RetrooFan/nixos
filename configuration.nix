@@ -14,7 +14,6 @@
 
       "bashrc.local".text =                   builtins.readFile ./bashrc.local;
       "file-paths".text =                     builtins.readFile ./file-paths;
-      "functions".text =                      builtins.readFile ./functions;
       "htoprc".text =                         builtins.readFile ./htoprc;
       "tmux.conf".text =                      builtins.readFile ./tmux.conf;
 

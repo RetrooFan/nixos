@@ -17,7 +17,6 @@ REPO_ROOT_PATHS=(
   $REPO_DIR/bashrc.root
   $REPO_DIR/bashrc.local
   $REPO_DIR/file-paths
-  $REPO_DIR/functions
   $REPO_DIR/htoprc
   $REPO_DIR/nanorc
   $REPO_DIR/tmux.conf
@@ -26,7 +25,6 @@ SYSTEM_ROOT_PATHS=(
   /root/.bashrc.root
   /etc/bashrc.local
   /etc/file-paths
-  /etc/functions
   /etc/htoprc
   /etc/nanorc
   /etc/tmux.conf

@@ -14,7 +14,6 @@
 # ------------------------------------------------
 # ------------------------------------------------
 
-source $REPO_DIR/functions  2>/dev/null || source /etc/functions
 source $REPO_DIR/file-paths 2>/dev/null || source /etc/file-paths
 
 HISTSIZE=10000
