@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 source $REPO_DIR/functions   || exit 1
 source $REPO_DIR/file-arrays || exit 1
 
