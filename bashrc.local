@@ -93,8 +93,6 @@ trap after_exit EXIT
 
 # ------------------------------------------------
 
-INIT_DIR="$(pwd)"
 [ -f $REPO_DIR/scripts/git-pull ] && $REPO_DIR/scripts/git-pull || /etc/scripts/git-pull
-cd $INIT_DIR
 
 # ------------------------------------------------
