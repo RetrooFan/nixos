@@ -4,8 +4,6 @@
 
 # export REPO_USER="user"
 # export REPO_DIR="directory"
-# export repo_user="user"
-# export repo_dir="directory"
 
 # if [ -f /etc/bashrc.local ]; then
 #   source /etc/bashrc.local
