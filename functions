@@ -3,10 +3,10 @@
 # ------------------------------------------------
 
 compare-files() {
-  HASH1=$(sha256sum $1 2>/dev/null | awk '{print $1}') &&
-  HASH2=$(sha256sum $2 2>/dev/null | awk '{print $1}') &&
+  hash1=$(sha256sum $1 2>/dev/null | awk '{print $1}') &&
+  hash2=$(sha256sum $2 2>/dev/null | awk '{print $1}') &&
 
-  if [ "$HASH1" != "$HASH2" ]; then
+  if [ "$hash1" != "$hash2" ]; then
     if [ "$3" != "" ]; then
       echo "--------------------------------------------------"
       echo "|                                                |"
@@ -32,7 +32,7 @@ header() {
 }
 
 user-input() {
-  printf "${RESET} ${KOLOR}"
+  printf "${reset} ${kolor}"
   read odpowiedz
   odpowiedz="${odpowiedz,,}"
 }
@@ -41,9 +41,9 @@ compare-files-dialog() {
   plik_zrodlowy="${1/#$HOME/\~}"
   plik_docelowy="${2/#$HOME/\~}"
   uprawnienia_pliku_docelowego="$(ls -l $2 2>/dev/null | awk '{print $1, $3, $4}')"
-  ((${3:0} % 2)) && KOLOR="\033[0m" || KOLOR="\033[38;5;111m"
-  CZERWONY="\e[1;31m"
-  RESET="\033[0m"
+  ((${3:0} % 2)) && kolor="\033[0m" || kolor="\033[38;5;111m"
+  czerwony="\e[1;31m"
+  reset="\033[0m"
   ile_kresek=$((80 - ${#plik_docelowy} - 2))
   line1_column1=$(printf "│ %-74s%5s" "$plik_zrodlowy" "$(( $3 + 1 ))/$4")
   props1=$(echo $uprawnienia_pliku_docelowego | awk '{print $2}')
@@ -57,7 +57,7 @@ compare-files-dialog() {
 
   [ $3 == 0 ] && header
 
-  printf "${KOLOR}"
+  printf "${kolor}"
   printf "%s │ %-19s " "$line1_column1" "$props1 $props2"
   line2=$(printf "%s │ %-13s" "$line2_column1" "$props3")
   if compare-files $1 $2; then
@@ -71,20 +71,20 @@ compare-files-dialog() {
     if $5; then user-input; else printf "\n"; fi
   else
     read_hint="[copy/y/N]"
-    printf "${CZERWONY}"
+    printf "${czerwony}"
     [ -f "$1" ] && ([ -f "$2" ] && printf "%s" "1≠2" || printf "%s" "2∈Ø") || printf "%s" "1∈Ø"
-    printf "${RESET}${KOLOR}"
+    printf "${reset}${kolor}"
     printf " │\n"
     printf "$line2"
-    printf "${CZERWONY}"
+    printf "${czerwony}"
     printf "%10s" "$read_hint"
-    printf "${KOLOR}"
+    printf "${kolor}"
     printf " │"
     read_hint=
 
     user-input
   fi
-  printf "${RESET}"
+  printf "${reset}"
 
   [ "$odpowiedz" == "y" ] && odpowiedz= && return 1
   [ "$odpowiedz" == "copy" ] && odpowiedz= && return 2
