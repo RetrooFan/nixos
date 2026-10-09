@@ -103,23 +103,8 @@ fi
 
 # ------------------------------------------------
 
-git_pull() {
-  [ "$CURRENT_USER" != "$REPO_USER" ] && return
-
-  cd $REPO_DIR || return
-
-  plik_z_data=".gitupdate"
-  data_z_pliku=$(cat $plik_z_data)
-  data_aktualna=$(date +%F)
-
-  [ "$data_z_pliku" == "$data_aktualna" ] && return
-
-  echo "git pull ..."
-  git pull && echo $data_aktualna > $plik_z_data
-}
-
 INIT_DIR="$(pwd)"
-git_pull
+[ -f $REPO_DIR/scripts/git-pull ] && $REPO_DIR/scripts/git-pull || /etc/scripts/git-pull
 cd $INIT_DIR
 
 # ------------------------------------------------

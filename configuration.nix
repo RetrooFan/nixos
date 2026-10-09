@@ -11,6 +11,7 @@
       "scripts/compare-and-copy-files".text = builtins.readFile ./scripts/compare-and-copy-files;
       "scripts/compare-files-dialog".text =   builtins.readFile ./scripts/compare-files-dialog;
       "scripts/compare-files".text =          builtins.readFile ./scripts/compare-files;
+      "scripts/git-pull".text =               builtins.readFile ./scripts/git-pull;
 
       "bashrc.local".text =                   builtins.readFile ./bashrc.local;
       "file-paths".text =                     builtins.readFile ./file-paths;
