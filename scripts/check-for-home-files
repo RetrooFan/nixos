@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+source $REPO_DIR/file-paths || exit 1
+
+if [ "${#HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
+  echo
+  echo "TABLICE MAJA ROZNE DLUGOSCI!"
+  echo
+else
+  for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
+    $compare_files ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc "copy-config-to-home"
+  done
+fi

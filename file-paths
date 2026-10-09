@@ -6,6 +6,7 @@ REPO_SCRIPTS_PATHS=(
   $REPO_DIR/scripts/compare-files-dialog
   $REPO_DIR/scripts/compare-files
   $REPO_DIR/scripts/git-pull
+  $REPO_DIR/scripts/check-for-home-files
 )
 SYSTEM_SCRIPTS_PATHS=(
   /usr/local/bin/copy-config-to-home
@@ -13,6 +14,7 @@ SYSTEM_SCRIPTS_PATHS=(
   /etc/scripts/compare-files-dialog
   /etc/scripts/compare-files
   /etc/scripts/git-pull
+  /etc/scripts/check-for-home-files
 )
 
 REPO_ROOT_PATHS=(
