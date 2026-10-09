@@ -60,7 +60,7 @@ compare-files-dialog() {
   printf "${kolor}"
   printf "%s │ %-19s " "$line1_column1" "$props1 $props2"
   line2=$(printf "%s │ %-13s" "$line2_column1" "$props3")
-  if compare-files $1 $2; then
+  if compare-files $1 $2 ""; then
     $5 && read_hint="[copy/y/N]"
     printf "%s\n" "1=2 │"
     printf "$line2"
@@ -104,6 +104,8 @@ compare-and-copy-files() {
 
   [ $result == 1 ] && $EDITOR $2 $3
   [ $result == 2 ] && cp      $2 $3
+
+  return 0
 }
 
 # ------------------------------------------------
