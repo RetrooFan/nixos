@@ -6,7 +6,7 @@ REPO_SCRIPTS_PATHS=(
 )
 SYSTEM_SCRIPTS_PATHS=(
   /usr/local/bin/copy-config-to-home
-  /usr/local/scripts/compare-and-copy-files
+  /etc/scripts/compare-and-copy-files
 )
 
 REPO_ROOT_PATHS=(
