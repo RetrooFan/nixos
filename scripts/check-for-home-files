@@ -8,6 +8,6 @@ if [ "${#HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
   echo
 else
   for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
-    $compare_files ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc "copy-config-to-home"
+    /etc/scripts/compare-files ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc "copy-config-to-home"
   done
 fi

@@ -23,20 +23,20 @@ fi
 mkdir -p /etc/scripts/
 size=${#REPO_SCRIPTS_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
-  $compare_and_copy_files $INSPECT ${REPO_SCRIPTS_PATHS[$i]} ${SYSTEM_SCRIPTS_PATHS[$i]} $i $size
+  /etc/scripts/compare-and-copy-files $INSPECT ${REPO_SCRIPTS_PATHS[$i]} ${SYSTEM_SCRIPTS_PATHS[$i]} $i $size
   [ -f ${SYSTEM_SCRIPTS_PATHS[$i]} ] && chmod a+x           ${SYSTEM_SCRIPTS_PATHS[$i]}
 done
 echo
 
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
-  $compare_and_copy_files $INSPECT ${REPO_ROOT_PATHS[$i]}    ${SYSTEM_ROOT_PATHS[$i]}    $i $size
+  /etc/scripts/compare-and-copy-files $INSPECT ${REPO_ROOT_PATHS[$i]}    ${SYSTEM_ROOT_PATHS[$i]}    $i $size
 done
 echo
 
 mkdir -p /etc/homefiles/
 size=${#REPO_HOME_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
-  $compare_and_copy_files $INSPECT ${REPO_HOME_PATHS[$i]}    ${SYSTEM_HOME_PATHS[$i]}    $i $size
+  /etc/scripts/compare-and-copy-files $INSPECT ${REPO_HOME_PATHS[$i]}    ${SYSTEM_HOME_PATHS[$i]}    $i $size
 done
 echo
