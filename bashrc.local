@@ -89,10 +89,10 @@ trap after_exit EXIT
 
 # ------------------------------------------------
 
-[ -f $REPO_DIR/scripts/check-for-home-files ] && $REPO_DIR/scripts/check-for-home-files || /etc/scripts/check-for-home-files
+[ -f /etc/scripts/check-for-home-files ] && /etc/scripts/check-for-home-files
 
 # ------------------------------------------------
 
-[ -f $REPO_DIR/scripts/git-pull ] && $REPO_DIR/scripts/git-pull || /etc/scripts/git-pull
+[ -f /etc/scripts/git-pull ] && /etc/scripts/git-pull
 
 # ------------------------------------------------
