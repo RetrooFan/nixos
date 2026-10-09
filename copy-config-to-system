@@ -20,6 +20,7 @@ if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PAT
   echo "TABLICE MAJA ROZNE DLUGOSCI!"; echo; exit 0
 fi
 
+mkdir -p /usr/local/scripts/
 size=${#REPO_SCRIPTS_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
   compare-and-copy-files $INSPECT ${REPO_SCRIPTS_PATHS[$i]} ${SYSTEM_SCRIPTS_PATHS[$i]} $i $size
