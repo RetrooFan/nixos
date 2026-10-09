@@ -30,8 +30,8 @@ mkdir -p ~/.config/sublime-text/Packages/User/
 
 size=${#SYSTEM_HOME_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
-  compare-and-copy-files $INSPECT ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc $i $size
-  [ -f ${HOME_PATHS[$i]}.etc ] && chmod a=r ${HOME_PATHS[$i]}.etc
+  compare-and-copy-files $INSPECT         ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc $i $size
+  [ -f ${HOME_PATHS[$i]}.etc ] && chmod a=r                        ${HOME_PATHS[$i]}.etc
 done
 echo
 
@@ -44,19 +44,19 @@ fi
 if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
   for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
     if ((i < 2)); then
-      [ ! -f ${HOME_PATHS[$i]} ] && cp    ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
+      [ ! -f ${HOME_PATHS[$i]} ] && cp    ${REPO_HOME_PATHS[$i]}   ${HOME_PATHS[$i]}
     else
-      [ ! -f ${HOME_PATHS[$i]} ] && ln -s ${REPO_HOME_PATHS[$i]} ${HOME_PATHS[$i]}
+      [ ! -f ${HOME_PATHS[$i]} ] && ln -s ${REPO_HOME_PATHS[$i]}   ${HOME_PATHS[$i]}
     fi
   done
 else
   for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
-    [ ! -f ${HOME_PATHS[$i]} ] && cp ${HOME_PATHS[$i]}.etc  ${HOME_PATHS[$i]}
+    [ ! -f ${HOME_PATHS[$i]} ] && cp      ${HOME_PATHS[$i]}.etc    ${HOME_PATHS[$i]}
   done
 fi
 
 size=${#HOME_PATHS[@]}
 for ((i = 0; i < $size; i++)); do
-  compare-and-copy-files $INSPECT ${HOME_PATHS[$i]}.etc ${HOME_PATHS[$i]} $i $size
+  compare-and-copy-files $INSPECT         ${HOME_PATHS[$i]}.etc    ${HOME_PATHS[$i]} $i $size
 done
 echo
