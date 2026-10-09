@@ -28,6 +28,8 @@
     interactiveShellInit = ''
       export REPO_USER="nixos"
       export REPO_DIR="/etc/nixos"
+      export repo_user="nixos"
+      export repo_dir="/etc/nixos"
     '';
   };
 
