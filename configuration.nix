@@ -8,18 +8,33 @@
     etc = {
       "k3s-manifests/traefik-dashboard-config.yaml".text = builtins.readFile ./traefik-dashboard-config.yaml;
 
-      "scripts/compare-and-copy-files".text = builtins.readFile ./scripts/compare-and-copy-files;
-      "scripts/compare-files-dialog".text =   builtins.readFile ./scripts/compare-files-dialog;
-      "scripts/compare-files".text =          builtins.readFile ./scripts/compare-files;
-      "scripts/git-pull".text =               builtins.readFile ./scripts/git-pull;
-      "scripts/check-for-home-files".text =   builtins.readFile ./scripts/check-for-home-files;
-      "sources/set-exit-action".text =        builtins.readFile ./sources/set-exit-action;
-      "sources/set-prompt".text =             builtins.readFile ./sources/set-prompt;
+      "scripts/compare-and-copy-files" = {
+        text = builtins.readFile ./scripts/compare-and-copy-files;
+        mode = "0555";
+      };
+      "scripts/compare-files-dialog" = {
+        text = builtins.readFile ./scripts/compare-files-dialog;
+        mode = "0555";
+      };
+      "scripts/compare-files" = {
+        text = builtins.readFile ./scripts/compare-files;
+        mode = "0555";
+      };
+      "scripts/git-pull" = {
+        text = builtins.readFile ./scripts/git-pull;
+        mode = "0555";
+      };
+      "scripts/check-for-home-files" = {
+        text = builtins.readFile ./scripts/check-for-home-files;
+        mode = "0555";
+      };
 
       "bashrc.local".text =                   builtins.readFile ./bashrc.local;
       "file-paths".text =                     builtins.readFile ./file-paths;
       "htoprc".text =                         builtins.readFile ./htoprc;
       "tmux.conf".text =                      builtins.readFile ./tmux.conf;
+      "sources/set-exit-action".text =        builtins.readFile ./sources/set-exit-action;
+      "sources/set-prompt".text =             builtins.readFile ./sources/set-prompt;
 
       "homefiles/gitconfig".text =            builtins.readFile ./homefiles/gitconfig;
       "homefiles/tmux.conf".text =            builtins.readFile ./homefiles/tmux.conf;
@@ -35,8 +50,6 @@
     interactiveShellInit = ''
       export REPO_USER="nixos"
       export REPO_DIR="/etc/nixos"
-
-      chmod a+x /etc/scripts/*
     '';
   };
 
