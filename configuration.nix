@@ -10,21 +10,21 @@
 
       "scripts/compare-and-copy-files".text = builtins.readFile ./scripts/compare-and-copy-files;
 
-      "bashrc.local".text =                  builtins.readFile ./bashrc.local;
-      "file-paths".text =                    builtins.readFile ./file-paths;
-      "functions".text =                     builtins.readFile ./functions;
-      "htoprc".text =                        builtins.readFile ./htoprc;
-      "tmux.conf".text =                     builtins.readFile ./tmux.conf;
+      "bashrc.local".text =                   builtins.readFile ./bashrc.local;
+      "file-paths".text =                     builtins.readFile ./file-paths;
+      "functions".text =                      builtins.readFile ./functions;
+      "htoprc".text =                         builtins.readFile ./htoprc;
+      "tmux.conf".text =                      builtins.readFile ./tmux.conf;
 
-      "homefiles/gitconfig".text =           builtins.readFile ./homefiles/gitconfig;
-      "homefiles/tmux.conf".text =           builtins.readFile ./homefiles/tmux.conf;
-      "homefiles/alacritty.toml".text =      builtins.readFile ./homefiles/alacritty.toml;
-      "homefiles/inputrc".text =             builtins.readFile ./homefiles/inputrc;
-      "homefiles/lazygit.yml".text =         builtins.readFile ./homefiles/lazygit.yml;
-      "homefiles/micro.bindings.json".text = builtins.readFile ./homefiles/micro.bindings.json;
-      "homefiles/micro.settings.json".text = builtins.readFile ./homefiles/micro.settings.json;
-      "homefiles/sublime.json".text =        builtins.readFile ./homefiles/sublime.json;
-      "homefiles/vscode.json".text =         builtins.readFile ./homefiles/vscode.json;
+      "homefiles/gitconfig".text =            builtins.readFile ./homefiles/gitconfig;
+      "homefiles/tmux.conf".text =            builtins.readFile ./homefiles/tmux.conf;
+      "homefiles/alacritty.toml".text =       builtins.readFile ./homefiles/alacritty.toml;
+      "homefiles/inputrc".text =              builtins.readFile ./homefiles/inputrc;
+      "homefiles/lazygit.yml".text =          builtins.readFile ./homefiles/lazygit.yml;
+      "homefiles/micro.bindings.json".text =  builtins.readFile ./homefiles/micro.bindings.json;
+      "homefiles/micro.settings.json".text =  builtins.readFile ./homefiles/micro.settings.json;
+      "homefiles/sublime.json".text =         builtins.readFile ./homefiles/sublime.json;
+      "homefiles/vscode.json".text =          builtins.readFile ./homefiles/vscode.json;
     };
 
     interactiveShellInit = ''
