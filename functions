@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# ------------------------------------------------
+
 compare-files() {
   HASH1=$(sha256sum $1 2>/dev/null | awk '{print $1}') &&
   HASH2=$(sha256sum $2 2>/dev/null | awk '{print $1}') &&
@@ -20,6 +22,8 @@ compare-files() {
     return 2
   fi
 }
+
+# ------------------------------------------------
 
 header() {
   printf "╭"; printf '%.0s─' $(seq 1 81); printf "┬"; printf '%.0s─' $(seq 1 25); printf "╮\n"
@@ -87,6 +91,8 @@ compare-files-dialog() {
   return 0
 }
 
+# ------------------------------------------------
+
 compare-and-copy-files() {
   if $1; then
     compare-files-dialog $2 $3 $4 $5 true
@@ -98,3 +104,5 @@ compare-and-copy-files() {
   [ $result == 1 ] && $EDITOR $2 $3
   [ $result == 2 ] && cp      $2 $3
 }
+
+# ------------------------------------------------
