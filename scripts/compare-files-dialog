@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source $REPO_DIR/file-paths || exit 1
+source /etc/file-paths || exit 1
 
 header() {
   printf "╭"; printf '%.0s─' $(seq 1 81); printf "┬"; printf '%.0s─' $(seq 1 25); printf "╮\n"

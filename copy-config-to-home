@@ -2,7 +2,7 @@
 
 # set -euo pipefail
 
-source $REPO_DIR/file-paths 2>/dev/null || source /etc/file-paths || exit 1
+source /etc/file-paths || exit 1
 
 DELETE=false
 INSPECT=false
