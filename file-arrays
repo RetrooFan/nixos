@@ -6,6 +6,7 @@ REPO_SCRIPTS_PATHS=(
 SYSTEM_SCRIPTS_PATHS=(
   /usr/local/bin/copy-config-to-home
 )
+
 REPO_ROOT_PATHS=(
   $REPO_DIR/bashrc.root
   $REPO_DIR/bashrc.local
@@ -24,6 +25,7 @@ SYSTEM_ROOT_PATHS=(
   /etc/nanorc
   /etc/tmux.conf
 )
+
 REPO_HOME_PATHS=(
   $REPO_DIR/homefiles/gitconfig
   $REPO_DIR/homefiles/tmux.conf
