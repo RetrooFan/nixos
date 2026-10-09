@@ -60,8 +60,9 @@ compare-files-dialog() {
     $5 && read_hint="[copy/y/N]"
     printf "%s\n" "1=2 │"
     printf "$line2"
-    printf "%10s" "$read_hint" && read_hint=""
+    printf "%10s" "$read_hint"
     printf " │"
+    read_hint=
 
     if $5; then user-input; else printf "\n"; fi
   else
@@ -72,16 +73,17 @@ compare-files-dialog() {
     printf " │\n"
     printf "$line2"
     printf "${CZERWONY}"
-    printf "%10s" "$read_hint" && read_hint=""
+    printf "%10s" "$read_hint"
     printf "${KOLOR}"
     printf " │"
+    read_hint=
 
     user-input
   fi
   printf "${RESET}"
 
-  [ "$odpowiedz" == "y" ] && odpowiedz="" && return 1
-  [ "$odpowiedz" == "copy" ] && odpowiedz="" && return 2
+  [ "$odpowiedz" == "y" ] && odpowiedz= && return 1
+  [ "$odpowiedz" == "copy" ] && odpowiedz= && return 2
   return 0
 }
 
