@@ -12,7 +12,7 @@
 # ------------------------------------------------
 # ------------------------------------------------
 
-source $REPO_DIR/functions 2>/dev/null || source /etc/functions
+source $REPO_DIR/functions   2>/dev/null || source /etc/functions
 source $REPO_DIR/file-arrays 2>/dev/null || source /etc/file-arrays
 
 HISTSIZE=10000
