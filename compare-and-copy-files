@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-command -v "compare-files-dialog" &>/dev/null &&
-  compare_files_dialog="compare-files-dialog" ||
-  compare_files_dialog="$REPO_DIR/compare-files-dialog"
+source $REPO_DIR/functions || exit 1
 
 if $1; then
-  $compare_files_dialog -i $2 $3 $4 $5
+  compare-files-dialog $2 $3 $4 $5 true
 else
-  $compare_files_dialog    $2 $3 $4 $5
+  compare-files-dialog $2 $3 $4 $5 false
 fi
 result=$?
 
