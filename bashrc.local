@@ -12,6 +12,7 @@
 # ------------------------------------------------
 # ------------------------------------------------
 
+source $REPO_DIR/functions 2>/dev/null || source /etc/functions
 source $REPO_DIR/file-arrays 2>/dev/null || source /etc/file-arrays
 
 HISTSIZE=10000
@@ -89,17 +90,13 @@ trap after_exit EXIT
 
 # ------------------------------------------------
 
-command -v "compare-files" &>/dev/null &&
-  compare_files="compare-files" ||
-  compare_files="$REPO_DIR/compare-files"
-
 if [ "${#HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
   echo
   echo "TABLICE MAJA ROZNE DLUGOSCI!"
   echo
 else
   for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
-    $compare_files -c "copy-config-to-home" ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc
+    compare-files ${SYSTEM_HOME_PATHS[$i]} ${HOME_PATHS[$i]}.etc "copy-config-to-home"
   done
 fi
 

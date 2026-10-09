@@ -9,11 +9,8 @@
 # ------------------------------------------------
 # ------------------------------------------------
 
+source $REPO_DIR/functions 2>/dev/null || source /etc/functions
 source $REPO_DIR/file-arrays 2>/dev/null || source /etc/file-arrays
-
-command -v "compare-files" &>/dev/null &&
-  compare_files="compare-files" ||
-  compare_files="$REPO_DIR/compare-files"
 
 if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
   echo
@@ -21,10 +18,10 @@ if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PAT
   echo
 else
   for ((i = 0; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
-    $compare_files -c "copy-config-to-system" ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]}
+    compare-files ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} "copy-config-to-system"
   done
 
   for ((i = 0; i < ${#REPO_HOME_PATHS[@]}; i++)); do
-    $compare_files -c "copy-config-to-system" ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]}
+    compare-files ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} "copy-config-to-system"
   done
 fi
