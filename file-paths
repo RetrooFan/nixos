@@ -3,10 +3,14 @@
 REPO_SCRIPTS_PATHS=(
   $REPO_DIR/copy-config-to-home
   $REPO_DIR/scripts/compare-and-copy-files
+  $REPO_DIR/scripts/compare-files-dialog
+  $REPO_DIR/scripts/compare-files
 )
 SYSTEM_SCRIPTS_PATHS=(
   /usr/local/bin/copy-config-to-home
   /etc/scripts/compare-and-copy-files
+  /etc/scripts/compare-files-dialog
+  /etc/scripts/compare-files
 )
 
 REPO_ROOT_PATHS=(
@@ -69,3 +73,7 @@ HOME_PATHS=(
 [ -f $REPO_DIR/scripts/compare-files-dialog ] &&
   compare_files_dialog="$REPO_DIR/scripts/compare-files-dialog" ||
   compare_files_dialog="/etc/scripts/compare-files-dialog"
+
+[ -f $REPO_DIR/scripts/compare-files ] &&
+  compare_files="$REPO_DIR/scripts/compare-files" ||
+  compare_files="/etc/scripts/compare-files"

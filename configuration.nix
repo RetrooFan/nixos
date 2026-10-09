@@ -9,6 +9,8 @@
       "k3s-manifests/traefik-dashboard-config.yaml".text = builtins.readFile ./traefik-dashboard-config.yaml;
 
       "scripts/compare-and-copy-files".text = builtins.readFile ./scripts/compare-and-copy-files;
+      "scripts/compare-files-dialog".text =   builtins.readFile ./scripts/compare-files-dialog;
+      "scripts/compare-files".text =          builtins.readFile ./scripts/compare-files;
 
       "bashrc.local".text =                   builtins.readFile ./bashrc.local;
       "file-paths".text =                     builtins.readFile ./file-paths;
