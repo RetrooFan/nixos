@@ -10,6 +10,7 @@
 
       "bashrc.local".text =                  builtins.readFile ./bashrc.local;
       "file-arrays".text =                   builtins.readFile ./file-arrays;
+      "functions".text =                     builtins.readFile ./functions;
       "htoprc".text =                        builtins.readFile ./htoprc;
       "tmux.conf".text =                     builtins.readFile ./tmux.conf;
 
