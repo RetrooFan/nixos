@@ -29,49 +29,7 @@ alias -- mi='micro'
 
 # ------------------------------------------------
 
-case "$CURRENT_USER" in
-  "root")
-    PS1_COLOR='\[\033[01;31m\]';;
-  "kristof")
-    PS1_COLOR='\[\033[01;32m\]';;
-  *)
-    PS1_COLOR='\[\033[01;33m\]';;
-esac
-
-PS1_FORMAT_END='\[\033[00m\]'
-PS1_PROMPT_TEXT='\$\$\$\$\$'
-PS1_USER="$PS1_COLOR\u$PS1_FORMAT_END"
-PS1_USER_SPACES=`printf "%*s" $(expr 10 - ${#CURRENT_USER})`
-PS1_SHLVL="$PS1_COLOR$SHLVL$PS1_FORMAT_END"
-PS1_PID="$$"
-PS1_PID_SPACES=`printf "%*s" $(expr 8 - ${#PS1_PID})`
-PS1_PATH="\[\033[01;34m\]\w$PS1_FORMAT_END"
-PS1_PROMPT="$PS1_COLOR$PS1_PROMPT_TEXT$PS1_FORMAT_END -> "
-
-PS1_INIT=$PS1
-
-prompt() {
-  PS1_DATE=$(date)
-  PS1_DATE_SPACES=`printf "%*s" $(expr 30 - ${#PS1_DATE})`
-  PS1_DATE_WITH_SPACES=$PS1_DATE$PS1_DATE_SPACES
-  printf -v PS1_DATE_LINE '%.0s─' $(seq -1 ${#PS1_DATE_WITH_SPACES})
-
-  PS1_PWD="${PWD/#$HOME/\~}"
-  printf -v PS1_PWD_LINE '%.0s─' $(seq -1 ${#PS1_PWD})
-
-  PS1_HORIZONTAL_LINE="╰$PS1_DATE_LINE┴────────────┴───┴──────────┴$PS1_PWD_LINE┴"
-  END_LINE_LENGTH=$((148 - ${#PS1_HORIZONTAL_LINE}))
-  printf -v END_LINE '%.0s─' $(seq 1 $END_LINE_LENGTH)
-
-  printf -v PS1_VERTICAL_SPACING '%.0s\n' $(seq 0 "${empty_lines:-0}")
-  empty_lines=0
-
-  PS1_LINE1="│ $PS1_DATE_WITH_SPACES │ $PS1_0$PS1_USER$PS1_USER_SPACES │ $PS1_SHLVL │ $PS1_PID$PS1_PID_SPACES │ $PS1_PATH │"
-  PS1_LINE2="$PS1_HORIZONTAL_LINE$END_LINE"
-  PS1_LINE3="$PS1_VERTICAL_SPACING$PS1_PROMPT"
-  PS1="$PS1_LINE1\n$PS1_LINE2$PS1_LINE3"
-}
-PROMPT_COMMAND=prompt
+[ -f /etc/scripts/set-prompt ] && source /etc/scripts/set-prompt
 
 # ------------------------------------------------
 
