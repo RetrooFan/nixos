@@ -12,8 +12,6 @@
     latest.tmux
     latest.micro
 
-    (pkgs.writeShellScriptBin "compare-files" (builtins.readFile ./compare-files))
-    (pkgs.writeShellScriptBin "compare-files-dialog" (builtins.readFile ./compare-files-dialog))
     (pkgs.writeShellScriptBin "copy-config-to-home" (builtins.readFile ./copy-config-to-home))
   ];
 }
