@@ -9,22 +9,4 @@
 # ------------------------------------------------
 # ------------------------------------------------
 
-source /etc/file-paths
-
-if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
-  echo
-  echo "TABLICE MAJA ROZNE DLUGOSCI!"
-  echo
-else
-  for ((i = 0; i < ${#REPO_SCRIPTS_PATHS[@]}; i++)); do
-    $compare_files ${REPO_SCRIPTS_PATHS[$i]} ${SYSTEM_SCRIPTS_PATHS[$i]} "copy-config-to-system"
-  done
-
-  for ((i = 0; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
-    $compare_files ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} "copy-config-to-system"
-  done
-
-  for ((i = 0; i < ${#REPO_HOME_PATHS[@]}; i++)); do
-    $compare_files ${REPO_HOME_PATHS[$i]} ${SYSTEM_HOME_PATHS[$i]} "copy-config-to-system"
-  done
-fi
+[ -f /etc/scripts/check-for-root-files ] && /etc/scripts/check-for-root-files
