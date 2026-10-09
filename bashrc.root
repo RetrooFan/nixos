@@ -17,6 +17,10 @@ if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" -o "${#REPO_HOME_PAT
   echo "TABLICE MAJA ROZNE DLUGOSCI!"
   echo
 else
+  for ((i = 0; i < ${#REPO_SCRIPTS_PATHS[@]}; i++)); do
+    compare-files ${REPO_SCRIPTS_PATHS[$i]} ${SYSTEM_SCRIPTS_PATHS[$i]} "copy-config-to-system"
+  done
+
   for ((i = 0; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
     compare-files ${REPO_ROOT_PATHS[$i]} ${SYSTEM_ROOT_PATHS[$i]} "copy-config-to-system"
   done
