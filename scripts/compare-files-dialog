@@ -34,13 +34,13 @@ printf "${kolor}"
 printf "%s │ %-19s " "$line1_column1" "$props1 $props2"
 line2=$(printf "%s │ %-13s" "$line2_column1" "$props3")
 if /etc/scripts/compare-files "$1" "$2" ""; then
-  "$5" && read_hint="[copy/y/N]"
+  $5 && read_hint="[copy/y/N]"
   printf "%s\n" "1=2 │"
   printf "$line2"
   printf "%10s" "$read_hint"
   printf " │"
 
-  if "$5"; then user-input; else printf "\n"; fi
+  if $5; then user-input; else printf "\n"; fi
 else
   read_hint="[copy/y/N]"
   printf "${czerwony}"
