@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SESSION_ID=`hexdump -vn4 -e'4/1 "%02x"' /dev/urandom`
-echo "# ----- | `date` | START | $SESSION_ID" >> $HISTFILE
+echo "# ----- | `date` | START | $SESSION_ID" >> "$HISTFILE"
 
 after_exit() {
   sleep 0.1 && echo "# ----- | `date` | END   | $SESSION_ID" >> "$HISTFILE" &

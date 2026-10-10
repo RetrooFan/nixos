@@ -4,37 +4,37 @@ set_prompt() {
   local PS1_COLOR
   case "$CURRENT_USER" in
     "root")
-      PS1_COLOR='\[\033[01;31m\]';;
+      PS1_COLOR="\[\033[01;31m\]";;
     "kristof")
-      PS1_COLOR='\[\033[01;32m\]';;
+      PS1_COLOR="\[\033[01;32m\]";;
     *)
-      PS1_COLOR='\[\033[01;33m\]';;
+      PS1_COLOR="\[\033[01;33m\]";;
   esac
 
-  local PS1_FORMAT_END='\[\033[00m\]'
-  local PS1_PROMPT_TEXT='\$\$\$\$\$'
+  local PS1_FORMAT_END="\[\033[00m\]"
+  local PS1_PROMPT_TEXT="\\$\\$\\$\\$\\$"
   local PS1_USER="$PS1_COLOR\u$PS1_FORMAT_END"
-  local PS1_USER_SPACES=`printf "%*s" $(expr 10 - ${#CURRENT_USER})`
+  local PS1_USER_SPACES=`printf "%*s" $(expr 10 - "${#CURRENT_USER}")`
   local PS1_SHLVL="$PS1_COLOR$SHLVL$PS1_FORMAT_END"
   local PS1_PID="$$"
-  local PS1_PID_SPACES=`printf "%*s" $(expr 8 - ${#PS1_PID})`
+  local PS1_PID_SPACES=`printf "%*s" $(expr 8 - "${#PS1_PID}")`
   local PS1_PATH="\[\033[01;34m\]\w$PS1_FORMAT_END"
   local PS1_PROMPT="$PS1_COLOR$PS1_PROMPT_TEXT$PS1_FORMAT_END -> "
 
   local PS1_DATE=$(date)
-  local PS1_DATE_SPACES=`printf "%*s" $(expr 30 - ${#PS1_DATE})`
-  local PS1_DATE_WITH_SPACES=$PS1_DATE$PS1_DATE_SPACES
+  local PS1_DATE_SPACES=`printf "%*s" $(expr 30 - "${#PS1_DATE}")`
+  local PS1_DATE_WITH_SPACES="$PS1_DATE$PS1_DATE_SPACES"
   local PS1_DATE_LINE
-  printf -v PS1_DATE_LINE '%.0s─' $(seq -1 ${#PS1_DATE_WITH_SPACES})
+  printf -v PS1_DATE_LINE '%.0s─' $(seq -1 "${#PS1_DATE_WITH_SPACES}")
 
   local PS1_PWD="${PWD/#$HOME/\~}"
   local PS1_PWD_LINE
-  printf -v PS1_PWD_LINE '%.0s─' $(seq -1 ${#PS1_PWD})
+  printf -v PS1_PWD_LINE '%.0s─' $(seq -1 "${#PS1_PWD}")
 
   local PS1_HORIZONTAL_LINE="╰$PS1_DATE_LINE┴────────────┴───┴──────────┴$PS1_PWD_LINE┴"
-  local END_LINE_LENGTH=$((148 - ${#PS1_HORIZONTAL_LINE}))
+  local END_LINE_LENGTH=$((148 - "${#PS1_HORIZONTAL_LINE}"))
   local END_LINE
-  printf -v END_LINE '%.0s─' $(seq 1 $END_LINE_LENGTH)
+  printf -v END_LINE '%.0s─' $(seq 1 "$END_LINE_LENGTH")
 
   local PS1_VERTICAL_SPACING
   printf -v PS1_VERTICAL_SPACING '%.0s\n' $(seq 0 "${empty_lines:-0}")
@@ -46,5 +46,5 @@ set_prompt() {
   PS1="$PS1_LINE1\n$PS1_LINE2$PS1_LINE3"
 }
 
-PS1_INIT=$PS1
+PS1_INIT="$PS1"
 PROMPT_COMMAND=set_prompt
