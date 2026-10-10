@@ -12,42 +12,25 @@ set_prompt() {
   esac
 
   local PS1_FORMAT_END="\[\033[00m\]"
-  local PS1_PROMPT_TEXT="\\$\\$\\$\\$\\$"
-  local PS1_USER="$PS1_COLOR\u$PS1_FORMAT_END"
-  local PS1_USER_SPACES
-  PS1_USER_SPACES=$(printf "%*s" $(expr 10 - "${#CURRENT_USER}"))
+  local PS1_DATE; PS1_DATE=$(date); (( ${#PS1_DATE} < 31 )) && PS1_DATE+=$(printf "%$((31 - ${#PS1_DATE}))s")
+  local PS1_USER; PS1_USER=$(printf "%s%-10s%s" "$PS1_COLOR" "$CURRENT_USER" "$PS1_FORMAT_END")
   local PS1_SHLVL="$PS1_COLOR$SHLVL$PS1_FORMAT_END"
-  local PS1_PID="$$"
-  local PS1_PID_SPACES
-  PS1_PID_SPACES=$(printf "%*s" $(expr 8 - "${#PS1_PID}"))
+  local PS1_PID; PS1_PID=$(printf "%-8s" "$$")
   local PS1_PATH="\[\033[01;34m\]\w$PS1_FORMAT_END"
-  local PS1_PROMPT="$PS1_COLOR$PS1_PROMPT_TEXT$PS1_FORMAT_END -> "
-
-  local PS1_DATE
-  PS1_DATE=$(date)
-  local PS1_DATE_SPACES
-  PS1_DATE_SPACES=$(printf "%*s" $(expr 30 - "${#PS1_DATE}"))
-  local PS1_DATE_WITH_SPACES="$PS1_DATE$PS1_DATE_SPACES"
-  local PS1_DATE_LINE
-  printf -v PS1_DATE_LINE '%.0s─' $(seq -1 "${#PS1_DATE_WITH_SPACES}")
+  local PS1_LINE1="│ $PS1_DATE │ $PS1_USER │ $PS1_SHLVL │ $PS1_PID │ $PS1_PATH │"
 
   local PS1_PWD="${PWD/#$HOME/\~}"
-  local PS1_PWD_LINE
-  printf -v PS1_PWD_LINE '%.0s─' $(seq -1 ${#PS1_PWD})
+  local PS1_HORIZONTAL_LINE; PS1_HORIZONTAL_LINE=$(printf "╰%33s┴%12s┴%3s┴%10s┴─%${#PS1_PWD}s─┴" | sed "s/ /─/g")
+  local PS1_END_LINE; PS1_END_LINE=$(printf "%$((148 - ${#PS1_HORIZONTAL_LINE}))s" | sed "s/ /─/g")
+  local PS1_LINE2="$PS1_HORIZONTAL_LINE$PS1_END_LINE"
 
-  local PS1_HORIZONTAL_LINE="╰$PS1_DATE_LINE┴────────────┴───┴──────────┴$PS1_PWD_LINE┴"
-  local END_LINE_LENGTH=$((148 - ${#PS1_HORIZONTAL_LINE}))
-  local END_LINE
-  printf -v END_LINE '%.0s─' $(seq 1 "$END_LINE_LENGTH")
+  local PS1_VERTICAL_SPACING; PS1_VERTICAL_SPACING=$(printf "%${empty_lines:-0}s" | sed "s/ /\n/g"; echo X)
+  local PS1_PROMPT_TEXT="\\$\\$\\$\\$\\$"
+  local PS1_PROMPT="$PS1_COLOR$PS1_PROMPT_TEXT$PS1_FORMAT_END -> "
+  local PS1_LINE3="${PS1_VERTICAL_SPACING%X}$PS1_PROMPT"
 
-  local PS1_VERTICAL_SPACING
-  printf -v PS1_VERTICAL_SPACING '%.0s\n' $(seq 0 "${empty_lines:-0}")
   empty_lines=0
-
-  local PS1_LINE1="│ $PS1_DATE_WITH_SPACES │ $PS1_0$PS1_USER$PS1_USER_SPACES │ $PS1_SHLVL │ $PS1_PID$PS1_PID_SPACES │ $PS1_PATH │"
-  local PS1_LINE2="$PS1_HORIZONTAL_LINE$END_LINE"
-  local PS1_LINE3="$PS1_VERTICAL_SPACING$PS1_PROMPT"
-  PS1="$PS1_LINE1\n$PS1_LINE2$PS1_LINE3"
+  PS1="$PS1_LINE1\n$PS1_LINE2\n$PS1_LINE3"
 }
 
 # shellcheck disable=SC2034
