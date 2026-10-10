@@ -4,7 +4,7 @@
 [ ! -d "$REPO_DIR" ] && exit 0
 
 plik_z_data="$REPO_DIR/.gitupdate"
-data_z_pliku=$(cat "$plik_z_data")
+data_z_pliku=$(cat "$plik_z_data" 2>/dev/null || echo "")
 data_aktualna=$(date +%F)
 
 [ "$data_z_pliku" == "$data_aktualna" ] && exit 0
