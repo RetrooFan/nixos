@@ -2,7 +2,7 @@
 
 # set -euo pipefail
 
-[ ! -f /etc/file-paths ] && "$EDITOR" "$REPO_DIR/file-paths" /etc/file-paths
+[ ! -f /etc/file-paths ] && $EDITOR "$REPO_DIR/file-paths" /etc/file-paths
 # shellcheck disable=SC1091
 source /etc/file-paths || exit 1
 
@@ -31,7 +31,7 @@ for ((i = 0; i < size; i++)); do
   if [ -f /etc/scripts/compare-and-copy-files ]; then
     /etc/scripts/compare-and-copy-files "$INSPECT" "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}" "$i" "$size"
   else
-    "$EDITOR" "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}"
+    $EDITOR "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}"
   fi
 
   [ -f "${SYSTEM_SCRIPTS_PATHS[$i]}" ] && chmod a+x           "${SYSTEM_SCRIPTS_PATHS[$i]}"

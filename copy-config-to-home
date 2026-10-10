@@ -41,7 +41,7 @@ for ((i = 0; i < size; i++)); do
 done
 echo
 
-if "$DELETE"; then
+if $DELETE; then
   for ((i = 2; i < ${#HOME_PATHS[@]}; i++)); do
     rm -f "${HOME_PATHS[$i]}"
   done
