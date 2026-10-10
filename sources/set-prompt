@@ -14,15 +14,19 @@ set_prompt() {
   local PS1_FORMAT_END="\[\033[00m\]"
   local PS1_PROMPT_TEXT="\\$\\$\\$\\$\\$"
   local PS1_USER="$PS1_COLOR\u$PS1_FORMAT_END"
-  local PS1_USER_SPACES=$(printf "%*s" $(expr 10 - "${#CURRENT_USER}"))
+  local PS1_USER_SPACES
+  PS1_USER_SPACES=$(printf "%*s" $(expr 10 - "${#CURRENT_USER}"))
   local PS1_SHLVL="$PS1_COLOR$SHLVL$PS1_FORMAT_END"
   local PS1_PID="$$"
-  local PS1_PID_SPACES=$(printf "%*s" $(expr 8 - "${#PS1_PID}"))
+  local PS1_PID_SPACES
+  PS1_PID_SPACES=$(printf "%*s" $(expr 8 - "${#PS1_PID}"))
   local PS1_PATH="\[\033[01;34m\]\w$PS1_FORMAT_END"
   local PS1_PROMPT="$PS1_COLOR$PS1_PROMPT_TEXT$PS1_FORMAT_END -> "
 
-  local PS1_DATE=$(date)
-  local PS1_DATE_SPACES=$(printf "%*s" $(expr 30 - "${#PS1_DATE}"))
+  local PS1_DATE
+  PS1_DATE=$(date)
+  local PS1_DATE_SPACES
+  PS1_DATE_SPACES=$(printf "%*s" $(expr 30 - "${#PS1_DATE}"))
   local PS1_DATE_WITH_SPACES="$PS1_DATE$PS1_DATE_SPACES"
   local PS1_DATE_LINE
   printf -v PS1_DATE_LINE '%.0s─' $(seq -1 "${#PS1_DATE_WITH_SPACES}")
