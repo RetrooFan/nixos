@@ -33,10 +33,10 @@ set_prompt() {
 
   local PS1_PWD="${PWD/#$HOME/\~}"
   local PS1_PWD_LINE
-  printf -v PS1_PWD_LINE '%.0s─' $(seq -1 "${#PS1_PWD}")
+  printf -v PS1_PWD_LINE '%.0s─' $(seq -1 ${#PS1_PWD})
 
   local PS1_HORIZONTAL_LINE="╰$PS1_DATE_LINE┴────────────┴───┴──────────┴$PS1_PWD_LINE┴"
-  local END_LINE_LENGTH=$((148 - "${#PS1_HORIZONTAL_LINE}"))
+  local END_LINE_LENGTH=$((148 - ${#PS1_HORIZONTAL_LINE}))
   local END_LINE
   printf -v END_LINE '%.0s─' $(seq 1 "$END_LINE_LENGTH")
 
