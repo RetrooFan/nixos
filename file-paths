@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 REPO_SCRIPTS_PATHS=(
-  $REPO_DIR/copy-config-to-home
-  $REPO_DIR/scripts/compare-and-copy-files
-  $REPO_DIR/scripts/compare-files-dialog
-  $REPO_DIR/scripts/compare-files
-  $REPO_DIR/scripts/git-pull
-  $REPO_DIR/scripts/check-for-home-files
-  $REPO_DIR/scripts/check-for-root-files
+  "$REPO_DIR/copy-config-to-home"
+  "$REPO_DIR/scripts/compare-and-copy-files"
+  "$REPO_DIR/scripts/compare-files-dialog"
+  "$REPO_DIR/scripts/compare-files"
+  "$REPO_DIR/scripts/git-pull"
+  "$REPO_DIR/scripts/check-for-home-files"
+  "$REPO_DIR/scripts/check-for-root-files"
 )
 SYSTEM_SCRIPTS_PATHS=(
   /usr/local/bin/copy-config-to-home
@@ -20,14 +20,14 @@ SYSTEM_SCRIPTS_PATHS=(
 )
 
 REPO_ROOT_PATHS=(
-  $REPO_DIR/bashrc.root
-  $REPO_DIR/bashrc.local
-  $REPO_DIR/file-paths
-  $REPO_DIR/htoprc
-  $REPO_DIR/nanorc
-  $REPO_DIR/tmux.conf
-  $REPO_DIR/sources/set-exit-action
-  $REPO_DIR/sources/set-prompt
+  "$REPO_DIR/bashrc.root"
+  "$REPO_DIR/bashrc.local"
+  "$REPO_DIR/file-paths"
+  "$REPO_DIR/htoprc"
+  "$REPO_DIR/nanorc"
+  "$REPO_DIR/tmux.conf"
+  "$REPO_DIR/sources/set-exit-action"
+  "$REPO_DIR/sources/set-prompt"
 )
 SYSTEM_ROOT_PATHS=(
   /root/.bashrc.root
@@ -41,15 +41,15 @@ SYSTEM_ROOT_PATHS=(
 )
 
 REPO_HOME_PATHS=(
-  $REPO_DIR/homefiles/gitconfig
-  $REPO_DIR/homefiles/tmux.conf
-  $REPO_DIR/homefiles/alacritty.toml
-  $REPO_DIR/homefiles/inputrc
-  $REPO_DIR/homefiles/lazygit.yml
-  $REPO_DIR/homefiles/micro.bindings.json
-  $REPO_DIR/homefiles/micro.settings.json
-  $REPO_DIR/homefiles/sublime.json
-  $REPO_DIR/homefiles/vscode.json
+  "$REPO_DIR/homefiles/gitconfig"
+  "$REPO_DIR/homefiles/tmux.conf"
+  "$REPO_DIR/homefiles/alacritty.toml"
+  "$REPO_DIR/homefiles/inputrc"
+  "$REPO_DIR/homefiles/lazygit.yml"
+  "$REPO_DIR/homefiles/micro.bindings.json"
+  "$REPO_DIR/homefiles/micro.settings.json"
+  "$REPO_DIR/homefiles/sublime.json"
+  "$REPO_DIR/homefiles/vscode.json"
 )
 SYSTEM_HOME_PATHS=(
   /etc/homefiles/gitconfig
