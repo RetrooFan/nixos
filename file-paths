@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# shellcheck disable=SC2034
 REPO_SCRIPTS_PATHS=(
   "$REPO_DIR/copy-config-to-home"
   "$REPO_DIR/scripts/compare-and-copy-files"

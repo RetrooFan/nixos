@@ -2,6 +2,7 @@
 
 # set -euo pipefail
 
+# shellcheck disable=SC1091
 source /etc/file-paths || exit 1
 
 DELETE=false
@@ -14,12 +15,16 @@ while getopts "di" flaga; do
     i)
       INSPECT=true
       ;;
+    *)
+      echo "Invalid flag: -${flaga}" >&2
+      exit 1
+      ;;
   esac
 done
 shift $((OPTIND - 1))
 
 echo
-if [ "${#HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" -o "${#HOME_PATHS[@]}" != "${#REPO_HOME_PATHS[@]}" ]; then
+if [ "${#HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ] || [ "${#HOME_PATHS[@]}" != "${#REPO_HOME_PATHS[@]}" ]; then
   echo "TABLICE MAJA ROZNE DLUGOSCI!"; echo; exit 0
 fi
 
@@ -30,7 +35,7 @@ mkdir -p ~/.config/alacritty/
 mkdir -p ~/.config/sublime-text/Packages/User/
 
 size="${#SYSTEM_HOME_PATHS[@]}"
-for ((i = 0; i < $size; i++)); do
+for ((i = 0; i < size; i++)); do
   /etc/scripts/compare-and-copy-files "$INSPECT"         "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc" "$i" "$size"
   [ -f "${HOME_PATHS[$i]}.etc" ] && chmod a=r                        "${HOME_PATHS[$i]}.etc"
 done
@@ -42,7 +47,7 @@ if "$DELETE"; then
   done
 fi
 
-if [ "$CURRENT_USER" == "$REPO_USER" -o "$CURRENT_USER" == "root" ]; then
+if [ "$CURRENT_USER" == "$REPO_USER" ] || [ "$CURRENT_USER" == "root" ]; then
   for ((i = 0; i < "${#HOME_PATHS[@]}"; i++)); do
     if ((i < 2)); then
       [ ! -f "${HOME_PATHS[$i]}" ] && cp    "${REPO_HOME_PATHS[$i]}"   "${HOME_PATHS[$i]}"
@@ -57,7 +62,7 @@ else
 fi
 
 size="${#HOME_PATHS[@]}"
-for ((i = 0; i < $size; i++)); do
+for ((i = 0; i < size; i++)); do
   /etc/scripts/compare-and-copy-files "$INSPECT"         "${HOME_PATHS[$i]}.etc"    "${HOME_PATHS[$i]}"     "$i" "$size"
 done
 echo

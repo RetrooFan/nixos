@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# shellcheck disable=SC1091
 source /etc/file-paths || exit 1
 
 if [ "${#HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then

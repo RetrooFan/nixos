@@ -18,7 +18,8 @@ HISTCONTROL=ignoreboth
 
 stty -ixon
 export EDITOR=micro
-export CURRENT_USER="$(whoami)"
+CURRENT_USER="$(whoami)"
+export CURRENT_USER
 
 alias -- grep='grep --color=auto'
 alias -- fgrep='fgrep --color=auto'
@@ -29,10 +30,12 @@ alias -- mi='micro'
 
 # ------------------------------------------------
 
+# shellcheck disable=SC1091
 [ -f /etc/sources/set-prompt ] && source /etc/sources/set-prompt
 
 # ------------------------------------------------
 
+# shellcheck disable=SC1091
 [ -f /etc/sources/set-exit-action ] && source /etc/sources/set-exit-action
 
 # ------------------------------------------------
