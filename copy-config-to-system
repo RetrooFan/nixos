@@ -21,12 +21,12 @@ done
 shift $((OPTIND - 1))
 
 echo
-if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" ] || [ "${#REPO_HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
+if [ ${#REPO_ROOT_PATHS[@]} != ${#SYSTEM_ROOT_PATHS[@]} ] || [ ${#REPO_HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ]; then
   echo "TABLICE MAJA ROZNE DLUGOSCI!"; echo; exit 0
 fi
 
 mkdir -p /etc/scripts/
-size="${#REPO_SCRIPTS_PATHS[@]}"
+size=${#REPO_SCRIPTS_PATHS[@]}
 for ((i = 0; i < size; i++)); do
   if [ -f /etc/scripts/compare-and-copy-files ]; then
     /etc/scripts/compare-and-copy-files "$INSPECT" "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}" "$i" "$size"
@@ -39,14 +39,14 @@ done
 echo
 
 mkdir -p /etc/sources/
-size="${#REPO_ROOT_PATHS[@]}"
+size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < size; i++)); do
   /etc/scripts/compare-and-copy-files "$INSPECT" "${REPO_ROOT_PATHS[$i]}"    "${SYSTEM_ROOT_PATHS[$i]}"    "$i" "$size"
 done
 echo
 
 mkdir -p /etc/homefiles/
-size="${#REPO_HOME_PATHS[@]}"
+size=${#REPO_HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
   /etc/scripts/compare-and-copy-files "$INSPECT" "${REPO_HOME_PATHS[$i]}"    "${SYSTEM_HOME_PATHS[$i]}"    "$i" "$size"
 done
