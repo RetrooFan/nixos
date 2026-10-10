@@ -23,7 +23,7 @@ props1=$(echo "$uprawnienia_pliku_docelowego" | awk '{print $2}')
 props2=$(echo "$uprawnienia_pliku_docelowego" | awk '{print $3}')
 line2_column1=$(
   (( "$3" + 1 == "$4" )) && printf "╰" || printf "├"
-  printf "%.0s─" $(seq 1 $((80 - "${#plik_docelowy}" - 2)))
+  printf "%.0s─" $(seq 1 $((80 - ${#plik_docelowy} - 2)))
   printf "► %s" "$plik_docelowy"
 )
 props3=$(echo "$uprawnienia_pliku_docelowego" | awk '{print $1}')

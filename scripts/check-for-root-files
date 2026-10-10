@@ -3,20 +3,20 @@
 # shellcheck disable=SC1091
 source /etc/file-paths || exit 1
 
-if [ "${#REPO_ROOT_PATHS[@]}" != "${#SYSTEM_ROOT_PATHS[@]}" ] || [ "${#REPO_HOME_PATHS[@]}" != "${#SYSTEM_HOME_PATHS[@]}" ]; then
+if [ ${#REPO_ROOT_PATHS[@]} != ${#SYSTEM_ROOT_PATHS[@]} ] || [ ${#REPO_HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ]; then
   echo
   echo "TABLICE MAJA ROZNE DLUGOSCI!"
   echo
 else
-  for ((i = 0; i < "${#REPO_SCRIPTS_PATHS[@]}"; i++)); do
+  for ((i = 0; i < ${#REPO_SCRIPTS_PATHS[@]}; i++)); do
     /etc/scripts/compare-files "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}" "copy-config-to-system"
   done
 
-  for ((i = 0; i < "${#REPO_ROOT_PATHS[@]}"; i++)); do
+  for ((i = 0; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
     /etc/scripts/compare-files "${REPO_ROOT_PATHS[$i]}" "${SYSTEM_ROOT_PATHS[$i]}" "copy-config-to-system"
   done
 
-  for ((i = 0; i < "${#REPO_HOME_PATHS[@]}"; i++)); do
+  for ((i = 0; i < ${#REPO_HOME_PATHS[@]}; i++)); do
     /etc/scripts/compare-files "${REPO_HOME_PATHS[$i]}" "${SYSTEM_HOME_PATHS[$i]}" "copy-config-to-system"
   done
 fi
