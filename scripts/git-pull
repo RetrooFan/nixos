@@ -9,9 +9,9 @@ data_aktualna=$(date +%F)
 
 [ "$data_z_pliku" == "$data_aktualna" ] && exit 0
 
-cd "$REPO_DIR"
+cd "$REPO_DIR" || exit 1
 echo "git pull ..."
 git pull && echo "$data_aktualna" > "$plik_z_data"
-cd "$INIT_DIR"
+cd "$INIT_DIR" || exit 1
 
 exit 0
