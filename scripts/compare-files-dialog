@@ -7,8 +7,8 @@ header() {
 }
 
 user-input() {
-  printf "${reset} ${kolor}"
-  read odpowiedz
+  printf "%b %b" "${reset}" "${kolor}"
+  read -r odpowiedz
   odpowiedz="${odpowiedz,,}"
 }
 
@@ -30,32 +30,32 @@ props3=$(echo "$uprawnienia" | awk '{print $1}')
 
 [ "$3" == 0 ] && header
 
-printf "${kolor}"
+printf "%b" "${kolor}"
 printf "%s │ %-19s " "$line1_column1" "$props1 $props2"
 line2=$(printf "%s │ %-13s" "$line2_column1" "$props3")
 if /etc/scripts/compare-files "$1" "$2" ""; then
   $5 && read_hint="[copy/y/N]"
   printf "%s\n" "1=2 │"
-  printf "$line2"
+  printf "%s" "$line2"
   printf "%10s" "$read_hint"
   printf " │"
 
   if $5; then user-input; else printf "\n"; fi
 else
   read_hint="[copy/y/N]"
-  printf "${czerwony}"
+  printf "%b" "${czerwony}"
   [ -f "$1" ] && ([ -f "$2" ] && printf "%s" "1≠2" || printf "%s" "2∈Ø") || printf "%s" "1∈Ø"
-  printf "${reset}${kolor}"
+  printf "%b" "${reset}${kolor}"
   printf " │\n"
-  printf "$line2"
-  printf "${czerwony}"
+  printf "%s" "$line2"
+  printf "%b" "${czerwony}"
   printf "%10s" "$read_hint"
-  printf "${kolor}"
+  printf "%b" "${kolor}"
   printf " │"
 
   user-input
 fi
-printf "${reset}"
+printf "%b" "${reset}"
 
 [ "$odpowiedz" == "y" ] && exit 1
 [ "$odpowiedz" == "copy" ] && exit 2
