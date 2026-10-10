@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 [ "$CURRENT_USER" != "$REPO_USER" ] && exit 0
-[ ! -d "$REPO_DIR" ] && exit 0
 
 plik_z_data="$REPO_DIR/.gitupdate"
 data_z_pliku=$(cat "$plik_z_data" 2>/dev/null || echo "")
@@ -12,6 +11,5 @@ data_aktualna=$(date +%F)
 cd "$REPO_DIR" || exit 1
 echo "git pull ..."
 git pull && echo "$data_aktualna" > "$plik_z_data"
-cd "$INIT_DIR" || exit 1
 
 exit 0
