@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
 if [ -f /etc/scripts/compare-files-dialog ]; then
-  if $1; then
-    /etc/scripts/compare-files-dialog $2 $3 $4 $5 true
+  if "$1"; then
+    /etc/scripts/compare-files-dialog "$2" "$3" "$4" "$5" true
   else
-    /etc/scripts/compare-files-dialog $2 $3 $4 $5 false
+    /etc/scripts/compare-files-dialog "$2" "$3" "$4" "$5" false
   fi
 
-  result=$?
+  result="$?"
 else
   result=1
 fi
 
-[ $result == 1 ] && $EDITOR $2 $3
-[ $result == 2 ] && cp      $2 $3
+[ "$result" == 1 ] && "$EDITOR" "$2" "$3"
+[ "$result" == 2 ] && cp      "$2" "$3"
 
 exit 0
