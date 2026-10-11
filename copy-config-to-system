@@ -7,14 +7,6 @@ cd "$script_dir"
 # shellcheck disable=SC1091
 source file-paths || exit 1
 
-[ ! -f /etc/scripts/compare-and-copy-files ] && $EDITOR "$REPO_DIR/scripts/compare-and-copy-files" /etc/scripts/compare-and-copy-files
-[ ! -f /etc/scripts/compare-files-dialog ]   && $EDITOR "$REPO_DIR/scripts/compare-files-dialog"   /etc/scripts/compare-files-dialog
-[ ! -f /etc/scripts/compare-files ]          && $EDITOR "$REPO_DIR/scripts/compare-files"          /etc/scripts/compare-files
-
-([ -f /etc/scripts/compare-and-copy-files ]  && chmod a+x /etc/scripts/compare-and-copy-files) || (echo "Missing file"; exit 1)
-([ -f /etc/scripts/compare-files-dialog ]    && chmod a+x /etc/scripts/compare-files-dialog)   || (echo "Missing file"; exit 1)
-([ -f /etc/scripts/compare-files ]           && chmod a+x /etc/scripts/compare-files)          || (echo "Missing file"; exit 1)
-
 INSPECT=false
 while getopts "i" flaga; do
   case "${flaga}" in
