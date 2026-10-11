@@ -14,11 +14,11 @@ else
   done
 
   for ((i = 0; i < ${#REPO_ROOT_PATHS[@]}; i++)); do
-    /etc/scripts/compare-files "${REPO_ROOT_PATHS[$i]}" "${SYSTEM_ROOT_PATHS[$i]}" "copy-config-to-system" || :
+    /etc/scripts/compare-files "${REPO_ROOT_PATHS[$i]}"    "${SYSTEM_ROOT_PATHS[$i]}"    "copy-config-to-system" || :
   done
 
   for ((i = 0; i < ${#REPO_HOME_PATHS[@]}; i++)); do
-    /etc/scripts/compare-files "${REPO_HOME_PATHS[$i]}" "${SYSTEM_HOME_PATHS[$i]}" "copy-config-to-system" || :
+    /etc/scripts/compare-files "${REPO_HOME_PATHS[$i]}"    "${SYSTEM_HOME_PATHS[$i]}"    "copy-config-to-system" || :
   done
 fi
 
