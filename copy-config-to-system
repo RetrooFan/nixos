@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 [ ! -f /etc/file-paths ] && $EDITOR "$REPO_DIR/file-paths" /etc/file-paths
 # shellcheck disable=SC1091
