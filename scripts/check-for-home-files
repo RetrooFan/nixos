@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # shellcheck disable=SC1091
 source /etc/file-paths || exit 1
@@ -9,7 +10,7 @@ if [ ${#HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ]; then
   echo
 else
   for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
-    /etc/scripts/compare-files "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc" "copy-config-to-home"
+    /etc/scripts/compare-files "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc" "copy-config-to-home" || :
   done
 fi
 

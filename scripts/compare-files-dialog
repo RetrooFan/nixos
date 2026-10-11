@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 header() {
   printf "╭%81s┬%25s╮\n" "" "" | sed "s/ /─/g"
@@ -12,6 +13,7 @@ user-input() {
   odpowiedz="${odpowiedz,,}"
 }
 
+odpowiedz=""
 plik_zrodlowy="${1/#$HOME/\~}"
 plik_docelowy="${2/#$HOME/\~}"
 uprawnienia=$(ls -l "$2" 2>/dev/null)
@@ -34,6 +36,7 @@ printf "%b" "${kolor}"
 printf "%s │ %-19s " "$line1_column1" "$props1 $props2"
 line2=$(printf "%s │ %-13s" "$line2_column1" "$props3")
 if /etc/scripts/compare-files "$1" "$2" ""; then
+  read_hint=""
   $5 && read_hint="[copy/y/N]"
   printf "%s\n" "1=2 │"
   printf "%s" "$line2"

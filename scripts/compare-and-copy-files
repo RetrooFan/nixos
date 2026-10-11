@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
+result=0
 if [ -f /etc/scripts/compare-files-dialog ]; then
   if $1; then
     /etc/scripts/compare-files-dialog "$2" "$3" "$4" "$5" true
   else
     /etc/scripts/compare-files-dialog "$2" "$3" "$4" "$5" false
-  fi
-
-  result="$?"
+  fi || result="$?"
 else
   result=1
 fi
