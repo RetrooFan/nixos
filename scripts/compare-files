@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-hash1=$(sha256sum "$1" 2>/dev/null | awk '{print $1}') &&
-hash2=$(sha256sum "$2" 2>/dev/null | awk '{print $1}') &&
+hash1=$(sha256sum "$1" 2>/dev/null | awk '{print $1}' || echo "") &&
+hash2=$(sha256sum "$2" 2>/dev/null | awk '{print $1}' || echo "") &&
 
 if [ "$hash1" != "$hash2" ]; then
   if [ "$3" != "" ]; then

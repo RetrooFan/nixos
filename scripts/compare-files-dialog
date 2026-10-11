@@ -16,7 +16,7 @@ user-input() {
 odpowiedz=""
 plik_zrodlowy="${1/#$HOME/\~}"
 plik_docelowy="${2/#$HOME/\~}"
-uprawnienia=$(ls -l "$2" 2>/dev/null)
+uprawnienia=$(ls -l "$2" 2>/dev/null || echo "")
 (("${3:0}" % 2)) && kolor="\033[0m" || kolor="\033[38;5;111m"
 czerwony="\e[1;31m"
 reset="\033[0m"
