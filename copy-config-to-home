@@ -35,7 +35,7 @@ mkdir -p ~/.config/sublime-text/Packages/User/
 
 size=${#SYSTEM_HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  /etc/scripts/compare-and-copy-files "$INSPECT" "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc" "$i" "$size"
+  /etc/scripts/compare-and-copy-files "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc" "$i" "$size" "$INSPECT"
   [ -f "${HOME_PATHS[$i]}.etc" ] && chmod a=r                               "${HOME_PATHS[$i]}.etc"
 done
 echo
@@ -62,6 +62,6 @@ fi
 
 size=${#HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  /etc/scripts/compare-and-copy-files "$INSPECT" "${HOME_PATHS[$i]}.etc"    "${HOME_PATHS[$i]}"     "$i" "$size"
+  /etc/scripts/compare-and-copy-files "${HOME_PATHS[$i]}.etc"    "${HOME_PATHS[$i]}"     "$i" "$size" "$INSPECT"
 done
 echo

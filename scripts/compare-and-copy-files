@@ -2,13 +2,14 @@
 set -euo pipefail
 
 result=0
-if $1; then
-  /etc/scripts/compare-files-dialog "$2" "$3" "$4" "$5" true
+
+if $5; then
+  /etc/scripts/compare-files-dialog "$1" "$2" "$3" "$4" true
 else
-  /etc/scripts/compare-files-dialog "$2" "$3" "$4" "$5" false
+  /etc/scripts/compare-files-dialog "$1" "$2" "$3" "$4" false
 fi || result="$?"
 
-[ "$result" == 1 ] && $EDITOR "$2" "$3"
-[ "$result" == 2 ] && cp      "$2" "$3"
+[ "$result" == 1 ] && $EDITOR "$1" "$2"
+[ "$result" == 2 ] && cp      "$1" "$2"
 
 exit 0
