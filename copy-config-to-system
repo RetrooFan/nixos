@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+[ "$(id -u)" != 0 ] && echo "This script must be run as root!" && exit 1
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$script_dir"
 
