@@ -2,6 +2,8 @@
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+[ "$(stat -c '%u' "$script_dir"/copy-config-to-home)" == 0 ] && run_dir=/etc || run_dir="$script_dir"
+
 # shellcheck disable=SC1091
 source "$script_dir"/file-paths 2>/dev/null || source /etc/file-paths || exit 1
 
@@ -36,7 +38,7 @@ mkdir -p ~/.config/sublime-text/Packages/User/
 
 size=${#SYSTEM_HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  /etc/scripts/compare-and-copy-files     "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc" "$i" "$size" "$INSPECT"
+  "$run_dir"/scripts/compare-and-copy-files     "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc" "$i" "$size" "$INSPECT"
   [ -f "${HOME_PATHS[$i]}.etc" ] && chmod a=r                        "${HOME_PATHS[$i]}.etc"
 done
 echo
@@ -63,6 +65,6 @@ fi
 
 size=${#HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  /etc/scripts/compare-and-copy-files     "${HOME_PATHS[$i]}.etc"    "${HOME_PATHS[$i]}"     "$i" "$size" "$INSPECT"
+  "$run_dir"/scripts/compare-and-copy-files     "${HOME_PATHS[$i]}.etc"    "${HOME_PATHS[$i]}"     "$i" "$size" "$INSPECT"
 done
 echo
