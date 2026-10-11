@@ -30,23 +30,23 @@ for ((i = 0; i < size; i++)); do
   if [ -f /etc/scripts/compare-and-copy-files ]; then
     /etc/scripts/compare-and-copy-files "$INSPECT" "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}" "$i" "$size"
   else
-    $EDITOR "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}"
+    $EDITOR                                        "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}"
   fi
 
-  [ -f "${SYSTEM_SCRIPTS_PATHS[$i]}" ] && chmod a+x           "${SYSTEM_SCRIPTS_PATHS[$i]}"
+  [ -f "${SYSTEM_SCRIPTS_PATHS[$i]}" ] && chmod a+x                            "${SYSTEM_SCRIPTS_PATHS[$i]}"
 done
 echo
 
 mkdir -p /etc/sources/
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  /etc/scripts/compare-and-copy-files "$INSPECT" "${REPO_ROOT_PATHS[$i]}"    "${SYSTEM_ROOT_PATHS[$i]}"    "$i" "$size"
+  /etc/scripts/compare-and-copy-files   "$INSPECT" "${REPO_ROOT_PATHS[$i]}"    "${SYSTEM_ROOT_PATHS[$i]}"    "$i" "$size"
 done
 echo
 
 mkdir -p /etc/homefiles/
 size=${#REPO_HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  /etc/scripts/compare-and-copy-files "$INSPECT" "${REPO_HOME_PATHS[$i]}"    "${SYSTEM_HOME_PATHS[$i]}"    "$i" "$size"
+  /etc/scripts/compare-and-copy-files   "$INSPECT" "${REPO_HOME_PATHS[$i]}"    "${SYSTEM_HOME_PATHS[$i]}"    "$i" "$size"
 done
 echo
