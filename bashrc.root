@@ -2,8 +2,8 @@
 # ------------------------------------------------
 # ------------------------------------------------
 
-# if [ -f /root/bashrc.root ]; then
-#   source /root/bashrc.root
+# if [ -f /root/.bashrc.root ]; then
+#   source /root/.bashrc.root
 # fi
 
 # ------------------------------------------------
