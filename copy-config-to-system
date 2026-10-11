@@ -2,6 +2,7 @@
 set -euo pipefail
 
 [ ! -f /etc/file-paths ] && $EDITOR "$REPO_DIR/file-paths" /etc/file-paths
+
 # shellcheck disable=SC1091
 source /etc/file-paths || exit 1
 
