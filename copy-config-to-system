@@ -36,12 +36,7 @@ fi
 mkdir -p /etc/scripts/
 size=${#REPO_SCRIPTS_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  if [ -f /etc/scripts/compare-and-copy-files ]; then
-    /etc/scripts/compare-and-copy-files "$INSPECT" "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}" "$i" "$size"
-  else
-    $EDITOR                                        "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}"
-  fi
-
+  /etc/scripts/compare-and-copy-files "$INSPECT" "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}" "$i" "$size"
   [ -f "${SYSTEM_SCRIPTS_PATHS[$i]}" ] && chmod a+x                            "${SYSTEM_SCRIPTS_PATHS[$i]}"
 done
 echo
