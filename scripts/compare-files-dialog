@@ -31,10 +31,10 @@ line2_column1=$(
 props3=$(echo "$uprawnienia" | awk '{print $1}')
 
 [ "$3" == 0 ] && header
-
 printf "%b" "${kolor}"
 printf "%s │ %-19s " "$line1_column1" "$props1 $props2"
 line2=$(printf "%s │ %-13s" "$line2_column1" "$props3")
+
 if /etc/scripts/compare-files "$1" "$2" ""; then
   read_hint=""
   $5 && read_hint="[copy/y/N]"
@@ -58,6 +58,7 @@ else
 
   user-input
 fi
+
 printf "%b" "${reset}"
 
 [ "$odpowiedz" == "y" ] && exit 1
