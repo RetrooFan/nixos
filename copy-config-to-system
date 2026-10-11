@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-cd "$(dirname "${BASH_SOURCE[0]}")"
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$script_dir"
 
 # shellcheck disable=SC1091
 source file-paths || exit 1
@@ -36,7 +37,7 @@ fi
 mkdir -p /etc/scripts/
 size=${#REPO_SCRIPTS_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  /etc/scripts/compare-and-copy-files "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}" "$i" "$size" "$INSPECT"
+  "$script_dir"/scripts/compare-and-copy-files "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}" "$i" "$size" "$INSPECT"
   [ -f "${SYSTEM_SCRIPTS_PATHS[$i]}" ] && chmod a+x                            "${SYSTEM_SCRIPTS_PATHS[$i]}"
 done
 echo
@@ -44,13 +45,13 @@ echo
 mkdir -p /etc/sources/
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  /etc/scripts/compare-and-copy-files   "${REPO_ROOT_PATHS[$i]}"    "${SYSTEM_ROOT_PATHS[$i]}"    "$i" "$size" "$INSPECT"
+  "$script_dir"/scripts/compare-and-copy-files   "${REPO_ROOT_PATHS[$i]}"    "${SYSTEM_ROOT_PATHS[$i]}"    "$i" "$size" "$INSPECT"
 done
 echo
 
 mkdir -p /etc/homefiles/
 size=${#REPO_HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  /etc/scripts/compare-and-copy-files   "${REPO_HOME_PATHS[$i]}"    "${SYSTEM_HOME_PATHS[$i]}"    "$i" "$size" "$INSPECT"
+  "$script_dir"/scripts/compare-and-copy-files   "${REPO_HOME_PATHS[$i]}"    "${SYSTEM_HOME_PATHS[$i]}"    "$i" "$size" "$INSPECT"
 done
 echo

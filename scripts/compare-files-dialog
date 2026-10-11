@@ -13,6 +13,7 @@ user-input() {
   odpowiedz="${odpowiedz,,}"
 }
 
+script_dir="$(dirname "${BASH_SOURCE[0]}")"
 odpowiedz=""
 plik_zrodlowy="${1/#$HOME/\~}"
 plik_docelowy="${2/#$HOME/\~}"
@@ -35,7 +36,7 @@ printf "%b" "${kolor}"
 printf "%s │ %-19s " "$line1_column1" "$props1 $props2"
 line2=$(printf "%s │ %-13s" "$line2_column1" "$props3")
 
-if /etc/scripts/compare-files "$1" "$2" ""; then
+if "$script_dir"/compare-files "$1" "$2" ""; then
   read_hint=""
   $5 && read_hint="[copy/y/N]"
   printf "%s\n" "1=2 │"

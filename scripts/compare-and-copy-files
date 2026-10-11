@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+script_dir="$(dirname "${BASH_SOURCE[0]}")"
 result=0
 
-/etc/scripts/compare-files-dialog "$1" "$2" "$3" "$4" "$5" || result="$?"
+"$script_dir"/compare-files-dialog "$1" "$2" "$3" "$4" "$5" || result="$?"
 
 [ "$result" == 1 ] && $EDITOR "$1" "$2"
 [ "$result" == 2 ] && cp      "$1" "$2"
