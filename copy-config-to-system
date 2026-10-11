@@ -12,7 +12,7 @@ set -euo pipefail
 ([ -f /etc/scripts/compare-files ]           && chmod a+x /etc/scripts/compare-files)          || (echo "Missing file"; exit 1)
 
 # shellcheck disable=SC1091
-source /etc/file-paths || exit 1
+source /etc/file-paths
 
 INSPECT=false
 while getopts "i" flaga; do
