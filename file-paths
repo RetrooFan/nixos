@@ -67,7 +67,7 @@ REPO_HOME_PATHS=(
   "$REPO_DIR/homefiles/micro.bindings.json"
   "$REPO_DIR/homefiles/micro.settings.json"
   "$REPO_DIR/homefiles/sublime.json"
-  "$REPO_DIR/homefiles/vscode.json"
+  "$REPO_DIR/homefiles/vscode.settings.json"
 )
 
 SYSTEM_HOME_PATHS=(
@@ -79,7 +79,7 @@ SYSTEM_HOME_PATHS=(
   "$SYSTEM_HOME_DIR/homefiles/micro.bindings.json"
   "$SYSTEM_HOME_DIR/homefiles/micro.settings.json"
   "$SYSTEM_HOME_DIR/homefiles/sublime.json"
-  "$SYSTEM_HOME_DIR/homefiles/vscode.json"
+  "$SYSTEM_HOME_DIR/homefiles/vscode.settings.json"
 )
 
 HOME_PATHS=(
