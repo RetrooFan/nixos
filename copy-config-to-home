@@ -2,7 +2,7 @@
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-[ "$(stat -c '%u' "$script_dir"/copy-config-to-home)" == 0 ] && run_dir=/etc || run_dir="$script_dir"
+[ "$(stat -c '%u' "$script_dir"/copy-config-to-home)" == 0 ] && run_dir="/etc" || run_dir="$script_dir"
 
 # shellcheck disable=SC1091
 source "$script_dir"/file-paths 2>/dev/null || source /etc/file-paths || exit 1
