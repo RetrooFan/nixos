@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
+script_file="$(basename "${BASH_SOURCE[1]}")"
+source_dir="$(dirname "${BASH_SOURCE[0]}")"
+
 # ------------------------------------------------
 
 REPO_SCRIPTS_PATHS=(
@@ -49,6 +52,12 @@ SYSTEM_ROOT_PATHS=(
 
 # ------------------------------------------------
 
+if [ "$source_dir" == "/etc" ] || [ "${script_file}" == "copy-config-to-system" ]; then
+  SYSTEM_HOME_DIR="/etc"
+else
+  SYSTEM_HOME_DIR="$REPO_DIR"
+fi
+
 REPO_HOME_PATHS=(
   "$REPO_DIR/homefiles/gitconfig"
   "$REPO_DIR/homefiles/tmux.conf"
@@ -62,15 +71,15 @@ REPO_HOME_PATHS=(
 )
 
 SYSTEM_HOME_PATHS=(
-  /etc/homefiles/gitconfig
-  /etc/homefiles/tmux.conf
-  /etc/homefiles/alacritty.toml
-  /etc/homefiles/inputrc
-  /etc/homefiles/lazygit.yml
-  /etc/homefiles/micro.bindings.json
-  /etc/homefiles/micro.settings.json
-  /etc/homefiles/sublime.json
-  /etc/homefiles/vscode.json
+  "$SYSTEM_HOME_DIR/homefiles/gitconfig"
+  "$SYSTEM_HOME_DIR/homefiles/tmux.conf"
+  "$SYSTEM_HOME_DIR/homefiles/alacritty.toml"
+  "$SYSTEM_HOME_DIR/homefiles/inputrc"
+  "$SYSTEM_HOME_DIR/homefiles/lazygit.yml"
+  "$SYSTEM_HOME_DIR/homefiles/micro.bindings.json"
+  "$SYSTEM_HOME_DIR/homefiles/micro.settings.json"
+  "$SYSTEM_HOME_DIR/homefiles/sublime.json"
+  "$SYSTEM_HOME_DIR/homefiles/vscode.json"
 )
 
 HOME_PATHS=(
