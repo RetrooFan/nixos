@@ -28,21 +28,21 @@ REPO_ROOT_PATHS=(
   "$REPO_DIR/bashrc.root"
   "$REPO_DIR/bashrc.local"
   "$REPO_DIR/file-paths"
+  "$REPO_DIR/sources/set-exit-action"
+  "$REPO_DIR/sources/set-prompt"
   "$REPO_DIR/htoprc"
   "$REPO_DIR/nanorc"
   "$REPO_DIR/tmux.conf"
-  "$REPO_DIR/sources/set-exit-action"
-  "$REPO_DIR/sources/set-prompt"
 )
 SYSTEM_ROOT_PATHS=(
   /root/.bashrc.root
   /etc/bashrc.local
   /etc/file-paths
+  /etc/sources/set-exit-action
+  /etc/sources/set-prompt
   /etc/htoprc
   /etc/nanorc
   /etc/tmux.conf
-  /etc/sources/set-exit-action
-  /etc/sources/set-prompt
 )
 
 # ------------------------------------------------
