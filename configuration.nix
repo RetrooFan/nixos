@@ -44,6 +44,7 @@
       "homefiles/micro.bindings.json".text =  builtins.readFile ./homefiles/micro.bindings.json;
       "homefiles/micro.settings.json".text =  builtins.readFile ./homefiles/micro.settings.json;
       "homefiles/sublime.json".text =         builtins.readFile ./homefiles/sublime.json;
+      "homefiles/vscode.keybindings.json".text = builtins.readFile ./homefiles/vscode.keybindings.json;
       "homefiles/vscode.settings.json".text = builtins.readFile ./homefiles/vscode.settings.json;
     };
 
