@@ -5,7 +5,7 @@ script_file="$(basename "${BASH_SOURCE[1]}")"
 source_dir="$(dirname "${BASH_SOURCE[0]}")"
 [ "$source_dir" == "/etc" ] || [ "${script_file}" == "copy-config-to-system" ]; system_level="$?"
 
-if $system_level; then
+if [ $system_level == 0 ]; then
   SYSTEM_HOME_DIR="/etc"
 else
   SYSTEM_HOME_DIR="$REPO_DIR"
@@ -98,7 +98,7 @@ HOME_PATHS=(
   ~/.config/Code/User/settings.json
 )
 
-if ! $system_level; then
+if [ $system_level != 0 ]; then
   REPO_HOME_PATHS[1]="$REPO_DIR/tmux.conf"
   SYSTEM_HOME_PATHS[1]="$SYSTEM_HOME_DIR/tmux.conf"
 
