@@ -29,12 +29,12 @@
         mode = "0555";
       };
 
+      "sources/set-exit-action".text =        builtins.readFile ./sources/set-exit-action;
+      "sources/set-prompt".text =             builtins.readFile ./sources/set-prompt;
       "bashrc.local".text =                   builtins.readFile ./bashrc.local;
       "file-paths".text =                     builtins.readFile ./file-paths;
       "htoprc".text =                         builtins.readFile ./htoprc;
       "tmux.conf".text =                      builtins.readFile ./tmux.conf;
-      "sources/set-exit-action".text =        builtins.readFile ./sources/set-exit-action;
-      "sources/set-prompt".text =             builtins.readFile ./sources/set-prompt;
 
       "homefiles/gitconfig".text =            builtins.readFile ./homefiles/gitconfig;
       "homefiles/tmux.conf".text =            builtins.readFile ./homefiles/tmux.conf;
