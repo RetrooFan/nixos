@@ -67,6 +67,7 @@ REPO_HOME_PATHS=(
   "$REPO_DIR/homefiles/micro.bindings.json"
   "$REPO_DIR/homefiles/micro.settings.json"
   "$REPO_DIR/homefiles/sublime.json"
+  "$REPO_DIR/homefiles/vscode.keybindings.json"
   "$REPO_DIR/homefiles/vscode.settings.json"
 )
 
@@ -79,6 +80,7 @@ SYSTEM_HOME_PATHS=(
   "$SYSTEM_HOME_DIR/homefiles/micro.bindings.json"
   "$SYSTEM_HOME_DIR/homefiles/micro.settings.json"
   "$SYSTEM_HOME_DIR/homefiles/sublime.json"
+  "$SYSTEM_HOME_DIR/homefiles/vscode.keybindings.json"
   "$SYSTEM_HOME_DIR/homefiles/vscode.settings.json"
 )
 
@@ -91,6 +93,7 @@ HOME_PATHS=(
   ~/.config/micro/bindings.json
   ~/.config/micro/settings.json
   ~/.config/sublime-text/Packages/User/Preferences.sublime-settings
+  ~/.config/Code/User/keybindings.json
   ~/.config/Code/User/settings.json
 )
 
