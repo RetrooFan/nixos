@@ -4,6 +4,12 @@
 script_file="$(basename "${BASH_SOURCE[1]}")"
 source_dir="$(dirname "${BASH_SOURCE[0]}")"
 
+if [ "$source_dir" == "/etc" ] || [ "${script_file}" == "copy-config-to-system" ]; then
+  SYSTEM_HOME_DIR="/etc"
+else
+  SYSTEM_HOME_DIR="$REPO_DIR"
+fi
+
 # ------------------------------------------------
 
 REPO_SCRIPTS_PATHS=(
@@ -51,12 +57,6 @@ SYSTEM_ROOT_PATHS=(
 )
 
 # ------------------------------------------------
-
-if [ "$source_dir" == "/etc" ] || [ "${script_file}" == "copy-config-to-system" ]; then
-  SYSTEM_HOME_DIR="/etc"
-else
-  SYSTEM_HOME_DIR="$REPO_DIR"
-fi
 
 REPO_HOME_PATHS=(
   "$REPO_DIR/homefiles/gitconfig"
