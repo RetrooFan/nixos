@@ -12,6 +12,7 @@ REPO_SCRIPTS_PATHS=(
   "$REPO_DIR/scripts/check-for-root-files"
   "$REPO_DIR/copy-config-to-home"
 )
+
 SYSTEM_SCRIPTS_PATHS=(
   /etc/scripts/compare-and-copy-files
   /etc/scripts/compare-files-dialog
@@ -34,6 +35,7 @@ REPO_ROOT_PATHS=(
   "$REPO_DIR/nanorc"
   "$REPO_DIR/tmux.conf"
 )
+
 SYSTEM_ROOT_PATHS=(
   /root/.bashrc.root
   /etc/bashrc.local
@@ -58,6 +60,7 @@ REPO_HOME_PATHS=(
   "$REPO_DIR/homefiles/sublime.json"
   "$REPO_DIR/homefiles/vscode.json"
 )
+
 SYSTEM_HOME_PATHS=(
   /etc/homefiles/gitconfig
   /etc/homefiles/tmux.conf
@@ -69,6 +72,7 @@ SYSTEM_HOME_PATHS=(
   /etc/homefiles/sublime.json
   /etc/homefiles/vscode.json
 )
+
 HOME_PATHS=(
   ~/.gitconfig
   ~/.tmux.conf
