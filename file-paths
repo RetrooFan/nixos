@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
+
+# ------------------------------------------------
+
 REPO_SCRIPTS_PATHS=(
   "$REPO_DIR/scripts/compare-and-copy-files"
   "$REPO_DIR/scripts/compare-files-dialog"
@@ -18,6 +21,8 @@ SYSTEM_SCRIPTS_PATHS=(
   /etc/scripts/check-for-root-files
   /usr/local/bin/copy-config-to-home
 )
+
+# ------------------------------------------------
 
 REPO_ROOT_PATHS=(
   "$REPO_DIR/bashrc.root"
@@ -39,6 +44,8 @@ SYSTEM_ROOT_PATHS=(
   /etc/sources/set-exit-action
   /etc/sources/set-prompt
 )
+
+# ------------------------------------------------
 
 REPO_HOME_PATHS=(
   "$REPO_DIR/homefiles/gitconfig"
@@ -73,3 +80,5 @@ HOME_PATHS=(
   ~/.config/sublime-text/Packages/User/Preferences.sublime-settings
   ~/.config/Code/User/settings.json
 )
+
+# ------------------------------------------------
