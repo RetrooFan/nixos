@@ -9,7 +9,8 @@ source "$REPO_DIR"/file-paths || exit 1
 
 if [ ${#ROOT_SCRIPT_INDEXES[@]} != ${#REPO_ROOT_PATHS[@]} ] ||
    [ ${#ROOT_SCRIPT_INDEXES[@]} != ${#SYSTEM_ROOT_PATHS[@]} ] ||
-   [ ${#REPO_HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ]; then
+   [ ${#HOME_SCRIPT_INDEXES[@]} != ${#REPO_HOME_PATHS[@]} ] ||
+   [ ${#HOME_SCRIPT_INDEXES[@]} != ${#SYSTEM_HOME_PATHS[@]} ]; then
   echo "TABLICE MAJA ROZNE DLUGOSCI!"; exit 0
 fi
 
