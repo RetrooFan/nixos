@@ -7,11 +7,11 @@ set -euo pipefail
 source /etc/file-paths || exit 1
 
 if [ ${#HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ]; then
-  echo "TABLICE MAJA ROZNE DLUGOSCI!"
-else
-  for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
-    /etc/scripts/compare-files "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc" "copy-config-to-home" || :
-  done
+  echo "TABLICE MAJA ROZNE DLUGOSCI!"; exit 1
 fi
+
+for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
+  /etc/scripts/compare-files "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc" "copy-config-to-home" || :
+done
 
 exit 0
