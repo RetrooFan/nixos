@@ -25,9 +25,9 @@ while getopts "i" flaga; do
 done
 shift $((OPTIND - 1))
 
+mkdir -p /etc/homefiles/
 mkdir -p /etc/scripts/
 mkdir -p /etc/sources/
-mkdir -p /etc/homefiles/
 
 echo
 size=${#REPO_SCRIPTS_PATHS[@]}
