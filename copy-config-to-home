@@ -21,7 +21,7 @@ fi
 if [ ${#HOME_SCRIPT_INDEXES[@]} != ${#REPO_HOME_PATHS[@]} ] ||
    [ ${#HOME_SCRIPT_INDEXES[@]} != ${#SYSTEM_HOME_PATHS[@]} ] ||
    [ ${#HOME_SCRIPT_INDEXES[@]} != ${#HOME_PATHS[@]} ]; then
-  echo "TABLICE MAJA ROZNE DLUGOSCI!"; exit 0
+  echo "TABLICE MAJA ROZNE DLUGOSCI!"; exit 1
 fi
 
 DELETE=false
