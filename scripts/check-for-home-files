@@ -3,8 +3,16 @@ set -euo pipefail
 
 [ -f "$REPO_DIR/file-paths" ]
 
-# shellcheck disable=SC1091
-source /etc/file-paths || exit 1
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+user_level=false; [ "$script_dir" == "/etc/scripts" ] || user_level=true
+
+if $user_level; then
+  # shellcheck disable=SC1091
+  source "$REPO_DIR/file-paths"
+else
+  # shellcheck disable=SC1091
+  source /etc/file-paths
+fi
 
 if [ ${#HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ]; then
   echo "TABLICE MAJA ROZNE DLUGOSCI!"; exit 1
