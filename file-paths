@@ -99,6 +99,8 @@ HOME_PATHS=(
   ~/.config/Code/User/settings.json
 )
 
+# ------------------------------------------------
+
 if [ $system_level != 0 ]; then
   mkdir -p ~/.config/htop/
   mkdir -p ~/.scripts/
