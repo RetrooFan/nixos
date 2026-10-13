@@ -83,3 +83,5 @@ for ((i = 0; i < size; i++)); do
   [ -f "${HOME_PATHS[$i]}" ] && ${HOME_SCRIPT_INDEXES[$i]} && chmod a+x "${HOME_PATHS[$i]}"
 done
 echo
+
+exit 0
