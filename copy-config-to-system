@@ -7,6 +7,10 @@ script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck disable=SC1091
 source "$script_dir"/file-paths || exit 1
 
+if [ ${#REPO_ROOT_PATHS[@]} != ${#SYSTEM_ROOT_PATHS[@]} ] || [ ${#REPO_HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ]; then
+  echo "TABLICE MAJA ROZNE DLUGOSCI!"; exit 0
+fi
+
 INSPECT=false
 while getopts "i" flaga; do
   case "${flaga}" in
@@ -20,10 +24,6 @@ while getopts "i" flaga; do
   esac
 done
 shift $((OPTIND - 1))
-
-if [ ${#REPO_ROOT_PATHS[@]} != ${#SYSTEM_ROOT_PATHS[@]} ] || [ ${#REPO_HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ]; then
-  echo "TABLICE MAJA ROZNE DLUGOSCI!"; exit 0
-fi
 
 mkdir -p /etc/scripts/
 mkdir -p /etc/sources/
