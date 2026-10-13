@@ -106,33 +106,35 @@ if [ $system_level != 0 ]; then
   REPO_HOME_PATHS[1]="$REPO_DIR/tmux.conf"
   SYSTEM_HOME_PATHS[1]="$SYSTEM_HOME_DIR/tmux.conf"
 
-  REPO_HOME_PATHS+=("$REPO_DIR/scripts/git-pull")
-  SYSTEM_HOME_PATHS+=("$SYSTEM_HOME_DIR/scripts/git-pull")
-  HOME_PATHS+=("$HOME/.scripts/git-pull")
+  REPO_HOME_PATHS+=(
+    "$REPO_DIR/scripts/git-pull"
+    "$REPO_DIR/scripts/check-for-home-files"
+    "$REPO_DIR/sources/set-exit-action"
+    "$REPO_DIR/sources/set-prompt"
+    "$REPO_DIR/bashrc.local.nonroot"
+    "$REPO_DIR/htoprc"
+    "$REPO_DIR/nanorc"
+  )
 
-  REPO_HOME_PATHS+=("$REPO_DIR/scripts/check-for-home-files")
-  SYSTEM_HOME_PATHS+=("$SYSTEM_HOME_DIR/scripts/check-for-home-files")
-  HOME_PATHS+=("$HOME/.scripts/check-for-home-files")
+  SYSTEM_HOME_PATHS+=(
+    "$SYSTEM_HOME_DIR/scripts/git-pull"
+    "$SYSTEM_HOME_DIR/scripts/check-for-home-files"
+    "$SYSTEM_HOME_DIR/sources/set-exit-action"
+    "$SYSTEM_HOME_DIR/sources/set-prompt"
+    "$SYSTEM_HOME_DIR/bashrc.local.nonroot"
+    "$SYSTEM_HOME_DIR/htoprc"
+    "$SYSTEM_HOME_DIR/nanorc"
+  )
 
-  REPO_HOME_PATHS+=("$REPO_DIR/sources/set-exit-action")
-  SYSTEM_HOME_PATHS+=("$SYSTEM_HOME_DIR/sources/set-exit-action")
-  HOME_PATHS+=("$HOME/.sources/set-exit-action")
-
-  REPO_HOME_PATHS+=("$REPO_DIR/sources/set-prompt")
-  SYSTEM_HOME_PATHS+=("$SYSTEM_HOME_DIR/sources/set-prompt")
-  HOME_PATHS+=("$HOME/.sources/set-prompt")
-
-  REPO_HOME_PATHS+=("$REPO_DIR/bashrc.local.nonroot")
-  SYSTEM_HOME_PATHS+=("$SYSTEM_HOME_DIR/bashrc.local.nonroot")
-  HOME_PATHS+=("$HOME/.bashrc.local")
-
-  REPO_HOME_PATHS+=("$REPO_DIR/htoprc")
-  SYSTEM_HOME_PATHS+=("$SYSTEM_HOME_DIR/htoprc")
-  HOME_PATHS+=("$HOME/.config/htop/htoprc")
-
-  REPO_HOME_PATHS+=("$REPO_DIR/nanorc")
-  SYSTEM_HOME_PATHS+=("$SYSTEM_HOME_DIR/nanorc")
-  HOME_PATHS+=("$HOME/.nanorc")
+  HOME_PATHS+=(
+    "$HOME/.scripts/git-pull"
+    "$HOME/.scripts/check-for-home-files"
+    "$HOME/.sources/set-exit-action"
+    "$HOME/.sources/set-prompt"
+    "$HOME/.bashrc.local"
+    "$HOME/.config/htop/htoprc"
+    "$HOME/.nanorc"
+  )
 fi
 
 # ------------------------------------------------
