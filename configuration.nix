@@ -49,6 +49,7 @@
     };
 
     interactiveShellInit = ''
+      export EDITOR="micro"
       export REPO_USER="nixos"
       export REPO_DIR="/etc/nixos"
     '';
