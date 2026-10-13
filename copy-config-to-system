@@ -27,6 +27,9 @@ if [ ${#REPO_ROOT_PATHS[@]} != ${#SYSTEM_ROOT_PATHS[@]} ] || [ ${#REPO_HOME_PATH
 fi
 
 mkdir -p /etc/scripts/
+mkdir -p /etc/sources/
+mkdir -p /etc/homefiles/
+
 size=${#REPO_SCRIPTS_PATHS[@]}
 for ((i = 0; i < size; i++)); do
   "$script_dir"/scripts/compare-and-copy-files "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}" "$i" "$size" "$INSPECT"
@@ -34,14 +37,12 @@ for ((i = 0; i < size; i++)); do
 done
 echo
 
-mkdir -p /etc/sources/
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < size; i++)); do
   "$script_dir"/scripts/compare-and-copy-files "${REPO_ROOT_PATHS[$i]}"    "${SYSTEM_ROOT_PATHS[$i]}"    "$i" "$size" "$INSPECT"
 done
 echo
 
-mkdir -p /etc/homefiles/
 size=${#REPO_HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
   "$script_dir"/scripts/compare-and-copy-files "${REPO_HOME_PATHS[$i]}"    "${SYSTEM_HOME_PATHS[$i]}"    "$i" "$size" "$INSPECT"
