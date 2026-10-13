@@ -25,9 +25,8 @@ while getopts "di" flaga; do
 done
 shift $((OPTIND - 1))
 
-echo
 if [ ${#HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ] || [ ${#HOME_PATHS[@]} != ${#REPO_HOME_PATHS[@]} ]; then
-  echo "TABLICE MAJA ROZNE DLUGOSCI!"; echo; exit 0
+  echo "TABLICE MAJA ROZNE DLUGOSCI!"; exit 0
 fi
 
 mkdir -p ~/.config/micro/
@@ -36,6 +35,7 @@ mkdir -p ~/.config/lazygit/
 mkdir -p ~/.config/alacritty/
 mkdir -p ~/.config/sublime-text/Packages/User/
 
+echo
 size=${#SYSTEM_HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
   "$run_dir"/scripts/compare-and-copy-files "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc" "$i" "$size" "$INSPECT"
