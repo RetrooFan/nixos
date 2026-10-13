@@ -4,9 +4,9 @@ set -euo pipefail
 [ -f "$REPO_DIR/file-paths" ]
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-user_level=0; [ "$script_dir" == "$REPO_DIR" ] || user_level=1
+user_level=true; [ "$script_dir" == "$REPO_DIR" ] || user_level=false
 
-if [ $user_level == 0 ]; then
+if $user_level; then
   # shellcheck disable=SC1091
   source "$REPO_DIR/file-paths"
 
