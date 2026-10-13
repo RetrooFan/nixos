@@ -38,8 +38,8 @@ SYSTEM_SCRIPTS_PATHS=(
 REPO_ROOT_PATHS=(
   "$REPO_DIR/sources/set-exit-action"
   "$REPO_DIR/sources/set-prompt"
-  "$REPO_DIR/bashrc.root"
   "$REPO_DIR/bashrc.local"
+  "$REPO_DIR/bashrc.root"
   "$REPO_DIR/file-paths"
   "$REPO_DIR/htoprc"
   "$REPO_DIR/nanorc"
@@ -49,8 +49,8 @@ REPO_ROOT_PATHS=(
 SYSTEM_ROOT_PATHS=(
   /etc/sources/set-exit-action
   /etc/sources/set-prompt
-  /root/.bashrc.root
   /etc/bashrc.local
+  /root/.bashrc.root
   /etc/file-paths
   /etc/htoprc
   /etc/nanorc
@@ -62,8 +62,8 @@ SYSTEM_ROOT_PATHS=(
 REPO_HOME_PATHS=(
   "$REPO_DIR/homefiles/gitconfig"
   "$REPO_DIR/homefiles/tmux.conf"
-  "$REPO_DIR/homefiles/alacritty.toml"
   "$REPO_DIR/homefiles/inputrc"
+  "$REPO_DIR/homefiles/alacritty.toml"
   "$REPO_DIR/homefiles/lazygit.yml"
   "$REPO_DIR/homefiles/micro.bindings.json"
   "$REPO_DIR/homefiles/micro.settings.json"
@@ -75,8 +75,8 @@ REPO_HOME_PATHS=(
 SYSTEM_HOME_PATHS=(
   "$SYSTEM_HOME_DIR/homefiles/gitconfig"
   "$SYSTEM_HOME_DIR/homefiles/tmux.conf"
-  "$SYSTEM_HOME_DIR/homefiles/alacritty.toml"
   "$SYSTEM_HOME_DIR/homefiles/inputrc"
+  "$SYSTEM_HOME_DIR/homefiles/alacritty.toml"
   "$SYSTEM_HOME_DIR/homefiles/lazygit.yml"
   "$SYSTEM_HOME_DIR/homefiles/micro.bindings.json"
   "$SYSTEM_HOME_DIR/homefiles/micro.settings.json"
@@ -88,8 +88,8 @@ SYSTEM_HOME_PATHS=(
 HOME_PATHS=(
   ~/.gitconfig
   ~/.tmux.conf
-  ~/.config/alacritty/alacritty.toml
   ~/.inputrc
+  ~/.config/alacritty/alacritty.toml
   ~/.config/lazygit/config.yml
   ~/.config/micro/bindings.json
   ~/.config/micro/settings.json
