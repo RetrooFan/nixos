@@ -7,7 +7,9 @@ set -euo pipefail
 # shellcheck disable=SC1091
 source "$REPO_DIR"/file-paths || exit 1
 
-if [ ${#REPO_ROOT_PATHS[@]} != ${#SYSTEM_ROOT_PATHS[@]} ] || [ ${#REPO_HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ]; then
+if [ ${#ROOT_SCRIPT_INDEXES[@]} != ${#REPO_ROOT_PATHS[@]} ] ||
+   [ ${#ROOT_SCRIPT_INDEXES[@]} != ${#SYSTEM_ROOT_PATHS[@]} ] ||
+   [ ${#REPO_HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ]; then
   echo "TABLICE MAJA ROZNE DLUGOSCI!"; exit 0
 fi
 
@@ -30,16 +32,10 @@ mkdir -p /etc/scripts/
 mkdir -p /etc/sources/
 
 echo
-size=${#REPO_SCRIPTS_PATHS[@]}
-for ((i = 0; i < size; i++)); do
-  "$REPO_DIR"/scripts/compare-and-copy-files "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}" "$i" "$size" "$INSPECT"
-  [ -f "${SYSTEM_SCRIPTS_PATHS[$i]}" ] && chmod a+x                        "${SYSTEM_SCRIPTS_PATHS[$i]}"
-done
-echo
-
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < size; i++)); do
   "$REPO_DIR"/scripts/compare-and-copy-files "${REPO_ROOT_PATHS[$i]}"    "${SYSTEM_ROOT_PATHS[$i]}"    "$i" "$size" "$INSPECT"
+  [ -f "${SYSTEM_ROOT_PATHS[$i]}" ] && ${ROOT_SCRIPT_INDEXES[$i]} && chmod a+x "${SYSTEM_ROOT_PATHS[$i]}"
 done
 echo
 

@@ -13,7 +13,9 @@ fi
 
 # ------------------------------------------------
 
-REPO_SCRIPTS_PATHS=(
+ROOT_SCRIPT_INDEXES=(true true true true true true true false false false false false false false false)
+
+REPO_ROOT_PATHS=(
   "$REPO_DIR/scripts/compare-and-copy-files"
   "$REPO_DIR/scripts/compare-files-dialog"
   "$REPO_DIR/scripts/compare-files"
@@ -21,21 +23,6 @@ REPO_SCRIPTS_PATHS=(
   "$REPO_DIR/scripts/check-for-home-files"
   "$REPO_DIR/scripts/check-for-root-files"
   "$REPO_DIR/copy-config-to-home"
-)
-
-SYSTEM_SCRIPTS_PATHS=(
-  /etc/scripts/compare-and-copy-files
-  /etc/scripts/compare-files-dialog
-  /etc/scripts/compare-files
-  /etc/scripts/git-pull
-  /etc/scripts/check-for-home-files
-  /etc/scripts/check-for-root-files
-  /usr/local/bin/copy-config-to-home
-)
-
-# ------------------------------------------------
-
-REPO_ROOT_PATHS=(
   "$REPO_DIR/sources/set-exit-action"
   "$REPO_DIR/sources/set-prompt"
   "$REPO_DIR/bashrc.local"
@@ -47,6 +34,13 @@ REPO_ROOT_PATHS=(
 )
 
 SYSTEM_ROOT_PATHS=(
+  /etc/scripts/compare-and-copy-files
+  /etc/scripts/compare-files-dialog
+  /etc/scripts/compare-files
+  /etc/scripts/git-pull
+  /etc/scripts/check-for-home-files
+  /etc/scripts/check-for-root-files
+  /usr/local/bin/copy-config-to-home
   /etc/sources/set-exit-action
   /etc/sources/set-prompt
   /etc/bashrc.local
