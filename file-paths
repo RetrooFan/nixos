@@ -3,12 +3,12 @@
 
 script_file="$(basename "${BASH_SOURCE[1]}")"
 source_dir="$(dirname "${BASH_SOURCE[0]}")"
-system_level=0; [ "$source_dir" == "/etc" ] || [ "${script_file}" == "copy-config-to-system" ] || system_level=1
+user_level=false; [ "$source_dir" == "/etc" ] || [ "${script_file}" == "copy-config-to-system" ] || user_level=true
 
-if [ $system_level == 0 ]; then
-  SYSTEM_HOME_DIR="/etc"
-else
+if $user_level; then
   SYSTEM_HOME_DIR="$REPO_DIR"
+else
+  SYSTEM_HOME_DIR="/etc"
 fi
 
 # ------------------------------------------------
@@ -100,7 +100,7 @@ HOME_PATHS=(
 
 # ------------------------------------------------
 
-if [ $system_level != 0 ]; then
+if $user_level; then
   mkdir -p ~/.config/htop/
   mkdir -p ~/.scripts/
   mkdir -p ~/.sources/
