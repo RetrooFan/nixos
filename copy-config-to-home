@@ -7,7 +7,7 @@ script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 [ "$(stat -c '%u' "$script_dir"/copy-config-to-home)" == 0 ] && run_dir="/etc" || run_dir="$script_dir"
 
 # shellcheck disable=SC1091
-source /etc/file-paths 2>/dev/null || source "$script_dir"/file-paths || exit 1
+source /etc/file-paths 2>/dev/null || source "$REPO_DIR"/file-paths || exit 1
 
 if [ ${#HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ] || [ ${#HOME_PATHS[@]} != ${#REPO_HOME_PATHS[@]} ]; then
   echo "TABLICE MAJA ROZNE DLUGOSCI!"; exit 0
