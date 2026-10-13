@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+[ ! -f "$REPO_DIR/file-paths" ] && echo "\$REPO_DIR incorrect!" && exit 1
+
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 [ "$(stat -c '%u' "$script_dir"/copy-config-to-home)" == 0 ] && run_dir="/etc" || run_dir="$script_dir"
 
