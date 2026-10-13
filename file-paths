@@ -3,7 +3,8 @@
 
 script_file="$(basename "${BASH_SOURCE[1]}")"
 source_dir="$(dirname "${BASH_SOURCE[0]}")"
-[ "$source_dir" == "/etc" ] || [ "${script_file}" == "copy-config-to-system" ]; system_level="$?"
+system_level=0
+[ "$source_dir" == "/etc" ] || [ "${script_file}" == "copy-config-to-system" ] || system_level=1
 
 if [ $system_level == 0 ]; then
   SYSTEM_HOME_DIR="/etc"
