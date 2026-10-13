@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set_prompt() {
+  local CURRENT_USER; CURRENT_USER="$(whoami)"
   local PS1_COLOR
   case "$CURRENT_USER" in
     "root")

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-[ "$CURRENT_USER" != "$REPO_USER" ] && exit 0
+[ "$(whoami)" != "$REPO_USER" ] && exit 0
 
 plik_z_data="$REPO_DIR/.gitupdate"
 data_z_pliku=$(cat "$plik_z_data" 2>/dev/null || echo "")
