@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 [ "$(id -u)" != 0 ] && echo "This script must be run as root!" && exit 1
 
 # shellcheck disable=SC1091
-source "$script_dir"/file-paths || exit 1
+source "$REPO_DIR"/file-paths || exit 1
 
 if [ ${#REPO_ROOT_PATHS[@]} != ${#SYSTEM_ROOT_PATHS[@]} ] || [ ${#REPO_HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ]; then
   echo "TABLICE MAJA ROZNE DLUGOSCI!"; exit 0
@@ -32,19 +31,19 @@ mkdir -p /etc/sources/
 echo
 size=${#REPO_SCRIPTS_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  "$script_dir"/scripts/compare-and-copy-files "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}" "$i" "$size" "$INSPECT"
+  "$REPO_DIR"/scripts/compare-and-copy-files "${REPO_SCRIPTS_PATHS[$i]}" "${SYSTEM_SCRIPTS_PATHS[$i]}" "$i" "$size" "$INSPECT"
   [ -f "${SYSTEM_SCRIPTS_PATHS[$i]}" ] && chmod a+x                        "${SYSTEM_SCRIPTS_PATHS[$i]}"
 done
 echo
 
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  "$script_dir"/scripts/compare-and-copy-files "${REPO_ROOT_PATHS[$i]}"    "${SYSTEM_ROOT_PATHS[$i]}"    "$i" "$size" "$INSPECT"
+  "$REPO_DIR"/scripts/compare-and-copy-files "${REPO_ROOT_PATHS[$i]}"    "${SYSTEM_ROOT_PATHS[$i]}"    "$i" "$size" "$INSPECT"
 done
 echo
 
 size=${#REPO_HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  "$script_dir"/scripts/compare-and-copy-files "${REPO_HOME_PATHS[$i]}"    "${SYSTEM_HOME_PATHS[$i]}"    "$i" "$size" "$INSPECT"
+  "$REPO_DIR"/scripts/compare-and-copy-files "${REPO_HOME_PATHS[$i]}"    "${SYSTEM_HOME_PATHS[$i]}"    "$i" "$size" "$INSPECT"
 done
 echo
