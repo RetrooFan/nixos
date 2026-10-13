@@ -2,7 +2,7 @@
 # ------------------------------------------------
 # /etc/bash.bashrc -------------------------------
 
-# export REPO_USER="user"
+# export REPO_USER=""
 # export REPO_DIR="directory"
 
 # if [ -f /etc/bashrc.local ]; then
