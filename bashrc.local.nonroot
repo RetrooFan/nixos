@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# ------------------------------------------------
+# ~/.bashrc.local --------------------------------
+
+# export EDITOR=micro
+# export REPO_USER=""
+# export REPO_DIR="directory"
+
+# if [ -f ~/.bashrc.local ]; then
+#   source ~/.bashrc.local
+# fi
+
+# ~/.bashrc.local --------------------------------
+# ------------------------------------------------
+
+HISTSIZE=10000
+HISTFILESIZE=20000
+HISTCONTROL=ignoreboth
+
+stty -ixon
+
+alias -- grep='grep --color=auto'
+alias -- fgrep='fgrep --color=auto'
+alias -- egrep='egrep --color=auto'
+alias -- l='ls -l'
+alias -- ll='ls -lA'
+alias -- mi='micro'
+
+# ------------------------------------------------
+
+# shellcheck disable=SC1090
+[ -f ~/.sources/set-prompt ] && source ~/.sources/set-prompt
+
+# ------------------------------------------------
+
+# shellcheck disable=SC1090
+[ -f ~/.sources/set-exit-action ] && source ~/.sources/set-exit-action
+
+# ------------------------------------------------
+
+[ -f ~/.scripts/check-for-home-files ] && ~/.scripts/check-for-home-files
+
+# ------------------------------------------------
+
+[ -f ~/.scripts/git-pull ] && ~/.scripts/git-pull
+
+# ------------------------------------------------
