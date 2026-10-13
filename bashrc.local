@@ -2,6 +2,7 @@
 # ------------------------------------------------
 # /etc/bash.bashrc -------------------------------
 
+# export EDITOR=micro
 # export REPO_USER=""
 # export REPO_DIR="directory"
 
@@ -17,7 +18,6 @@ HISTFILESIZE=20000
 HISTCONTROL=ignoreboth
 
 stty -ixon
-export EDITOR=micro
 
 alias -- grep='grep --color=auto'
 alias -- fgrep='fgrep --color=auto'
