@@ -4,10 +4,17 @@ set -euo pipefail
 [ ! -f "$REPO_DIR/file-paths" ] && echo "\$REPO_DIR incorrect!" && exit 1
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-[ "$script_dir" == "$REPO_DIR" ] && run_dir="$REPO_DIR" || run_dir="/etc"
+if [ "$script_dir" == "$REPO_DIR" ]; then
+  # shellcheck disable=SC1091
+  source "$REPO_DIR/file-paths"
 
-# shellcheck disable=SC1091
-source /etc/file-paths 2>/dev/null || source "$REPO_DIR"/file-paths || exit 1
+  run_dir="$REPO_DIR"
+else
+  # shellcheck disable=SC1091
+  source /etc/file-paths
+
+  run_dir="/etc"
+fi
 
 if [ ${#HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ] || [ ${#HOME_PATHS[@]} != ${#REPO_HOME_PATHS[@]} ]; then
   echo "TABLICE MAJA ROZNE DLUGOSCI!"; exit 0
