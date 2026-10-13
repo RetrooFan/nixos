@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-[ ! -f "$REPO_DIR/file-paths" ] && echo "\$REPO_DIR incorrect!" && exit 1
 [ "$(id -u)" != 0 ] && echo "This script must be run as root!" && exit 1
+[ -f "$REPO_DIR/file-paths" ]
 
 # shellcheck disable=SC1091
 source "$REPO_DIR"/file-paths || exit 1

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-[ ! -f "$REPO_DIR/file-paths" ] && echo "\$REPO_DIR incorrect!" && exit 1
+[ -f "$REPO_DIR/file-paths" ]
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if [ "$script_dir" == "$REPO_DIR" ]; then
