@@ -99,6 +99,8 @@ HOME_PATHS=(
 )
 
 if [ $system_level != 0 ]; then
+  mkdir -p ~/.config/htop/
+
   REPO_HOME_PATHS[1]="$REPO_DIR/tmux.conf"
   SYSTEM_HOME_PATHS[1]="$SYSTEM_HOME_DIR/tmux.conf"
 
