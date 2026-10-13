@@ -50,7 +50,7 @@ echo
 size=${#SYSTEM_HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
   "$run_dir"/scripts/compare-and-copy-files "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc" "$i" "$size" "$INSPECT"
-  [ -f "${HOME_PATHS[$i]}.etc" ] && chmod a-w                          "${HOME_PATHS[$i]}.etc"
+  [ -f "${HOME_PATHS[$i]}.etc" ] && chmod a-wx                         "${HOME_PATHS[$i]}.etc"
 done
 echo
 
