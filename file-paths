@@ -53,6 +53,8 @@ SYSTEM_ROOT_PATHS=(
 
 # ------------------------------------------------
 
+HOME_SCRIPT_INDEXES=(false false false false false false false false false false)
+
 REPO_HOME_PATHS=(
   "$REPO_DIR/homefiles/gitconfig"
   "$REPO_DIR/homefiles/tmux.conf"
@@ -101,6 +103,8 @@ if $user_level; then
 
   REPO_HOME_PATHS[1]="$REPO_DIR/tmux.conf"
   SYSTEM_HOME_PATHS[1]="$SYSTEM_HOME_DIR/tmux.conf"
+
+  HOME_SCRIPT_INDEXES+=(true true false false false false false)
 
   REPO_HOME_PATHS+=(
     "$REPO_DIR/scripts/git-pull"

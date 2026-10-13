@@ -18,7 +18,9 @@ else
   run_dir="/etc"
 fi
 
-if [ ${#HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ] || [ ${#HOME_PATHS[@]} != ${#REPO_HOME_PATHS[@]} ]; then
+if [ ${#HOME_SCRIPT_INDEXES[@]} != ${#REPO_HOME_PATHS[@]} ] ||
+   [ ${#HOME_SCRIPT_INDEXES[@]} != ${#SYSTEM_HOME_PATHS[@]} ] ||
+   [ ${#HOME_SCRIPT_INDEXES[@]} != ${#HOME_PATHS[@]} ]; then
   echo "TABLICE MAJA ROZNE DLUGOSCI!"; exit 0
 fi
 
@@ -78,5 +80,6 @@ fi
 size=${#HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
   "$run_dir"/scripts/compare-and-copy-files "${HOME_PATHS[$i]}.etc"    "${HOME_PATHS[$i]}"     "$i" "$size" "$INSPECT"
+  [ -f "${HOME_PATHS[$i]}" ] && ${HOME_SCRIPT_INDEXES[$i]} && chmod a+x "${HOME_PATHS[$i]}"
 done
 echo
