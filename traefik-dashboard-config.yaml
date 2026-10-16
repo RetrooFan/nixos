@@ -16,3 +16,14 @@ spec:
           default: true
         exposedPort: 8080
         port: 8080
+    certificatesResolvers:
+      letsencrypt:
+        acme:
+          email: test@email.com
+          storage: /data/acme.json
+          httpChallenge:
+            entryPoint: web
+    ports:
+      websecure:
+        tls:
+          certResolver: letsencrypt
