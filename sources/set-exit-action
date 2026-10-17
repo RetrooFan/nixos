@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SESSION_ID=$(hexdump -vn4 -e'4/1 "%02x"' /dev/urandom)
-WINDOW_INDEX=$(tmux display-message -p '#{window_index}')
+WINDOW_INDEX=$(tmux display-message -p '#{window_index}' 2>/dev/null)
 echo "# ----- | $(date) | START | $SESSION_ID | $WINDOW_INDEX |" >> "$HISTFILE"
 
 after_exit() {
