@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ -n "$TMUX" ]; then
+  TMUX_SESSION_NAME=$(tmux display-message -p '#S' 2>/dev/null)
+  TMUX_SESSION_NAME_SUFFIX=$(echo "$TMUX_SESSION_NAME" | cut -sd '-' -f2)
+
+  if [ -n "$TMUX_SESSION_NAME_SUFFIX" ]; then
+    HISTFILE+="_$TMUX_SESSION_NAME_SUFFIX"
+  fi
+fi

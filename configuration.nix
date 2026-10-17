@@ -30,6 +30,7 @@
       };
 
       "sources/set-exit-action".text =           builtins.readFile ./sources/set-exit-action;
+      "sources/set-histfile".text =              builtins.readFile ./sources/set-histfile;
       "sources/set-prompt".text =                builtins.readFile ./sources/set-prompt;
       "bashrc.local".text =                      builtins.readFile ./bashrc.local;
       "file-paths".text =                        builtins.readFile ./file-paths;

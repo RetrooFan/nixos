@@ -13,7 +13,7 @@ fi
 
 # ------------------------------------------------
 
-ROOT_SCRIPT_INDEXES=(true true true true true true true false false false false false false false false)
+ROOT_SCRIPT_INDEXES=(true true true true true true true false false false false false false false false false)
 
 REPO_ROOT_PATHS=(
   "$REPO_DIR/scripts/compare-and-copy-files"
@@ -24,6 +24,7 @@ REPO_ROOT_PATHS=(
   "$REPO_DIR/scripts/check-for-root-files"
   "$REPO_DIR/copy-config-to-home"
   "$REPO_DIR/sources/set-exit-action"
+  "$REPO_DIR/sources/set-histfile"
   "$REPO_DIR/sources/set-prompt"
   "$REPO_DIR/bashrc.local"
   "$REPO_DIR/bashrc.root"
@@ -42,6 +43,7 @@ SYSTEM_ROOT_PATHS=(
   /etc/scripts/check-for-root-files
   /usr/local/bin/copy-config-to-home
   /etc/sources/set-exit-action
+  /etc/sources/set-histfile
   /etc/sources/set-prompt
   /etc/bashrc.local
   /root/.bashrc.root
@@ -104,12 +106,13 @@ if $user_level; then
   REPO_HOME_PATHS[1]="$REPO_DIR/tmux.conf"
   SYSTEM_HOME_PATHS[1]="$SYSTEM_HOME_DIR/tmux.conf"
 
-  HOME_SCRIPT_INDEXES+=(true true false false false false false)
+  HOME_SCRIPT_INDEXES+=(true true false false false false false false)
 
   REPO_HOME_PATHS+=(
     "$REPO_DIR/scripts/git-pull"
     "$REPO_DIR/scripts/check-for-home-files"
     "$REPO_DIR/sources/set-exit-action"
+    "$REPO_DIR/sources/set-histfile"
     "$REPO_DIR/sources/set-prompt"
     "$REPO_DIR/bashrc.local.nonroot"
     "$REPO_DIR/htoprc"
@@ -120,6 +123,7 @@ if $user_level; then
     "$SYSTEM_HOME_DIR/scripts/git-pull"
     "$SYSTEM_HOME_DIR/scripts/check-for-home-files"
     "$SYSTEM_HOME_DIR/sources/set-exit-action"
+    "$SYSTEM_HOME_DIR/sources/set-histfile"
     "$SYSTEM_HOME_DIR/sources/set-prompt"
     "$SYSTEM_HOME_DIR/bashrc.local.nonroot"
     "$SYSTEM_HOME_DIR/htoprc"
@@ -130,6 +134,7 @@ if $user_level; then
     "$HOME/.scripts/git-pull"
     "$HOME/.scripts/check-for-home-files"
     "$HOME/.sources/set-exit-action"
+    "$HOME/.sources/set-histfile"
     "$HOME/.sources/set-prompt"
     "$HOME/.bashrc.local"
     "$HOME/.config/htop/htoprc"

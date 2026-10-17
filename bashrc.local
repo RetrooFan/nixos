@@ -29,6 +29,11 @@ alias -- mi='micro'
 # ------------------------------------------------
 
 # shellcheck disable=SC1091
+[ -f /etc/sources/set-histfile ] && source /etc/sources/set-histfile
+
+# ------------------------------------------------
+
+# shellcheck disable=SC1091
 [ -f /etc/sources/set-exit-action ] && source /etc/sources/set-exit-action
 
 # ------------------------------------------------
