@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 SESSION_ID=$(hexdump -vn4 -e'4/1 "%02x"' /dev/urandom)
-echo "# ----- | $(date) | START | $SESSION_ID" >> "$HISTFILE"
+WINDOW_INDEX=$(tmux display-message -p '#{window_index}')
+echo "# ----- | $(date) | START | $SESSION_ID | $WINDOW_INDEX |" >> "$HISTFILE"
 
 after_exit() {
-  sleep 0.1 && echo "# ----- | $(date) | END   | $SESSION_ID" >> "$HISTFILE" &
+  sleep 0.1 && echo "# ----- | $(date) | END   | $SESSION_ID | $WINDOW_INDEX |" >> "$HISTFILE" &
 }
 
 trap after_exit EXIT
