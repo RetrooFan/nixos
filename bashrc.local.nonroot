@@ -29,12 +29,12 @@ alias -- mi='micro'
 # ------------------------------------------------
 
 # shellcheck disable=SC1090
-[ -f ~/.sources/set-prompt ] && source ~/.sources/set-prompt
+[ -f ~/.sources/set-exit-action ] && source ~/.sources/set-exit-action
 
 # ------------------------------------------------
 
 # shellcheck disable=SC1090
-[ -f ~/.sources/set-exit-action ] && source ~/.sources/set-exit-action
+[ -f ~/.sources/set-prompt ] && source ~/.sources/set-prompt
 
 # ------------------------------------------------
 
