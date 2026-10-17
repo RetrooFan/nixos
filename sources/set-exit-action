@@ -2,11 +2,12 @@
 
 SESSION_ID=$(hexdump -vn4 -e'4/1 "%02x"' /dev/urandom)
 WINDOW_INDEX=$(tmux display-message -p '#{window_index}' 2>/dev/null)
-echo "# ----- | $(date) | START | $SESSION_ID | $WINDOW_INDEX |" >> "$HISTFILE"
+[ "$WINDOW_INDEX" != "" ] && WINDOW_INDEX_FORMATTED=" $WINDOW_INDEX |"
+echo "# ----- | $(date) | START | $SESSION_ID |$WINDOW_INDEX_FORMATTED" >> "$HISTFILE"
 
 after_exit() {
   history -a
-  echo "# ----- | $(date) | END   | $SESSION_ID | $WINDOW_INDEX |" >> "$HISTFILE"
+  echo "# ----- | $(date) | END   | $SESSION_ID |$WINDOW_INDEX_FORMATTED" >> "$HISTFILE"
 }
 
 trap after_exit EXIT
