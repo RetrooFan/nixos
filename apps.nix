@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     stable.k3s
+    stable.kubernetes-helm
 
     latest.git
     latest.htop
