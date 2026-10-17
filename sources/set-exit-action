@@ -5,8 +5,8 @@ WINDOW_INDEX=$(tmux display-message -p '#{window_index}')
 echo "# ----- | $(date) | START | $SESSION_ID | $WINDOW_INDEX |" >> "$HISTFILE"
 
 after_exit() {
-  sleep 0.1 &&
-  echo "# ----- | $(date) | END   | $SESSION_ID | $WINDOW_INDEX |" >> "$HISTFILE" &
+  history -a
+  echo "# ----- | $(date) | END   | $SESSION_ID | $WINDOW_INDEX |" >> "$HISTFILE"
 }
 
 trap after_exit EXIT
