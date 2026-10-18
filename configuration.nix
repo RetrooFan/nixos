@@ -69,6 +69,7 @@
   nix = {
     registry.latest.flake = inputs.nixpkgs-unstable; # Żeby w terminalu było dostępne 'nix search latest <paczka>'
     registry.stable.flake = inputs.nixpkgs; # Żeby w terminalu było dostępne 'nix search stable <paczka>'
+    registry.nixos-22_11.flake = inputs.nixpkgs-22_11; # Żeby w terminalu było dostępne 'nix search nixos-22_11 <paczka>'
     settings.experimental-features = [ "nix-command" "flakes" ]; # Włączenie obsługi Flakes również w nowym systemie
   };
 
@@ -81,6 +82,11 @@
 
       # Żeby w 'apps.nix' można było używać 'stable.<paczka>'
       stable = import inputs.nixpkgs.outPath {
+        system = final.stdenv.hostPlatform.system;
+      };
+
+      # Żeby w 'apps.nix' można było używać 'nixos-22_11.<paczka>'
+      nixos-22_11 = import inputs.nixpkgs-22_11.outPath {
         system = final.stdenv.hostPlatform.system;
       };
     })
