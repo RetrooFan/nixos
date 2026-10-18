@@ -44,3 +44,7 @@ alias -- mi='micro'
 [ -f ~/.scripts/git-pull ] && ~/.scripts/git-pull
 
 # ------------------------------------------------
+
+command -v direnv 1>/dev/null && eval "$(direnv hook bash)"
+
+# ------------------------------------------------
