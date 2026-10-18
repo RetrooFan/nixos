@@ -87,7 +87,6 @@
   ];
 
   programs = {
-    direnv.enable = true;
     nano = {
       enable = false;
       nanorc = builtins.readFile ./nanorc;

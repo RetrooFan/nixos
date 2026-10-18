@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs; [
     stable.k3s
 
+    latest.direnv
     latest.git
     latest.htop
     latest.iftop
