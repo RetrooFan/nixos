@@ -13,6 +13,8 @@
 # ~/.bashrc.local --------------------------------
 # ------------------------------------------------
 
+[ -z "$PS1" ] && return
+
 HISTSIZE=10000
 HISTFILESIZE=20000
 HISTCONTROL=ignoreboth
