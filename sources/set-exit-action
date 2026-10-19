@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
-SESSION_ID=$(hexdump -vn4 -e'4/1 "%02x"' /dev/urandom)
-WINDOW_INDEX=$(tmux display-message -p '#{window_index}' 2>/dev/null)
-[ "$WINDOW_INDEX" != "" ] && WINDOW_INDEX_FORMATTED=" $WINDOW_INDEX |"
+get_windows_index() {
+  WINDOW_INDEX=$(tmux display-message -p '#{window_index}' 2>/dev/null)
+  [ "$WINDOW_INDEX" != "" ] && WINDOW_INDEX_FORMATTED=" $WINDOW_INDEX |"
+}
 
+SESSION_ID=$(hexdump -vn4 -e'4/1 "%02x"' /dev/urandom)
+get_windows_index
 echo "# ----- | $(date) | START | $SESSION_ID |$WINDOW_INDEX_FORMATTED" >> "$HISTFILE"
 
 after_exit() {
