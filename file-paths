@@ -16,12 +16,12 @@ fi
 ROOT_SCRIPT_INDEXES=(true true true true true true true false false false false false false false false false)
 
 REPO_ROOT_PATHS=(
+  "$REPO_DIR/scripts/check-for-home-files"
+  "$REPO_DIR/scripts/check-for-root-files"
   "$REPO_DIR/scripts/compare-and-copy-files"
   "$REPO_DIR/scripts/compare-files-dialog"
   "$REPO_DIR/scripts/compare-files"
   "$REPO_DIR/scripts/git-pull"
-  "$REPO_DIR/scripts/check-for-home-files"
-  "$REPO_DIR/scripts/check-for-root-files"
   "$REPO_DIR/copy-config-to-home"
   "$REPO_DIR/sources/set-exit-action"
   "$REPO_DIR/sources/set-histfile"
@@ -35,12 +35,12 @@ REPO_ROOT_PATHS=(
 )
 
 SYSTEM_ROOT_PATHS=(
+  /etc/scripts/check-for-home-files
+  /etc/scripts/check-for-root-files
   /etc/scripts/compare-and-copy-files
   /etc/scripts/compare-files-dialog
   /etc/scripts/compare-files
   /etc/scripts/git-pull
-  /etc/scripts/check-for-home-files
-  /etc/scripts/check-for-root-files
   /usr/local/bin/copy-config-to-home
   /etc/sources/set-exit-action
   /etc/sources/set-histfile
