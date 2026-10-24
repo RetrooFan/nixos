@@ -19,7 +19,7 @@ if [ ${#HOME_PATHS[@]} != ${#SYSTEM_HOME_PATHS[@]} ]; then
 fi
 
 for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
-  /etc/scripts/compare-files "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc" "copy-config-to-home" || :
+  "$script_dir"/compare-files "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc" "copy-config-to-home" || :
 done
 
 exit 0
