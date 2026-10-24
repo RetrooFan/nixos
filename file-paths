@@ -19,8 +19,8 @@ REPO_ROOT_PATHS=(
   "$REPO_DIR/scripts/check-for-home-files"
   "$REPO_DIR/scripts/check-for-root-files"
   "$REPO_DIR/scripts/compare-and-copy-files"
-  "$REPO_DIR/scripts/compare-files-dialog"
   "$REPO_DIR/scripts/compare-files"
+  "$REPO_DIR/scripts/compare-files-dialog"
   "$REPO_DIR/scripts/git-pull"
   "$REPO_DIR/copy-config-to-home"
   "$REPO_DIR/sources/set-exit-action"
@@ -38,8 +38,8 @@ SYSTEM_ROOT_PATHS=(
   /etc/scripts/check-for-home-files
   /etc/scripts/check-for-root-files
   /etc/scripts/compare-and-copy-files
-  /etc/scripts/compare-files-dialog
   /etc/scripts/compare-files
+  /etc/scripts/compare-files-dialog
   /etc/scripts/git-pull
   /usr/local/bin/copy-config-to-home
   /etc/sources/set-exit-action
