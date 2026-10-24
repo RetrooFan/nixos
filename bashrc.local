@@ -21,7 +21,7 @@ HISTCONTROL=ignoreboth
 
 shopt -s histappend
 shopt -s checkwinsize
-stty -ixon
+command -v stty 1>/dev/null && stty -ixon
 
 alias -- grep='grep --color=auto'
 alias -- fgrep='fgrep --color=auto'
