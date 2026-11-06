@@ -35,14 +35,14 @@ mkdir -p /etc/sources/
 echo
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  "$REPO_DIR"/scripts/compare-and-copy-files "${REPO_ROOT_PATHS[$i]}"    "${SYSTEM_ROOT_PATHS[$i]}"    "$i" "$size" "$INSPECT"
+  "$REPO_DIR"/scripts/compare-and-copy-files "${REPO_ROOT_PATHS[$i]}"          "${SYSTEM_ROOT_PATHS[$i]}" "$i" "$size" "$INSPECT"
   [ -f "${SYSTEM_ROOT_PATHS[$i]}" ] && ${ROOT_SCRIPT_INDEXES[$i]} && chmod a+x "${SYSTEM_ROOT_PATHS[$i]}"
 done
 echo
 
 size=${#REPO_HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  "$REPO_DIR"/scripts/compare-and-copy-files "${REPO_HOME_PATHS[$i]}"    "${SYSTEM_HOME_PATHS[$i]}"    "$i" "$size" "$INSPECT"
+  "$REPO_DIR"/scripts/compare-and-copy-files "${REPO_HOME_PATHS[$i]}"          "${SYSTEM_HOME_PATHS[$i]}" "$i" "$size" "$INSPECT"
 done
 echo
 

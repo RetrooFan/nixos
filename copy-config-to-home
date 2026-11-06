@@ -51,8 +51,8 @@ mkdir -p ~/.config/sublime-text/Packages/User/
 echo
 size=${#SYSTEM_HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  "$run_dir"/scripts/compare-and-copy-files "${SYSTEM_HOME_PATHS[$i]}" "${HOME_PATHS[$i]}.etc" "$i" "$size" "$INSPECT"
-  [ -f "${HOME_PATHS[$i]}.etc" ] && chmod a-wx                         "${HOME_PATHS[$i]}.etc"
+  "$run_dir"/scripts/compare-and-copy-files "${SYSTEM_HOME_PATHS[$i]}"  "${HOME_PATHS[$i]}.etc" "$i" "$size" "$INSPECT"
+  [ -f "${HOME_PATHS[$i]}.etc" ] && chmod a-wx                          "${HOME_PATHS[$i]}.etc"
 done
 echo
 
@@ -64,23 +64,23 @@ fi
 
 if [ "$(whoami)" == "$REPO_USER" ]; then
   for ((i = 0; i < 2; i++)); do
-    [ ! -f "${HOME_PATHS[$i]}" ] && cp      "${REPO_HOME_PATHS[$i]}"   "${HOME_PATHS[$i]}"
-    [ -f "${HOME_PATHS[$i]}" ]   && chmod ug+w                         "${HOME_PATHS[$i]}"
+    [ ! -f "${HOME_PATHS[$i]}" ] && cp      "${REPO_HOME_PATHS[$i]}"    "${HOME_PATHS[$i]}"
+    [ -f "${HOME_PATHS[$i]}" ]   && chmod ug+w                          "${HOME_PATHS[$i]}"
   done
 
   for ((i = 2; i < ${#HOME_PATHS[@]}; i++)); do
-    [ ! -f "${HOME_PATHS[$i]}" ] && ln -s   "${REPO_HOME_PATHS[$i]}"   "${HOME_PATHS[$i]}"
+    [ ! -f "${HOME_PATHS[$i]}" ] && ln -s   "${REPO_HOME_PATHS[$i]}"    "${HOME_PATHS[$i]}"
   done
 else
   for ((i = 0; i < ${#HOME_PATHS[@]}; i++)); do
-    [ ! -f "${HOME_PATHS[$i]}" ] && cp      "${HOME_PATHS[$i]}.etc"    "${HOME_PATHS[$i]}"
-    [ -f "${HOME_PATHS[$i]}" ]   && chmod ug+w                         "${HOME_PATHS[$i]}"
+    [ ! -f "${HOME_PATHS[$i]}" ] && cp      "${HOME_PATHS[$i]}.etc"     "${HOME_PATHS[$i]}"
+    [ -f "${HOME_PATHS[$i]}" ]   && chmod ug+w                          "${HOME_PATHS[$i]}"
   done
 fi
 
 size=${#HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  "$run_dir"/scripts/compare-and-copy-files "${HOME_PATHS[$i]}.etc"    "${HOME_PATHS[$i]}"     "$i" "$size" "$INSPECT"
+  "$run_dir"/scripts/compare-and-copy-files "${HOME_PATHS[$i]}.etc"     "${HOME_PATHS[$i]}"     "$i" "$size" "$INSPECT"
   [ -f "${HOME_PATHS[$i]}" ] && ${HOME_SCRIPT_INDEXES[$i]} && chmod a+x "${HOME_PATHS[$i]}"
 done
 echo
