@@ -13,6 +13,10 @@ fi
 
 # ------------------------------------------------
 
+mkdir -p /etc/homefiles/
+mkdir -p /etc/scripts/
+mkdir -p /etc/sources/
+
 ROOT_SCRIPT_INDEXES=(true true true true true true true false false false false false false false false false)
 
 REPO_ROOT_PATHS=(
@@ -54,6 +58,13 @@ SYSTEM_ROOT_PATHS=(
 )
 
 # ------------------------------------------------
+
+mkdir -p ~/.config/alacritty/
+mkdir -p ~/.config/Code/User/
+mkdir -p ~/.config/lazygit/
+mkdir -p ~/.config/micro/
+mkdir -p ~/.config/sublime-text/Packages/User/
+mkdir -p ~/.vscode/extensions/
 
 HOME_SCRIPT_INDEXES=(false false false false false false false false false false false)
 

@@ -42,12 +42,6 @@ while getopts "di" flaga; do
 done
 shift $((OPTIND - 1))
 
-mkdir -p ~/.config/alacritty/
-mkdir -p ~/.config/Code/User/
-mkdir -p ~/.config/lazygit/
-mkdir -p ~/.config/micro/
-mkdir -p ~/.config/sublime-text/Packages/User/
-
 echo
 size=${#SYSTEM_HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do

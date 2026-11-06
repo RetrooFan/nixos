@@ -28,10 +28,6 @@ while getopts "i" flaga; do
 done
 shift $((OPTIND - 1))
 
-mkdir -p /etc/homefiles/
-mkdir -p /etc/scripts/
-mkdir -p /etc/sources/
-
 echo
 size=${#REPO_ROOT_PATHS[@]}
 for ((i = 0; i < size; i++)); do
