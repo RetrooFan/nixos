@@ -30,7 +30,7 @@
   "update.showReleaseNotes": false,
   "window.commandCenter": false,
   "window.density.layout": "compact",
-  "window.menuBarVisibility": "toggle",
+  "window.menuBarVisibility": "visible",
   "window.customTitleBarVisibility": "windowed",
   "window.title": "${appName}${separator}${profileName}${separator}${rootName}${separator}${activeEditorShort} ${dirty}",
   "window.titleBarStyle": "custom",
