@@ -2,6 +2,7 @@
 set -euo pipefail
 
 [ "$(whoami)" != "$REPO_USER" ] && exit 0
+command -v git 1>/dev/null || exit 0
 
 plik_z_data="$REPO_DIR/.gitupdate"
 data_z_pliku=$(cat "$plik_z_data" 2>/dev/null || echo "")
