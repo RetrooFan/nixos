@@ -363,31 +363,5 @@
       "isPreReleaseVersion": false,
       "hasPreReleaseVersion": false
     }
-  },
-  {
-    "identifier": {
-      "id": "amazonwebservices.aws-toolkit-vscode",
-      "uuid": "ac5787df-9b2d-441c-abf0-977d62bc66f0"
-    },
-    "version": "4.20.0",
-    "location": {
-      "$mid": 1,
-      "path": "/home/kristof/.vscode/extensions/amazonwebservices.aws-toolkit-vscode-4.20.0",
-      "scheme": "file"
-    },
-    "relativeLocation": "amazonwebservices.aws-toolkit-vscode-4.20.0",
-    "metadata": {
-      "installedTimestamp": 1795178818827,
-      "pinned": false,
-      "source": "gallery",
-      "id": "ac5787df-9b2d-441c-abf0-977d62bc66f0",
-      "publisherId": "e5177ad8-ec3b-4d49-aefd-3d3331129b54",
-      "publisherDisplayName": "Amazon Web Services",
-      "targetPlatform": "undefined",
-      "updated": false,
-      "private": false,
-      "isPreReleaseVersion": false,
-      "hasPreReleaseVersion": false
-    }
   }
 ]
