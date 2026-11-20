@@ -341,21 +341,22 @@
   },
   {
     "identifier": {
-      "id": "yusifaliyevpro.vscicons",
-      "uuid": "af09676f-ca6f-4f37-b738-d2610863977a"
+      "id": "yusifaliyevpro.vscicons"
     },
-    "version": "1.2.13",
+    "version": "1.3.0",
     "location": {
       "$mid": 1,
-      "path": "/home/kristof/.vscode/extensions/yusifaliyevpro.vscicons-1.2.13",
+      "fsPath": "/home/kristof/.vscode/extensions/yusifaliyevpro.vscicons-1.3.0",
+      "external": "file:///home/kristof/.vscode/extensions/yusifaliyevpro.vscicons-1.3.0",
+      "path": "/home/kristof/.vscode/extensions/yusifaliyevpro.vscicons-1.3.0",
       "scheme": "file"
     },
-    "relativeLocation": "yusifaliyevpro.vscicons-1.2.13",
+    "relativeLocation": "yusifaliyevpro.vscicons-1.3.0",
     "metadata": {
       "isApplicationScoped": false,
       "isMachineScoped": false,
       "isBuiltin": false,
-      "installedTimestamp": 1793990588588,
+      "installedTimestamp": 1795178981870,
       "pinned": true,
       "source": "gallery",
       "id": "af09676f-ca6f-4f37-b738-d2610863977a",
@@ -397,33 +398,28 @@
   },
   {
     "identifier": {
-      "id": "amazonwebservices.aws-toolkit-vscode"
+      "id": "amazonwebservices.aws-toolkit-vscode",
+      "uuid": "ac5787df-9b2d-441c-abf0-977d62bc66f0"
     },
     "version": "4.20.0",
     "location": {
       "$mid": 1,
-      "fsPath": "/home/kristof/.vscode/extensions/amazonwebservices.aws-toolkit-vscode-4.20.0",
-      "external": "file:///home/kristof/.vscode/extensions/amazonwebservices.aws-toolkit-vscode-4.20.0",
       "path": "/home/kristof/.vscode/extensions/amazonwebservices.aws-toolkit-vscode-4.20.0",
       "scheme": "file"
     },
     "relativeLocation": "amazonwebservices.aws-toolkit-vscode-4.20.0",
     "metadata": {
-      "isApplicationScoped": false,
-      "isMachineScoped": false,
-      "isBuiltin": false,
-      "installedTimestamp": 1795131381328,
+      "installedTimestamp": 1795178818827,
       "pinned": false,
       "source": "gallery",
       "id": "ac5787df-9b2d-441c-abf0-977d62bc66f0",
       "publisherId": "e5177ad8-ec3b-4d49-aefd-3d3331129b54",
       "publisherDisplayName": "Amazon Web Services",
       "targetPlatform": "undefined",
-      "updated": true,
+      "updated": false,
       "private": false,
       "isPreReleaseVersion": false,
-      "hasPreReleaseVersion": false,
-      "preRelease": false
+      "hasPreReleaseVersion": false
     }
   }
 ]
