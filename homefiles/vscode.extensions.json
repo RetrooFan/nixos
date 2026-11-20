@@ -1,127 +1,23 @@
 [
   {
     "identifier": {
-      "id": "wayou.vscode-todo-highlight",
-      "uuid": "97a08c5f-6667-4242-a5c5-045dfb6bd4b9"
+      "id": "dbaeumer.vscode-eslint",
+      "uuid": "583b2b34-2c1e-4634-8c0b-0b82e283ea3a"
     },
-    "version": "1.0.5",
+    "version": "3.0.34",
     "location": {
       "$mid": 1,
-      "path": "/home/kristof/.vscode/extensions/wayou.vscode-todo-highlight-1.0.5",
+      "path": "/home/kristof/.vscode/extensions/dbaeumer.vscode-eslint-3.0.34",
       "scheme": "file"
     },
-    "relativeLocation": "wayou.vscode-todo-highlight-1.0.5",
+    "relativeLocation": "dbaeumer.vscode-eslint-3.0.34",
     "metadata": {
-      "installedTimestamp": 1795182791632,
+      "installedTimestamp": 1795182435307,
       "pinned": false,
       "source": "gallery",
-      "id": "97a08c5f-6667-4242-a5c5-045dfb6bd4b9",
-      "publisherId": "47daa402-5396-4346-b7bd-62494d6d63ec",
-      "publisherDisplayName": "Wayou Liu",
-      "targetPlatform": "undefined",
-      "updated": false,
-      "private": false,
-      "isPreReleaseVersion": false,
-      "hasPreReleaseVersion": false
-    }
-  },
-  {
-    "identifier": {
-      "id": "humao.rest-client",
-      "uuid": "dda49fd5-1f3b-4d25-bf61-4fc41905ede5"
-    },
-    "version": "0.25.1",
-    "location": {
-      "$mid": 1,
-      "path": "/home/kristof/.vscode/extensions/humao.rest-client-0.25.1",
-      "scheme": "file"
-    },
-    "relativeLocation": "humao.rest-client-0.25.1",
-    "metadata": {
-      "installedTimestamp": 1795182482834,
-      "pinned": false,
-      "source": "gallery",
-      "id": "dda49fd5-1f3b-4d25-bf61-4fc41905ede5",
-      "publisherId": "aa260071-fe15-4a92-8990-7b8753d9cbc7",
-      "publisherDisplayName": "Huachao Mao",
-      "targetPlatform": "undefined",
-      "updated": false,
-      "private": false,
-      "isPreReleaseVersion": false,
-      "hasPreReleaseVersion": false
-    }
-  },
-  {
-    "identifier": {
-      "id": "mikestead.dotenv",
-      "uuid": "532533c9-a894-4a58-9eee-bbfbe7c06f71"
-    },
-    "version": "1.0.1",
-    "location": {
-      "$mid": 1,
-      "path": "/home/kristof/.vscode/extensions/mikestead.dotenv-1.0.1",
-      "scheme": "file"
-    },
-    "relativeLocation": "mikestead.dotenv-1.0.1",
-    "metadata": {
-      "installedTimestamp": 1795182619426,
-      "pinned": false,
-      "source": "gallery",
-      "id": "532533c9-a894-4a58-9eee-bbfbe7c06f71",
-      "publisherId": "b6aa9b98-56e5-4846-b7d2-600d45fc63fc",
-      "publisherDisplayName": "mikestead",
-      "targetPlatform": "undefined",
-      "updated": false,
-      "private": false,
-      "isPreReleaseVersion": false,
-      "hasPreReleaseVersion": false
-    }
-  },
-  {
-    "identifier": {
-      "id": "ms-azuretools.vscode-docker",
-      "uuid": "0479fc1c-3d67-49f9-b087-fb9069afe48f"
-    },
-    "version": "2.0.0",
-    "location": {
-      "$mid": 1,
-      "path": "/home/kristof/.vscode/extensions/ms-azuretools.vscode-docker-2.0.0",
-      "scheme": "file"
-    },
-    "relativeLocation": "ms-azuretools.vscode-docker-2.0.0",
-    "metadata": {
-      "installedTimestamp": 1795182672976,
-      "pinned": false,
-      "source": "gallery",
-      "id": "0479fc1c-3d67-49f9-b087-fb9069afe48f",
-      "publisherId": "52b787f2-79a9-4f32-99b4-393afe3005d3",
+      "id": "583b2b34-2c1e-4634-8c0b-0b82e283ea3a",
+      "publisherId": "29859a75-d81b-4f0e-8578-2c80ecee6f99",
       "publisherDisplayName": "Microsoft",
-      "targetPlatform": "undefined",
-      "updated": false,
-      "private": false,
-      "isPreReleaseVersion": false,
-      "hasPreReleaseVersion": false
-    }
-  },
-  {
-    "identifier": {
-      "id": "mechatroner.rainbow-csv",
-      "uuid": "3792588c-3d35-442d-91ea-fe6a755e8155"
-    },
-    "version": "3.24.1",
-    "location": {
-      "$mid": 1,
-      "path": "/home/kristof/.vscode/extensions/mechatroner.rainbow-csv-3.24.1",
-      "scheme": "file"
-    },
-    "relativeLocation": "mechatroner.rainbow-csv-3.24.1",
-    "metadata": {
-      "installedTimestamp": 1795182568505,
-      "pinned": false,
-      "source": "gallery",
-      "id": "3792588c-3d35-442d-91ea-fe6a755e8155",
-      "publisherId": "0d5438b6-325a-4f88-aa28-6192aa2cf2a6",
-      "publisherDisplayName": "mechatroner",
       "targetPlatform": "undefined",
       "updated": false,
       "private": false,
@@ -157,22 +53,126 @@
   },
   {
     "identifier": {
-      "id": "dbaeumer.vscode-eslint",
-      "uuid": "583b2b34-2c1e-4634-8c0b-0b82e283ea3a"
+      "id": "hashicorp.terraform",
+      "uuid": "4a23294b-fd16-4c51-9759-da9936474cf8"
     },
-    "version": "3.0.34",
+    "version": "2.40.1",
     "location": {
       "$mid": 1,
-      "path": "/home/kristof/.vscode/extensions/dbaeumer.vscode-eslint-3.0.34",
+      "path": "/home/kristof/.vscode/extensions/hashicorp.terraform-2.40.1-linux-x64",
       "scheme": "file"
     },
-    "relativeLocation": "dbaeumer.vscode-eslint-3.0.34",
+    "relativeLocation": "hashicorp.terraform-2.40.1-linux-x64",
     "metadata": {
-      "installedTimestamp": 1795182435307,
+      "installedTimestamp": 1795182474868,
       "pinned": false,
       "source": "gallery",
-      "id": "583b2b34-2c1e-4634-8c0b-0b82e283ea3a",
-      "publisherId": "29859a75-d81b-4f0e-8578-2c80ecee6f99",
+      "id": "4a23294b-fd16-4c51-9759-da9936474cf8",
+      "publisherId": "a8dd781d-e144-400a-943c-417165981be2",
+      "publisherDisplayName": "HashiCorp",
+      "targetPlatform": "linux-x64",
+      "updated": false,
+      "private": false,
+      "isPreReleaseVersion": false,
+      "hasPreReleaseVersion": false
+    }
+  },
+  {
+    "identifier": {
+      "id": "humao.rest-client",
+      "uuid": "dda49fd5-1f3b-4d25-bf61-4fc41905ede5"
+    },
+    "version": "0.25.1",
+    "location": {
+      "$mid": 1,
+      "path": "/home/kristof/.vscode/extensions/humao.rest-client-0.25.1",
+      "scheme": "file"
+    },
+    "relativeLocation": "humao.rest-client-0.25.1",
+    "metadata": {
+      "installedTimestamp": 1795182482834,
+      "pinned": false,
+      "source": "gallery",
+      "id": "dda49fd5-1f3b-4d25-bf61-4fc41905ede5",
+      "publisherId": "aa260071-fe15-4a92-8990-7b8753d9cbc7",
+      "publisherDisplayName": "Huachao Mao",
+      "targetPlatform": "undefined",
+      "updated": false,
+      "private": false,
+      "isPreReleaseVersion": false,
+      "hasPreReleaseVersion": false
+    }
+  },
+  {
+    "identifier": {
+      "id": "mechatroner.rainbow-csv",
+      "uuid": "3792588c-3d35-442d-91ea-fe6a755e8155"
+    },
+    "version": "3.24.1",
+    "location": {
+      "$mid": 1,
+      "path": "/home/kristof/.vscode/extensions/mechatroner.rainbow-csv-3.24.1",
+      "scheme": "file"
+    },
+    "relativeLocation": "mechatroner.rainbow-csv-3.24.1",
+    "metadata": {
+      "installedTimestamp": 1795182568505,
+      "pinned": false,
+      "source": "gallery",
+      "id": "3792588c-3d35-442d-91ea-fe6a755e8155",
+      "publisherId": "0d5438b6-325a-4f88-aa28-6192aa2cf2a6",
+      "publisherDisplayName": "mechatroner",
+      "targetPlatform": "undefined",
+      "updated": false,
+      "private": false,
+      "isPreReleaseVersion": false,
+      "hasPreReleaseVersion": false
+    }
+  },
+  {
+    "identifier": {
+      "id": "mikestead.dotenv",
+      "uuid": "532533c9-a894-4a58-9eee-bbfbe7c06f71"
+    },
+    "version": "1.0.1",
+    "location": {
+      "$mid": 1,
+      "path": "/home/kristof/.vscode/extensions/mikestead.dotenv-1.0.1",
+      "scheme": "file"
+    },
+    "relativeLocation": "mikestead.dotenv-1.0.1",
+    "metadata": {
+      "installedTimestamp": 1795182619426,
+      "pinned": false,
+      "source": "gallery",
+      "id": "532533c9-a894-4a58-9eee-bbfbe7c06f71",
+      "publisherId": "b6aa9b98-56e5-4846-b7d2-600d45fc63fc",
+      "publisherDisplayName": "mikestead",
+      "targetPlatform": "undefined",
+      "updated": false,
+      "private": false,
+      "isPreReleaseVersion": false,
+      "hasPreReleaseVersion": false
+    }
+  },
+  {
+    "identifier": {
+      "id": "ms-azuretools.vscode-containers",
+      "uuid": "2cd1d691-3d69-4d2d-ae39-fda4bc4cfd3d"
+    },
+    "version": "2.5.3",
+    "location": {
+      "$mid": 1,
+      "path": "/home/kristof/.vscode/extensions/ms-azuretools.vscode-containers-2.5.3",
+      "scheme": "file"
+    },
+    "relativeLocation": "ms-azuretools.vscode-containers-2.5.3",
+    "metadata": {
+      "installedTimestamp": 1795182667637,
+      "pinned": false,
+      "source": "gallery",
+      "id": "2cd1d691-3d69-4d2d-ae39-fda4bc4cfd3d",
+      "publisherId": "52b787f2-79a9-4f32-99b4-393afe3005d3",
       "publisherDisplayName": "Microsoft",
       "targetPlatform": "undefined",
       "updated": false,
@@ -183,23 +183,50 @@
   },
   {
     "identifier": {
-      "id": "vscode-icons-team.vscode-icons",
-      "uuid": "9ccc1dd7-7ec4-4a46-bd4f-7d7b8b9d322a"
+      "id": "ms-azuretools.vscode-docker",
+      "uuid": "0479fc1c-3d67-49f9-b087-fb9069afe48f"
     },
-    "version": "13.0.0",
+    "version": "2.0.0",
     "location": {
       "$mid": 1,
-      "path": "/home/kristof/.vscode/extensions/vscode-icons-team.vscode-icons-13.0.0",
+      "path": "/home/kristof/.vscode/extensions/ms-azuretools.vscode-docker-2.0.0",
       "scheme": "file"
     },
-    "relativeLocation": "vscode-icons-team.vscode-icons-13.0.0",
+    "relativeLocation": "ms-azuretools.vscode-docker-2.0.0",
     "metadata": {
-      "installedTimestamp": 1795182784933,
+      "installedTimestamp": 1795182672976,
       "pinned": false,
       "source": "gallery",
-      "id": "9ccc1dd7-7ec4-4a46-bd4f-7d7b8b9d322a",
-      "publisherId": "652ad61d-3a6a-48ca-ab1a-80dc8953b2b6",
-      "publisherDisplayName": "VSCode Icons Team",
+      "id": "0479fc1c-3d67-49f9-b087-fb9069afe48f",
+      "publisherId": "52b787f2-79a9-4f32-99b4-393afe3005d3",
+      "publisherDisplayName": "Microsoft",
+      "targetPlatform": "undefined",
+      "updated": false,
+      "private": false,
+      "isPreReleaseVersion": false,
+      "hasPreReleaseVersion": false
+    }
+  },
+  {
+    "identifier": {
+      "id": "ms-vsliveshare.vsliveshare"
+    },
+    "version": "1.1.122",
+    "location": {
+      "$mid": 1,
+      "fsPath": "/home/kristof/.vscode/extensions/ms-vsliveshare.vsliveshare-1.1.122",
+      "external": "file:///home/kristof/.vscode/extensions/ms-vsliveshare.vsliveshare-1.1.122",
+      "path": "/home/kristof/.vscode/extensions/ms-vsliveshare.vsliveshare-1.1.122",
+      "scheme": "file"
+    },
+    "relativeLocation": "ms-vsliveshare.vsliveshare-1.1.122",
+    "metadata": {
+      "installedTimestamp": 1795184189067,
+      "pinned": false,
+      "source": "gallery",
+      "id": "5a6dc0d5-dc02-4121-8e24-cad33a2ff0af",
+      "publisherId": "74365139-d24d-4d0a-8377-c28643f7a216",
+      "publisherDisplayName": "Microsoft",
       "targetPlatform": "undefined",
       "updated": false,
       "private": false,
@@ -261,24 +288,24 @@
   },
   {
     "identifier": {
-      "id": "hashicorp.terraform",
-      "uuid": "4a23294b-fd16-4c51-9759-da9936474cf8"
+      "id": "vscode-icons-team.vscode-icons",
+      "uuid": "9ccc1dd7-7ec4-4a46-bd4f-7d7b8b9d322a"
     },
-    "version": "2.40.1",
+    "version": "13.0.0",
     "location": {
       "$mid": 1,
-      "path": "/home/kristof/.vscode/extensions/hashicorp.terraform-2.40.1-linux-x64",
+      "path": "/home/kristof/.vscode/extensions/vscode-icons-team.vscode-icons-13.0.0",
       "scheme": "file"
     },
-    "relativeLocation": "hashicorp.terraform-2.40.1-linux-x64",
+    "relativeLocation": "vscode-icons-team.vscode-icons-13.0.0",
     "metadata": {
-      "installedTimestamp": 1795182474868,
+      "installedTimestamp": 1795182784933,
       "pinned": false,
       "source": "gallery",
-      "id": "4a23294b-fd16-4c51-9759-da9936474cf8",
-      "publisherId": "a8dd781d-e144-400a-943c-417165981be2",
-      "publisherDisplayName": "HashiCorp",
-      "targetPlatform": "linux-x64",
+      "id": "9ccc1dd7-7ec4-4a46-bd4f-7d7b8b9d322a",
+      "publisherId": "652ad61d-3a6a-48ca-ab1a-80dc8953b2b6",
+      "publisherDisplayName": "VSCode Icons Team",
+      "targetPlatform": "undefined",
       "updated": false,
       "private": false,
       "isPreReleaseVersion": false,
@@ -287,23 +314,23 @@
   },
   {
     "identifier": {
-      "id": "ms-azuretools.vscode-containers",
-      "uuid": "2cd1d691-3d69-4d2d-ae39-fda4bc4cfd3d"
+      "id": "wayou.vscode-todo-highlight",
+      "uuid": "97a08c5f-6667-4242-a5c5-045dfb6bd4b9"
     },
-    "version": "2.5.3",
+    "version": "1.0.5",
     "location": {
       "$mid": 1,
-      "path": "/home/kristof/.vscode/extensions/ms-azuretools.vscode-containers-2.5.3",
+      "path": "/home/kristof/.vscode/extensions/wayou.vscode-todo-highlight-1.0.5",
       "scheme": "file"
     },
-    "relativeLocation": "ms-azuretools.vscode-containers-2.5.3",
+    "relativeLocation": "wayou.vscode-todo-highlight-1.0.5",
     "metadata": {
-      "installedTimestamp": 1795182667637,
+      "installedTimestamp": 1795182791632,
       "pinned": false,
       "source": "gallery",
-      "id": "2cd1d691-3d69-4d2d-ae39-fda4bc4cfd3d",
-      "publisherId": "52b787f2-79a9-4f32-99b4-393afe3005d3",
-      "publisherDisplayName": "Microsoft",
+      "id": "97a08c5f-6667-4242-a5c5-045dfb6bd4b9",
+      "publisherId": "47daa402-5396-4346-b7bd-62494d6d63ec",
+      "publisherDisplayName": "Wayou Liu",
       "targetPlatform": "undefined",
       "updated": false,
       "private": false,
@@ -330,33 +357,6 @@
       "id": "af09676f-ca6f-4f37-b738-d2610863977a",
       "publisherId": "7910f81a-cced-4574-a13c-d3623fb37de9",
       "publisherDisplayName": "Yusif Aliyev",
-      "targetPlatform": "undefined",
-      "updated": false,
-      "private": false,
-      "isPreReleaseVersion": false,
-      "hasPreReleaseVersion": false
-    }
-  },
-  {
-    "identifier": {
-      "id": "ms-vsliveshare.vsliveshare"
-    },
-    "version": "1.1.122",
-    "location": {
-      "$mid": 1,
-      "fsPath": "/home/kristof/.vscode/extensions/ms-vsliveshare.vsliveshare-1.1.122",
-      "external": "file:///home/kristof/.vscode/extensions/ms-vsliveshare.vsliveshare-1.1.122",
-      "path": "/home/kristof/.vscode/extensions/ms-vsliveshare.vsliveshare-1.1.122",
-      "scheme": "file"
-    },
-    "relativeLocation": "ms-vsliveshare.vsliveshare-1.1.122",
-    "metadata": {
-      "installedTimestamp": 1795184189067,
-      "pinned": false,
-      "source": "gallery",
-      "id": "5a6dc0d5-dc02-4121-8e24-cad33a2ff0af",
-      "publisherId": "74365139-d24d-4d0a-8377-c28643f7a216",
-      "publisherDisplayName": "Microsoft",
       "targetPlatform": "undefined",
       "updated": false,
       "private": false,
