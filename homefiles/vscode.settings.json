@@ -57,5 +57,6 @@
   ],
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform"
-  }
+  },
+  "redhat.telemetry.enabled": false
 }
