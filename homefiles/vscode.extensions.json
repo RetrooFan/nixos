@@ -12,7 +12,7 @@
     },
     "relativeLocation": "dbaeumer.vscode-eslint-3.0.34",
     "metadata": {
-      "installedTimestamp": 1795182435307,
+      "installedTimestamp": 1795198554899,
       "pinned": false,
       "source": "gallery",
       "id": "583b2b34-2c1e-4634-8c0b-0b82e283ea3a",
@@ -38,7 +38,7 @@
     },
     "relativeLocation": "esbenp.prettier-vscode-12.4.0",
     "metadata": {
-      "installedTimestamp": 1795182462182,
+      "installedTimestamp": 1795198614051,
       "pinned": false,
       "source": "gallery",
       "id": "96fa4707-6983-4489-b7c5-d5ffdfdcce90",
@@ -64,7 +64,7 @@
     },
     "relativeLocation": "hashicorp.terraform-2.40.1-linux-x64",
     "metadata": {
-      "installedTimestamp": 1795182474868,
+      "installedTimestamp": 1795198629085,
       "pinned": false,
       "source": "gallery",
       "id": "4a23294b-fd16-4c51-9759-da9936474cf8",
@@ -90,7 +90,7 @@
     },
     "relativeLocation": "humao.rest-client-0.25.1",
     "metadata": {
-      "installedTimestamp": 1795182482834,
+      "installedTimestamp": 1795198640089,
       "pinned": false,
       "source": "gallery",
       "id": "dda49fd5-1f3b-4d25-bf61-4fc41905ede5",
@@ -116,7 +116,7 @@
     },
     "relativeLocation": "mechatroner.rainbow-csv-3.24.1",
     "metadata": {
-      "installedTimestamp": 1795182568505,
+      "installedTimestamp": 1795198648646,
       "pinned": false,
       "source": "gallery",
       "id": "3792588c-3d35-442d-91ea-fe6a755e8155",
@@ -142,7 +142,7 @@
     },
     "relativeLocation": "mikestead.dotenv-1.0.1",
     "metadata": {
-      "installedTimestamp": 1795182619426,
+      "installedTimestamp": 1795198668503,
       "pinned": false,
       "source": "gallery",
       "id": "532533c9-a894-4a58-9eee-bbfbe7c06f71",
@@ -168,7 +168,7 @@
     },
     "relativeLocation": "ms-azuretools.vscode-containers-2.5.3",
     "metadata": {
-      "installedTimestamp": 1795182667637,
+      "installedTimestamp": 1795198723643,
       "pinned": false,
       "source": "gallery",
       "id": "2cd1d691-3d69-4d2d-ae39-fda4bc4cfd3d",
@@ -194,7 +194,7 @@
     },
     "relativeLocation": "ms-azuretools.vscode-docker-2.0.0",
     "metadata": {
-      "installedTimestamp": 1795182672976,
+      "installedTimestamp": 1795198734816,
       "pinned": false,
       "source": "gallery",
       "id": "0479fc1c-3d67-49f9-b087-fb9069afe48f",
@@ -209,19 +209,18 @@
   },
   {
     "identifier": {
-      "id": "ms-vsliveshare.vsliveshare"
+      "id": "ms-vsliveshare.vsliveshare",
+      "uuid": "5a6dc0d5-dc02-4121-8e24-cad33a2ff0af"
     },
     "version": "1.1.122",
     "location": {
       "$mid": 1,
-      "fsPath": "/home/kristof/.vscode/extensions/ms-vsliveshare.vsliveshare-1.1.122",
-      "external": "file:///home/kristof/.vscode/extensions/ms-vsliveshare.vsliveshare-1.1.122",
       "path": "/home/kristof/.vscode/extensions/ms-vsliveshare.vsliveshare-1.1.122",
       "scheme": "file"
     },
     "relativeLocation": "ms-vsliveshare.vsliveshare-1.1.122",
     "metadata": {
-      "installedTimestamp": 1795184189067,
+      "installedTimestamp": 1795198749517,
       "pinned": false,
       "source": "gallery",
       "id": "5a6dc0d5-dc02-4121-8e24-cad33a2ff0af",
@@ -247,7 +246,7 @@
     },
     "relativeLocation": "redhat.vscode-yaml-2.0.0",
     "metadata": {
-      "installedTimestamp": 1795182764858,
+      "installedTimestamp": 1795198770644,
       "pinned": false,
       "source": "gallery",
       "id": "2061917f-f76a-458a-8da9-f162de22b97e",
@@ -273,7 +272,7 @@
     },
     "relativeLocation": "timonwong.shellcheck-0.48.4-linux-x64",
     "metadata": {
-      "installedTimestamp": 1795182774717,
+      "installedTimestamp": 1795198786505,
       "pinned": false,
       "source": "gallery",
       "id": "f95d8fff-f70a-4ae5-bb06-5c47ddbc8fc6",
@@ -299,7 +298,7 @@
     },
     "relativeLocation": "vscode-icons-team.vscode-icons-13.0.0",
     "metadata": {
-      "installedTimestamp": 1795182784933,
+      "installedTimestamp": 1795198820663,
       "pinned": false,
       "source": "gallery",
       "id": "9ccc1dd7-7ec4-4a46-bd4f-7d7b8b9d322a",
@@ -325,7 +324,7 @@
     },
     "relativeLocation": "wayou.vscode-todo-highlight-1.0.5",
     "metadata": {
-      "installedTimestamp": 1795182791632,
+      "installedTimestamp": 1795198836039,
       "pinned": false,
       "source": "gallery",
       "id": "97a08c5f-6667-4242-a5c5-045dfb6bd4b9",
@@ -351,7 +350,7 @@
     },
     "relativeLocation": "yusifaliyevpro.vscicons-1.3.0",
     "metadata": {
-      "installedTimestamp": 1795182805312,
+      "installedTimestamp": 1795198870361,
       "pinned": false,
       "source": "gallery",
       "id": "af09676f-ca6f-4f37-b738-d2610863977a",
