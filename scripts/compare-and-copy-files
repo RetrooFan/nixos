@@ -4,7 +4,7 @@ set -euo pipefail
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
 result=0
 
-"$script_dir"/compare-files-dialog "$1" "$2" "$3" "$4" "$5" || result="$?"
+"$script_dir"/compare-files-dialog "$1" "$2" "$3" "$4" "$5" || result=$?
 
 [ -f "$2" ] && chmod u+w "$2"
 
