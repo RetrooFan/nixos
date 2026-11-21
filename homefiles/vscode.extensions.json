@@ -1,6 +1,33 @@
 [
   {
     "identifier": {
+      "id": "amazonwebservices.aws-toolkit-vscode"
+    },
+    "version": "4.20.0",
+    "location": {
+      "$mid": 1,
+      "fsPath": "/home/kristof/.vscode/extensions/amazonwebservices.aws-toolkit-vscode-4.20.0",
+      "external": "file:///home/kristof/.vscode/extensions/amazonwebservices.aws-toolkit-vscode-4.20.0",
+      "path": "/home/kristof/.vscode/extensions/amazonwebservices.aws-toolkit-vscode-4.20.0",
+      "scheme": "file"
+    },
+    "relativeLocation": "amazonwebservices.aws-toolkit-vscode-4.20.0",
+    "metadata": {
+      "installedTimestamp": 1795212683147,
+      "pinned": false,
+      "source": "gallery",
+      "id": "ac5787df-9b2d-441c-abf0-977d62bc66f0",
+      "publisherId": "e5177ad8-ec3b-4d49-aefd-3d3331129b54",
+      "publisherDisplayName": "Amazon Web Services",
+      "targetPlatform": "undefined",
+      "updated": false,
+      "private": false,
+      "isPreReleaseVersion": false,
+      "hasPreReleaseVersion": false
+    }
+  },
+  {
+    "identifier": {
       "id": "dbaeumer.vscode-eslint",
       "uuid": "583b2b34-2c1e-4634-8c0b-0b82e283ea3a"
     },
@@ -356,33 +383,6 @@
       "id": "af09676f-ca6f-4f37-b738-d2610863977a",
       "publisherId": "7910f81a-cced-4574-a13c-d3623fb37de9",
       "publisherDisplayName": "Yusif Aliyev",
-      "targetPlatform": "undefined",
-      "updated": false,
-      "private": false,
-      "isPreReleaseVersion": false,
-      "hasPreReleaseVersion": false
-    }
-  },
-  {
-    "identifier": {
-      "id": "amazonwebservices.aws-toolkit-vscode"
-    },
-    "version": "4.20.0",
-    "location": {
-      "$mid": 1,
-      "fsPath": "/home/kristof/.vscode/extensions/amazonwebservices.aws-toolkit-vscode-4.20.0",
-      "external": "file:///home/kristof/.vscode/extensions/amazonwebservices.aws-toolkit-vscode-4.20.0",
-      "path": "/home/kristof/.vscode/extensions/amazonwebservices.aws-toolkit-vscode-4.20.0",
-      "scheme": "file"
-    },
-    "relativeLocation": "amazonwebservices.aws-toolkit-vscode-4.20.0",
-    "metadata": {
-      "installedTimestamp": 1795212683147,
-      "pinned": false,
-      "source": "gallery",
-      "id": "ac5787df-9b2d-441c-abf0-977d62bc66f0",
-      "publisherId": "e5177ad8-ec3b-4d49-aefd-3d3331129b54",
-      "publisherDisplayName": "Amazon Web Services",
       "targetPlatform": "undefined",
       "updated": false,
       "private": false,
