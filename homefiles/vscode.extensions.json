@@ -1,13 +1,12 @@
 [
   {
     "identifier": {
-      "id": "amazonwebservices.aws-toolkit-vscode"
+      "id": "amazonwebservices.aws-toolkit-vscode",
+      "uuid": "ac5787df-9b2d-441c-abf0-977d62bc66f0"
     },
     "version": "4.20.0",
     "location": {
       "$mid": 1,
-      "fsPath": "/home/kristof/.vscode/extensions/amazonwebservices.aws-toolkit-vscode-4.20.0",
-      "external": "file:///home/kristof/.vscode/extensions/amazonwebservices.aws-toolkit-vscode-4.20.0",
       "path": "/home/kristof/.vscode/extensions/amazonwebservices.aws-toolkit-vscode-4.20.0",
       "scheme": "file"
     },
