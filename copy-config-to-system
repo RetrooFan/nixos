@@ -38,7 +38,7 @@ echo
 
 size=${#REPO_HOME_PATHS[@]}
 for ((i = 0; i < size; i++)); do
-  "$REPO_DIR"/scripts/compare-and-copy-files "${REPO_HOME_PATHS[$i]}"          "${SYSTEM_HOME_PATHS[$i]}" "$i" "$size" "$INSPECT"
+  "$REPO_DIR"/scripts/compare-and-copy-files "${REPO_HOME_PATHS[$i]}" "${SYSTEM_HOME_PATHS[$i]}" "$i" "$size" "$INSPECT"
 done
 echo
 

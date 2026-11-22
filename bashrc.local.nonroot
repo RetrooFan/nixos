@@ -33,19 +33,19 @@ alias -- mi='micro'
 # ------------------------------------------------
 
 # shellcheck disable=SC1090
-[ -f ~/.sources/set-histfile ] && source ~/.sources/set-histfile
+[ -f ~/.sources/set-histfile ]    && source ~/.sources/set-histfile
 
 # shellcheck disable=SC1090
 [ -f ~/.sources/set-exit-action ] && source ~/.sources/set-exit-action
 
 # shellcheck disable=SC1090
-[ -f ~/.sources/set-prompt ] && source ~/.sources/set-prompt
+[ -f ~/.sources/set-prompt ]      && source ~/.sources/set-prompt
 
 # ------------------------------------------------
 
 [ -f ~/.scripts/check-for-home-files ] && ~/.scripts/check-for-home-files
 
-[ -f ~/.scripts/git-pull ] && ~/.scripts/git-pull
+[ -f ~/.scripts/git-pull ]             && ~/.scripts/git-pull
 
 # ------------------------------------------------
 
